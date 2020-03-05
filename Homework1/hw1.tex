@@ -1,0 +1,381 @@
+\documentclass[hyperref,]{ctexart}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{xltxtra,xunicode}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\usepackage[usenames,dvipsnames]{color}
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={田嘉禾},
+            pdftitle={测试计划},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+
+\title{测试计划}
+\author{田嘉禾}
+\date{}
+
+
+
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\hypertarget{ux529fux80fdux6027ux6d4bux8bd5}{%
+\section{功能性测试}\label{ux529fux80fdux6027ux6d4bux8bd5}}
+
+\hypertarget{ux767bux5f55ux53caux4e2aux4ebaux4fe1ux606fux6d4bux8bd5}{%
+\subsection{登录及个人信息测试}\label{ux767bux5f55ux53caux4e2aux4ebaux4fe1ux606fux6d4bux8bd5}}
+
+\begin{itemize}
+\tightlist
+\item
+  用户输入正确用户名，密码登录测试
+\item
+  用户输入错误用户名，密码登录测试
+\item
+  修改个人信息测试
+\end{itemize}
+
+\hypertarget{ux6b65ux9aa4ux4e00ux5efaux7acbux4e00ux4e2aux65b0ux9879ux76ee}{%
+\subsection{步骤一:建立一个新项目}\label{ux6b65ux9aa4ux4e00ux5efaux7acbux4e00ux4e2aux65b0ux9879ux76ee}}
+
+\begin{itemize}
+\tightlist
+\item
+  对创建新的出题系统、确定主持人进行测试
+\item
+  对为项目定义唯一项目名这一功能进行测试
+\item
+  对主持人进行的项目规划和运行进行测试
+\item
+  对创建新考题进行测试
+\item
+  对``开始''状态设置以及编写考题框架进行测试
+\item
+  对确定出题相关属性进行测试
+\item
+  对作者编写考题属性进行测试
+\item
+  对主持人设置考题状态``开始''权限进行测试
+\item
+  为考题添加单个作者，评审员，质管员进行测试
+\item
+  为考题添加多个作者，评审员，质管员进行测试
+\item
+  对作者和评审员之间读取互相信息权限进行测试
+\item
+  对作者和评审员的唯一标识符进行测试
+\end{itemize}
+
+\hypertarget{ux6b65ux9aa4ux4e8cux5f00ux59cbux542fux52a8ux9879ux76eeux72b6ux6001ux5f00ux59cbux89d2ux8272ux4e3bux6301ux4eba}{%
+\subsection{步骤二:开始启动项目(状态:开始;角色:主持人)}\label{ux6b65ux9aa4ux4e8cux5f00ux59cbux542fux52a8ux9879ux76eeux72b6ux6001ux5f00ux59cbux89d2ux8272ux4e3bux6301ux4eba}}
+
+\begin{itemize}
+\item
+  对主持人能够在状态为``开始''的考题内分配知识点、作者和评审员进行测试
+\item
+  对主持人能够为状态为``开始''的考题设定编写考题与评审考题的时间限期进行测试
+\item
+  对系统会对超出限期的任务报警进行测试
+\item
+  对主持人能对超出限期的任务提出警告或调整时间限期进行测试
+\item
+  对主持人能将分配了知识点、作者、评审员和限期的题目状态改为``编写''，状态改变后系统能给对应作者发送邮件的测试
+\item
+  对未完成分配任务的题目状态不能改为``编写''的测试
+\item
+  //对主持人能够批量将完成分配的题目状态改为``编写''，系统会给对应作者发送邮件的测试
+\item
+  对除主持人外，系统管理员、作者、评审员没有修改题目状态的权限的测试
+\end{itemize}
+
+\hypertarget{ux6b65ux9aa4ux4e09ux7f16ux5199ux8003ux9898ux72b6ux6001ux7f16ux5199ux89d2ux8272ux4f5cux8005}{%
+\subsection{步骤三:编写考题(状态:编写;角色:作者)}\label{ux6b65ux9aa4ux4e09ux7f16ux5199ux8003ux9898ux72b6ux6001ux7f16ux5199ux89d2ux8272ux4f5cux8005}}
+
+\begin{itemize}
+\tightlist
+\item
+  对作者能够看到应当由他编写的考题的相关信息进行测试
+\item
+  对作者能够编写普通考题、给出标准答案并设置相关属性进行测试
+\item
+  对作者能够编写带有表格的题目、给出标准答案并设置相关属性进行测试
+\item
+  对作者能够编写带有图形的题目、给出标准答案并设置相关属性进行测试
+\item
+  对未完成编写（题干为空？），未给出标准答案或未完成相关属性设定的题目，作者不能修改其状态为``评审''的测试
+\item
+  对作者能够将编写完成、给出标准答案并设置相关属性的题目状态改为``评审''，系统会给评审员发出邮件的测试
+\item
+  对编写过程中主持人不能修改和操作的权限进行测试
+\item
+  对普通考题能以XML，Excel的形式导入出题系统的测试
+\item
+  对带有表格的题目能以XML，Excel的形式导入出题系统的测试
+\item
+  对带有图形的题目能以XML，Excel的形式导入出题系统的测试
+\end{itemize}
+
+\hypertarget{ux6b65ux9aa4ux56dbux8bc4ux5ba1ux8003ux9898ux72b6ux6001ux8bc4ux5ba1ux89d2ux8272ux8bc4ux5ba1ux5458}{%
+\subsection{步骤四:评审考题(状态:评审;角色:评审员)}\label{ux6b65ux9aa4ux56dbux8bc4ux5ba1ux8003ux9898ux72b6ux6001ux8bc4ux5ba1ux89d2ux8272ux8bc4ux5ba1ux5458}}
+
+\begin{itemize}
+\tightlist
+\item
+  对评审员能够查看需要自己评审的题目的权限进行测试
+\item
+  对评审员能够查看需要再次评审的题目的权限进行测试
+\item
+  对评审员设置为``可接受''评审结果与``再审''状态的考题的流程进行测试
+\item
+  对评审员设置为``需修改''评审结果与``修改''状态的考题的流程进行测试
+\item
+  对评审员设置为``被拒绝''评审结果与``再审''状态的考题的流程进行测试
+\item
+  对评审过程中主持人没有修改和操作的权限进行测试
+\end{itemize}
+
+\hypertarget{ux6b65ux9aa4ux4e94ux518dux5ba1ux8003ux9898ux72b6ux6001ux518dux5ba1ux89d2ux8272ux8d28ux7ba1ux5458}{%
+\subsection{步骤五:再审考题(状态:再审;角色:质管员)}\label{ux6b65ux9aa4ux4e94ux518dux5ba1ux8003ux9898ux72b6ux6001ux518dux5ba1ux89d2ux8272ux8d28ux7ba1ux5458}}
+
+\begin{itemize}
+\tightlist
+\item
+  对质管员将``可接受''评审结果的题目设置为``发布''状态的流程进行测试
+\item
+  对质管员将``被拒绝''评审结果的题目设置为``作废''状态的流程进行测试
+\item
+  对质管员将``可接受''评审结果的题目设置为``修改''状态的流程进行测试
+\item
+  对质管员阅读所有处于``再审''状态的考题的权限进行测试
+\item
+  对质管员给所有处于``再审''状态的考题编写评审意见和建议的权限进行测试
+\item
+  对质管员给所有处于``再审''状态的考题进行变更状态的权限进行测试
+\item
+  对再审过程中主持人没有修改和操作的权限进行测试
+\end{itemize}
+
+\hypertarget{ux6b65ux9aa4ux516dux4feeux6539ux8003ux9898ux72b6ux6001ux4feeux6539ux89d2ux8272ux4f5cux8005}{%
+\subsection{步骤六:修改考题(状态:修改;角色:作者)}\label{ux6b65ux9aa4ux516dux4feeux6539ux8003ux9898ux72b6ux6001ux4feeux6539ux89d2ux8272ux4f5cux8005}}
+
+\begin{itemize}
+\tightlist
+\item
+  测试主持人不能进行修改题目
+\item
+  测试作者，评审员进行修改题目
+\end{itemize}
+
+\hypertarget{ux6b65ux9aa4ux4e03ux53d1ux5e03ux8003ux9898ux72b6ux6001ux53d1ux5e03ux89d2ux8272ux4e3bux6301ux4eba}{%
+\subsection{步骤七:发布考题(状态:发布;角色:主持人)}\label{ux6b65ux9aa4ux4e03ux53d1ux5e03ux8003ux9898ux72b6ux6001ux53d1ux5e03ux89d2ux8272ux4e3bux6301ux4eba}}
+
+\begin{itemize}
+\tightlist
+\item
+  进行普通考题导出为XML，Excel测试
+\item
+  进行带表格或图片的考题导出为XML，Excel测试
+\end{itemize}
+
+\hypertarget{ux6b65ux9aa4ux516bux4f5cux5e9fux8003ux9898ux72b6ux6001ux4f5cux5e9fux89d2ux8272ux4e3bux6301ux4eba}{%
+\subsection{步骤八:作废考题(状态:作废;角色:主持人)}\label{ux6b65ux9aa4ux516bux4f5cux5e9fux8003ux9898ux72b6ux6001ux4f5cux5e9fux89d2ux8272ux4e3bux6301ux4eba}}
+
+\begin{itemize}
+\tightlist
+\item
+  对主持人废除考题的操作进行测试
+\item
+  对主持人再次安排替补的考题这一流程进行测试
+\item
+  对主持人阅读处于作废状态的考题这一权限进行测试
+\item
+  对主持人没有修改和操作的权限进行测试
+\end{itemize}
+
+\hypertarget{ux6574ux4f53ux6d41ux7a0bux63a7ux5236}{%
+\subsection{整体流程控制}\label{ux6574ux4f53ux6d41ux7a0bux63a7ux5236}}
+
+// - 定义新的合法状态模型进行测试
+
+// - 测试用户作出更改后系统所产生的记录信息可否追踪
+
+\hypertarget{ux975eux529fux80fdux6027ux6d4bux8bd5}{%
+\section{非功能性测试}\label{ux975eux529fux80fdux6027ux6d4bux8bd5}}
+
+\hypertarget{ux6027ux80fdux6548ux7387}{%
+\subsection{性能效率}\label{ux6027ux80fdux6548ux7387}}
+
+\begin{itemize}
+\tightlist
+\item
+  测试导入题库不同大小的数据耗时
+\item
+  测试从题库导出不同大小的数据耗时
+\end{itemize}
+
+\hypertarget{ux517cux5bb9ux6027}{%
+\subsection{兼容性}\label{ux517cux5bb9ux6027}}
+
+\begin{itemize}
+\tightlist
+\item
+  针对不同浏览器做测试
+\item
+  针对不同用户端，不同窗口大小（如不同款式手机，平板电脑）的适配性做测试
+\end{itemize}
+
+\hypertarget{ux6613ux7528ux6027}{%
+\subsection{易用性}\label{ux6613ux7528ux6027}}
+
+\begin{itemize}
+\tightlist
+\item
+  输入不符合规定格式的用户名/密码
+\item
+  对于合法值有限的下拉框，尝试抓包修改值为非法值之后发送
+\item
+  对于日期等格式固定的参数，尝试修改为不符合格式后发送
+\item
+  把不能为null的值修改为空后发送
+\item
+  测试搜索不存在的条目
+\item
+  测试不合法数据导入题库管理系统
+\item
+  测试上传图片的大小和类型限制
+\item
+  测试无效URL的图片
+\item
+  上传图片时测试上传非图片的文件
+\item
+  测试支持的图片文件大小
+\item
+  测试支持的表格行列极限大小
+\item
+  测试添加作者，评审，质管为不存在用户
+\item
+  定义新的不合法状态模型（如含有null字段，无意义权限等）进行测试
+\end{itemize}
+
+\hypertarget{ux53efux9760ux6027}{%
+\subsection{可靠性}\label{ux53efux9760ux6027}}
+
+\begin{itemize}
+\tightlist
+\item
+  测试编辑到一半断电/掉线后的数据恢复能力
+\item
+  测试各角色对数据修改后未保存的后果
+\item
+  测试各角色对数据修改后能否撤销
+\item
+  测试用户作出更改后系统所产生的记录信息可否追踪
+\item
+  测试同一数据重复导入题库管理系统
+\item
+  测试未登录角色导入数据
+\item
+  测试未拥有权限的角色导入数据
+\item
+  在尚未有发布考题的时候进行导出测试
+\item
+  测试无权限的角色能否导出数据
+\item
+  测试未登录能否导出数据
+\item
+  测试多个用户在线且同时对同一考题进行更改对考题产生的作用
+\item
+  测试在用户更改某个考题时，另一用户删除该考题的后果
+\item
+  测试多位教师同时上传某一相同考题的后果
+\item
+  测试多位管理员同时导入同一数据的后果
+\item
+  测试多位管理员同时删除同一考题的后果
+\item
+  测试对网站进行DDoS攻击
+\end{itemize}
+
+\hypertarget{ux4fe1ux606fux5b89ux5168ux6027}{%
+\subsection{信息安全性}\label{ux4fe1ux606fux5b89ux5168ux6027}}
+
+\begin{itemize}
+\tightlist
+\item
+  测试在各个环节通过SQL注入/XSS注入盗取数据/cookie
+\item
+  测试通过.DS\_Store，web.rar，.git等常见后缀是否能够泄露源码
+\item
+  测试网页前端注释中是否有敏感数据泄露
+\item
+  测试通过URL的越权访问
+\item
+  测试将含有XXE注入的XML数据导入题库管理系统
+\item
+  上传图片时测试上传嵌入webshell的文件
+\item
+  在登录界面用户名，密码或题目题干等处进行SQL注入，webshell插入，XSS注入
+\end{itemize}
+
+\hypertarget{ux7ef4ux62a4ux6027}{%
+\subsection{维护性}\label{ux7ef4ux62a4ux6027}}
+
+\hypertarget{ux53efux79fbux690dux6027}{%
+\subsection{可移植性}\label{ux53efux79fbux690dux6027}}
+
+\begin{itemize}
+\tightlist
+\item
+  在Mac，Windows，Linux等各个平台上独立测试
+\end{itemize}
+
+\end{document}
