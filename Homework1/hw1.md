@@ -1,10 +1,18 @@
 ---
-title: \vspace{2in} 测试计划
-subtitle: "A Report for Uniqlo Scholarship Winter Program (Supply Chain Reform Direction)"
+title: \vspace{2in} 出题系统测试计划报告
+subtitle: "软件质量保障与测试课程第一次课程作业"
 author:
-  - 田嘉禾大佬^[Undergraduate in Software Engineering, Software School of Fudan University; Software Development Engineer at Amazon Shanghai Institute of Artificial Intelligence, Amazon Web Services. (wangc16@fudan.edu.cn; cwanam@amazon.com)]
+  - Tian, Jiahe^[Equal Contribution, Fudan University, 17307130313 (tianjh17@fudan.edu.cn)]
+  - Hu, Xiaoxiao^[Equal Contribution, Fudan University, 17302010077 (xxhu17@fudan.edu.cn)]
+  - Huang, Jiani^[Equal Contribution, Fudan University, 17302010063 (huangjn17@fudan.edu.cn)]
+  - Liu, Jiaxing^[Equal Contribution, Fudan University, 17302010049 (jiaxingliu17@fudan.edu.cn)]
+  - Shi, Ruixin^[Equal Contribution, Fudan University, 17302010065 (rxshi17@fudan.edu.cn)]
+  - Wu, Chenning^[Equal Contribution, Fudan University, 17302010066 (cnwu17@fudan.edu.cn)]
+  - Zhang, Cenyuan^[Equal Contribution, Fudan University, 17302010068 (cenyuanzhang17@fudan.edu.cn)]
+  - Zhang, Yihan^[Equal Contribution, Fudan University, 17302010076 (zhangyihan17@fudan.edu.cn)]
+  - Wang, Chen^[Equal Contribution, Fudan University, 16307110064 (wangc16@fudan.edu.cn)]
 
-date: "February 11th, 2020"
+date: "2020年3月7日"
 documentclass: ctexart
 output:
   rticles::ctex:
@@ -321,6 +329,7 @@ references:
 
 
 
+
 \newpage
 
 \LARGE
@@ -426,15 +435,22 @@ Supply Chain Management; Quick Response; Uniqlo
 
 ## 步骤六:修改考题(状态:修改;角色:作者)
 
-
-- 测试主持人不能进行修改题目
-- 测试作者，评审员进行修改题目
+- 对作者可以阅读到所有与本作者有关的处于“修改”状态的考题这一权限进行测试
+- 对作者可以修改考题信息进行测试
+- 对作者可以将考题由“修改”状态改为“评审”状态这一权限进行测试
+- 对考题改为“评审”状态后,系统自动给评审员发送提示电邮这一功能进行测试
+- 对修改过程中主持人只有阅读权限,没有修改和操作的权限进行测试
 
 
 ## 步骤七:发布考题(状态:发布;角色:主持人) 
 
-- 进行普通考题导出为XML，Excel测试
+- 对主持人可以接受处于发布状态的考题进行测试
+- 对主持人可以正常导出考题进行测试
+- 对导出时选择导出考题的最终版本,不带上历史数据及无关的考题属性这一情况进行测试
+- 对导出时选择导出考题的所有完整内容这一情况进行测试
+- 进行普通考题导出为XML，Excel格式分别测试
 - 进行带表格或图片的考题导出为XML，Excel测试
+- 对题库系统管理员可以正常导入由主持人导出的考题进行测试(Excel和XML格式的考题)
 
 ## 步骤八:作废考题(状态:作废;角色:主持人)
 

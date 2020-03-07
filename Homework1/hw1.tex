@@ -32,8 +32,8 @@
 \usepackage[usenames,dvipsnames]{color}
 \hypersetup{breaklinks=true,
             bookmarks=true,
-            pdfauthor={田嘉禾大佬},
-            pdftitle={ 测试计划},
+            pdfauthor={Tian, Jiahe; Hu, Xiaoxiao; Huang, Jiani; Liu, Jiaxing; Shi, Ruixin; Wu, Chenning; Zhang, Cenyuan; Zhang, Yihan; Wang, Chen},
+            pdftitle={ 出题系统测试计划报告},
             colorlinks=true,
             citecolor=blue,
             urlcolor=blue,
@@ -45,14 +45,19 @@
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
 
-\title{\vspace{2in} 测试计划\\\vspace{0.5em}{\large A Report for Uniqlo Scholarship Winter Program (Supply Chain Reform
-Direction)}}
-\author{田嘉禾大佬\footnote{Undergraduate in Software Engineering, Software
-  School of Fudan University; Software Development Engineer at Amazon
-  Shanghai Institute of Artificial Intelligence, Amazon Web Services.
-  (\href{mailto:wangc16@fudan.edu.cn}{\nolinkurl{wangc16@fudan.edu.cn}};
-  \href{mailto:cwanam@amazon.com}{\nolinkurl{cwanam@amazon.com}})}}
-\date{February 11th, 2020}
+\title{\vspace{2in} 出题系统测试计划报告\\\vspace{0.5em}{\large 软件质量保障与测试课程第一次课程作业}}
+\author{Tian, Jiahe\footnote{Equal Contribution, Fudan University, 17307130313
+  (\href{mailto:tianjh17@fudan.edu.cn}{\nolinkurl{tianjh17@fudan.edu.cn}})} \and Hu, Xiaoxiao\footnote{Equal Contribution, Fudan University, 17302010077
+  (\href{mailto:xxhu17@fudan.edu.cn}{\nolinkurl{xxhu17@fudan.edu.cn}})} \and Huang, Jiani\footnote{Equal Contribution, Fudan University, 17302010063
+  (\href{mailto:huangjn17@fudan.edu.cn}{\nolinkurl{huangjn17@fudan.edu.cn}})} \and Liu, Jiaxing\footnote{Equal Contribution, Fudan University, 17302010049
+  (\href{mailto:jiaxingliu17@fudan.edu.cn}{\nolinkurl{jiaxingliu17@fudan.edu.cn}})} \and Shi, Ruixin\footnote{Equal Contribution, Fudan University, 17302010065
+  (\href{mailto:rxshi17@fudan.edu.cn}{\nolinkurl{rxshi17@fudan.edu.cn}})} \and Wu, Chenning\footnote{Equal Contribution, Fudan University, 17302010066
+  (\href{mailto:cnwu17@fudan.edu.cn}{\nolinkurl{cnwu17@fudan.edu.cn}})} \and Zhang, Cenyuan\footnote{Equal Contribution, Fudan University,
+  17302010068
+  (\href{mailto:cenyuanzhang17@fudan.edu.cn}{\nolinkurl{cenyuanzhang17@fudan.edu.cn}})} \and Zhang, Yihan\footnote{Equal Contribution, Fudan University, 17302010076
+  (\href{mailto:zhangyihan17@fudan.edu.cn}{\nolinkurl{zhangyihan17@fudan.edu.cn}})} \and Wang, Chen\footnote{Equal Contribution, Fudan University, 16307110064
+  (\href{mailto:wangc16@fudan.edu.cn}{\nolinkurl{wangc16@fudan.edu.cn}})}}
+\date{2020年3月7日}
 
 
 
@@ -265,9 +270,15 @@ Supply Chain Management; Quick Response; Uniqlo
 \begin{itemize}
 \tightlist
 \item
-  测试主持人不能进行修改题目
+  对作者可以阅读到所有与本作者有关的处于``修改''状态的考题这一权限进行测试
 \item
-  测试作者，评审员进行修改题目
+  对作者可以修改考题信息进行测试
+\item
+  对作者可以将考题由``修改''状态改为``评审''状态这一权限进行测试
+\item
+  对考题改为``评审''状态后,系统自动给评审员发送提示电邮这一功能进行测试
+\item
+  对修改过程中主持人只有阅读权限,没有修改和操作的权限进行测试
 \end{itemize}
 
 \hypertarget{ux6b65ux9aa4ux4e03ux53d1ux5e03ux8003ux9898ux72b6ux6001ux53d1ux5e03ux89d2ux8272ux4e3bux6301ux4eba}{%
@@ -276,9 +287,19 @@ Supply Chain Management; Quick Response; Uniqlo
 \begin{itemize}
 \tightlist
 \item
-  进行普通考题导出为XML，Excel测试
+  对主持人可以接受处于发布状态的考题进行测试
+\item
+  对主持人可以正常导出考题进行测试
+\item
+  对导出时选择导出考题的最终版本,不带上历史数据及无关的考题属性这一情况进行测试
+\item
+  对导出时选择导出考题的所有完整内容这一情况进行测试
+\item
+  进行普通考题导出为XML，Excel格式分别测试
 \item
   进行带表格或图片的考题导出为XML，Excel测试
+\item
+  对题库系统管理员可以正常导入由主持人导出的考题进行测试(Excel和XML格式的考题)
 \end{itemize}
 
 \hypertarget{ux6b65ux9aa4ux516bux4f5cux5e9fux8003ux9898ux72b6ux6001ux4f5cux5e9fux89d2ux8272ux4e3bux6301ux4eba}{%

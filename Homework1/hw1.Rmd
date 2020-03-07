@@ -1,10 +1,18 @@
 ---
-title: \vspace{2in} 测试计划
-subtitle: "A Report for Uniqlo Scholarship Winter Program (Supply Chain Reform Direction)"
+title: \vspace{2in} 出题系统测试计划报告
+subtitle: "软件质量保障与测试课程第一次课程作业"
 author:
-  - 田嘉禾大佬^[Undergraduate in Software Engineering, Software School of Fudan University; Software Development Engineer at Amazon Shanghai Institute of Artificial Intelligence, Amazon Web Services. (wangc16@fudan.edu.cn; cwanam@amazon.com)]
+  - Tian, Jiahe^[Equal Contribution, Fudan University, 17307130313 (tianjh17@fudan.edu.cn)]
+  - Hu, Xiaoxiao^[Equal Contribution, Fudan University, 17302010077 (xxhu17@fudan.edu.cn)]
+  - Huang, Jiani^[Equal Contribution, Fudan University, 17302010063 (huangjn17@fudan.edu.cn)]
+  - Liu, Jiaxing^[Equal Contribution, Fudan University, 17302010049 (jiaxingliu17@fudan.edu.cn)]
+  - Shi, Ruixin^[Equal Contribution, Fudan University, 17302010065 (rxshi17@fudan.edu.cn)]
+  - Wu, Chenning^[Equal Contribution, Fudan University, 17302010066 (cnwu17@fudan.edu.cn)]
+  - Zhang, Cenyuan^[Equal Contribution, Fudan University, 17302010068 (cenyuanzhang17@fudan.edu.cn)]
+  - Zhang, Yihan^[Equal Contribution, Fudan University, 17302010076 (zhangyihan17@fudan.edu.cn)]
+  - Wang, Chen^[Equal Contribution, Fudan University, 16307110064 (wangc16@fudan.edu.cn)]
 
-date: "February 11th, 2020"
+date: "2020年3月7日"
 documentclass: ctexart
 output:
   rticles::ctex:
