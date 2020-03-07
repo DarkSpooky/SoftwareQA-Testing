@@ -26,305 +26,85 @@ nocite: |
 
 references:
 - id: innovativeInternationalisation
-  title: "Innovative Internationalisation in New firms: Born Globals–the Swedish Case"
+  title: "Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Guide to SQuaRE"
   author:
-  - family: Andersson
-    given: Svante
-  - family: Wictor 
-    given: Ingemar
-  container-title: Journal of International Entrepreneurship
-  volume: 11
-  URL: 'https://doi.org/10.1023/A:1024110806241'
-  DOI: 10.1023/A:1024110806241
-  issue: 1
-  publisher: Kluwer Academic Publishers
-  page: 249-275
-  type: article-journal
+  - family: International Organization for Standardization
+  container-title: International Organization for Standardization
+  volume: 2014
+  URL: 'https://www.iso.org/standard/64764.html'
+  issue: 2
+  #publisher: Kluwer Academic Publishers
+  #page: 249-275
+  type: book
   issued:
-    year: 2003
-    month: 9
+    year: 2014
+    month: 3
 
 - id: innovative1
-  title: The Internationalization of the Firm from an Entrepreneurial Perspective
+  title: "GB/T 25000.51-2016《系统与软件工程系统与软件质量要求和评价 (SQuaRE) 第 51 部分 : 就绪可用软件产品 (RUSP) 的质量要求和测试细则》"
   author:
-  - family: Andersson
-    given: Svante
-  container-title: International Studies of Management & Organization
-  volume: 30
-  URL: 'https://doi.org/10.1080/00208825.2000.11656783'
-  DOI: 10.1080/00208825.2000.11656783
-  issue: 1
-  publisher: Taylor & Francis, Ltd.
-  page: 63-92
-  type: article-journal
+  - family: 中国国家标准化管理委员会
+  container-title: 系统与软件工程系统与软件质量要求和评价 (SQuaRE)
+  volume: 51
+  URL: 'http://openstd.samr.gov.cn'
+  publisher: 中国国家标准化管理委员会
+  type: book
   issued:
-    year: 2000
+    year: 2016
     month: 1
     
 - id: innovative2
-  title: Power, Value and Supply Chain Management
+  title: "GB/T 25000.23-2019《系统与软件工程 系统与软件质量要求和评价(SQuaRE) 第23部分：系统与软件产品质量测量》"
   author:
-  - family: Cox
-    given: Andrew
-  container-title: Supply chain management
-  volume: 4
-  URL: 'https://doi.org/10.1108/13598549910284480'
-  DOI: 10.1108/13598549910284480
-  issue: 4
-  publisher: MCB UP Ltd
-  page: 167-175
-  type: article-journal
-  issued:
-    year: 1999
-    month: 10
-
-- id: innovative3
-  title: "ABC Kaikaku no Zenbou (The full picture of all better change activity)"
-  author:
-  - family: Edition Department of Hanbai Kakushin
-  container-title: Hnbai Kakushin
-  page: 38-38
+  - family: 中国国家标准化管理委员会
+  container-title: 系统与软件工程系统与软件质量要求和评价 (SQuaRE)
+  volume: 23
+  URL: 'http://openstd.samr.gov.cn'
+  publisher: 中国国家标准化管理委员会
   type: book
   issued:
-    year: 2000
-    month: 1
-
-- id: innovative4
-  title: "Choice of Foreign Market Entry Mode: Impact of Ownership, Location and Internalization Factors"
-  author:
-  - family: Agarwal
-    given: Sanjeev
-  - family: Ramaswami
-    given: Sridhar N.
-  container-title: Journal of International Business Studies
-  volume: 23
-  URL: 'https://doi.org/10.1057/palgrave.jibs.8490257'
-  DOI: 10.1057/palgrave.jibs.8490257
-  issue: 1
-  publisher: Palgrave Macmillan UK
-  page: 1-27
-  type: article-journal
-  issued:
-    year: 1992
-    month: 3
-
-- id: innovative5
-  title: "Resource-based theory and international growth strategies: an exploratory study"
-  author:
-  - family: Andersen
-    given: Otto
-  - family: Kheam
-    given: Low Suat
-  container-title: International Business Review
-  volume: 7
-  URL: 'https://doi.org/10.1016/S0969-5931(98)00004-3'
-  DOI: 10.1016/S0969-5931(98)00004-3
-  issue: 2
-  publisher: Elsevier B.V.
-  page: 163-184
-  type: article-journal
-  issued:
-    year: 1998
-    month: 4
-
-- id: innovative6
-  title: "A case study on the internationalization process of a 'born-global' fashion retailer"
-  author:
-  - family: Vertica
-  - family: Bhardwaj
-  - family: Megan
-  - family: Eickman
-  - family: Rodney
-  container-title: International review of retail, distribution and consumer research
-  publisher: Taylor & Francis (Routledge)
-  type: article-journal
-  issued:
-    year: 2011
-    month: 1
-
-- id: innovative7
-  title: Is Uppsala model valid to fashion retailers? An analysis from internationalisation patterns of fast fashion retailers
-  author:
-  - family: Childs
-    given: Michelle Lynn
-  - family: Jin
-    given: Byoungho
-  container-title: Journal of Fashion Marketing and Management
-  volume: 18
-  URL: 'https://doi.org/10.1108/JFMM-10-2012-0061'
-  DOI: 10.1108/JFMM-10-2012-0061
-  issue: 16
-  publisher: Emerald Publishing Limited
-  page: 36-51
-  type: article-journal
-  issued:
-    year: 2014
-    month: 1
-
-- id: innovative8
-  title: "The impact of the changing marketing environment in the Pacific Rim: four case studies"
-  author:
-  - family: Dibb
-    given: Sally
-  container-title: International Journal of Retail & Distribution Management
-  volume: 24
-  URL: 'https://doi.org/10.1108/09590559610131691'
-  DOI: 10.1108/09590559610131691
-  issue: 1
-  publisher: MCB University Press
-  page: 16-29
-  type: article-journal
-  issued:
-    year: 1996
-    month: 11
-
-- id: innovative9
-  title: "Trade, Location of Economic Activity and the MNE: A Search for an Eclectic Approach"
-  author:
-  - family: Dunning
-    given: John H.
-  container-title: The International Allocation of Economic Activity
-  volume: 30
-  URL: 'https://doi.org/10.1007/978-1-349-03196-2_38'
-  DOI: 10.1007/978-1-349-03196-2_38
-  issue: 1
-  publisher: Palgrave Macmillan, London
-  page: 395-418
-  type: article-journal
-  issued:
-    year: 1977
-    month: 1
-
-- id: innovative10
-  title: "The Eclectic Paradigm of International Production: A Restatement and Some Possible Extensions"
-  author:
-  - family: Dunning
-    given: John H.
-  container-title: Journal of International Business Studies
-  volume: 19
-  URL: 'https://doi.org/10.1057/palgrave.jibs.8490372'
-  DOI: 10.1057/palgrave.jibs.8490372
-  issue: 1
-  publisher: Palgrave Macmillan UK
-  page: 1-31
-  type: article-journal
-  issued:
-    year: 1988
-    month: 3
-
-
-- id: innovative11
-  title: "The Concept of Learning in the Uppsala Internationalization Process Model: A Critical Review"
-  author:
-  - family: Forsgren
-    given: Mats
-  container-title: Knowledge, Networks and Power
-  volume: 19
-  URL: 'https://doi.org/10.1057/9781137508829_4'
-  DOI: 10.1057/9781137508829_4
-  issue: 1
-  publisher: Palgrave Macmillan, London
-  page: 88-110
-  type: article-journal
-  issued:
-    year: 2015
-    month: 3
+    year: 2019
+    month: 8
     
-- id: innovative12
-  title: "Fast fashion: a financial snapshot"
+- id: innovative3
+  title: "GB/T 25000.12-2017《系统与软件工程 系统与软件质量要求和评价(SQuaRE) 第12部分：数据质量模型》"
   author:
-  - family: Hayes 
-    given: S.G.
-  - family: Jones
-    given: Nicola
-  container-title: Journal of Fashion Marketing and Management
-  volume: 10
-  URL: 'https://doi.org/10.1108/13612020610679277'
-  DOI: 10.1108/13612020610679277
-  issue: 3
-  publisher: Emerald Group Publishing Limited
-  page: 282-300
-  type: article-journal
+  - family: 中国国家标准化管理委员会
+  container-title: 系统与软件工程系统与软件质量要求和评价 (SQuaRE)
+  volume: 12
+  URL: 'http://openstd.samr.gov.cn'
+  publisher: 中国国家标准化管理委员会
+  type: book
   issued:
-    year: 2006
-    month: 7
-
-- id: innovative13
-  title: "Retail internationalisation: Marks and Spencer in Hong Kong"
+    year: 2017
+    month: 11
+    
+- id: innovative4
+  title: "GB/T 25000.24-2017《系统与软件工程 系统与软件质量要求和评价(SQuaRE) 第24部分：数据质量测量》"
   author:
-  - family: Jackson
-    given: Paul
-  - family: Sparks
-    given: Leigh
-  container-title: International Journal of Retail & Distribution Management
-  volume: 33
-  URL: 'https://doi.org/10.1108/09590550510622308'
-  DOI: 10.1108/09590550510622308
-  issue: 10
-  publisher: Emerald Group Publishing Limited
-  page: 766-783
-  type: article-journal
+  - family: 中国国家标准化管理委员会
+  container-title: 系统与软件工程系统与软件质量要求和评价 (SQuaRE)
+  volume: 24
+  URL: 'http://openstd.samr.gov.cn'
+  publisher: 中国国家标准化管理委员会
+  type: book
   issued:
-    year: 2005
-    month: 10
-
-- id: innovative14
-  title: "The Internationalization Process of the Firm — A Model of Knowledge Development and Increasing Foreign Market Commitments"
+    year: 2017
+    month: 11
+    
+- id: innovative5
+  title: "GB/T 25000.40-201《系统与软件工程 系统与软件质量要求和评价(SQuaRE) 第40部分：评价过程》"
   author:
-  - family: Johanson
-    given: Jan
-  - family: Vahlne
-    given: Jan-Erik
-  container-title: Journal of International Business Studies
-  volume: 10
-  URL: 'https://doi.org/10.1057/palgrave.jibs.8490676'
-  DOI: 10.1057/palgrave.jibs.8490676
-  issue: 3
-  publisher: Palgrave Macmillan, London
-  page: 23-32
-  type: article-journal
+  - family: 中国国家标准化管理委员会
+  container-title: 系统与软件工程系统与软件质量要求和评价 (SQuaRE)
+  volume: 40
+  URL: 'http://openstd.samr.gov.cn'
+  publisher: 中国国家标准化管理委员会
+  type: book
   issued:
-    year: 1977
-    month: 3
-
-- id: innovative15
-  title: "Is the magic of 'feel good' and 'look great' at Giordano still working?"
-  author:
-  - family: Saxena
-    given: Ravindra P.
-  - family: Khandelwal
-    given: Pradeep K.
-  container-title: Management Decision
-  volume: 48
-  URL: 'https://doi.org/10.1108/00251741011037792'
-  DOI: 10.1108/00251741011037792
-  issue: 3
-  publisher: Emerald Group Publishing Limited
-  page: 440-455
-  type: article-journal
-  issued:
-    year: 2010
-    month: 3
-
-- id: innovative16
-  title: "Internationalisation of the Spanish fashion brand Zara"
-  author:
-  - family: Lopez
-    given: Carmen
-  - family: Fan
-    given: Ying
-  container-title: Journal of Fashion Marketing and Management
-  volume: 13
-  URL: 'https://doi.org/10.1108/13612020910957770'
-  DOI: 10.1108/13612020910957770
-  issue: 2
-  publisher: Emerald Group Publishing Limited
-  page: 279-296
-  type: article-journal
-  issued:
-    year: 2009
-    month: 5
-
+    year: 2018
+    month: 12
+    
 ---
 
 ```{r eval=FALSE, include=FALSE}
@@ -540,4 +320,4 @@ tinytex::install_tinytex()
 
 \pagebreak
 
-# Bibliography {-}
+# 参考文献 {-}
