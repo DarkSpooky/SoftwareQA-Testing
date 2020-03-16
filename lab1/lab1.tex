@@ -1,0 +1,678 @@
+\documentclass[hyperref, a4paper]{ctexart}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{xltxtra,xunicode}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\usepackage[usenames,dvipsnames]{color}
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={Tian, Jiahe; Hu, Xiaoxiao; Huang, Jiani; Liu, Jiaxing; Shi, Ruixin; Wu, Chenning; Zhang, Cenyuan; Zhang, Yihan; Wang, Chen},
+            pdftitle={ 出题系统需求文档},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+
+\title{\vspace{2in} 出题系统需求文档\\\vspace{0.5em}{\large 软件质量保障与测试课程Lab1课程作业（第9组）}}
+\author{Tian, Jiahe\footnote{Equal Contribution, Fudan University, 17307130313
+  (\href{mailto:tianjh17@fudan.edu.cn}{\nolinkurl{tianjh17@fudan.edu.cn}})} \and Hu, Xiaoxiao\footnote{Equal Contribution, Fudan University, 17302010077
+  (\href{mailto:xxhu17@fudan.edu.cn}{\nolinkurl{xxhu17@fudan.edu.cn}})} \and Huang, Jiani\footnote{Equal Contribution, Fudan University, 17302010063
+  (\href{mailto:huangjn17@fudan.edu.cn}{\nolinkurl{huangjn17@fudan.edu.cn}})} \and Liu, Jiaxing\footnote{Equal Contribution, Fudan University, 17302010049
+  (\href{mailto:jiaxingliu17@fudan.edu.cn}{\nolinkurl{jiaxingliu17@fudan.edu.cn}})} \and Shi, Ruixin\footnote{Equal Contribution, Fudan University, 17302010065
+  (\href{mailto:rxshi17@fudan.edu.cn}{\nolinkurl{rxshi17@fudan.edu.cn}})} \and Wu, Chenning\footnote{Equal Contribution, Fudan University, 17302010066
+  (\href{mailto:cnwu17@fudan.edu.cn}{\nolinkurl{cnwu17@fudan.edu.cn}})} \and Zhang, Cenyuan\footnote{Equal Contribution, Fudan University,
+  17302010068
+  (\href{mailto:cenyuanzhang17@fudan.edu.cn}{\nolinkurl{cenyuanzhang17@fudan.edu.cn}})} \and Zhang, Yihan\footnote{Equal Contribution, Fudan University, 17302010076
+  (\href{mailto:zhangyihan17@fudan.edu.cn}{\nolinkurl{zhangyihan17@fudan.edu.cn}})} \and Wang, Chen\footnote{Equal Contribution, Fudan University, 16307110064
+  (\href{mailto:wangc16@fudan.edu.cn}{\nolinkurl{wangc16@fudan.edu.cn}})}}
+\date{2020年3月12日}
+
+
+
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\begin{document}
+\maketitle
+
+\newpage
+
+\LARGE
+
+\begin{center}
+\textbf{出题系统需求文档}
+\end{center}
+
+\large
+\begin{center}
+\textbf{\emph{软件质量保障与测试课程Lab1课程作业}}
+\end{center}
+
+\hypertarget{ux6458ux8981}{%
+\section*{摘要}\label{ux6458ux8981}}
+\addcontentsline{toc}{section}{摘要}
+
+本次作业为软件质量保障与测试课程的Lab1课程作业，需要我们以小组为单位阅读、理解出题系统初始需求文档，进行小组讨论，结合软件质量相关属性，提出潜在存在的需求重构点，并自定义需求规范撰写需求文档，结合``禅道''平台辅助进行需求管理。
+
+\hypertarget{ux5173ux952eux8bcd}{%
+\section*{关键词}\label{ux5173ux952eux8bcd}}
+\addcontentsline{toc}{section}{关键词}
+
+系统与软件工程; 系统与软件质量要求和评价; 需求文档
+
+\hypertarget{ux7248ux672cux5386ux53f2}{%
+\section*{版本历史}\label{ux7248ux672cux5386ux53f2}}
+\addcontentsline{toc}{section}{版本历史}
+
+\begin{center}
+%干我的居中失败了why
+\begin{tabular}{|p{2cm}|p{3.3cm}|p{8cm}|}
+\hline
+版本 & 日期 & 说明\\
+\hline
+草稿 & 2014 年2 月6 日 & 建立此文档\\
+\hline
+Alpha 版 & 2014 年2 月8 日 & 做了修改后进行内部评审\\
+\hline
+Alpha 03 & 2014 年2 月9 日 & 魏X 内部评审稿\\
+\hline
+Alpha 04 & 2014 年2 月11 日 & 黄X 增加属性，完善评审流程\\
+\hline
+Alpha 05 & 2014 年2 月14 日 & 增加周X 的问题\\
+\hline
+Alpha 06 & 2014 年2 月17 日 & 增加T 模块考卷规则、增加分值规则\\
+\hline
+发布版 1.0 & 2014 年3 月10 日 & 修改后发布\\
+\hline
+发布版 2.0 & 2014 年3 月16 日 & 评审后，经修改后发布\\
+\hline
+修订版3.1 & 2014 年4 月25 日 & 与开发商和办公室讨论后收集的建议和问题\\
+\hline
+修订版3.2 & 2014 年5 月21 日 & 回答魏X 的问题\\
+\hline
+修订版3.3 & 2014 年6 月30 日 & 根据开发商反馈建议和需求细化后整理。\\
+\hline
+发布版3.0 & 2014 年7 月1 日 & 修改后发布。所有状态的描述重新编写，更加便于理解。加入新的考题属性“理论实践”。部分修改和完善。\\
+\hline
+修订版4.0 & 2020 年3 月12 日 & 进行合理性检查和规范定义后整理。\\
+\hline
+\end{tabular}
+\end{center}
+
+\normalsize
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\hypertarget{ux5728ux7ebfux51faux9898ux8003ux8bd5ux7cfbux7edfux6982ux8ff0ux5b8cux6574ux7cfbux7edf}{%
+\section*{在线出题考试系统概述（完整系统）}\label{ux5728ux7ebfux51faux9898ux8003ux8bd5ux7cfbux7edfux6982ux8ff0ux5b8cux6574ux7cfbux7edf}}
+\addcontentsline{toc}{section}{在线出题考试系统概述（完整系统）}
+
+``在线出题考试系统''是为组织考试的一个基于Web
+的在线系统，主要由``出题系统''、``题库管理系统''、``在线报名和考生管理系统''以及``考试系统''四大模块（子系统）组成。
+
+\hypertarget{ux51faux9898ux7cfbux7edfux63cfux8ff0}{%
+\section*{出题系统描述}\label{ux51faux9898ux7cfbux7edfux63cfux8ff0}}
+\addcontentsline{toc}{section}{出题系统描述}
+
+出题系统是在线出题考试系统的的一个子系统。利用出题系统，出题专家们可以方便的进行网上考题编写和评审，并无缝的与在线出题考试系统进行衔接，提高考题编写的质量和效率，也便于考题的统一管理和评估。
+在出题系统中，每一次的出题活动定义为一个``项目''（Project），每个项目有它的目的、内容、角色（成员）、时间（限期）和结果（输出）。例如：某一个项目可能要求出一份或几份完整的，有若干考题组成的完整``考卷''，也有可能是针对某一个或某几个``知识点''编写相应考题。在一个项目中定义了一系列``角色''，如项目的``主持人''、编写考题的``作者''和考题的``评审员''以及最后对考题把关的``质管员''等。
+在出题系统中的最小单元是``考题''，``考题''包括了``考题信息''和``考题属性（辅助信息）''，``考题信息''又有``场景描述''（可有可无）、``题干''和``选项''组成；而``辅助信息''是指``考题''在它的整个生命周期中，在管理、统计、评估和自动出考卷过程所使用的一些辅助元素，在这里称为考题的``属性''，包括此考题覆盖大纲的``章节''、``知识点''和``K级（Kn）''、``状态''、``作者''、``评审员''、``质管员''、``发布时间（启用时间）''、``使用次数（使用频率）''、``答对率（每次累加）''、``答错率（每次累加）''、``出题难度（作者的预估）''、``反馈难度（学生反馈）''等（可参看考题属性描述）。这些考题经编写、评审并通过审核后可以``发布''，并以统一的格式导出和存放到题库管理系统。
+
+\hypertarget{ux5b9aux4e49ux672aux5b8cux6210ux9700ux5b8cux5584}{%
+\section{定义（未完成，需完善）}\label{ux5b9aux4e49ux672aux5b8cux6210ux9700ux5b8cux5584}}
+
+\hypertarget{ux57faux672cux5b9aux4e49}{%
+\subsection{基本定义}\label{ux57faux672cux5b9aux4e49}}
+
+\hypertarget{ux8003ux5377}{%
+\subsubsection{考卷}\label{ux8003ux5377}}
+
+考卷是由若干考题组成，并按照出题规则，主要根据考卷相对应大纲的知识点（对应大纲的章/节）以及知识点的K级，可参看考卷组成规则。
+
+\hypertarget{ux8003ux9898}{%
+\subsubsection{考题}\label{ux8003ux9898}}
+
+考题是组成考卷的最小单位，由属于考题本身的考题信息以及为管理考题所需的考题属性组成。考题信息又包括该考题场景、考题题干和考题选项。考题属性包含对考题管理所需的各种属性，如考题的作者、考题的ID、考题评审者、考题的状态等，可参看考题属性表。
+
+\hypertarget{ux77e5ux8bc6ux70b9}{%
+\subsubsection{知识点}\label{ux77e5ux8bc6ux70b9}}
+
+考题根据大纲所覆盖的章节内容，是出题的依据和范围。且每个知识点有其对应的K级别。
+
+\hypertarget{ux6b63ux786eux9009ux9879}{%
+\subsubsection{正确选项}\label{ux6b63ux786eux9009ux9879}}
+
+考题可以是正选题，例如在考题中选择哪项是正确的，也可以是反选题，例如在考题中要求选择哪个是错误或不正确的，无论是正选还是反选题，如果考生做了正确的选择，那个被选中的选项定义为正确的选项。
+
+\hypertarget{ux51faux9898ux7cfbux7edfux89d2ux8272}{%
+\subsection{出题系统角色：}\label{ux51faux9898ux7cfbux7edfux89d2ux8272}}
+
+\hypertarget{ux7cfbux7edfux7ba1ux7406ux5458}{%
+\subsubsection{系统管理员}\label{ux7cfbux7edfux7ba1ux7406ux5458}}
+
+负责该系统中所有用户账户的开设，创建新项目（项目名+主持人）；对整个系统的配置
+和运行负责；维护系统和系统数据（如大纲知识点的更新等）。
+
+\hypertarget{ux4e3bux6301ux4eba}{%
+\subsubsection{主持人}\label{ux4e3bux6301ux4eba}}
+
+整个考题的编写和评审流程的发起人和负责人。指定此次考题对应的大纲知识点，将考
+题分配给指定的作者、评审员和质管员，设定考题编写和评审时限。可以导出质管员同
+意发布的考题。每题考题的评审员可以有多人。
+
+\hypertarget{ux4f5cux8005}{%
+\subsubsection{作者}\label{ux4f5cux8005}}
+
+考题的编写者，收到由主持人指定需要出的考题对应的大纲知识点等信息后开始编写考
+题，也可根据评审员的意见修改考题。
+
+\hypertarget{ux8bc4ux5ba1ux5458}{%
+\subsubsection{评审员}\label{ux8bc4ux5ba1ux5458}}
+
+可对由主持人分配的，并由对应作者已编写的考题进行评审，提出评审和修改意见。
+
+\hypertarget{ux8d28ux7ba1ux5458}{%
+\subsubsection{质管员}\label{ux8d28ux7ba1ux5458}}
+
+是最后保障考题质量的把关和负责人，由主持人指定考题的质管员，在考题通过评审后
+进入``再审''状态，在``再审''状态下质管员决定是否需要返回给作者修改或者直接发
+布或者作废。
+
+\hypertarget{ux8003ux9898ux7684ux72b6ux6001}{%
+\subsection{考题的状态}\label{ux8003ux9898ux7684ux72b6ux6001}}
+
+\hypertarget{ux5f00ux59cbux72b6ux6001}{%
+\subsubsection{开始状态}\label{ux5f00ux59cbux72b6ux6001}}
+
+由主持人创建一个新的考题（考题的ID），新创建考题的状态为``开始''。主持人在开始
+状态为考题建立框架，分配考题对应的知识点、时间安排、分配作者和评审员以及质管
+员等，完成相关设定后主持人将考题的状态从``开始''改为``编写''状态。
+
+\hypertarget{ux7f16ux5199ux72b6ux6001}{%
+\subsubsection{编写状态}\label{ux7f16ux5199ux72b6ux6001}}
+
+在``编写''状态下，作者根据被指定的章节知识点来编写考题信息内容（场景，题干，
+选项），作者填写必须或应该填写的考题属性内容。作者编写考题完毕后，作者将此考题
+的状态从``编写''改写为``评审''状态。
+
+\hypertarget{ux8bc4ux5ba1ux72b6ux6001}{%
+\subsubsection{评审状态}\label{ux8bc4ux5ba1ux72b6ux6001}}
+
+在``评审''状态下，评审员对作者编写或修改的考题进行评审，每一考题的评审员由主
+持人事先指定。评审员完成评审活动后，根据评审结果评审员可将此考题的状态从``评
+审''改写为``再审''或``修改''状态。例如，评审结果为``可接受''或``被拒绝''，则评
+审员将此考题的状态从``评审''改写为``再审''状态。如果评审结果为``需修改''，则评
+审员将此考题的状态从``评审''改写为``修改''状态。
+
+\hypertarget{ux518dux5ba1ux72b6ux6001}{%
+\subsubsection{再审状态}\label{ux518dux5ba1ux72b6ux6001}}
+
+当考题处于``再审''状态，质管员对考题质量进行再次审核。根据再审结果，质管员可
+以将此考题的状态从``再审''改为``修改''、``发布''或``作废''状态。
+\emph{备注：评审员或质管员应该在规定时限内完成评审活动并提交评审意见，如果超出规定时限评审员没有完成评审，系统自动向相关评审员或质管员发出提示信息（Mail），并同时向主持人发出信息（Mail），收到信息后主持人根据实际情况重新进行调整，可通过多重渠道进行调整：延长时间、重新安排评审员或质管员、直至删除该题等。}
+
+\hypertarget{ux4feeux6539ux72b6ux6001}{%
+\subsubsection{修改状态}\label{ux4feeux6539ux72b6ux6001}}
+
+当考题处于``修改''状态时，考题的作者可以对考题进行修改，作者一般是参照评审的
+记录和要求对考题进行修改。修改完毕后，作者可将此题的状态从``修改''改为``评审''
+状态。
+
+\hypertarget{ux53d1ux5e03ux72b6ux6001}{%
+\subsubsection{发布状态}\label{ux53d1ux5e03ux72b6ux6001}}
+
+当考题处于``发布''状态时，表示此题已经通过编写和评审，可以被使用了。主持人可
+以导出此状态下的考题。主持人可以单题导出，也可以批量导出。
+
+\hypertarget{ux4f5cux5e9fux72b6ux6001}{%
+\subsubsection{作废状态}\label{ux4f5cux5e9fux72b6ux6001}}
+
+当考题处于``作废''状态时，表示此题由于各种原因不被接受，也不会使用，主持人对
+此类考题按照规定进行处理，例如删除。
+
+\hypertarget{ux529fux80fdux6027ux9700ux6c42}{%
+\section{功能性需求}\label{ux529fux80fdux6027ux9700ux6c42}}
+
+\hypertarget{ux767bux9646ux53caux4e2aux4ebaux4fe1ux606f}{%
+\subsection{登陆及个人信息}\label{ux767bux9646ux53caux4e2aux4ebaux4fe1ux606f}}
+
+\hypertarget{ux529fux80fd-ux9700ux6c42ux540d}{%
+\subsubsection{功能-需求名}\label{ux529fux80fd-ux9700ux6c42ux540d}}
+
+\begin{itemize}
+\tightlist
+\item
+  关键词
+\item
+  需求描述（参考模板：作为一种,我希望,这样可以)
+\item
+  验收标准
+\item
+  （图）
+\end{itemize}
+
+\hypertarget{ux529fux80fd-ux9700ux6c42ux540d2}{%
+\subsubsection{功能-需求名2}\label{ux529fux80fd-ux9700ux6c42ux540d2}}
+
+\begin{itemize}
+\tightlist
+\item
+  关键词
+\item
+  需求描述（参考模板：作为一种,我希望,这样可以)
+\item
+  验收标准
+\item
+  （图）
+\end{itemize}
+
+\hypertarget{ux5efaux7acbux65b0ux9879ux76ee}{%
+\subsection{建立新项目}\label{ux5efaux7acbux65b0ux9879ux76ee}}
+
+\hypertarget{ux529fux80fd-ux9700ux6c42ux540d3}{%
+\subsubsection{功能-需求名3}\label{ux529fux80fd-ux9700ux6c42ux540d3}}
+
+\begin{itemize}
+\tightlist
+\item
+  关键词
+\item
+  需求描述（参考模板：作为一种,我希望,这样可以)
+\item
+  验收标准
+\item
+  （图）
+\end{itemize}
+
+\hypertarget{ux5f00ux59cbux542fux52a8ux9879ux76eeux72b6ux6001-ux5f00ux59cb-ux89d2ux8272-ux4e3bux6301ux4eba}{%
+\subsection{开始启动项目(状态: 开始; 角色:
+主持人)}\label{ux5f00ux59cbux542fux52a8ux9879ux76eeux72b6ux6001-ux5f00ux59cb-ux89d2ux8272-ux4e3bux6301ux4eba}}
+
+\hypertarget{ux7f16ux5199ux8003ux9898ux72b6ux6001-ux7f16ux5199-ux89d2ux8272-ux4f5cux8005}{%
+\subsection{编写考题(状态: 编写; 角色:
+作者)}\label{ux7f16ux5199ux8003ux9898ux72b6ux6001-ux7f16ux5199-ux89d2ux8272-ux4f5cux8005}}
+
+\hypertarget{ux8bc4ux5ba1ux8003ux9898ux72b6ux6001-ux8bc4ux5ba1-ux89d2ux8272-ux8bc4ux5ba1ux5458}{%
+\subsection{评审考题(状态: 评审; 角色:
+评审员)}\label{ux8bc4ux5ba1ux8003ux9898ux72b6ux6001-ux8bc4ux5ba1-ux89d2ux8272-ux8bc4ux5ba1ux5458}}
+
+在评审状态下，评审员只能查看由主持人分配属于需要自己评审的考题，
+或已经评审过但经作者修改后需要再次评审的考题，并对这些考题进行评审。
+
+\begin{table}[!htbp]
+  \caption{评审说明}
+  \label{Tab:bookRWCal}
+  \centering
+  \begin{tabular}{|l|p{1.5cm}|p{5.3cm}|p{3.3cm}|}
+  \hline
+  \textbf{序号} &\textbf{评审结果} &\textbf{说明}&\textbf{备注}\\
+  \hline
+  01 & 可接受  & 评审中没有（再）发现考题中有错误，考题也满足了出题的要求，
+  覆盖了相应的 大纲知识点。& 此题可以进行再评审，如果再评审没发现问题，则可发布。\\
+  \hline
+  02 & 需修改  & 评审如果（再）发现考题中有错误，或(和)考题没用满足出题的要求，
+  或(和)考题没用覆盖相应的大纲知识点。& 此题可以进行再评审，如果再评审没发现问题，则可发布。\\
+  \hline
+  03  & 被拒绝 & 评审中发现有非常严重的错误，根本无 法修改，或不值修改。或者考题完全偏
+  离了出题的要求，或者没有覆盖相应的大纲知识点。& 此题可以进行再评审，如果质量管理员也认可评审员的决定，则可作废此题。\\
+  \hline
+  \end{tabular}
+\end{table}
+
+\hypertarget{ux529fux80fd-ux8bc4ux5ba1ux53efux63a5ux53d7}{%
+\subsubsection{功能-评审可接受}\label{ux529fux80fd-ux8bc4ux5ba1ux53efux63a5ux53d7}}
+
+\begin{itemize}
+\tightlist
+\item
+  关键词：可接受~再审
+\item
+  如果评审员在评审过程中没有（再）发现考题中有错误，考题也满足了出题的要求，覆盖了
+  相应的大纲知识点，则评审员设置评审结果为\texttt{可接受\textquotesingle{}\textquotesingle{}，并且评审员将考题的状态从}评
+  审'`改为``再审''（第二次评审），系统会自动给质管员（质量管理员）发送相应的提示电邮。
+\item
+  验收标准：评审员能够正确设置评审结果为``可接受''，考题的状态从``评审''变为``再审''，能够通过邮件提醒相关质管员。
+\end{itemize}
+
+\hypertarget{ux529fux80fd-ux8bc4ux5ba1ux88abux62d2ux7edd}{%
+\subsubsection{功能-评审被拒绝}\label{ux529fux80fd-ux8bc4ux5ba1ux88abux62d2ux7edd}}
+
+\begin{itemize}
+\tightlist
+\item
+  关键词：被拒绝~再审
+\item
+  如果评审员在评审过程中发现考题有非常严重的错误，根本无法修改，或不值修改。
+  或者考题完全偏离了出题的要求，或者没有覆盖相应的大纲知识点，
+  则评审员设置评审结果为``被拒绝''，并且将考题的状态从``评审''修改为``再审''（第二次评审），
+  系统会自动给质管员 （质量管理员）发送相应的提示电邮。
+\item
+  验收标准：评审员能够正确设置考题的状态从``再审''变为``发布''，能够通过邮件提醒相关质管员。
+\end{itemize}
+
+\hypertarget{ux529fux80fd-ux8bc4ux5ba1ux9700ux4feeux6539}{%
+\subsubsection{功能-评审需修改}\label{ux529fux80fd-ux8bc4ux5ba1ux9700ux4feeux6539}}
+
+\begin{itemize}
+\tightlist
+\item
+  关键词：需修改~修改
+\item
+  如果评审员在评审过程中发现考题中有错误，或/和考题没有满足出题的要求，
+  或/和考题没有覆盖相应的大纲知识点，并要求作者进行修改，则评审员设置评审结果为``需修改''，
+  并且将考题的状态从``评审''改为``修改''，系统会自动给作者发送相应的提示电邮。
+\item
+  验收标准：评审员能够正确设置评审结果为``需修改''，考题的状态从``评审''变为``修改''，能够通过邮件提醒作者。
+\end{itemize}
+
+\hypertarget{ux89d2ux8272ux548cux6743ux9650}{%
+\subsubsection{角色和权限}\label{ux89d2ux8272ux548cux6743ux9650}}
+
+在评审状态下，评审员有权可以阅读被主持人分配属于需要自己评审的考题，
+也有权对此考题编写评审意见和建议，或指出错误所在。评审员有权可以改变属于需要自己
+评审的考题的状态（从``评审''到``再审''，或从``评审''到``修改''）。在评审状态下主持
+人只有阅读的权限，
+没有修改（考题和属性的修改）和操作（改变状态）的权限。
+
+\hypertarget{ux518dux5ba1ux8003ux9898ux72b6ux6001-ux518dux5ba1-ux89d2ux8272-ux8d28ux7ba1ux5458}{%
+\subsection{再审考题(状态: 再审; 角色:
+质管员)}\label{ux518dux5ba1ux8003ux9898ux72b6ux6001-ux518dux5ba1-ux89d2ux8272-ux8d28ux7ba1ux5458}}
+
+在再审状态下，质管员（质量管理员）要做最后的质量把关。在再评审过程，质量管理员可
+以根据评审员的评审结果（可接受、需修改、被拒绝），
+以及凭借自己的专业水平和敬业精 神对考题进行评审和把关。
+
+\hypertarget{ux529fux80fd-ux518dux5ba1ux53efux53d1ux5e03}{%
+\subsubsection{功能-再审可发布}\label{ux529fux80fd-ux518dux5ba1ux53efux53d1ux5e03}}
+
+\begin{itemize}
+\tightlist
+\item
+  关键词：可接受~发布
+\item
+  如果此考题的评审结果是``可接受''，在再审过程中，
+  质量管理员也认为此题确实可以发布，
+  则将此题的状态从``再审''修改为``发布''。表示此题可以发布。
+  系统都会自动给主持人发出提示电邮。
+\item
+  验收标准：评审员能够正确设置考题的状态，从``再审''变为``发布''，能够通过邮件提醒主持人。
+\end{itemize}
+
+\hypertarget{ux529fux80fd-ux518dux5ba1ux9700ux4feeux6539}{%
+\subsubsection{功能-再审需修改}\label{ux529fux80fd-ux518dux5ba1ux9700ux4feeux6539}}
+
+\begin{itemize}
+\tightlist
+\item
+  关键词：可接受~被拒绝~修改
+\item
+  评审结果为``可接受''，但质量管理员在再审过程中发现一些错误，
+  甚至考题没有满足出题的要求，或（和）考题没有覆盖相应的大纲知识点。
+  质量管理员也可要求作者进行修改，并将考题的状态从``再审''修改为``修改''。
+  系统会自动给作者发送相应的提示电邮。
+\item
+  评审结果为``被拒绝''，但质量管理员在再审过程中发现考题基本上满足了出题的要求，或（和）考题没有覆盖相应的大纲知识点，但略有不足之处。
+  质量管理员可要求作者进行修改，并将考题的状态从``再审''修改为``修改''。
+  系统会自动给作者发送相应的提示电邮。
+\item
+  验收标准：评审员能够正确设置考题的状态，从``再审''变为``修改''，能够通过邮件提醒作者。
+\end{itemize}
+
+\hypertarget{ux529fux80fd-ux518dux5ba1ux9700ux4f5cux5e9f}{%
+\subsubsection{功能-再审需作废}\label{ux529fux80fd-ux518dux5ba1ux9700ux4f5cux5e9f}}
+
+\begin{itemize}
+\tightlist
+\item
+  关键词：被拒绝~作废
+\item
+  如果此考题的评审结果是``被拒绝''，在再审过程中，质量管理员也认为此题确实应该作废，
+  则将此题的状态从``再审''修改为``作废''。表示此题已被作废。
+  系统都会自动给主持人发出提示电邮。
+\item
+  验收标准：评审员能够正确设置考题的状态，从``再审''变为``作废''，能够通过邮件提醒主持人。
+\end{itemize}
+
+\hypertarget{ux89d2ux8272ux548cux6743ux9650-1}{%
+\subsubsection{角色和权限}\label{ux89d2ux8272ux548cux6743ux9650-1}}
+
+在再审状态下，质管员（质量管理员）有权阅读所有处于``再审''的考题， 也
+有权对这些考题编写评审意见和建议，或指出错误所在。质管员（质量管理员）有权改变处
+于``再审''考题的状态（从``再审''到``修改''，或从``再审''到``发布''，或从``再审''到
+``作废''）。在再审状态下主持人只有阅读的权限，
+没有修改考题（考题和属性的修改）和操 作（改变状态）的权限。
+
+\hypertarget{ux4feeux6539ux8003ux9898ux72b6ux6001-ux4feeux6539-ux89d2ux8272-ux4f5cux8005}{%
+\subsection{修改考题(状态: 修改; 角色:
+作者)}\label{ux4feeux6539ux8003ux9898ux72b6ux6001-ux4feeux6539-ux89d2ux8272-ux4f5cux8005}}
+
+\hypertarget{ux5177ux4f53ux529fux80fd}{%
+\subsubsection{具体功能}\label{ux5177ux4f53ux529fux80fd}}
+
+\begin{itemize}
+\tightlist
+\item
+  关键词：作废修改~评审
+\item
+  在修改状态下，作者可以阅读到所有与本作者有关的需要修改的考题，
+  这些修改要求有可能是评审员要求的，也有可能是质量管理员在``再审''时要求的。
+  作者在仔细阅读修改要求或修改意见或建议后，并参看大纲，认真思考，对考题进行修改。
+  修改完毕后，作者将此题的状态从``修改''再改变为``评审''，系统会自动给评审员发出提示电邮。
+  。
+\item
+  验收标准：作者可以阅读修改要求、意见，并对考题进行修改。作者能够正确的是指考题状态，从修改到``评审''。
+  能够通过邮件提醒相关评审员。
+\end{itemize}
+
+\hypertarget{ux89d2ux8272ux548cux6743ux9650-2}{%
+\subsubsection{角色和权限}\label{ux89d2ux8272ux548cux6743ux9650-2}}
+
+在修改状态下，作者有权阅读所有属于需要自己修改的考题，
+有权对这些考题进行修改。作者有权改变处于``修改''考题的状态（从``修改''到``评审''）。
+在修改状态下
+主持人只有阅读的权限，没有修改（考题和属性的修改）和操作（改变状态）的权限。
+\#\# 发布考题(状态: 发布; 角色: 主持人)
+
+\hypertarget{ux529fux80fd-ux5bfcux51faux53d1ux5e03ux8003ux9898}{%
+\subsubsection{功能-导出发布考题}\label{ux529fux80fd-ux5bfcux51faux53d1ux5e03ux8003ux9898}}
+
+\begin{itemize}
+\item
+  关键词：发布~导出
+\item
+  在考题处于``发布''状态下，主持人可以阅读所有这些已发布的考题，并且根据考题导出规则导出这些考题。主持人没有修改考题（包含考题的内容和属性）和操作（改变状态）的权限。
+\item
+  此处限定考题导出规则为：（以从高到低的优先级顺序排列）根据考题的发布时间、考题的id命名规则、参与该考题出题和评审的人员信息的顺序导出考题。
+\item
+  此处限定考题导出内容为：考题最终发布版本的所有完整内容及属性和考题的历史数据（包括评审内容、评审结果和修改内容）
+\item
+  验收标准：主持人能够查看并以Excel和XML的文件格式正确导出处于发布状态的考题的所有内容。
+\end{itemize}
+
+\hypertarget{ux529fux80fd-ux5bfcux5165ux9898ux5e93}{%
+\subsubsection{功能-导入题库}\label{ux529fux80fd-ux5bfcux5165ux9898ux5e93}}
+
+\begin{itemize}
+\item
+  关键词：导入
+\item
+  题库系统管理员可以将已发布并且由主持人导出的考题（Excel文件和XML文件）文件导入题库系统，题库系统必须支持该两种格式的考题文件。
+\item
+  验收标准：题库系统管理员可以正确将考题文件导入题库系统。
+\end{itemize}
+
+\hypertarget{ux4f5cux5e9fux8003ux9898ux72b6ux6001-ux4f5cux5e9f-ux89d2ux8272-ux4e3bux6301ux4eba}{%
+\subsection{作废考题(状态: 作废; 角色:
+主持人)}\label{ux4f5cux5e9fux8003ux9898ux72b6ux6001-ux4f5cux5e9f-ux89d2ux8272-ux4e3bux6301ux4eba}}
+
+\hypertarget{ux529fux80fd-ux5e9fux9664ux4f5cux5e9fux8003ux9898}{%
+\subsubsection{功能-废除作废考题}\label{ux529fux80fd-ux5e9fux9664ux4f5cux5e9fux8003ux9898}}
+
+\begin{itemize}
+\item
+  关键词：作废~废除
+\item
+  主持人查看所有处于作废状态的考题，并且废除这些考题（即这些考题将永远不会被使用）。主持人不能修改考题和改变考题状态。
+\item
+  验收标准：主持人能够查看所有处于作废状态的考题。
+\end{itemize}
+
+\hypertarget{ux529fux80fd-ux91cdux542fux51faux9898ux6d41ux7a0b}{%
+\subsubsection{功能-重启出题流程}\label{ux529fux80fd-ux91cdux542fux51faux9898ux6d41ux7a0b}}
+
+\begin{itemize}
+\item
+  关键词：作废～重启
+\item
+  主持人对于处于作废状态的考题进行判断后，发现无法达成出题目的和要求，重新启动项目，进行新考题的编写与评审。
+\item
+  验收标准：主持人能够根据出题目的和要求，根据作废考题的情况，重新启动项目。
+\end{itemize}
+
+\hypertarget{ux8d28ux91cfux9700ux6c42}{%
+\section{质量需求}\label{ux8d28ux91cfux9700ux6c42}}
+
+\hypertarget{ux8d28ux91cf-ux9700ux6c42ux540d}{%
+\subsection{质量-需求名}\label{ux8d28ux91cf-ux9700ux6c42ux540d}}
+
+\begin{itemize}
+\tightlist
+\item
+  关键词
+\item
+  需求描述
+\item
+  验收标准
+\end{itemize}
+
+\hypertarget{ux8d28ux91cf-ux9700ux6c42ux540d2}{%
+\subsection{质量-需求名2}\label{ux8d28ux91cf-ux9700ux6c42ux540d2}}
+
+\begin{itemize}
+\tightlist
+\item
+  关键词
+\item
+  需求描述
+\item
+  验收标准
+\end{itemize}
+
+\hypertarget{ux7ea6ux675fux6761ux4ef6}{%
+\section{约束条件}\label{ux7ea6ux675fux6761ux4ef6}}
+
+\hypertarget{ux7ea6ux675f-ux9700ux6c42ux540d}{%
+\subsection{约束-需求名}\label{ux7ea6ux675f-ux9700ux6c42ux540d}}
+
+\begin{itemize}
+\tightlist
+\item
+  关键词
+\item
+  需求描述
+\item
+  验收标准
+\end{itemize}
+
+\hypertarget{ux7ea6ux675f-ux9700ux6c42ux540d2}{%
+\subsection{约束-需求名2}\label{ux7ea6ux675f-ux9700ux6c42ux540d2}}
+
+\begin{itemize}
+\tightlist
+\item
+  关键词
+\item
+  需求描述
+\item
+  验收标准
+\end{itemize}
+
+\pagebreak
+
+\hypertarget{ux53c2ux8003ux6587ux732e}{%
+\section*{参考文献}\label{ux53c2ux8003ux6587ux732e}}
+\addcontentsline{toc}{section}{参考文献}
+
+\hypertarget{refs}{}
+\leavevmode\hypertarget{ref-innovativeInternationalisation}{}%
+International Organization for Standardization. 2014. \emph{Systems and
+Software Engineering --- Systems and Software Quality Requirements and
+Evaluation (SQuaRE) --- Guide to SQuaRE}. \emph{International
+Organization for Standardization}. Vol. 2014.
+\url{https://www.iso.org/standard/64764.html}.
+
+\leavevmode\hypertarget{ref-innovative1}{}%
+中国国家标准化管理委员会. 2016. \emph{GB/T
+25000.51-2016《系统与软件工程系统与软件质量要求和评价 (SQuaRE) 第 51
+部分 : 就绪可用软件产品 (RUSP) 的质量要求和测试细则》}.
+\emph{系统与软件工程系统与软件质量要求和评价 (SQuaRE)}. Vol. 51.
+中国国家标准化管理委员会. \url{http://openstd.samr.gov.cn}.
+
+\leavevmode\hypertarget{ref-innovative3}{}%
+---------. 2017a. \emph{GB/T 25000.12-2017《系统与软件工程
+系统与软件质量要求和评价(SQuaRE) 第12部分：数据质量模型》}.
+\emph{系统与软件工程系统与软件质量要求和评价 (SQuaRE)}. Vol. 12.
+中国国家标准化管理委员会. \url{http://openstd.samr.gov.cn}.
+
+\leavevmode\hypertarget{ref-innovative4}{}%
+---------. 2017b. \emph{GB/T 25000.24-2017《系统与软件工程
+系统与软件质量要求和评价(SQuaRE) 第24部分：数据质量测量》}.
+\emph{系统与软件工程系统与软件质量要求和评价 (SQuaRE)}. Vol. 24.
+中国国家标准化管理委员会. \url{http://openstd.samr.gov.cn}.
+
+\leavevmode\hypertarget{ref-innovative5}{}%
+---------. 2018. \emph{GB/T 25000.40-201《系统与软件工程
+系统与软件质量要求和评价(SQuaRE) 第40部分：评价过程》}.
+\emph{系统与软件工程系统与软件质量要求和评价 (SQuaRE)}. Vol. 40.
+中国国家标准化管理委员会. \url{http://openstd.samr.gov.cn}.
+
+\leavevmode\hypertarget{ref-innovative2}{}%
+---------. 2019. \emph{GB/T 25000.23-2019《系统与软件工程
+系统与软件质量要求和评价(SQuaRE) 第23部分：系统与软件产品质量测量》}.
+\emph{系统与软件工程系统与软件质量要求和评价 (SQuaRE)}. Vol. 23.
+中国国家标准化管理委员会. \url{http://openstd.samr.gov.cn}.
+
+\end{document}
