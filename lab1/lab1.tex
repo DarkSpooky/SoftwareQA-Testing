@@ -279,61 +279,141 @@ Alpha 06 & 2014 年2 月17 日 & 增加T 模块考卷规则、增加分值规则
 \hypertarget{ux767bux9646ux53caux4e2aux4ebaux4fe1ux606f}{%
 \subsection{登陆及个人信息}\label{ux767bux9646ux53caux4e2aux4ebaux4fe1ux606f}}
 
-\hypertarget{ux529fux80fd-ux9700ux6c42ux540d}{%
-\subsubsection{功能-需求名}\label{ux529fux80fd-ux9700ux6c42ux540d}}
+未登录状态下，用户输入正确的用户名和密码，进入登录状态，获得系统使用权限。登录状态下，用户可以修改个人信息。
+
+\hypertarget{ux529fux80fd-ux767bux5f55ux6821ux9a8c}{%
+\subsubsection{功能-登录校验}\label{ux529fux80fd-ux767bux5f55ux6821ux9a8c}}
 
 \begin{itemize}
 \tightlist
 \item
-  关键词
+  关键词：登录~匹配
 \item
-  需求描述（参考模板：作为一种,我希望,这样可以)
+  在用户属于未登录状态下，用户输入正确的用户名和密码，进入登录状态，可以根据用户权限对考题进行创建、修改或评审。用户输入错误的用户名或密码，提示``用户名或密码''错误，允许继续输入，不允许对考题进行任一操作。
 \item
-  验收标准
-\item
-  （图）
+  验收标准：用户能够正确登录系统，登录状态由``未登录''变为对应用户名。
 \end{itemize}
 
-\hypertarget{ux529fux80fd-ux9700ux6c42ux540d2}{%
-\subsubsection{功能-需求名2}\label{ux529fux80fd-ux9700ux6c42ux540d2}}
+\hypertarget{ux529fux80fd-ux4feeux6539ux4e2aux4ebaux4fe1ux606f}{%
+\subsubsection{功能-修改个人信息}\label{ux529fux80fd-ux4feeux6539ux4e2aux4ebaux4fe1ux606f}}
 
 \begin{itemize}
 \tightlist
 \item
-  关键词
+  关键词：个人信息~修改
 \item
-  需求描述（参考模板：作为一种,我希望,这样可以)
+  在用户处于登录状态下，可以对用户信息（包括用户名、密码、其他信息等）进行修改。修改完成后自动更新用户信息。
 \item
-  验收标准
-\item
-  （图）
+  验收标准：用户能够完成信息修改并正确显示。
 \end{itemize}
 
 \hypertarget{ux5efaux7acbux65b0ux9879ux76ee}{%
 \subsection{建立新项目}\label{ux5efaux7acbux65b0ux9879ux76ee}}
 
-\hypertarget{ux529fux80fd-ux9700ux6c42ux540d3}{%
-\subsubsection{功能-需求名3}\label{ux529fux80fd-ux9700ux6c42ux540d3}}
+完成登录后，主持人需要创建新的项目，并对其进行规划。项目创建完成后，主持人需要在其中创建新的题目并设置题目属性、分配作者与评审员。
+
+\hypertarget{ux529fux80fd-ux521bux5efaux9879ux76ee}{%
+\subsubsection{功能-创建项目}\label{ux529fux80fd-ux521bux5efaux9879ux76ee}}
 
 \begin{itemize}
 \tightlist
 \item
-  关键词
+  关键词：新建~系统~主持人
 \item
-  需求描述（参考模板：作为一种,我希望,这样可以)
+  主持人创建新的出题系统，不允许更换其他主持人。在创建时定义项目名，不能与其他出题系统重复，不允许创建完成后修改。
 \item
-  验收标准
+  主持人在创建项目时可以对项目进行规划，如限制项目考题数量或考题范围。
 \item
-  （图）
+  验收标准：主持人成功创建项目，确定项目名称以及项目规划，并通过邮件提示主持人。
+\end{itemize}
+
+\hypertarget{ux529fux80fd-ux65b0ux5efaux8003ux9898}{%
+\subsubsection{功能-新建考题}\label{ux529fux80fd-ux65b0ux5efaux8003ux9898}}
+
+\begin{itemize}
+\tightlist
+\item
+  关键词：新建~考题~属性~管理人员
+\item
+  主持人在完成项目创建后可以创建新考题，创建时为考题确定唯一不重复ID。主持人设置考题状态为``开始''，在开始状态下为考题设置题目属性（如时间点、时间安排）。
+\item
+  主持人在开始状态下为考题设置相关管理人员，包括作者、评审员、质管员。其中不同身份不能安排同一名用户，如作者与评审员不能有同一个用户ID。每个身份要求至少安排一人，允许为一道考题安排多名作者、评审员、质管员。同时允许评审员和作者之间互相读取权限信息。
+\item
+  验收标准：主持人成功新建题目、设置题目属性与作者、评审员，并自动发送邮件给对应管理人员进行确认。
 \end{itemize}
 
 \hypertarget{ux5f00ux59cbux542fux52a8ux9879ux76eeux72b6ux6001-ux5f00ux59cb-ux89d2ux8272-ux4e3bux6301ux4eba}{%
 \subsection{开始启动项目(状态: 开始; 角色:
 主持人)}\label{ux5f00ux59cbux542fux52a8ux9879ux76eeux72b6ux6001-ux5f00ux59cb-ux89d2ux8272-ux4e3bux6301ux4eba}}
 
+在开始状态下，主持人可以为题目分配知识点，设置期限与管理人员。在完成设置后允许主持人将题目状态改为``编写''，由系统自动提示作者进行编写，编写过程存在时间限制。
+
+\hypertarget{ux529fux80fd-ux8bbeux7f6eux671fux9650}{%
+\subsubsection{功能-设置期限}\label{ux529fux80fd-ux8bbeux7f6eux671fux9650}}
+
+\begin{itemize}
+\tightlist
+\item
+  关键词：开始~期限~警告
+\item
+  主持人为开始状态下的考题分配知识点，设定编写考题与评审考题的时间限制。
+\item
+  设置完成后，当作者和评审员修改对应考题时，系统对超出时间限制的任务进行报警，自动发送邮件或站内信给主持人。主持人收到报警后可以选择对超出期限的任务提出警告或是延长时间限制。
+\item
+  验收标准：主持人成功设置考题编写与评审时间限制，并在超出限制时收到邮件或站内信。
+\end{itemize}
+
+\hypertarget{ux529fux80fd-ux4feeux6539ux72b6ux6001}{%
+\subsubsection{功能-修改状态}\label{ux529fux80fd-ux4feeux6539ux72b6ux6001}}
+
+\begin{itemize}
+\tightlist
+\item
+  关键词：编写~作者
+\item
+  主持人在开始状态下完成了对题目属性的设置、知识点的分配、作者、评审员和质管员的设置后，可以将题目状态改为``编写''。系统自动向状态为``编写''题目的作者发送提示邮件。
+\item
+  未完成相应设置的题目不允许修改状态。允许批量修改多个题目状态。
+\item
+  验收标准：主持人成功修改题目状态，作者收到邮件通知。
+\end{itemize}
+
 \hypertarget{ux7f16ux5199ux8003ux9898ux72b6ux6001-ux7f16ux5199-ux89d2ux8272-ux4f5cux8005}{%
 \subsection{编写考题(状态: 编写; 角色:
 作者)}\label{ux7f16ux5199ux8003ux9898ux72b6ux6001-ux7f16ux5199-ux89d2ux8272-ux4f5cux8005}}
+
+在编写状态下，作者应对多种格式的题目（包括普通文字、表格、图形）进行手动编写或限制格式的自动导入。在确保题目进行充分编写后，作者可以修改题目状态，提交评审。
+
+\hypertarget{ux529fux80fd-ux8bbeux7f6eux591aux7c7bux578bux8003ux9898}{%
+\subsubsection{功能-设置多类型考题}\label{ux529fux80fd-ux8bbeux7f6eux591aux7c7bux578bux8003ux9898}}
+
+\begin{itemize}
+\tightlist
+\item
+  关键词：编写~答案
+\item
+  在编写状态下，作者可以看到由主持人分配给自己编写的考题。作者允许编写普通（纯文字）考题、带有表格或图形的考题并正确显示，无乱码。同时，作者需要对题目给出标准答案并设置相关属性（如题型、知识点、分值等）。
+\item
+  作者可以手动输入考题，也可以对普通考题、带有表格或图形对考题以XML,
+  Excel的形式导入出题系统。
+\item
+  验收标准：作者正确编写或导入多种格式的考题，显示正确。
+\end{itemize}
+
+\hypertarget{ux529fux80fd-ux4feeux6539ux72b6ux6001-1}{%
+\subsubsection{功能-修改状态}\label{ux529fux80fd-ux4feeux6539ux72b6ux6001-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  关键词：状态~评审
+\item
+  在编写过程中，作者不允许对评审员、质管员进行修改，也不允许修改题目的编写时间限制或所属项目。仅允许且必须对题干、答案和部分题目属性进行编写和设置。
+\item
+  在完成题目、答案与属性编写后，作者需要把题目状态设置为``评审''。由系统自动发送邮件给评审员，提醒评审。未完成编写对题目不允许修改状态，仍保持``编写''状态。
+\item
+  验收标准：作者完成题目编写后正确修改题目状态，评审员收到邮件通知。
+\end{itemize}
 
 \hypertarget{ux8bc4ux5ba1ux8003ux9898ux72b6ux6001-ux8bc4ux5ba1-ux89d2ux8272-ux8bc4ux5ba1ux5458}{%
 \subsection{评审考题(状态: 评审; 角色:
