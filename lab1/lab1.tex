@@ -668,6 +668,33 @@ Alpha 06 & 2014 年2 月17 日 & 增加T 模块考卷规则、增加分值规则
   验收标准：主持人能够根据出题目的和要求，根据作废考题的情况，重新启动项目。
 \end{itemize}
 
+\hypertarget{umlux5efaux6a21}{%
+\subsection{UML建模}\label{umlux5efaux6a21}}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.33]{./assets/usecase_diagram.pdf}
+  \caption{整体用况图}\label{2}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.33]{./assets/dataflow_diagram.pdf}
+  \caption{数据流图}\label{2}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.33]{./assets/status_diagram.pdf}
+  \caption{状态机图}\label{2}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.33]{./assets/swimlane_diagram.pdf}
+  \caption{泳道图}\label{2}
+\end{figure}
+
 \hypertarget{ux8d28ux91cfux9700ux6c42}{%
 \section{质量需求}\label{ux8d28ux91cfux9700ux6c42}}
 
@@ -895,7 +922,9 @@ Alpha 06 & 2014 年2 月17 日 & 增加T 模块考卷规则、增加分值规则
 \item
   对应需求：2.6.1 再审需修改
 \item
-  关于考题再审，前一版需求文档中对于评审员``拒绝''，但质管员认为``还可''的考题处理情况没有进行说明。这里设想的是，当质管员认为题目仍然可以使用时，可将``被拒绝''的题目状态改为``修改''，并邮件通知作者。这里对需求进行更细致的定义。
+  修改后的需求：关于考题再审，前一版需求文档中对于评审员``拒绝''，但质管员认为``还可''的考题处理情况没有进行说明。这里补充的是，当质管员认为题目仍然可以使用时，可将``被拒绝''的题目状态改为``修改''，并邮件通知作者。
+\item
+  对应的不合理需求：原版需求文档中，只提及了评审员``拒绝''的题目在后续审核中被质管员``废除''，我们认为无论是评审员``接受''或``拒绝''的题目在质管员处都可以在审核后改变为``发布''/``作废''/``修改''状态。
 \end{itemize}
 
 \hypertarget{ux5bf9ux8003ux9898ux5bfcux51faux89c4ux5219ux548cux5185ux5bb9ux4f5cux51faux9650ux5b9a}{%
