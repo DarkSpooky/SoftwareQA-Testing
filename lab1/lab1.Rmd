@@ -453,6 +453,32 @@ Alpha 06 & 2014 年2 月17 日 & 增加T 模块考卷规则、增加分值规则
 
 - 验收标准：主持人能够根据出题目的和要求，根据作废考题的情况，重新启动项目。
 
+## UML建模
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.33]{./assets/usecase_diagram.pdf}
+  \caption{整体用况图}\label{2}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.33]{./assets/dataflow_diagram.pdf}
+  \caption{数据流图}\label{2}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.33]{./assets/status_diagram.pdf}
+  \caption{状态机图}\label{2}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.33]{./assets/swimlane_diagram.pdf}
+  \caption{泳道图}\label{2}
+\end{figure}
+
 # 质量需求
 ## 响应速度
 - 关键词：响应速度
