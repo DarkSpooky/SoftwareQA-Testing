@@ -455,10 +455,12 @@ Alpha 06 & 2014 年2 月17 日 & 增加T 模块考卷规则、增加分值规则
 
 ## UML建模
 
+对于我们分析的流程，除了上面的文字描述之外，我们还以如下这些流程图的形式进行了体现。流程图中所展示的流程与上面小节的描述是一致的。
+
 \begin{figure}
   \centering
   \includegraphics[scale=0.33]{./assets/usecase_diagram.pdf}
-  \caption{整体用况图}\label{2}
+  \caption{整体用况图}\label{1}
 \end{figure}
 
 \begin{figure}
@@ -470,14 +472,16 @@ Alpha 06 & 2014 年2 月17 日 & 增加T 模块考卷规则、增加分值规则
 \begin{figure}
   \centering
   \includegraphics[scale=0.33]{./assets/status_diagram.pdf}
-  \caption{状态机图}\label{2}
+  \caption{状态机图}\label{3}
 \end{figure}
 
 \begin{figure}
   \centering
   \includegraphics[scale=0.33]{./assets/swimlane_diagram.pdf}
-  \caption{泳道图}\label{2}
+  \caption{泳道图}\label{4}
 \end{figure}
+
+\pagebreak
 
 # 质量需求
 ## 响应速度
