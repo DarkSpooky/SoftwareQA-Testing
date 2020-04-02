@@ -1,0 +1,749 @@
+\documentclass[hyperref, a4paper]{ctexart}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{xltxtra,xunicode}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\usepackage[usenames,dvipsnames]{color}
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={Tian, Jiahe; Hu, Xiaoxiao; Huang, Jiani; Liu, Jiaxing; Shi, Ruixin; Wu, Chenning; Zhang, Cenyuan; Zhang, Yihan; Wang, Chen},
+            pdftitle={ 出题系统需求文档},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+
+\title{\vspace{2in} 出题系统需求文档\\\vspace{0.5em}{\large 软件质量保障与测试课程Lab3课程作业（第9组）}}
+\author{Tian, Jiahe\footnote{Equal Contribution, Fudan University, 17307130313
+  (\href{mailto:tianjh17@fudan.edu.cn}{\nolinkurl{tianjh17@fudan.edu.cn}})} \and Hu, Xiaoxiao\footnote{Equal Contribution, Fudan University, 17302010077
+  (\href{mailto:xxhu17@fudan.edu.cn}{\nolinkurl{xxhu17@fudan.edu.cn}})} \and Huang, Jiani\footnote{Equal Contribution, Fudan University, 17302010063
+  (\href{mailto:huangjn17@fudan.edu.cn}{\nolinkurl{huangjn17@fudan.edu.cn}})} \and Liu, Jiaxing\footnote{Equal Contribution, Fudan University, 17302010049
+  (\href{mailto:jiaxingliu17@fudan.edu.cn}{\nolinkurl{jiaxingliu17@fudan.edu.cn}})} \and Shi, Ruixin\footnote{Equal Contribution, Fudan University, 17302010065
+  (\href{mailto:rxshi17@fudan.edu.cn}{\nolinkurl{rxshi17@fudan.edu.cn}})} \and Wu, Chenning\footnote{Equal Contribution, Fudan University, 17302010066
+  (\href{mailto:cnwu17@fudan.edu.cn}{\nolinkurl{cnwu17@fudan.edu.cn}})} \and Zhang, Cenyuan\footnote{Equal Contribution, Fudan University,
+  17302010068
+  (\href{mailto:cenyuanzhang17@fudan.edu.cn}{\nolinkurl{cenyuanzhang17@fudan.edu.cn}})} \and Zhang, Yihan\footnote{Equal Contribution, Fudan University, 17302010076
+  (\href{mailto:zhangyihan17@fudan.edu.cn}{\nolinkurl{zhangyihan17@fudan.edu.cn}})} \and Wang, Chen\footnote{Equal Contribution, Fudan University, 16307110064
+  (\href{mailto:wangc16@fudan.edu.cn}{\nolinkurl{wangc16@fudan.edu.cn}})}}
+\date{2020年4月1日}
+
+
+
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\begin{document}
+\maketitle
+
+\newpage
+
+\LARGE
+
+\begin{center}
+\textbf{出题系统需求文档}
+\end{center}
+
+\large
+\begin{center}
+\textbf{\emph{软件质量保障与测试课程Lab3课程作业}}
+\end{center}
+
+\hypertarget{ux6458ux8981}{%
+\section*{摘要}\label{ux6458ux8981}}
+\addcontentsline{toc}{section}{摘要}
+
+本次作业为软件质量保障与测试课程的Lab3课程作业，需要我们以小组为单位撰写CS选课系统的IEEE829测试文档.
+
+\hypertarget{ux5173ux952eux8bcd}{%
+\section*{关键词}\label{ux5173ux952eux8bcd}}
+\addcontentsline{toc}{section}{关键词}
+
+系统与软件工程; 系统与软件质量要求和评价; 需求文档
+
+\normalsize
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\hypertarget{ux76eeux7684ux5220ux9664}{%
+\section{目的（删除）}\label{ux76eeux7684ux5220ux9664}}
+
+本测试计划基于Lab2版本的CS出题系统，本测试文档将涵盖以下方面： -
+定义测试过程所需的测试方法与工具 -
+与相关人员沟通测试任务分派，确定测试时间表、测试环境与风险控制 -
+定义测试进行的具体步骤
+
+\hypertarget{ux6d4bux8bd5ux8ba1ux5212ux6807ux8bc6}{%
+\section{测试计划标识}\label{ux6d4bux8bd5ux8ba1ux5212ux6807ux8bc6}}
+
+CSTQB4.0-TP1.0 修订历史
+
+\begin{tabular}{|p{2cm}|p{3.3cm}|p{8cm}|}
+\hline
+版本 & 日期 & 说明\\
+\hline
+草稿 & 2021 年3 月7 日 & 基于出题系统的测试计划草稿\\
+\hline
+CSTQB4.0-TP1.0 & 2021 年4 月1 日 & 建立更完善的出题系统的测试计划\\
+\hline
+\end{tabular}
+
+\hypertarget{ux4ecbux7ecd}{%
+\section{介绍}\label{ux4ecbux7ecd}}
+
+\hypertarget{ux76eeux6807}{%
+\subsection{目标}\label{ux76eeux6807}}
+
+本测试计划基于Lab2版本的CS出题系统，本测试文档将涵盖以下方面： -
+定义测试过程所需的测试方法与工具 -
+与相关人员沟通测试任务分派，确定测试时间表、测试环境与风险控制 -
+定义测试进行的具体步骤 \#\# 测试软件情况介绍：
+出题系统是在线出题考试系统的的一个子系统。利用出题系统，出题专家们可以方便的进行网上考题编写和评审，并无缝的与在线出题考试系统进行衔接，提高考题编写的质量和效率，也便于考题的统一管理和评估。
+
+\hypertarget{ux6d4bux8bd5ux9879}{%
+\section{测试项}\label{ux6d4bux8bd5ux9879}}
+
+\hypertarget{ux767bux9646ux53caux4e2aux4ebaux4fe1ux606f}{%
+\subsection{登陆及个人信息}\label{ux767bux9646ux53caux4e2aux4ebaux4fe1ux606f}}
+
+\hypertarget{ux7528ux6237ux767bux5f55ux6821ux9a8c}{%
+\subsubsection{用户登录校验}\label{ux7528ux6237ux767bux5f55ux6821ux9a8c}}
+
+\begin{itemize}
+\tightlist
+\item
+  先决条件：用户已经成功在系统中注册过自己的用户名和密码
+
+  \begin{itemize}
+  \tightlist
+  \item
+    用户输入正确用户名和密码可以成功登录，登录状态由``未登录''变为对应用户名。
+  \item
+    用户输入错误用户名和密码无法登陆系统，提示``用户名或密码''错误，允许继续输入，不允许对考题进行任一操作。
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux7528ux6237ux4feeux6539ux4e2aux4ebaux4fe1ux606f}{%
+\subsubsection{用户修改个人信息}\label{ux7528ux6237ux4feeux6539ux4e2aux4ebaux4fe1ux606f}}
+
+\begin{itemize}
+\tightlist
+\item
+  先决条件：用户登陆系统成功
+
+  \begin{itemize}
+  \tightlist
+  \item
+    用户可以对用户信息（包括用户名、密码、其他信息等）进行修改，修改完成后自动更新用户信息。
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux5efaux7acbux65b0ux9879ux76ee}{%
+\subsection{建立新项目}\label{ux5efaux7acbux65b0ux9879ux76ee}}
+
+\hypertarget{ux4e3bux6301ux4ebaux521bux5efaux9879ux76ee}{%
+\subsubsection{主持人创建项目}\label{ux4e3bux6301ux4ebaux521bux5efaux9879ux76ee}}
+
+\begin{itemize}
+\tightlist
+\item
+  先决条件：登陆用户角色为主持人
+
+  \begin{itemize}
+  \tightlist
+  \item
+    主持人可以创建新的出题系统，一旦创建不允许更换其他主持人。
+  \item
+    主持人在创建时定义项目名，不能与其他出题系统重复，不允许创建完成后再修改项目名。
+  \item
+    主持人在创建项目时可以成功对项目进行规划，如限制项目考题数量或考题范围。
+  \item
+    系统在主持人成功创建项目并完成项目设置后自动发送邮件提示主持人。
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux4e3bux6301ux4ebaux65b0ux5efaux8003ux9898}{%
+\subsubsection{主持人新建考题}\label{ux4e3bux6301ux4ebaux65b0ux5efaux8003ux9898}}
+
+\begin{itemize}
+\tightlist
+\item
+  先决条件：登陆用户角色为主持人且完成项目创建
+
+  \begin{itemize}
+  \tightlist
+  \item
+    主持人可以创建新考题，成功创建的考题有唯一不重复ID。
+  \item
+    主持人可以设置新考题状态为``开始''。
+  \item
+    主持人在开始状态下可以为考题设置题目属性（如知识点，时间点、时间安排）
+  \item
+    主持人在开始状态下可以为考题设置相关管理人员，包括作者、评审员、质管员。其中不同身份不能安排同一名用户，如作者与评审员不能有同一个用户ID。每个身份要求至少安排一人，允许为一道考题安排多名作者、评审员、质管员。
+  \item
+    考题相关的评审员和作者之间可以互相读取权限信息。
+  \item
+    系统在主持人成功新建题目、设置题目属性与作者、评审员、质管员后会自动发送邮件给对应管理人员进行确认。
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux5f00ux59cbux542fux52a8ux9879ux76eeux72b6ux6001-ux5f00ux59cb-ux89d2ux8272-ux4e3bux6301ux4eba}{%
+\subsection{开始启动项目(状态: 开始; 角色:
+主持人)}\label{ux5f00ux59cbux542fux52a8ux9879ux76eeux72b6ux6001-ux5f00ux59cb-ux89d2ux8272-ux4e3bux6301ux4eba}}
+
+\hypertarget{ux4e3bux6301ux4ebaux8bbeux7f6eux8003ux9898ux671fux9650}{%
+\subsubsection{主持人设置考题期限}\label{ux4e3bux6301ux4ebaux8bbeux7f6eux8003ux9898ux671fux9650}}
+
+\begin{itemize}
+\tightlist
+\item
+  先决条件：登陆用户角色为主持人且已设置考题状态为``开始''
+
+  \begin{itemize}
+  \tightlist
+  \item
+    主持人能够为状态为``开始''的考题设定编写考题与评审考题的时间限期。
+  \item
+    系统会对超出限期的任务报警，自动发送邮件或站内信给主持人。
+  \item
+    主持人能对超出限期的任务提出警告或延长时间限期。
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux4e3bux6301ux4ebaux4feeux6539ux72b6ux6001ux5f00ux59cb-ux7f16ux5199}{%
+\subsubsection{主持人修改状态(开始-编写)}\label{ux4e3bux6301ux4ebaux4feeux6539ux72b6ux6001ux5f00ux59cb-ux7f16ux5199}}
+
+\begin{itemize}
+\tightlist
+\item
+  先决条件：登陆用户角色为主持人且已设置考题状态为``开始''
+
+  \begin{itemize}
+  \tightlist
+  \item
+    主持人在开始状态下完成了对题目属性的设置、知识点的分配、作者、评审员和质管员的设置后，可以将题目状态改为``编写''。
+  \item
+    系统在题目状态改变为``编写''后能自动给对应作者发送提示邮件。
+  \item
+    主持人未完成相关设置的题目不能修改状态。
+  \item
+    主持人能够批量将完成分配的题目状态改为``编写''，系统会给对应作者发送邮件
+  \item
+    在考题状态为``开始''下，除主持人外，系统管理员、作者、评审员没有修改题目状态的权限。
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux7f16ux5199ux8003ux9898ux72b6ux6001-ux7f16ux5199-ux89d2ux8272-ux4f5cux8005}{%
+\subsection{编写考题(状态: 编写; 角色:
+作者)}\label{ux7f16ux5199ux8003ux9898ux72b6ux6001-ux7f16ux5199-ux89d2ux8272-ux4f5cux8005}}
+
+\hypertarget{ux4f5cux8005ux8bbeux7f6eux591aux7c7bux578bux8003ux9898}{%
+\subsubsection{作者设置多类型考题}\label{ux4f5cux8005ux8bbeux7f6eux591aux7c7bux578bux8003ux9898}}
+
+\begin{itemize}
+\tightlist
+\item
+  先决条件：登陆用户角色为作者并已被主持人分配出题任务
+
+  \begin{itemize}
+  \tightlist
+  \item
+    作者能够看到由主持人分配给自己编写的考题的相关信息。
+  \item
+    作者能够编写普通（纯文字）考题并设置相关属性。
+  \item
+    作者能够编写带有表格的题目并正确显示，无乱码并设置相关属性。
+  \item
+    作者能够编写带有图形的题目并正确显示，无乱码并设置相关属性。
+  \item
+    作者需要对题目给出标准答案并设置相关属性（如题型、知识点、分值等）。
+  \item
+    普通考题能以XML，Excel的形式导入出题系统
+  \item
+    带有表格的题目能以XML，Excel的形式导入出题系统
+  \item
+    带有图形的题目能以XML，Excel的形式导入出题系统
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux4f5cux8005ux4feeux6539ux72b6ux6001ux7f16ux5199-ux8bc4ux5ba1}{%
+\subsubsection{作者修改状态(编写-评审)}\label{ux4f5cux8005ux4feeux6539ux72b6ux6001ux7f16ux5199-ux8bc4ux5ba1}}
+
+\begin{itemize}
+\tightlist
+\item
+  先决条件：登陆用户角色为作者并已被主持人分配出题任务
+
+  \begin{itemize}
+  \tightlist
+  \item
+    作者不可以对评审员、质管员进行修改，也不可以修改题目的编写时间限制或所属项目。仅允许且必须对题干、答案和部分题目属性进行编写和设置。
+  \item
+    对未完成编写（如题干为空等情况），未给出标准答案或未完成相关属性设定的题目，作者不能修改其状态为``评审''。
+  \item
+    作者能够将编写完成、给出标准答案并设置相关属性的题目状态改为``评审''。
+  \item
+    系统在题目状态改为``评审''后给评审员发出邮件。
+  \item
+    主持人在编写过程中没有修改和操作的权限。
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux8bc4ux5ba1ux8003ux9898ux72b6ux6001-ux8bc4ux5ba1-ux89d2ux8272-ux8bc4ux5ba1ux5458}{%
+\subsection{评审考题(状态: 评审; 角色:
+评审员)}\label{ux8bc4ux5ba1ux8003ux9898ux72b6ux6001-ux8bc4ux5ba1-ux89d2ux8272-ux8bc4ux5ba1ux5458}}
+
+\hypertarget{ux8bc4ux5ba1ux5458ux8bbeux7f6eux8bc4ux5ba1ux7ed3ux679cux4e3aux53efux63a5ux53d7}{%
+\subsubsection{评审员设置评审结果为``可接受''}\label{ux8bc4ux5ba1ux5458ux8bbeux7f6eux8bc4ux5ba1ux7ed3ux679cux4e3aux53efux63a5ux53d7}}
+
+\begin{itemize}
+\tightlist
+\item
+  先决条件：登陆用户角色为评审员并有需要此用户评审的考题
+
+  \begin{itemize}
+  \tightlist
+  \item
+    评审员能够设置评审结果为``可接受''，考题的状态从``评审''变为``再审''。
+  \item
+    系统在状态变化后通过邮件提醒相关质管员并提示评审信息。
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux8bc4ux5ba1ux5458ux8bbeux7f6eux8bc4ux5ba1ux7ed3ux679cux4e3aux88abux62d2ux7edd}{%
+\subsubsection{评审员设置评审结果为``被拒绝''}\label{ux8bc4ux5ba1ux5458ux8bbeux7f6eux8bc4ux5ba1ux7ed3ux679cux4e3aux88abux62d2ux7edd}}
+
+\begin{itemize}
+\tightlist
+\item
+  先决条件：登陆用户角色为评审员并有需要此用户评审的考题
+
+  \begin{itemize}
+  \tightlist
+  \item
+    评审员能够设置评审结果为``被拒绝''，考题的状态从``评审''修改为``再审''。
+  \item
+    系统在状态变化后通过邮件提醒相关质管员并提示评审信息。
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux8bc4ux5ba1ux5458ux8bbeux7f6eux8bc4ux5ba1ux7ed3ux679cux4e3aux9700ux4feeux6539}{%
+\subsubsection{评审员设置评审结果为``需修改''}\label{ux8bc4ux5ba1ux5458ux8bbeux7f6eux8bc4ux5ba1ux7ed3ux679cux4e3aux9700ux4feeux6539}}
+
+\begin{itemize}
+\tightlist
+\item
+  先决条件：登陆用户角色为评审员并有需要此用户评审的考题
+
+  \begin{itemize}
+  \tightlist
+  \item
+    评审员能够设置评审结果为``需修改''，考题的状态从``评审''变为``修改''。
+  \item
+    系统在状态变化后通过包含评审信息的邮件提醒相关作者修改。
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux8bc4ux5ba1ux5458ux8bc4ux5ba1ux6743ux9650}{%
+\subsubsection{评审员评审权限}\label{ux8bc4ux5ba1ux5458ux8bc4ux5ba1ux6743ux9650}}
+
+\begin{itemize}
+\tightlist
+\item
+  先决条件：登陆用户角色为评审员，考题处于``评审''状态
+
+  \begin{itemize}
+  \tightlist
+  \item
+    评审员有权阅读被主持人分配属于自己评审的考题
+  \item
+    评审员有权对被主持人分配属于自己评审的考题编写评审意见和建议（包括指出考题的错误）
+  \item
+    评审员无权改变被主持人分配属于自己评审的考题（包括内容，属性及其他）
+  \item
+    评审员有权改变被主持人分配属于自己评审的考题的状态
+  \item
+    评审员无权阅读其他考题
+  \item
+    评审员无权对其他考题编写评审意见和建议（包括指出考题的错误）
+  \item
+    评审员无权改变其他考题（包括内容，属性及其他）
+  \item
+    评审员无权改变其他考题的状态
+  \item
+    主持人否有权阅读考题
+  \item
+    主持人无权对考题编写评审意见和建议（包括指出考题的错误）
+  \item
+    主持人无权改变考题（包括内容，属性及其他）
+  \item
+    主持人无权改变考题的状态
+  \item
+    其他角色无权阅读考题
+  \item
+    其他角色无权对考题编写评审意见和建议（包括指出考题的错误）
+  \item
+    其他角色无权改变考题（包括内容，属性及其他）
+  \item
+    其他角色无权改变考题的状态
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux518dux5ba1ux8003ux9898ux72b6ux6001-ux518dux5ba1-ux89d2ux8272-ux8d28ux7ba1ux5458}{%
+\subsection{再审考题(状态: 再审; 角色:
+质管员)}\label{ux518dux5ba1ux8003ux9898ux72b6ux6001-ux518dux5ba1-ux89d2ux8272-ux8d28ux7ba1ux5458}}
+
+\hypertarget{ux8d28ux7ba1ux5458ux8bbeux7f6eux518dux5ba1ux7ed3ux679cux4e3aux53efux53d1ux5e03}{%
+\subsubsection{质管员设置再审结果为``可发布''}\label{ux8d28ux7ba1ux5458ux8bbeux7f6eux518dux5ba1ux7ed3ux679cux4e3aux53efux53d1ux5e03}}
+
+\begin{itemize}
+\tightlist
+\item
+  先决条件：登陆用户角色为质管员并有需要此用户再审的考题
+
+  \begin{itemize}
+  \tightlist
+  \item
+    质管员能够设置再审结果为``可发布''，考题的状态从``再审''变为``发布''。
+  \item
+    系统在状态改变后能够通过邮件提醒主持人。
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux8d28ux7ba1ux5458ux8bbeux7f6eux518dux5ba1ux7ed3ux679cux4e3aux9700ux4feeux6539}{%
+\subsubsection{质管员设置再审结果为``需修改''}\label{ux8d28ux7ba1ux5458ux8bbeux7f6eux518dux5ba1ux7ed3ux679cux4e3aux9700ux4feeux6539}}
+
+\begin{itemize}
+\tightlist
+\item
+  先决条件：登陆用户角色为质管员并有需要此用户再审的考题
+
+  \begin{itemize}
+  \tightlist
+  \item
+    质管员能够设置再审结果为``需修改''，考题的状态从``再审''变为``修改''。
+  \item
+    系统在状态改变后能够通过邮件提醒作者。
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux8d28ux7ba1ux5458ux8bbeux7f6eux518dux5ba1ux7ed3ux679cux4e3aux9700ux4f5cux5e9f}{%
+\subsubsection{质管员设置再审结果为``需作废''}\label{ux8d28ux7ba1ux5458ux8bbeux7f6eux518dux5ba1ux7ed3ux679cux4e3aux9700ux4f5cux5e9f}}
+
+\begin{itemize}
+\tightlist
+\item
+  先决条件：登陆用户角色为质管员并有需要此用户再审的考题
+
+  \begin{itemize}
+  \tightlist
+  \item
+    质管员能够设置再审结果为``需作废''，考题的状态从``再审''变为``作废''。
+  \item
+    系统在状态改变后能够通过邮件提醒主持人。
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux8d28ux7ba1ux5458ux518dux5ba1ux6743ux9650}{%
+\subsubsection{质管员再审权限}\label{ux8d28ux7ba1ux5458ux518dux5ba1ux6743ux9650}}
+
+\begin{itemize}
+\tightlist
+\item
+  先决条件：登陆用户角色为质管员，考题处于``再审''状态
+
+  \begin{itemize}
+  \tightlist
+  \item
+    质管员有权阅读考题
+  \item
+    质管员有权对考题编写评审意见和建议（包括指出考题的错误）
+  \item
+    质管员无权改变考题（包括内容，属性及其他）
+  \item
+    主持人有权阅读考题
+  \item
+    主持人无权对考题编写评审意见和建议（包括指出考题的错误）
+  \item
+    主持人无权改变考题（包括内容，属性及其他）
+  \item
+    主持人无权改变考题的状态
+  \item
+    其余角色无权阅读考题
+  \item
+    其余角色无权对考题编写评审意见和建议（包括指出考题的错误）
+  \item
+    其余角色无权改变考题（包括内容，属性及其他）
+  \item
+    其余角色无权改变考题的状态
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux4feeux6539ux8003ux9898ux72b6ux6001-ux4feeux6539-ux89d2ux8272-ux4f5cux8005}{%
+\subsection{修改考题(状态: 修改; 角色:
+作者)}\label{ux4feeux6539ux8003ux9898ux72b6ux6001-ux4feeux6539-ux89d2ux8272-ux4f5cux8005}}
+
+\hypertarget{ux4f5cux8005ux4feeux6539ux8003ux9898}{%
+\subsubsection{作者修改考题}\label{ux4f5cux8005ux4feeux6539ux8003ux9898}}
+
+\begin{itemize}
+\tightlist
+\item
+  先决条件：登陆用户角色为作者，考题处于修改状态
+
+  \begin{itemize}
+  \tightlist
+  \item
+    作者能够阅读修改要求及意见。
+  \item
+    作者将题目状态设置为``评审''后，系统自动给评审员发送状态变化的邮件提醒。
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux4f5cux8005ux4feeux6539ux6743ux9650}{%
+\subsubsection{作者修改权限}\label{ux4f5cux8005ux4feeux6539ux6743ux9650}}
+
+\begin{itemize}
+\tightlist
+\item
+  先决条件：考题处于``修改''状态
+
+  \begin{itemize}
+  \tightlist
+  \item
+    作者能够阅读所有需要自己修改的考题
+  \item
+    作者可以对需要自己修改的考题（包括内容及属性）进行改动
+  \item
+    作者无权对评审员，质管员，编写时间限制，所属项目等进行修改
+  \item
+    作者可以改变处于``修改''且需要自己修改的考题的状态从``修改''到``评审''而非其他状态
+  \item
+    主持人能够阅读考题
+  \item
+    主持人无权对这些考题（包括内容，属性及其他）进行改动
+  \item
+    主持人无权改变考题的状态从``修改''到其他状态
+  \item
+    作者不能够阅读不需要自己修改的考题
+  \item
+    作者无权对不需要自己修改的考题（包括内容，属性及其他）进行改动
+  \item
+    作者无权改变处于``修改''状态且不需要自己修改的考题的状态从``修改''到``评审''
+  \item
+    作者无权改变处于``修改''状态且不需要自己修改的考题的状态从``修改''到其他状态
+  \item
+    其余角色不能够阅读考题
+  \item
+    其余角色无权对这些考题（包括内容，属性及其他）进行改动
+  \item
+    其余角色无权改变考题的状态从``修改''到其他状态
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux53d1ux5e03ux8003ux9898ux72b6ux6001-ux53d1ux5e03-ux89d2ux8272-ux4e3bux6301ux4eba}{%
+\subsection{发布考题(状态: 发布; 角色:
+主持人)}\label{ux53d1ux5e03ux8003ux9898ux72b6ux6001-ux53d1ux5e03-ux89d2ux8272-ux4e3bux6301ux4eba}}
+
+\hypertarget{ux4e3bux6301ux4ebaux5bfcux51faux53d1ux5e03ux8003ux9898}{%
+\subsubsection{主持人导出发布考题}\label{ux4e3bux6301ux4ebaux5bfcux51faux53d1ux5e03ux8003ux9898}}
+
+\begin{itemize}
+\tightlist
+\item
+  先决条件：考题处于``发布''状态
+
+  \begin{itemize}
+  \tightlist
+  \item
+    主持人可以阅读这些考题
+  \item
+    主持人可以根据考题导出规则导出考题
+  \item
+    主持人不可以修改考题（包括内容，属性及其他）
+  \item
+    主持人不可以修改考题的状态
+  \item
+    导出的考题需要符合考题导出规则
+  \item
+    导出的考题包括考题最终发布版本的所有完整内容及属性，或者同时导出考题的历史数据
+  \item
+    导出的考题文件可以为Excel或XML格式
+  \item
+    导出的考题中不含有冗余信息
+  \item
+    其余角色不可以阅读这些考题
+  \item
+    其余角色不可以导出考题
+  \item
+    其余角色不可以修改考题（包括内容，属性及其他）
+  \item
+    其余角色不可以修改考题的状态
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux4e3bux6301ux4ebaux5bfcux5165ux9898ux5e93}{%
+\subsubsection{主持人导入题库}\label{ux4e3bux6301ux4ebaux5bfcux5165ux9898ux5e93}}
+
+\begin{itemize}
+\tightlist
+\item
+  先决条件：考题已发布，并由主持人以XML或Excel形式导出
+
+  \begin{itemize}
+  \tightlist
+  \item
+    题库系统管理员可以将符合以上先决条件的XML文件导入题库
+  \item
+    题库系统管理员可以将符合以上先决条件的Excel文件导入题库
+  \item
+    题库系统管理员不可以将未发布的考题导入题库
+  \item
+    题库系统管理员不可以将未经主持人导出的考题导入题库
+  \item
+    题库系统管理员不可以将非合法考题形式的XML或Excel文件导入题库
+  \item
+    其他角色不可以将任意XML或Excel文件导入题库
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux4f5cux5e9fux8003ux9898ux72b6ux6001-ux4f5cux5e9f-ux89d2ux8272-ux4e3bux6301ux4eba}{%
+\subsection{作废考题(状态: 作废; 角色:
+主持人)}\label{ux4f5cux5e9fux8003ux9898ux72b6ux6001-ux4f5cux5e9f-ux89d2ux8272-ux4e3bux6301ux4eba}}
+
+\hypertarget{ux4e3bux6301ux4ebaux5e9fux9664ux4f5cux5e9fux8003ux9898}{%
+\subsubsection{主持人废除作废考题}\label{ux4e3bux6301ux4ebaux5e9fux9664ux4f5cux5e9fux8003ux9898}}
+
+\begin{itemize}
+\tightlist
+\item
+  先决条件：考题处于作废状态
+
+  \begin{itemize}
+  \tightlist
+  \item
+    主持可以废除考题
+  \item
+    废除后的考题不能被使用（包括阅读及修改）
+  \item
+    主持人不能修改考题（包括内容，属性及其他）
+  \item
+    主持人不能修改考题的状态
+  \item
+    其余角色不能查看考题
+  \item
+    其余角色没有废除考题的权限
+  \item
+    其余角色不能修改考题（包括内容，属性及其他）
+  \item
+    其余角色不能修改考题的状态
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux4e3bux6301ux4ebaux91cdux542fux51faux9898ux6d41ux7a0b}{%
+\subsubsection{主持人重启出题流程}\label{ux4e3bux6301ux4ebaux91cdux542fux51faux9898ux6d41ux7a0b}}
+
+\begin{itemize}
+\tightlist
+\item
+  先决条件：主持人对于处于作废状态的考题进行判断后，发现无法达成出题目的和要求
+
+  \begin{itemize}
+  \tightlist
+  \item
+    主持人拥有重启项目的权限
+  \item
+    主持人重启项目后，旧项目中的考题不能被阅读和修改
+  \item
+    主持人重启项目后，新项目中的考题能够正常编写及被评审
+  \end{itemize}
+\end{itemize}
+
+\pagebreak
+
+\hypertarget{ux53c2ux8003ux6587ux732e}{%
+\section*{参考文献}\label{ux53c2ux8003ux6587ux732e}}
+\addcontentsline{toc}{section}{参考文献}
+
+\hypertarget{refs}{}
+\leavevmode\hypertarget{ref-innovativeInternationalisation}{}%
+International Organization for Standardization. 2014. \emph{Systems and
+Software Engineering --- Systems and Software Quality Requirements and
+Evaluation (SQuaRE) --- Guide to SQuaRE}. \emph{International
+Organization for Standardization}. Vol. 2014.
+\url{https://www.iso.org/standard/64764.html}.
+
+\leavevmode\hypertarget{ref-innovative1}{}%
+中国国家标准化管理委员会. 2016. \emph{GB/T
+25000.51-2016《系统与软件工程系统与软件质量要求和评价 (SQuaRE) 第 51
+部分 : 就绪可用软件产品 (RUSP) 的质量要求和测试细则》}.
+\emph{系统与软件工程系统与软件质量要求和评价 (SQuaRE)}. Vol. 51.
+中国国家标准化管理委员会. \url{http://openstd.samr.gov.cn}.
+
+\leavevmode\hypertarget{ref-innovative3}{}%
+---------. 2017a. \emph{GB/T 25000.12-2017《系统与软件工程
+系统与软件质量要求和评价(SQuaRE) 第12部分：数据质量模型》}.
+\emph{系统与软件工程系统与软件质量要求和评价 (SQuaRE)}. Vol. 12.
+中国国家标准化管理委员会. \url{http://openstd.samr.gov.cn}.
+
+\leavevmode\hypertarget{ref-innovative4}{}%
+---------. 2017b. \emph{GB/T 25000.24-2017《系统与软件工程
+系统与软件质量要求和评价(SQuaRE) 第24部分：数据质量测量》}.
+\emph{系统与软件工程系统与软件质量要求和评价 (SQuaRE)}. Vol. 24.
+中国国家标准化管理委员会. \url{http://openstd.samr.gov.cn}.
+
+\leavevmode\hypertarget{ref-innovative5}{}%
+---------. 2018. \emph{GB/T 25000.40-201《系统与软件工程
+系统与软件质量要求和评价(SQuaRE) 第40部分：评价过程》}.
+\emph{系统与软件工程系统与软件质量要求和评价 (SQuaRE)}. Vol. 40.
+中国国家标准化管理委员会. \url{http://openstd.samr.gov.cn}.
+
+\leavevmode\hypertarget{ref-innovative2}{}%
+---------. 2019. \emph{GB/T 25000.23-2019《系统与软件工程
+系统与软件质量要求和评价(SQuaRE) 第23部分：系统与软件产品质量测量》}.
+\emph{系统与软件工程系统与软件质量要求和评价 (SQuaRE)}. Vol. 23.
+中国国家标准化管理委员会. \url{http://openstd.samr.gov.cn}.
+
+\end{document}
