@@ -121,7 +121,7 @@
 
 CSTQB4.0-TP1.0 修订历史
 
-\begin{tabular}{|p{2cm}|p{3.3cm}|p{8cm}|}
+\begin{tabular}{|p{2cm}|p{3.3cm}|p{5cm}|}
 \hline
 版本 & 日期 & 说明\\
 \hline
@@ -702,6 +702,176 @@ CSTQB4.0-TP1.0 & 2021 年4 月1 日 & 建立更完善的出题系统的测试计
   \end{itemize}
 \end{itemize}
 
+\hypertarget{ux6d4bux8bd5ux9879ux901aux8fc7ux5931ux8d25ux51c6ux5219}{%
+\section{测试项通过/失败准则}\label{ux6d4bux8bd5ux9879ux901aux8fc7ux5931ux8d25ux51c6ux5219}}
+
+\begin{itemize}
+\tightlist
+\item
+  组件测试相关准则
+
+  \begin{itemize}
+  \tightlist
+  \item
+    通过准则
+
+    \begin{itemize}
+    \tightlist
+    \item
+      关于该组件接口的准则通过率达100\%
+    \item
+      代码覆盖率达80\%以上
+    \end{itemize}
+  \item
+    失败准则
+
+    \begin{itemize}
+    \tightlist
+    \item
+      任意测试组件的相关准则有不符合的条目即为失败
+    \end{itemize}
+  \end{itemize}
+\item
+  集成测试相关准则
+
+  \begin{itemize}
+  \tightlist
+  \item
+    通过准则
+
+    \begin{itemize}
+    \tightlist
+    \item
+      所有接口测试通过率达100\%
+    \item
+      单元测试平均代码覆盖率达80\%以上
+    \end{itemize}
+  \end{itemize}
+\item
+  系统测试相关准则
+
+  \begin{itemize}
+  \tightlist
+  \item
+    通过准则
+
+    \begin{itemize}
+    \tightlist
+    \item
+      该版本的系统功能能够完整运作
+    \end{itemize}
+  \end{itemize}
+\item
+  验收测试相关准则
+
+  \begin{itemize}
+  \tightlist
+  \item
+    通过准则
+
+    \begin{itemize}
+    \tightlist
+    \item
+      软件需求分析说明书中定义的所有功能已全部实现，性能指标全部达到要求。
+    \item
+      所有测试项没有残余的一级二级三级的错误。
+    \item
+      立项审批表、需求分析文档、设计文档和编码实现一致。
+    \item
+      验收测试工件齐全（测试计划，测试用例，测试日志，测试通知单，测试分析报告）
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux8981ux6d4bux8bd5ux7684ux7279ux6027}{%
+\section{要测试的特性}\label{ux8981ux6d4bux8bd5ux7684ux7279ux6027}}
+
+\hypertarget{ux6d4bux8bd5ux7528ux4f8bux89c4ux8303}{%
+\subsection{测试用例规范：}\label{ux6d4bux8bd5ux7528ux4f8bux89c4ux8303}}
+
+\begin{itemize}
+\tightlist
+\item
+  用例类型：功能测试、性能测试、配置相关、安装部署、安全相关、接口测试、其他
+\item
+  适用阶段：单元测试阶段、功能测试阶段、集成测试阶段、系统测试阶段、冒烟-
+  测试阶段、版本验证阶段
+\item
+  相关需求：测试用例关联的需求名称
+\item
+  用例标题：相关需求名-用例概括-编号
+\item
+  优先级：1、2、3、4
+\item
+  前置条件：用例测试的前置条件描述
+\item
+  用例步骤与预期结果
+\item
+  关键词
+\end{itemize}
+
+\hypertarget{ux4e0dux4f1aux88abux6d4bux8bd5ux7684ux7279ux6027}{%
+\section{不会被测试的特性}\label{ux4e0dux4f1aux88abux6d4bux8bd5ux7684ux7279ux6027}}
+
+\hypertarget{ux65b9ux6cd5}{%
+\section{方法}\label{ux65b9ux6cd5}}
+
+\hypertarget{ux6682ux505cux51c6ux5219ux548cux7ee7ux7eedux51c6ux5219}{%
+\section{暂停准则和继续准则}\label{ux6682ux505cux51c6ux5219ux548cux7ee7ux7eedux51c6ux5219}}
+
+\begin{itemize}
+\tightlist
+\item
+  暂停准则列表
+
+  \begin{itemize}
+  \tightlist
+  \item
+    当系统环境中必要的jar依赖包受到损坏或丢失，以至于系统无法启动时，测试暂停
+  \item
+    某组件相关测试准则通过率小于50\%时测试暂停
+  \end{itemize}
+\item
+  继续准则列表
+
+  \begin{itemize}
+  \tightlist
+  \item
+    因测试项准则通过率过低而被暂停的测试，开发人员修复结束后继续进行
+  \item
+    系统能够启动（主页能够在浏览器上被正常显示）时，测试继续
+  \item
+    测试暂停时进行到一半的测试活动需要被重启
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux6d4bux8bd5ux4ea4ux4ed8ux7269}{%
+\section{测试交付物}\label{ux6d4bux8bd5ux4ea4ux4ed8ux7269}}
+
+\begin{itemize}
+\tightlist
+\item
+  完整测试计划
+\item
+  测试设计规范
+\item
+  测试用例规范
+\item
+  测试程序规范
+\item
+  测试项目传送报告
+\item
+  测试日志
+\item
+  测试事故报告
+\item
+  测试总结报告
+\item
+  测试数据
+\item
+  测试工具记录
+\end{itemize}
+
 \hypertarget{ux6d4bux8bd5ux4efbux52a1}{%
 \section{测试任务}\label{ux6d4bux8bd5ux4efbux52a1}}
 
@@ -803,8 +973,165 @@ CSTQB4.0-TP1.0 & 2021 年4 月1 日 & 建立更完善的出题系统的测试计
   内容：模拟特定场景边界发生的事情，通过事件来触发某个动作的发生，观察事件的最终结果，从而用来发现需求中存在的问题
 \end{itemize}
 
+\hypertarget{ux73afux5883ux9700ux6c42}{%
+\section{环境需求}\label{ux73afux5883ux9700ux6c42}}
+
+\begin{itemize}
+\tightlist
+\item
+  硬件环境
+
+  \begin{itemize}
+  \tightlist
+  \item
+    能够连到互联网的个人电脑（若为Windows则需Windows7以上系统，内存大于等于2G）
+  \item
+    方便的实时语音通讯工具
+  \end{itemize}
+\item
+  软件环境
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Java 1.8 运行环境
+  \item
+    Maven
+  \item
+    适当的Java IDE
+  \end{itemize}
+\item
+  测试数据
+
+  \begin{itemize}
+  \tightlist
+  \item
+    用户数据包含多位主持人、作者、评审员、质管员，具体数据来源复旦大学软件学院教师资料
+  \end{itemize}
+\item
+  工具
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \url{https://codecov.io}
+  \item
+    \url{https://jenkins.io}
+  \item
+    \url{https://semmle.com/codeql}
+  \item
+    \url{https://travis-ci.org}
+  \item
+    \url{https://www.appveyor.com}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux8d23ux4efb}{%
+\section{责任}\label{ux8d23ux4efb}}
+
+\begin{itemize}
+\tightlist
+\item
+  出题系统测试小组：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Chen
+    Wang：管理与出题系统功能相关的所有测试、检查测试用例设计是否符合规范、总结测试结果
+  \item
+    Jiaxing Liu：为小组负责的测试项设计测试用例、作证测试用例执行结果
+  \item
+    Chenning Wu：执行测试用例并记录
+  \end{itemize}
+\item
+  题库管理系统测试小组：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Yihan
+    Zhang：管理与题库管理系统功能相关的所有测试、检查测试用例设计是否符合规范、总结测试结果
+  \item
+    Cenyuan Zhang：为小组负责的测试项设计测试用例、作证测试用例执行结果
+  \item
+    Ruixin Shi：执行测试用例并记录
+  \end{itemize}
+\item
+  集成测试小组：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Jia'ni
+    Huang：管理与系统非功能需求相关的所有测试及出题系统与题库管理系统之间的接口测试、检查测试用例设计是否符合规范、总结测试结果
+  \item
+    Jiahe Tian：为小组负责的测试项设计测试用例、作证测试用例执行结果
+  \item
+    Xiaoxiao Hu：执行测试用例并记录
+  \end{itemize}
+\item
+  提供测试项的小组：Ruixin Shi、Xiaoxiao Hu、Jiahe Tian
+\item
+  提供环境需求的小组：Chen Wang、Jiaxing Liu、Cenyuan Zhang
+\end{itemize}
+
+\hypertarget{ux4ebaux624bux548cux57f9ux8badux7684ux9700ux8981}{%
+\section{人手和培训的需要}\label{ux4ebaux624bux548cux57f9ux8badux7684ux9700ux8981}}
+
+\begin{itemize}
+\tightlist
+\item
+  测试工具培训
+
+  \begin{itemize}
+  \tightlist
+  \item
+    培训师：王宸
+  \item
+    资质：参与多次大型项目开发与测试工作，熟悉当今流行的测试工具
+  \end{itemize}
+\item
+  测试流程规范培训
+
+  \begin{itemize}
+  \tightlist
+  \item
+    培训师：刘佳兴
+  \item
+    资质：上市公司合作人，具有丰富的管理经验，可以轻松协调安排组内成员测试的规范性和一致性
+  \end{itemize}
+\end{itemize}
+
+\begin{tabular}{|p{2cm}|p{3.3cm}|p{8cm}|}
+\hline
+测试人员 & 需求技能 & 需求培训\\
+\hline
+Chen Wang & 熟悉测试工具、文档规范 & 测试流程规范培训\\
+\hline
+Jiaxing Liu & 熟悉测试用例设计规范 & 测试工具培训\\
+\hline
+Chenning Wu & 熟悉文档规范、程序代码、测试工具 & 测试流程规范培训、测试工具培训\\
+\hline
+Yihan Zhang & 熟悉测试工具、文档规范 & 测试流程规范培训、测试工具培训\\
+\hline
+Cenyuan Zhang & 熟悉测试用例设计规范 & 测试流程规范培训、测试工具培训\\
+\hline
+Ruixin Shi & 熟悉文档规范、程序代码、测试工具 & 测试流程规范培训、测试工具培训\\
+\hline
+Jia'ni Huang & 熟悉测试工具、文档规范 & 测试流程规范培训、测试工具培训\\
+\hline
+Jiahe Tian & 熟悉测试用例设计规范 & 测试流程规范培训、测试工具培训\\
+\hline
+Xiaoxiao Hu & 熟悉文档规范、程序代码、测试工具 & 测试流程规范培训、测试工具培训\\
+\hline
+\end{tabular}
+
 \hypertarget{ux65f6ux95f4ux8868}{%
 \section{时间表}\label{ux65f6ux95f4ux8868}}
+
+\hypertarget{ux603bux4f53ux65f6ux95f4ux8868}{%
+\subsection{总体时间表}\label{ux603bux4f53ux65f6ux95f4ux8868}}
 
 \begin{longtable}[]{@{}lll@{}}
 \toprule
@@ -866,6 +1193,45 @@ CSTQB4.0-TP1.0 & 2021 年4 月1 日 & 建立更完善的出题系统的测试计
 \end{minipage}\tabularnewline
 \bottomrule
 \end{longtable}
+
+\hypertarget{ux91ccux7a0bux7891}{%
+\subsection{里程碑}\label{ux91ccux7a0bux7891}}
+
+\begin{itemize}
+\tightlist
+\item
+  需求冻结：需求完全确定且不再进行版本更新
+\item
+  计划完成：测试计划书定稿
+\item
+  白盒测试完成：所有测试用例通过率达到100\%，代码覆盖率达80\%以上
+\item
+  黑盒测试完成：所有测试用例通过率达到100\%
+\item
+  安全性测试完成：所有测试用例通过率达到100\%
+\item
+  静态测试完成：代码全部审核完成且更改完毕
+\item
+  场景测试完成：所有测试用例通过率达到100\%
+\item
+  项目发布
+\end{itemize}
+
+\hypertarget{ux98ceux9669ux4ee5ux53caux5e94ux6025ux63aaux65bd}{%
+\section{风险以及应急措施}\label{ux98ceux9669ux4ee5ux53caux5e94ux6025ux63aaux65bd}}
+
+\hypertarget{ux6388ux6743}{%
+\section{授权}\label{ux6388ux6743}}
+
+\begin{itemize}
+\tightlist
+\item
+  核准计划负责人：沈立炜（总监）
+\item
+  签名：
+\item
+  日期：
+\end{itemize}
 
 \pagebreak
 
