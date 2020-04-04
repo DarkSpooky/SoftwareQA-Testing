@@ -40,7 +40,6 @@
             linkcolor=magenta,
             pdfborder={0 0 0}}
 \urlstyle{same}  % don't use monospace font for urls
-\usepackage{longtable,booktabs}
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -813,8 +812,467 @@ CSTQB4.0-TP1.0 & 2021 年4 月1 日 & 建立更完善的出题系统的测试计
 \hypertarget{ux4e0dux4f1aux88abux6d4bux8bd5ux7684ux7279ux6027}{%
 \section{不会被测试的特性}\label{ux4e0dux4f1aux88abux6d4bux8bd5ux7684ux7279ux6027}}
 
-\hypertarget{ux65b9ux6cd5}{%
-\section{方法}\label{ux65b9ux6cd5}}
+\hypertarget{ux65b9ux6cd5ux5173ux4e8eux6d4bux8bd5ux9879ux7684ux98ceux9669ux8bc4ux4f30}{%
+\section{方法（关于测试项的风险评估）}\label{ux65b9ux6cd5ux5173ux4e8eux6d4bux8bd5ux9879ux7684ux98ceux9669ux8bc4ux4f30}}
+
+\hypertarget{ux767bux5f55ux6821ux9a8c}{%
+\subsection{登录校验}\label{ux767bux5f55ux6821ux9a8c}}
+
+\hypertarget{ux7528ux6237ux4ee5ux975eux6cd5ux65b9ux5f0fux767bux5165ux7cfbux7edf}{%
+\subsubsection{用户以非法方式登入系统}\label{ux7528ux6237ux4ee5ux975eux6cd5ux65b9ux5f0fux767bux5165ux7cfbux7edf}}
+
+\begin{itemize}
+\tightlist
+\item
+  描述：用户利用SQL注入等方式，绕过登录校验以管理员等身份登陆进系统；可能造成恶意用户对系统数据的篡改和删除
+\item
+  可能性：中
+\item
+  影响程度：高
+\item
+  缓解措施：加强对登录页面的输入校验，过滤恶意输入
+\item
+  风险级别：一般损失
+\end{itemize}
+
+\hypertarget{ux5408ux6cd5ux7528ux6237ux65e0ux6cd5ux767bux5165ux7cfbux7edf}{%
+\subsubsection{合法用户无法登入系统}\label{ux5408ux6cd5ux7528ux6237ux65e0ux6cd5ux767bux5165ux7cfbux7edf}}
+
+\begin{itemize}
+\tightlist
+\item
+  描述：因为数据库损坏等原因，合法用户无法正常登入系统
+\item
+  可能性：低
+\item
+  影响程度：中
+\item
+  缓解措施：对数据进行备份
+\item
+  风险级别：一般损失
+\end{itemize}
+
+\hypertarget{ux4feeux6539ux4e2aux4ebaux4fe1ux606f}{%
+\subsection{修改个人信息}\label{ux4feeux6539ux4e2aux4ebaux4fe1ux606f}}
+
+\hypertarget{ux7528ux6237ux4e2aux4ebaux4fe1ux606fux4fddux5b58ux5931ux8d25}{%
+\subsubsection{用户个人信息保存失败}\label{ux7528ux6237ux4e2aux4ebaux4fe1ux606fux4fddux5b58ux5931ux8d25}}
+
+\begin{itemize}
+\tightlist
+\item
+  描述：因为网络连接失败或并发过高，用户修改个人信息后无法保存
+\item
+  可能性：低
+\item
+  影响程度：低
+\item
+  缓解措施：对用户的信息在本地进行储存，重新请求
+\item
+  风险级别：没有损失
+\end{itemize}
+
+\hypertarget{ux4e3bux6301ux4ebaux521bux5efaux9879ux76ee-1}{%
+\subsection{主持人创建项目}\label{ux4e3bux6301ux4ebaux521bux5efaux9879ux76ee-1}}
+
+\hypertarget{ux4e3bux6301ux4ebaux521bux5efaux9879ux76eeux5931ux8d25}{%
+\subsubsection{主持人创建项目失败}\label{ux4e3bux6301ux4ebaux521bux5efaux9879ux76eeux5931ux8d25}}
+
+\begin{itemize}
+\tightlist
+\item
+  描述：由于网络错误等原因，主持人创建项目时无法成功对项目进行规划，如限制项目考题数量或考题范围，或创建项目成功后无法保存设置
+\item
+  可能性：低
+\item
+  影响程度：中
+\item
+  缓解措施：合理设置主持人的权限并用log记录其行动，方便进行行动复现
+\item
+  风险级别：一般损失
+\end{itemize}
+
+\hypertarget{ux4e3bux6301ux4ebaux65b0ux5efaux8003ux9898-1}{%
+\subsection{主持人新建考题}\label{ux4e3bux6301ux4ebaux65b0ux5efaux8003ux9898-1}}
+
+\hypertarget{ux4e3bux6301ux4ebaux65b0ux5efaux8003ux9898ux5931ux8d25}{%
+\subsubsection{主持人新建考题失败}\label{ux4e3bux6301ux4ebaux65b0ux5efaux8003ux9898ux5931ux8d25}}
+
+\begin{itemize}
+\tightlist
+\item
+  描述：由于网络错误等原因，主持人无法设置新考题的状态，属性或相关管理人员
+\item
+  可能性：低
+\item
+  影响程度：中
+\item
+  缓解措施：合理设置主持人的权限并用log记录其行动，方便进行行动复现
+\item
+  风险级别：一般损失
+\end{itemize}
+
+\hypertarget{ux7cfbux7edfux53d1ux9001ux90aeux4ef6ux5931ux8d25}{%
+\subsubsection{系统发送邮件失败}\label{ux7cfbux7edfux53d1ux9001ux90aeux4ef6ux5931ux8d25}}
+
+\begin{itemize}
+\tightlist
+\item
+  描述：系统没有成功将邮件发送给相关管理人员
+\item
+  可能性：中
+\item
+  影响程度：中
+\item
+  缓解措施：若相关管理人员一段时间内没有登入系统则重发邮件
+\item
+  风险级别：一般损失
+\end{itemize}
+
+\hypertarget{ux4e3bux6301ux4ebaux8bbeux7f6eux8003ux9898ux671fux9650-1}{%
+\subsection{主持人设置考题期限}\label{ux4e3bux6301ux4ebaux8bbeux7f6eux8003ux9898ux671fux9650-1}}
+
+\hypertarget{ux4e3bux6301ux4ebaux8bbeux7f6eux8003ux9898ux671fux9650ux5931ux8d25}{%
+\subsubsection{主持人设置考题期限失败}\label{ux4e3bux6301ux4ebaux8bbeux7f6eux8003ux9898ux671fux9650ux5931ux8d25}}
+
+\begin{itemize}
+\tightlist
+\item
+  描述：主持人无法设定考题状态或错误设定评审考题的时间限期
+\item
+  可能性：中
+\item
+  影响程度：中
+\item
+  缓解措施：合理设置主持人的权限并用log记录其行动，方便进行行动复现；对主持人输入的时间限期是否合理进行检查
+\item
+  风险级别：一般损失
+\end{itemize}
+
+\hypertarget{ux4e3bux6301ux4ebaux4feeux6539ux72b6ux6001}{%
+\subsection{主持人修改状态}\label{ux4e3bux6301ux4ebaux4feeux6539ux72b6ux6001}}
+
+\hypertarget{ux4e3bux6301ux4ebaux4feeux6539ux72b6ux6001ux5931ux8d25}{%
+\subsubsection{主持人修改状态失败}\label{ux4e3bux6301ux4ebaux4feeux6539ux72b6ux6001ux5931ux8d25}}
+
+\begin{itemize}
+\tightlist
+\item
+  描述：主持人对于未完成设置的题目修改了状态，或完成设置后无法修改状态
+\item
+  可能性：低
+\item
+  影响程度：中
+\item
+  缓解措施：为防止高并发情况下出现此种状况，修改状态时对题目的设置进行检查，合理设置主持人的权限
+\item
+  风险级别：一般损失
+\end{itemize}
+
+\hypertarget{ux7cfbux7edfux53d1ux9001ux90aeux4ef6ux5931ux8d25-1}{%
+\subsubsection{系统发送邮件失败}\label{ux7cfbux7edfux53d1ux9001ux90aeux4ef6ux5931ux8d25-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  描述：系统没有成功将邮件发送给相关管理人员
+\item
+  可能性：中
+\item
+  影响程度：中
+\item
+  缓解措施：若相关管理人员一段时间内没有登入系统则重发邮件
+\item
+  风险级别：一般损失
+\end{itemize}
+
+\hypertarget{ux4f5cux8005ux8bbeux7f6eux591aux7c7bux578bux8003ux9898-1}{%
+\subsection{作者设置多类型考题}\label{ux4f5cux8005ux8bbeux7f6eux591aux7c7bux578bux8003ux9898-1}}
+
+\hypertarget{ux4f5cux8005ux65e0ux6cd5ux7f16ux5199ux5e26ux6709ux8868ux683cux56feux5f62ux7b49ux7684ux8003ux9898}{%
+\subsubsection{作者无法编写带有表格，图形等的考题}\label{ux4f5cux8005ux65e0ux6cd5ux7f16ux5199ux5e26ux6709ux8868ux683cux56feux5f62ux7b49ux7684ux8003ux9898}}
+
+\begin{itemize}
+\tightlist
+\item
+  描述：由于富文本编辑器的bug，作者无法在考题中插入表格及图形或表格或图形出现乱码
+\item
+  可能性：中
+\item
+  影响程度：中
+\item
+  缓解措施：在上线前对文本编辑器进行多轮测试并提供备用编辑器
+\item
+  风险级别：一般损失
+\end{itemize}
+
+\hypertarget{ux4f5cux8005ux5bfcux5165ux8003ux9898ux65f6ux5229ux7528ux4e0dux5408ux6cd5ux6587ux4ef6ux8fdbux884cux653bux51fb}{%
+\subsubsection{作者导入考题时利用不合法文件进行攻击}\label{ux4f5cux8005ux5bfcux5165ux8003ux9898ux65f6ux5229ux7528ux4e0dux5408ux6cd5ux6587ux4ef6ux8fdbux884cux653bux51fb}}
+
+\begin{itemize}
+\tightlist
+\item
+  描述：作者在XML中插入后门，在系统解析XML时对系统进行攻击
+\item
+  可能性：低
+\item
+  影响程度：高
+\item
+  缓解措施：对用户上传的XML文件进行过滤
+\item
+  风险级别：一般损失
+\end{itemize}
+
+\hypertarget{ux4f5cux8005ux4feeux6539ux72b6ux6001}{%
+\subsection{作者修改状态}\label{ux4f5cux8005ux4feeux6539ux72b6ux6001}}
+
+\hypertarget{ux4f5cux8005ux9519ux8befux4feeux6539ux72b6ux6001}{%
+\subsubsection{作者错误修改状态}\label{ux4f5cux8005ux9519ux8befux4feeux6539ux72b6ux6001}}
+
+\begin{itemize}
+\tightlist
+\item
+  描述：作者对未完成编写的题目修改了状态或作者编写完成后无法修改题目状态
+\item
+  可能性：低
+\item
+  影响程度：中
+\item
+  缓解措施：为防止高并发前提下出现此种状态，在修改状态的请求前对题目的编写状态进行确认
+\item
+  风险级别：一般损失
+\end{itemize}
+
+\hypertarget{ux8bc4ux5ba1ux5458ux8bbeux7f6eux8bc4ux5ba1ux7ed3ux679c}{%
+\subsection{评审员设置评审结果}\label{ux8bc4ux5ba1ux5458ux8bbeux7f6eux8bc4ux5ba1ux7ed3ux679c}}
+
+\hypertarget{ux7cfbux7edfux53d1ux9001ux90aeux4ef6ux5931ux8d25-2}{%
+\subsubsection{系统发送邮件失败}\label{ux7cfbux7edfux53d1ux9001ux90aeux4ef6ux5931ux8d25-2}}
+
+\begin{itemize}
+\tightlist
+\item
+  描述：系统没有成功将邮件发送给相关管理人员
+\item
+  可能性：中
+\item
+  影响程度：中
+\item
+  缓解措施：若相关管理人员一段时间内没有登入系统则重发邮件
+\item
+  风险级别：一般损失
+\end{itemize}
+
+\hypertarget{ux8bc4ux5ba1ux5458ux8bc4ux5ba1ux6743ux9650-1}{%
+\subsection{评审员评审权限}\label{ux8bc4ux5ba1ux5458ux8bc4ux5ba1ux6743ux9650-1}}
+
+\hypertarget{ux8bc4ux5ba1ux5458ux6743ux9650ux9519ux8bef}{%
+\subsubsection{评审员权限错误}\label{ux8bc4ux5ba1ux5458ux6743ux9650ux9519ux8bef}}
+
+\begin{itemize}
+\tightlist
+\item
+  描述：因为权限设置失败，评审员无法阅读及编辑属于自己评审的考题或有权阅读及编辑不属于自己评审的考题
+\item
+  可能性：低
+\item
+  影响程度：中
+\item
+  缓解措施：上线前进行多种权限测试；在考题处设置申请访问权限的入口，在检测到越权的修改记录后对评审员账户进行封禁
+\item
+  风险级别：一般损失
+\end{itemize}
+
+\hypertarget{ux8d28ux7ba1ux5458ux8bbeux7f6eux518dux5ba1ux7ed3ux679c}{%
+\subsection{质管员设置再审结果}\label{ux8d28ux7ba1ux5458ux8bbeux7f6eux518dux5ba1ux7ed3ux679c}}
+
+\hypertarget{ux7cfbux7edfux53d1ux9001ux90aeux4ef6ux5931ux8d25-3}{%
+\subsubsection{系统发送邮件失败}\label{ux7cfbux7edfux53d1ux9001ux90aeux4ef6ux5931ux8d25-3}}
+
+\begin{itemize}
+\tightlist
+\item
+  描述：系统没有成功将邮件发送给相关管理人员
+\item
+  可能性：中
+\item
+  影响程度：中
+\item
+  缓解措施：若相关管理人员一段时间内没有登入系统则重发邮件
+\item
+  风险级别：一般损失
+\end{itemize}
+
+\hypertarget{ux8d28ux7ba1ux5458ux518dux5ba1ux6743ux9650-1}{%
+\subsection{质管员再审权限}\label{ux8d28ux7ba1ux5458ux518dux5ba1ux6743ux9650-1}}
+
+\hypertarget{ux8d28ux7ba1ux5458ux518dux5ba1ux6743ux9650ux9519ux8bef}{%
+\subsubsection{质管员再审权限错误}\label{ux8d28ux7ba1ux5458ux518dux5ba1ux6743ux9650ux9519ux8bef}}
+
+\begin{itemize}
+\tightlist
+\item
+  描述：因为权限设置失败，质管员无法阅读及编辑属于自己再审的考题或有权阅读及编辑不属于自己再审的考题
+\item
+  可能性：低
+\item
+  影响程度：中
+\item
+  缓解措施：上线前进行多种权限测试；在考题处设置申请访问权限的入口，在检测到越权的修改记录后对质管员账户进行封禁
+\item
+  风险级别：一般损失
+\end{itemize}
+
+\hypertarget{ux4f5cux8005ux4feeux6539ux8003ux9898-1}{%
+\subsection{作者修改考题}\label{ux4f5cux8005ux4feeux6539ux8003ux9898-1}}
+
+\hypertarget{ux7cfbux7edfux53d1ux9001ux90aeux4ef6ux5931ux8d25-4}{%
+\subsubsection{系统发送邮件失败}\label{ux7cfbux7edfux53d1ux9001ux90aeux4ef6ux5931ux8d25-4}}
+
+\begin{itemize}
+\tightlist
+\item
+  描述：系统没有成功将邮件发送给相关管理人员
+\item
+  可能性：中
+\item
+  影响程度：中
+\item
+  缓解措施：若相关管理人员一段时间内没有登入系统则重发邮件
+\item
+  风险级别：一般损失
+\end{itemize}
+
+\hypertarget{ux4f5cux8005ux4feeux6539ux6743ux9650-1}{%
+\subsection{作者修改权限}\label{ux4f5cux8005ux4feeux6539ux6743ux9650-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  描述：因为权限设置失败，作者无法阅读及编辑需要自己修改的考题或有权阅读及编辑不属于自己修改的考题
+\item
+  可能性：低
+\item
+  影响程度：中
+\item
+  缓解措施：上线前进行多种权限测试；在考题处设置申请访问权限的入口，在检测到越权的修改记录后对作者账户进行封禁
+\item
+  风险级别：一般损失
+\end{itemize}
+
+\hypertarget{ux4e3bux6301ux4ebaux5bfcux51faux53d1ux5e03ux8003ux9898-1}{%
+\subsection{主持人导出发布考题}\label{ux4e3bux6301ux4ebaux5bfcux51faux53d1ux5e03ux8003ux9898-1}}
+
+\hypertarget{ux53d1ux5e03ux8003ux9898ux6570ux636eux635fux574f}{%
+\subsubsection{发布考题数据损坏}\label{ux53d1ux5e03ux8003ux9898ux6570ux636eux635fux574f}}
+
+\begin{itemize}
+\tightlist
+\item
+  描述：因为数据损坏，考题无法被阅读，主持人无法导出考题或导出的考题中含有冗余数据
+\item
+  可能性：低
+\item
+  影响程度：高
+\item
+  缓解措施：对数据进行备份
+\item
+  风险级别：一般损失
+\end{itemize}
+
+\hypertarget{ux5bfcux51faux7684ux8003ux9898ux4e0dux7b26ux5408ux8003ux9898ux5bfcux51faux89c4ux5219}{%
+\subsubsection{导出的考题不符合考题导出规则}\label{ux5bfcux51faux7684ux8003ux9898ux4e0dux7b26ux5408ux8003ux9898ux5bfcux51faux89c4ux5219}}
+
+\begin{itemize}
+\tightlist
+\item
+  描述：因为在考题导出过程中规则被修改等情况，考题不符合考题导出规则
+\item
+  可能性：低
+\item
+  影响程度：低
+\item
+  缓解措施：导出考题前重新对规则进行检查
+\item
+  风险级别：没有损失
+\end{itemize}
+
+\hypertarget{ux4e3bux6301ux4ebaux5bfcux5165ux9898ux5e93-1}{%
+\subsection{主持人导入题库}\label{ux4e3bux6301ux4ebaux5bfcux5165ux9898ux5e93-1}}
+
+\hypertarget{ux7ba1ux7406ux5458ux5bfcux5165ux8003ux9898ux65f6ux5229ux7528ux4e0dux5408ux6cd5ux6587ux4ef6ux8fdbux884cux653bux51fb}{%
+\subsubsection{管理员导入考题时利用不合法文件进行攻击}\label{ux7ba1ux7406ux5458ux5bfcux5165ux8003ux9898ux65f6ux5229ux7528ux4e0dux5408ux6cd5ux6587ux4ef6ux8fdbux884cux653bux51fb}}
+
+\begin{itemize}
+\tightlist
+\item
+  描述：管理员导入考题时在XML中插入后门，在系统解析XML时对系统进行攻击
+\item
+  可能性：低
+\item
+  影响程度：高
+\item
+  缓解措施：对输入文件进行格式检查和非法字符过滤
+\item
+  风险级别：一般损失
+\end{itemize}
+
+\hypertarget{ux4e3bux6301ux4ebaux5e9fux9664ux4f5cux5e9fux8003ux9898-1}{%
+\subsection{主持人废除作废考题}\label{ux4e3bux6301ux4ebaux5e9fux9664ux4f5cux5e9fux8003ux9898-1}}
+
+\hypertarget{ux5e9fux9664ux540eux7684ux8003ux9898ux4ecdux80fdux88abux4f7fux7528}{%
+\subsubsection{废除后的考题仍能被使用}\label{ux5e9fux9664ux540eux7684ux8003ux9898ux4ecdux80fdux88abux4f7fux7528}}
+
+\begin{itemize}
+\tightlist
+\item
+  描述：由于主持人的废除操作被打断等原因，废除后的考题仍然能被查看及使用
+\item
+  可能性：低
+\item
+  影响程度：中
+\item
+  缓解措施：对主持人的操作进行log记录以方便重现
+\item
+  风险级别：一般损失
+\end{itemize}
+
+\hypertarget{ux4e3bux6301ux4ebaux91cdux542fux51faux9898ux6d41ux7a0b-1}{%
+\subsection{主持人重启出题流程}\label{ux4e3bux6301ux4ebaux91cdux542fux51faux9898ux6d41ux7a0b-1}}
+
+\hypertarget{ux65e7ux9879ux76eeux4e2dux7684ux8003ux9898ux4ecdux80fdux88abux9605ux8bfbux6216ux4feeux6539}{%
+\subsubsection{旧项目中的考题仍能被阅读或修改}\label{ux65e7ux9879ux76eeux4e2dux7684ux8003ux9898ux4ecdux80fdux88abux9605ux8bfbux6216ux4feeux6539}}
+
+\begin{itemize}
+\tightlist
+\item
+  描述：由于主持人的重启操作被打断等原因，旧项目中的考题仍能被阅读或修改
+\item
+  可能性：低
+\item
+  影响程度：低
+\item
+  缓解措施：每次项目被使用时对项目状态进行确认
+\item
+  风险级别：没有损失
+\end{itemize}
+
+\hypertarget{ux65b0ux9879ux76eeux4e2dux7684ux8003ux9898ux65e0ux6cd5ux6b63ux5e38ux4f7fux7528}{%
+\subsubsection{新项目中的考题无法正常使用}\label{ux65b0ux9879ux76eeux4e2dux7684ux8003ux9898ux65e0ux6cd5ux6b63ux5e38ux4f7fux7528}}
+
+\begin{itemize}
+\tightlist
+\item
+  描述：由于主持人的重启操作被打断等原因，新项目中的考题无法正常使用
+\item
+  可能性：低
+\item
+  影响程度：高
+\item
+  缓解措施：检测到考题无法正常使用时对新建项目中的考题进行备份，以便再次新建时可以被使用
+\item
+  风险级别：一般损失
+\end{itemize}
 
 \hypertarget{ux6682ux505cux51c6ux5219ux548cux7ee7ux7eedux51c6ux5219}{%
 \section{暂停准则和继续准则}\label{ux6682ux505cux51c6ux5219ux548cux7ee7ux7eedux51c6ux5219}}
@@ -1133,66 +1591,21 @@ Xiaoxiao Hu & 熟悉文档规范、程序代码、测试工具 & 测试流程规
 \hypertarget{ux603bux4f53ux65f6ux95f4ux8868}{%
 \subsection{总体时间表}\label{ux603bux4f53ux65f6ux95f4ux8868}}
 
-\begin{longtable}[]{@{}lll@{}}
-\toprule
-\begin{minipage}[b]{0.13\columnwidth}\raggedright
-时间\strut
-\end{minipage} & \begin{minipage}[b]{0.28\columnwidth}\raggedright
-测试任务内容\strut
-\end{minipage} & \begin{minipage}[b]{0.50\columnwidth}\raggedright
-说明\strut
-\end{minipage}\tabularnewline
-\midrule
-\endhead
-\begin{minipage}[t]{0.13\columnwidth}\raggedright
-3月24日-4月5日\strut
-\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedright
-测试计划的编撰\strut
-\end{minipage} & \begin{minipage}[t]{0.50\columnwidth}\raggedright
--\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.13\columnwidth}\raggedright
-4月6日-4月20日\strut
-\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedright
-白盒测试用例设计与执行\strut
-\end{minipage} & \begin{minipage}[t]{0.50\columnwidth}\raggedright
-4月6日-4月10日：小组讨论及用例编写 4月11日-4月18日：具体执行及结果记录
-4月19日-4月20日：总结及报告撰写\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.13\columnwidth}\raggedright
-4月21日-5月11日\strut
-\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedright
-黑盒测试用例设计与执行\strut
-\end{minipage} & \begin{minipage}[t]{0.50\columnwidth}\raggedright
-4月21日-4月26日：小组讨论及用例编写 4月27日-5月9日：具体执行及结果记录
-5月10日-5月11日：总结及报告撰写\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.13\columnwidth}\raggedright
-5月12日-5月18日\strut
-\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedright
-性能测试用例设计与执行\strut
-\end{minipage} & \begin{minipage}[t]{0.50\columnwidth}\raggedright
-5月12日-5月13日：小组讨论及用例编写 5月14日-5月16日：具体执行及结果记录
-5月17日-5月18日：总结及报告撰写\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.13\columnwidth}\raggedright
-5月19日-5月25日\strut
-\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedright
-安全性测试与静态测试用例设计与执行\strut
-\end{minipage} & \begin{minipage}[t]{0.50\columnwidth}\raggedright
-5月19日-5月20日：小组讨论及用例编写 5月21日-5月23日：具体执行及结果记录
-5月24日-5月25日：总结及报告撰写\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.13\columnwidth}\raggedright
-5月26日-6月1日\strut
-\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedright
-场景测试用例设计与执行\strut
-\end{minipage} & \begin{minipage}[t]{0.50\columnwidth}\raggedright
-5月26日-5月27日：小组讨论及用例编写 5月28日-5月30日：具体执行及结果记录
-5月31日-6月1日：总结及报告撰写\strut
-\end{minipage}\tabularnewline
-\bottomrule
-\end{longtable}
+\begin{tabular}{|p{1.8cm}|p{3.3cm}|p{8cm}|}
+\hline
+3月24日-4月5日 & 测试计划的编撰 & -\\
+\hline
+4月6日-4月20日 & 白盒测试用例设计与执行 & 4月6日-4月10日：小组讨论及用例编写\newline4月11日-4月18日：具体执行及结果记录\newline4月19日-4月20日：总结及报告撰写\\
+\hline
+4月21日-5月11日 & 黑盒测试用例设计与执行 & 4月21日-4月26日：小组讨论及用例编写\newline4月27日-5月9日：具体执行及结果记录\newline5月10日-5月11日：总结及报告撰写\\
+\hline
+5月12日-5月18日 & 性能测试用例设计与执行 & 5月12日-5月13日：小组讨论及用例编写\newline5月14日-5月16日：具体执行及结果记录\newline5月17日-5月18日：总结及报告撰写\\
+\hline
+5月19日-5月25日 & 安全性测试与静态测试用例设计与执行 & 5月19日-5月20日：小组讨论及用例编写\newline5月21日-5月23日：具体执行及结果记录\newline5月24日-5月25日：总结及报告撰写\\
+\hline
+5月26日-6月1日 & 场景测试用例设计与执行 & 5月26日-5月27日：小组讨论及用例编写\newline5月28日-5月30日：具体执行及结果记录\newline5月31日-6月1日：总结及报告撰写\\
+\hline
+\end{tabular}
 
 \hypertarget{ux91ccux7a0bux7891}{%
 \subsection{里程碑}\label{ux91ccux7a0bux7891}}
