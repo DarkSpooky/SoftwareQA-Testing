@@ -79,7 +79,7 @@
 \LARGE
 
 \begin{center}
-\textbf{出题系统需求文档}
+\textbf{出题系统测试文档}
 \end{center}
 
 \large
@@ -97,7 +97,7 @@
 \section*{关键词}\label{ux5173ux952eux8bcd}}
 \addcontentsline{toc}{section}{关键词}
 
-系统与软件工程; 系统与软件质量要求和评价; 需求文档
+系统与软件工程; 系统与软件质量要求和评价; 测试文档
 
 \normalsize
 
@@ -107,13 +107,10 @@
 
 \newpage
 
-\hypertarget{ux76eeux7684ux5220ux9664}{%
-\section{目的（删除）}\label{ux76eeux7684ux5220ux9664}}
+\hypertarget{ux76eeux7684}{%
+\section{目的}\label{ux76eeux7684}}
 
-本测试计划基于Lab2版本的CS出题系统，本测试文档将涵盖以下方面： -
-定义测试过程所需的测试方法与工具 -
-与相关人员沟通测试任务分派，确定测试时间表、测试环境与风险控制 -
-定义测试进行的具体步骤
+本测试计划的⽬的为按照详细的计划测试已有的两个系统：出题系统、题库管理系统及⼆者之间接⼝的测试。最终⽬的是保证⼆个系统的正常运⾏。
 
 \hypertarget{ux6d4bux8bd5ux8ba1ux5212ux6807ux8bc6}{%
 \section{测试计划标识}\label{ux6d4bux8bd5ux8ba1ux5212ux6807ux8bc6}}
@@ -136,11 +133,21 @@ CSTQB4.0-TP1.0 & 2021 年4 月1 日 & 建立更完善的出题系统的测试计
 \hypertarget{ux76eeux6807}{%
 \subsection{目标}\label{ux76eeux6807}}
 
-本测试计划基于Lab2版本的CS出题系统，本测试文档将涵盖以下方面： -
+本测试计划基于Lab2版本的CS出题系统，本测试文档将涵盖以下方面：\newline -
 定义测试过程所需的测试方法与工具 -
 与相关人员沟通测试任务分派，确定测试时间表、测试环境与风险控制 -
-定义测试进行的具体步骤 \#\# 测试软件情况介绍：
-出题系统是在线出题考试系统的的一个子系统。利用出题系统，出题专家们可以方便的进行网上考题编写和评审，并无缝的与在线出题考试系统进行衔接，提高考题编写的质量和效率，也便于考题的统一管理和评估。
+定义测试进行的具体步骤
+
+\hypertarget{ux6d4bux8bd5ux8f6fux4ef6ux60c5ux51b5ux4ecbux7ecd}{%
+\subsection{测试软件情况介绍：}\label{ux6d4bux8bd5ux8f6fux4ef6ux60c5ux51b5ux4ecbux7ecd}}
+
+\begin{itemize}
+\tightlist
+\item
+  出题系统：出题系统是在线出题考试系统的的⼀个⼦系统。利⽤出题系统，出题专家们可以⽅便的进⾏⽹上考题编写和评审，并⽆缝的与在线出题考试系统进⾏衔接，提⾼考题编写的质量和效率，也便于考题的统⼀管理和评估。
+\item
+  题库管理系统：题库管理系统是在线出题考试系统的的⼀个⼦系统。他的输⼊是出题系统成功导出的考题，可以为考试系统按照规则导出考卷。
+\end{itemize}
 
 \hypertarget{ux6d4bux8bd5ux9879}{%
 \section{测试项}\label{ux6d4bux8bd5ux9879}}
@@ -701,10 +708,328 @@ CSTQB4.0-TP1.0 & 2021 年4 月1 日 & 建立更完善的出题系统的测试计
   \end{itemize}
 \end{itemize}
 
+\hypertarget{ux7cfbux7edfux8d28ux91cf}{%
+\subsection{系统质量}\label{ux7cfbux7edfux8d28ux91cf}}
+
+\hypertarget{ux54cdux5e94ux901fux5ea6}{%
+\subsubsection{响应速度}\label{ux54cdux5e94ux901fux5ea6}}
+
+\begin{itemize}
+\tightlist
+\item
+  先决条件：上述功能测试项已经通过
+
+  \begin{itemize}
+  \tightlist
+  \item
+    在95\%的情况下，响应时间将不超过1.5秒，在其他情况下不超过4秒。
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux5e76ux53d1ux8981ux6c42}{%
+\subsubsection{并发要求}\label{ux5e76ux53d1ux8981ux6c42}}
+
+\begin{itemize}
+\tightlist
+\item
+  先决条件：上述功能测试项已经通过
+
+  \begin{itemize}
+  \tightlist
+  \item
+    支持动态用户（在线用户）在1500以上，支持静态用户（注册用户）在50000以上，支持并发数（同时工作用户）300以上。
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux6d4fux89c8ux5668ux53efux79fbux690dux6027}{%
+\subsubsection{浏览器可移植性}\label{ux6d4fux89c8ux5668ux53efux79fbux690dux6027}}
+
+\begin{itemize}
+\tightlist
+\item
+  先决条件：上述功能测试项已经通过
+
+  \begin{itemize}
+  \tightlist
+  \item
+    出题系统应在Internet Explorer，Firefox，google chrome,
+    Opera最新版本下正常工作。
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux5e73ux53f0ux53efux79fbux690dux6027}{%
+\subsubsection{平台可移植性}\label{ux5e73ux53f0ux53efux79fbux690dux6027}}
+
+\begin{itemize}
+\tightlist
+\item
+  先决条件：上述功能测试项已经通过
+
+  \begin{itemize}
+  \tightlist
+  \item
+    出题系统应可以正常运行在Windows 系统、Mac OS 或Linux 平台。
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux6570ux636eux5e93ux53efux79fbux690dux6027}{%
+\subsubsection{数据库可移植性}\label{ux6570ux636eux5e93ux53efux79fbux690dux6027}}
+
+\begin{itemize}
+\tightlist
+\item
+  先决条件：上述功能测试项已经通过
+
+  \begin{itemize}
+  \tightlist
+  \item
+    出题系统的数据库有很好的更新能力，能够适应迭代开发。至少支持免费的数据库系统（MySQL），替换关系数据库系统的平均时间不超过2小时，并且保证没有数据丢失。便于之后出现系统升级更换数据库系统的情况。
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux7528ux6237ux5b89ux5168ux6027ux9700ux6c42}{%
+\subsubsection{用户安全性需求}\label{ux7528ux6237ux5b89ux5168ux6027ux9700ux6c42}}
+
+\begin{itemize}
+\tightlist
+\item
+  先决条件：上述功能测试项已经通过
+
+  \begin{itemize}
+  \tightlist
+  \item
+    严格权限访问控制，用户在经过身份认证后，只能访问其权限范围内的数据，只能进行其权限范围内的操作。在1000次数据的修改全部由对应权限的人员完成，没有例外。
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux7cfbux7edfux4e00ux81f4ux6027ux9700ux6c42}{%
+\subsubsection{系统一致性需求}\label{ux7cfbux7edfux4e00ux81f4ux6027ux9700ux6c42}}
+
+\begin{itemize}
+\tightlist
+\item
+  先决条件：上述功能测试项已经通过
+
+  \begin{itemize}
+  \tightlist
+  \item
+    在1000次断电、掉线测试中数据保存完好，没有例外。
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux6570ux636eux5b89ux5168ux6027ux9700ux6c42}{%
+\subsubsection{数据安全性需求}\label{ux6570ux636eux5b89ux5168ux6027ux9700ux6c42}}
+
+\begin{itemize}
+\tightlist
+\item
+  先决条件：上述功能测试项已经通过
+
+  \begin{itemize}
+  \tightlist
+  \item
+    系统可以保障数据的安全
+
+    \begin{itemize}
+    \tightlist
+    \item
+      对一些重要的数据在存储时利用可靠的加密技术进行加密，例如用户的密码等。
+    \item
+      网络传递数据时也应经过加密，需要保证数据在采集、传输和处理过程中不被偷窥、窃取、篡改。
+    \item
+      考题数据需要在存储时进行加密，确保不可破解。
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux7cfbux7edfux5b89ux5168ux6027ux9700ux6c42}{%
+\subsubsection{系统安全性需求}\label{ux7cfbux7edfux5b89ux5168ux6027ux9700ux6c42}}
+
+\begin{itemize}
+\tightlist
+\item
+  先决条件：上述功能测试项已经通过
+
+  \begin{itemize}
+  \tightlist
+  \item
+    系统安全可靠，具有防黑客能力，能经受来自互联网的一般性恶意攻击
+
+    \begin{itemize}
+    \tightlist
+    \item
+      可以防止一般的病毒（包括木马）攻击、口令猜测攻击、黑客入侵等
+    \item
+      至少90\%的攻击需要在10秒内检测到。
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux6570ux636eux53efux9760ux6027}{%
+\subsubsection{数据可靠性}\label{ux6570ux636eux53efux9760ux6027}}
+
+\begin{itemize}
+\tightlist
+\item
+  先决条件：上述功能测试项已经通过
+
+  \begin{itemize}
+  \tightlist
+  \item
+    系统做到了数据备份
+
+    \begin{itemize}
+    \tightlist
+    \item
+      在由于系统的错误或其他原因引起系统的数据丢失或系统的数据被破坏时，能够及时恢复和还原数据。
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux7cfbux7edfux53efux9760ux6027}{%
+\subsubsection{系统可靠性}\label{ux7cfbux7edfux53efux9760ux6027}}
+
+\begin{itemize}
+\tightlist
+\item
+  先决条件：上述功能测试项已经通过
+
+  \begin{itemize}
+  \tightlist
+  \item
+    系统是健壮的
+
+    \begin{itemize}
+    \tightlist
+    \item
+      在非硬件故障或非通讯故障时，系统能够保证正常运行100小时以上
+    \item
+      在10,000次错误测试中,因软件系统的失效而造成不能完成业务的概率小于5‰，最多出现1次需要重新启动系统的情况。
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux7528ux6237ux6613ux7528ux6027}{%
+\subsubsection{用户易用性}\label{ux7528ux6237ux6613ux7528ux6027}}
+
+\begin{itemize}
+\tightlist
+\item
+  先决条件：上述功能测试项已经通过
+
+  \begin{itemize}
+  \tightlist
+  \item
+    系统应该便于用户上手，80\%的没有计算机领域经验的用户在接受一个2小时的系统介绍培训后，可以熟练使用该系统
+  \end{itemize}
+\item
+  界面简洁美观，操作简单
+\end{itemize}
+
+\hypertarget{ux7cfbux7edfux6613ux7528ux6027}{%
+\subsubsection{系统易用性}\label{ux7cfbux7edfux6613ux7528ux6027}}
+
+\begin{itemize}
+\tightlist
+\item
+  先决条件：上述功能测试项已经通过
+
+  \begin{itemize}
+  \tightlist
+  \item
+    系统进行操作时有统一规范的提示信息
+
+    \begin{itemize}
+    \tightlist
+    \item
+      每个操作成功时都有对应的提示
+    \item
+      每个操作失败时都有对应的提示
+
+      \begin{itemize}
+      \tightlist
+      \item
+        操作失败时的提示指明操作失败的原因
+      \end{itemize}
+    \item
+      系统出错时都有对应的提示
+
+      \begin{itemize}
+      \tightlist
+      \item
+        系统出错时的提示可以被普通用户理解
+      \item
+        系统出错时的提示可以为专业人员解决问题提供帮助
+      \end{itemize}
+    \item
+      用户进行非法操作时有对应的提示
+    \item
+      系统加载过程中有对应的提示
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux5f00ux53d1ux4ebaux5458ux53efux7ef4ux62a4ux6027}{%
+\subsubsection{开发人员可维护性}\label{ux5f00ux53d1ux4ebaux5458ux53efux7ef4ux62a4ux6027}}
+
+\begin{itemize}
+\tightlist
+\item
+  先决条件：上述功能测试项已经通过
+
+  \begin{itemize}
+  \tightlist
+  \item
+    系统代码应便于开发人员维护
+
+    \begin{itemize}
+    \tightlist
+    \item
+      代码的命名规范，采用驼峰命名方式
+    \item
+      代码有易于理解的注释
+    \item
+      代码有合理的排版
+    \item
+      代码没有大量的重复和冗余
+    \item
+      代码有合理的错误处理方法和异常抛出
+    \item
+      代码被分解为合适的模块
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux7b26ux5408ux6cd5ux5f8bux6cd5ux89c4}{%
+\subsection{符合法律法规}\label{ux7b26ux5408ux6cd5ux5f8bux6cd5ux89c4}}
+
+\hypertarget{ux7b26ux5408ux56fdux5bb6ux5b89ux5168ux6807ux51c6}{%
+\subsubsection{符合国家安全标准}\label{ux7b26ux5408ux56fdux5bb6ux5b89ux5168ux6807ux51c6}}
+
+\begin{itemize}
+\tightlist
+\item
+  系统安全性符合中华人民共和国国家标准GB/T 22239-2008。
+\item
+  《信息系统安全等级保护基本要求》中每一项出题系统都符合。
+\end{itemize}
+
+\hypertarget{ux7b26ux5408ux7f51ux7ad9ux4fe1ux606fux670dux52a1ux6807ux51c6}{%
+\subsubsection{符合网站信息服务标准}\label{ux7b26ux5408ux7f51ux7ad9ux4fe1ux606fux670dux52a1ux6807ux51c6}}
+
+\begin{itemize}
+\tightlist
+\item
+  系统运营符合《非经营性互联网信息服务备案管理办法》。
+\item
+  做好已备案网站主页备案编号的悬挂和链接工作。
+\end{itemize}
+
 \hypertarget{ux6d4bux8bd5ux9879ux901aux8fc7ux5931ux8d25ux51c6ux5219}{%
 \section{测试项通过/失败准则}\label{ux6d4bux8bd5ux9879ux901aux8fc7ux5931ux8d25ux51c6ux5219}}
 
-\begin{itemize}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
   组件测试相关准则
@@ -780,7 +1105,7 @@ CSTQB4.0-TP1.0 & 2021 年4 月1 日 & 建立更完善的出题系统的测试计
       验收测试工件齐全（测试计划，测试用例，测试日志，测试通知单，测试分析报告）
     \end{itemize}
   \end{itemize}
-\end{itemize}
+\end{enumerate}
 
 \hypertarget{ux8981ux6d4bux8bd5ux7684ux7279ux6027}{%
 \section{要测试的特性}\label{ux8981ux6d4bux8bd5ux7684ux7279ux6027}}
