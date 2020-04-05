@@ -1400,88 +1400,6 @@ CSTESTMAKER1.0-TP1.0 & 2021 年4 月1 日 & 建立更完善的出题系统的测
   做好已备案网站主页备案编号的悬挂和链接工作。
 \end{itemize}
 
-\hypertarget{ux6d4bux8bd5ux9879ux901aux8fc7ux5931ux8d25ux51c6ux5219}{%
-\section{测试项通过/失败准则}\label{ux6d4bux8bd5ux9879ux901aux8fc7ux5931ux8d25ux51c6ux5219}}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  组件测试相关准则
-
-  \begin{itemize}
-  \tightlist
-  \item
-    通过准则
-
-    \begin{itemize}
-    \tightlist
-    \item
-      关于该组件接口的准则通过率达100\%
-    \item
-      代码覆盖率达80\%以上
-    \end{itemize}
-  \item
-    失败准则
-
-    \begin{itemize}
-    \tightlist
-    \item
-      任意测试组件的相关准则有不符合的条目即为失败
-    \end{itemize}
-  \end{itemize}
-\item
-  集成测试相关准则
-
-  \begin{itemize}
-  \tightlist
-  \item
-    通过准则
-
-    \begin{itemize}
-    \tightlist
-    \item
-      所有接口测试通过率达100\%
-    \item
-      单元测试平均代码覆盖率达80\%以上
-    \end{itemize}
-  \end{itemize}
-\item
-  系统测试相关准则
-
-  \begin{itemize}
-  \tightlist
-  \item
-    通过准则
-
-    \begin{itemize}
-    \tightlist
-    \item
-      该版本的系统功能能够完整运作
-    \end{itemize}
-  \end{itemize}
-\item
-  验收测试相关准则
-
-  \begin{itemize}
-  \tightlist
-  \item
-    通过准则
-
-    \begin{itemize}
-    \tightlist
-    \item
-      软件需求分析说明书中定义的所有功能已全部实现，性能指标全部达到要求。
-    \item
-      所有测试项没有残余的一级二级三级的错误。
-    \item
-      立项审批表、需求分析文档、设计文档和编码实现一致。
-    \item
-      验收测试工件齐全（测试计划，测试用例，测试日志，测试通知单，测试分析报告）
-    \end{itemize}
-  \end{itemize}
-\end{enumerate}
-
 \hypertarget{ux8981ux6d4bux8bd5ux7684ux7279ux6027}{%
 \section{要测试的特性}\label{ux8981ux6d4bux8bd5ux7684ux7279ux6027}}
 
@@ -1511,6 +1429,46 @@ CSTESTMAKER1.0-TP1.0 & 2021 年4 月1 日 & 建立更完善的出题系统的测
 
 \hypertarget{ux4e0dux4f1aux88abux6d4bux8bd5ux7684ux7279ux6027}{%
 \section{不会被测试的特性}\label{ux4e0dux4f1aux88abux6d4bux8bd5ux7684ux7279ux6027}}
+
+\hypertarget{ux5e76ux53d1ux8981ux6c42-1}{%
+\subsection{并发要求}\label{ux5e76ux53d1ux8981ux6c42-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  描述：支持动态用户（在线用户）在1500 以上，支持静态用户（注册用户）
+  在50000 以上，支持并发数（同时工作用户）300 以上。
+\item
+  原因：暂无资源同时测试要求数量的用户同时在线
+\item
+  风险评估：按照实际情况认为出题子系统，题库管理系统在使用中
+  不需要很高的并发度，而在线报名考生管理系统和考生系统对并发度有一定的要求，但可以在实际使用中通过人为规定，时间分流等方式避免。判定风险级别为：一般损失。
+\end{itemize}
+
+\hypertarget{ux6570ux636eux5e93ux53efux79fbux690dux6027-1}{%
+\subsection{数据库可移植性}\label{ux6570ux636eux5e93ux53efux79fbux690dux6027-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  描述：出题系统的数据库有很好的更新能力，能够适应迭代开发。替换关系数据库系统的平均时间不超过2
+  小时，并且保证没有数据丢失。便于之后出现系统升级更换数据
+  库系统的情况。
+\item
+  原因：暂无大规模的考题数据和用户数据内容资源，暂无多个数据库系统可供测试
+  -风险评估：根据实际情况判定，在线出题考试系统的数据增长有上限，数据库移植的可能性也较低。判定风险级别为：一般损失。
+\end{itemize}
+
+\hypertarget{ux7b26ux5408ux7f51ux7ad9ux4fe1ux606fux670dux52a1ux6807ux51c6-1}{%
+\subsection{符合网站信息服务标准}\label{ux7b26ux5408ux7f51ux7ad9ux4fe1ux606fux670dux52a1ux6807ux51c6-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  描述：做好已备案网站主页备案编号的悬挂和链接工作。
+\item
+  原因：暂无已备案域名与服务器资源，测试暂只针对离线网页版的在线出题考试系统，无需进行链接是否合法的测试。判定风险级别为：没有损失。
+\end{itemize}
 
 \hypertarget{ux65b9ux6cd5ux5173ux4e8eux6d4bux8bd5ux9879ux7684ux98ceux9669ux8bc4ux4f30}{%
 \section{方法（关于测试项的风险评估）}\label{ux65b9ux6cd5ux5173ux4e8eux6d4bux8bd5ux9879ux7684ux98ceux9669ux8bc4ux4f30}}
@@ -1974,6 +1932,88 @@ CSTESTMAKER1.0-TP1.0 & 2021 年4 月1 日 & 建立更完善的出题系统的测
   风险级别：一般损失
 \end{itemize}
 
+\hypertarget{ux6d4bux8bd5ux9879ux901aux8fc7ux5931ux8d25ux51c6ux5219}{%
+\section{测试项通过/失败准则}\label{ux6d4bux8bd5ux9879ux901aux8fc7ux5931ux8d25ux51c6ux5219}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  组件测试相关准则
+
+  \begin{itemize}
+  \tightlist
+  \item
+    通过准则
+
+    \begin{itemize}
+    \tightlist
+    \item
+      关于该组件接口的准则通过率达100\%
+    \item
+      代码覆盖率达80\%以上
+    \end{itemize}
+  \item
+    失败准则
+
+    \begin{itemize}
+    \tightlist
+    \item
+      任意测试组件的相关准则有不符合的条目即为失败
+    \end{itemize}
+  \end{itemize}
+\item
+  集成测试相关准则
+
+  \begin{itemize}
+  \tightlist
+  \item
+    通过准则
+
+    \begin{itemize}
+    \tightlist
+    \item
+      所有接口测试通过率达100\%
+    \item
+      单元测试平均代码覆盖率达80\%以上
+    \end{itemize}
+  \end{itemize}
+\item
+  系统测试相关准则
+
+  \begin{itemize}
+  \tightlist
+  \item
+    通过准则
+
+    \begin{itemize}
+    \tightlist
+    \item
+      该版本的系统功能能够完整运作
+    \end{itemize}
+  \end{itemize}
+\item
+  验收测试相关准则
+
+  \begin{itemize}
+  \tightlist
+  \item
+    通过准则
+
+    \begin{itemize}
+    \tightlist
+    \item
+      软件需求分析说明书中定义的所有功能已全部实现，性能指标全部达到要求。
+    \item
+      所有测试项没有残余的一级二级三级的错误。
+    \item
+      立项审批表、需求分析文档、设计文档和编码实现一致。
+    \item
+      验收测试工件齐全（测试计划，测试用例，测试日志，测试通知单，测试分析报告）
+    \end{itemize}
+  \end{itemize}
+\end{enumerate}
+
 \hypertarget{ux6682ux505cux51c6ux5219ux548cux7ee7ux7eedux51c6ux5219}{%
 \section{暂停准则和继续准则}\label{ux6682ux505cux51c6ux5219ux548cux7ee7ux7eedux51c6ux5219}}
 
@@ -2366,7 +2406,7 @@ Xiaoxiao Hu & 熟悉文档规范、程序代码、测试工具 & 测试流程规
 \end{itemize}
 
 \hypertarget{ux9879ux76eeux7684ux7ec4ux7ec7ux7c7bux578b}{%
-\subsubsection{项目的组织类型}\label{ux9879ux76eeux7684ux7ec4ux7ec7ux7c7bux578b}}
+\paragraph{项目的组织类型}\label{ux9879ux76eeux7684ux7ec4ux7ec7ux7c7bux578b}}
 
 \begin{itemize}
 \tightlist
