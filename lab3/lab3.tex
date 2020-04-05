@@ -110,12 +110,12 @@
 \hypertarget{ux76eeux7684}{%
 \section{目的}\label{ux76eeux7684}}
 
-本测试计划的⽬的为按照详细的计划测试已有的两个系统：出题系统、题库管理系统及⼆者之间接⼝的测试。最终⽬的是保证⼆个系统的正常运⾏。
+本测试计划的⽬的为按照详细的计划测试在线出题考试系统的四个子系统：出题系统、题库管理系统、考试系统、在线报名考生系统及其之间接⼝的测试。最终⽬的是保证在线出题考生系统的正常运⾏。
 
 \hypertarget{ux6d4bux8bd5ux8ba1ux5212ux6807ux8bc6}{%
 \section{测试计划标识}\label{ux6d4bux8bd5ux8ba1ux5212ux6807ux8bc6}}
 
-CSTQB4.0-TP1.0 修订历史
+CSTESTMAKER1.0-TP1.0 修订历史
 
 \begin{tabular}{|p{2cm}|p{3.3cm}|p{5cm}|}
 \hline
@@ -123,7 +123,7 @@ CSTQB4.0-TP1.0 修订历史
 \hline
 草稿 & 2021 年3 月7 日 & 基于出题系统的测试计划草稿\\
 \hline
-CSTQB4.0-TP1.0 & 2021 年4 月1 日 & 建立更完善的出题系统的测试计划\\
+CSTESTMAKER1.0-TP1.0 & 2021 年4 月1 日 & 建立更完善的出题系统的测试计划\\
 \hline
 \end{tabular}
 
@@ -147,21 +147,33 @@ CSTQB4.0-TP1.0 & 2021 年4 月1 日 & 建立更完善的出题系统的测试计
   出题系统：出题系统是在线出题考试系统的的⼀个⼦系统。利⽤出题系统，出题专家们可以⽅便的进⾏⽹上考题编写和评审，并⽆缝的与在线出题考试系统进⾏衔接，提⾼考题编写的质量和效率，也便于考题的统⼀管理和评估。
 \item
   题库管理系统：题库管理系统是在线出题考试系统的的⼀个⼦系统。他的输⼊是出题系统成功导出的考题，可以为考试系统按照规则导出考卷。
+\item
+  考试系统：考试系统是在线出题考试系统的的⼀个⼦系统。用户完成作答之后，考题系统可以自动批改试卷并给出相应得分。
+\item
+  在线报名考试管理系统：在线报名考试管理系统是在线出题考试系统的的⼀个⼦系统。考生能够根据既定的考生信息登陆考试系统，查看属于自己相对应的考卷，然后在规定的时间内作答。在作答后可以查看考试成绩。
 \end{itemize}
 
 \hypertarget{ux6d4bux8bd5ux9879}{%
 \section{测试项}\label{ux6d4bux8bd5ux9879}}
 
+\hypertarget{ux51faux9898ux7cfbux7edf}{%
+\subsection{出题系统}\label{ux51faux9898ux7cfbux7edf}}
+
 \hypertarget{ux767bux9646ux53caux4e2aux4ebaux4fe1ux606f}{%
-\subsection{登陆及个人信息}\label{ux767bux9646ux53caux4e2aux4ebaux4fe1ux606f}}
+\subsubsection{登陆及个人信息}\label{ux767bux9646ux53caux4e2aux4ebaux4fe1ux606f}}
 
 \hypertarget{ux7528ux6237ux767bux5f55ux6821ux9a8c}{%
-\subsubsection{用户登录校验}\label{ux7528ux6237ux767bux5f55ux6821ux9a8c}}
+\paragraph{用户登录校验}\label{ux7528ux6237ux767bux5f55ux6821ux9a8c}}
 
-\begin{itemize}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
   先决条件：用户已经成功在系统中注册过自己的用户名和密码
+\item
+  代码版本：CS\_TESTMAKER\_1.0
+\item
+  测试项：
 
   \begin{itemize}
   \tightlist
@@ -170,33 +182,43 @@ CSTQB4.0-TP1.0 & 2021 年4 月1 日 & 建立更完善的出题系统的测试计
   \item
     用户输入错误用户名和密码无法登陆系统，提示``用户名或密码''错误，允许继续输入，不允许对考题进行任一操作。
   \end{itemize}
-\end{itemize}
+\end{enumerate}
 
 \hypertarget{ux7528ux6237ux4feeux6539ux4e2aux4ebaux4fe1ux606f}{%
-\subsubsection{用户修改个人信息}\label{ux7528ux6237ux4feeux6539ux4e2aux4ebaux4fe1ux606f}}
+\paragraph{用户修改个人信息}\label{ux7528ux6237ux4feeux6539ux4e2aux4ebaux4fe1ux606f}}
 
-\begin{itemize}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
   先决条件：用户登陆系统成功
+\item
+  代码版本：CS\_TESTMAKER\_1.0
+\item
+  测试项：
 
   \begin{itemize}
   \tightlist
   \item
     用户可以对用户信息（包括用户名、密码、其他信息等）进行修改，修改完成后自动更新用户信息。
   \end{itemize}
-\end{itemize}
+\end{enumerate}
 
 \hypertarget{ux5efaux7acbux65b0ux9879ux76ee}{%
-\subsection{建立新项目}\label{ux5efaux7acbux65b0ux9879ux76ee}}
+\subsubsection{建立新项目}\label{ux5efaux7acbux65b0ux9879ux76ee}}
 
 \hypertarget{ux4e3bux6301ux4ebaux521bux5efaux9879ux76ee}{%
-\subsubsection{主持人创建项目}\label{ux4e3bux6301ux4ebaux521bux5efaux9879ux76ee}}
+\paragraph{主持人创建项目}\label{ux4e3bux6301ux4ebaux521bux5efaux9879ux76ee}}
 
-\begin{itemize}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
   先决条件：登陆用户角色为主持人
+\item
+  代码版本：CS\_TESTMAKER\_1.0
+\item
+  测试项：
 
   \begin{itemize}
   \tightlist
@@ -209,15 +231,20 @@ CSTQB4.0-TP1.0 & 2021 年4 月1 日 & 建立更完善的出题系统的测试计
   \item
     系统在主持人成功创建项目并完成项目设置后自动发送邮件提示主持人。
   \end{itemize}
-\end{itemize}
+\end{enumerate}
 
 \hypertarget{ux4e3bux6301ux4ebaux65b0ux5efaux8003ux9898}{%
-\subsubsection{主持人新建考题}\label{ux4e3bux6301ux4ebaux65b0ux5efaux8003ux9898}}
+\paragraph{主持人新建考题}\label{ux4e3bux6301ux4ebaux65b0ux5efaux8003ux9898}}
 
-\begin{itemize}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
   先决条件：登陆用户角色为主持人且完成项目创建
+\item
+  代码版本：CS\_TESTMAKER\_1.0
+\item
+  测试项：
 
   \begin{itemize}
   \tightlist
@@ -234,19 +261,23 @@ CSTQB4.0-TP1.0 & 2021 年4 月1 日 & 建立更完善的出题系统的测试计
   \item
     系统在主持人成功新建题目、设置题目属性与作者、评审员、质管员后会自动发送邮件给对应管理人员进行确认。
   \end{itemize}
-\end{itemize}
+\end{enumerate}
 
-\hypertarget{ux5f00ux59cbux542fux52a8ux9879ux76eeux72b6ux6001-ux5f00ux59cb-ux89d2ux8272-ux4e3bux6301ux4eba}{%
-\subsection{开始启动项目(状态: 开始; 角色:
-主持人)}\label{ux5f00ux59cbux542fux52a8ux9879ux76eeux72b6ux6001-ux5f00ux59cb-ux89d2ux8272-ux4e3bux6301ux4eba}}
+\hypertarget{ux5f00ux59cbux542fux52a8ux9879ux76ee}{%
+\subsubsection{开始启动项目}\label{ux5f00ux59cbux542fux52a8ux9879ux76ee}}
 
 \hypertarget{ux4e3bux6301ux4ebaux8bbeux7f6eux8003ux9898ux671fux9650}{%
-\subsubsection{主持人设置考题期限}\label{ux4e3bux6301ux4ebaux8bbeux7f6eux8003ux9898ux671fux9650}}
+\paragraph{主持人设置考题期限}\label{ux4e3bux6301ux4ebaux8bbeux7f6eux8003ux9898ux671fux9650}}
 
-\begin{itemize}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
   先决条件：登陆用户角色为主持人且已设置考题状态为``开始''
+\item
+  代码版本：CS\_TESTMAKER\_1.0
+\item
+  测试项:
 
   \begin{itemize}
   \tightlist
@@ -257,15 +288,20 @@ CSTQB4.0-TP1.0 & 2021 年4 月1 日 & 建立更完善的出题系统的测试计
   \item
     主持人能对超出限期的任务提出警告或延长时间限期。
   \end{itemize}
-\end{itemize}
+\end{enumerate}
 
 \hypertarget{ux4e3bux6301ux4ebaux4feeux6539ux72b6ux6001ux5f00ux59cb-ux7f16ux5199}{%
-\subsubsection{主持人修改状态(开始-编写)}\label{ux4e3bux6301ux4ebaux4feeux6539ux72b6ux6001ux5f00ux59cb-ux7f16ux5199}}
+\paragraph{主持人修改状态(开始-编写)}\label{ux4e3bux6301ux4ebaux4feeux6539ux72b6ux6001ux5f00ux59cb-ux7f16ux5199}}
 
-\begin{itemize}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
   先决条件：登陆用户角色为主持人且已设置考题状态为``开始''
+\item
+  代码版本：CS\_TESTMAKER\_1.0
+\item
+  测试项：
 
   \begin{itemize}
   \tightlist
@@ -280,19 +316,23 @@ CSTQB4.0-TP1.0 & 2021 年4 月1 日 & 建立更完善的出题系统的测试计
   \item
     在考题状态为``开始''下，除主持人外，系统管理员、作者、评审员没有修改题目状态的权限。
   \end{itemize}
-\end{itemize}
+\end{enumerate}
 
-\hypertarget{ux7f16ux5199ux8003ux9898ux72b6ux6001-ux7f16ux5199-ux89d2ux8272-ux4f5cux8005}{%
-\subsection{编写考题(状态: 编写; 角色:
-作者)}\label{ux7f16ux5199ux8003ux9898ux72b6ux6001-ux7f16ux5199-ux89d2ux8272-ux4f5cux8005}}
+\hypertarget{ux7f16ux5199ux8003ux9898}{%
+\subsubsection{编写考题}\label{ux7f16ux5199ux8003ux9898}}
 
 \hypertarget{ux4f5cux8005ux8bbeux7f6eux591aux7c7bux578bux8003ux9898}{%
-\subsubsection{作者设置多类型考题}\label{ux4f5cux8005ux8bbeux7f6eux591aux7c7bux578bux8003ux9898}}
+\paragraph{作者设置多类型考题}\label{ux4f5cux8005ux8bbeux7f6eux591aux7c7bux578bux8003ux9898}}
 
-\begin{itemize}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
   先决条件：登陆用户角色为作者并已被主持人分配出题任务
+\item
+  代码版本：CS\_TESTMAKER\_1.0
+\item
+  测试项:
 
   \begin{itemize}
   \tightlist
@@ -313,15 +353,20 @@ CSTQB4.0-TP1.0 & 2021 年4 月1 日 & 建立更完善的出题系统的测试计
   \item
     带有图形的题目能以XML，Excel的形式导入出题系统
   \end{itemize}
-\end{itemize}
+\end{enumerate}
 
 \hypertarget{ux4f5cux8005ux4feeux6539ux72b6ux6001ux7f16ux5199-ux8bc4ux5ba1}{%
-\subsubsection{作者修改状态(编写-评审)}\label{ux4f5cux8005ux4feeux6539ux72b6ux6001ux7f16ux5199-ux8bc4ux5ba1}}
+\paragraph{作者修改状态(编写-评审)}\label{ux4f5cux8005ux4feeux6539ux72b6ux6001ux7f16ux5199-ux8bc4ux5ba1}}
 
-\begin{itemize}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
   先决条件：登陆用户角色为作者并已被主持人分配出题任务
+\item
+  代码版本：CS\_TESTMAKER\_1.0
+\item
+  测试项:
 
   \begin{itemize}
   \tightlist
@@ -336,19 +381,65 @@ CSTQB4.0-TP1.0 & 2021 年4 月1 日 & 建立更完善的出题系统的测试计
   \item
     主持人在编写过程中没有修改和操作的权限。
   \end{itemize}
-\end{itemize}
+\end{enumerate}
 
-\hypertarget{ux8bc4ux5ba1ux8003ux9898ux72b6ux6001-ux8bc4ux5ba1-ux89d2ux8272-ux8bc4ux5ba1ux5458}{%
-\subsection{评审考题(状态: 评审; 角色:
-评审员)}\label{ux8bc4ux5ba1ux8003ux9898ux72b6ux6001-ux8bc4ux5ba1-ux89d2ux8272-ux8bc4ux5ba1ux5458}}
+\hypertarget{ux4f5cux8005ux8bbeux7f6eux591aux7c7bux578bux8003ux98982}{%
+\paragraph{作者设置多类型考题2}\label{ux4f5cux8005ux8bbeux7f6eux591aux7c7bux578bux8003ux98982}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  先决条件：登陆用户角色为作者并已被主持人分配出题任务
+\item
+  代码版本：CS\_TESTMAKER\_2.0
+\item
+  测试项:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    在编写状态下，作者可以使用
+    latex语法在文本中插入数学公式/符号，要求数学公式可以正确显示、存储，无乱码。也可以将带有latex语法的数学公式题目以Excel,
+    Xml 导入题库。
+  \end{itemize}
+\end{enumerate}
+
+\hypertarget{ux9001ux5ba1ux524dux5185ux5bb9ux68c0ux67e5}{%
+\paragraph{送审前内容检查}\label{ux9001ux5ba1ux524dux5185ux5bb9ux68c0ux67e5}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  先决条件：作者准备将考题从编写变为评审
+\item
+  代码版本：CS\_TESTMAKER\_2.0
+\item
+  测试项:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    如果题干中出现``如图''``表格''关键字，检查是否添加了图片和表格，如果没有则给出提醒并拒绝状改变。
+  \end{itemize}
+\end{enumerate}
+
+\hypertarget{ux8bc4ux5ba1ux8003ux9898}{%
+\subsubsection{评审考题}\label{ux8bc4ux5ba1ux8003ux9898}}
 
 \hypertarget{ux8bc4ux5ba1ux5458ux8bbeux7f6eux8bc4ux5ba1ux7ed3ux679cux4e3aux53efux63a5ux53d7}{%
-\subsubsection{评审员设置评审结果为``可接受''}\label{ux8bc4ux5ba1ux5458ux8bbeux7f6eux8bc4ux5ba1ux7ed3ux679cux4e3aux53efux63a5ux53d7}}
+\paragraph{评审员设置评审结果为``可接受''}\label{ux8bc4ux5ba1ux5458ux8bbeux7f6eux8bc4ux5ba1ux7ed3ux679cux4e3aux53efux63a5ux53d7}}
 
-\begin{itemize}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
   先决条件：登陆用户角色为评审员并有需要此用户评审的考题
+\item
+  代码版本：CS\_TESTMAKER\_1.0
+\item
+  测试项:
 
   \begin{itemize}
   \tightlist
@@ -357,15 +448,20 @@ CSTQB4.0-TP1.0 & 2021 年4 月1 日 & 建立更完善的出题系统的测试计
   \item
     系统在状态变化后通过邮件提醒相关质管员并提示评审信息。
   \end{itemize}
-\end{itemize}
+\end{enumerate}
 
 \hypertarget{ux8bc4ux5ba1ux5458ux8bbeux7f6eux8bc4ux5ba1ux7ed3ux679cux4e3aux88abux62d2ux7edd}{%
-\subsubsection{评审员设置评审结果为``被拒绝''}\label{ux8bc4ux5ba1ux5458ux8bbeux7f6eux8bc4ux5ba1ux7ed3ux679cux4e3aux88abux62d2ux7edd}}
+\paragraph{评审员设置评审结果为``被拒绝''}\label{ux8bc4ux5ba1ux5458ux8bbeux7f6eux8bc4ux5ba1ux7ed3ux679cux4e3aux88abux62d2ux7edd}}
 
-\begin{itemize}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
   先决条件：登陆用户角色为评审员并有需要此用户评审的考题
+\item
+  代码版本：CS\_TESTMAKER\_1.0
+\item
+  测试项:
 
   \begin{itemize}
   \tightlist
@@ -374,15 +470,20 @@ CSTQB4.0-TP1.0 & 2021 年4 月1 日 & 建立更完善的出题系统的测试计
   \item
     系统在状态变化后通过邮件提醒相关质管员并提示评审信息。
   \end{itemize}
-\end{itemize}
+\end{enumerate}
 
 \hypertarget{ux8bc4ux5ba1ux5458ux8bbeux7f6eux8bc4ux5ba1ux7ed3ux679cux4e3aux9700ux4feeux6539}{%
-\subsubsection{评审员设置评审结果为``需修改''}\label{ux8bc4ux5ba1ux5458ux8bbeux7f6eux8bc4ux5ba1ux7ed3ux679cux4e3aux9700ux4feeux6539}}
+\paragraph{评审员设置评审结果为``需修改''}\label{ux8bc4ux5ba1ux5458ux8bbeux7f6eux8bc4ux5ba1ux7ed3ux679cux4e3aux9700ux4feeux6539}}
 
-\begin{itemize}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
   先决条件：登陆用户角色为评审员并有需要此用户评审的考题
+\item
+  代码版本：CS\_TESTMAKER\_1.0
+\item
+  测试项:
 
   \begin{itemize}
   \tightlist
@@ -391,15 +492,20 @@ CSTQB4.0-TP1.0 & 2021 年4 月1 日 & 建立更完善的出题系统的测试计
   \item
     系统在状态变化后通过包含评审信息的邮件提醒相关作者修改。
   \end{itemize}
-\end{itemize}
+\end{enumerate}
 
 \hypertarget{ux8bc4ux5ba1ux5458ux8bc4ux5ba1ux6743ux9650}{%
-\subsubsection{评审员评审权限}\label{ux8bc4ux5ba1ux5458ux8bc4ux5ba1ux6743ux9650}}
+\paragraph{评审员评审权限}\label{ux8bc4ux5ba1ux5458ux8bc4ux5ba1ux6743ux9650}}
 
-\begin{itemize}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
   先决条件：登陆用户角色为评审员，考题处于``评审''状态
+\item
+  代码版本：CS\_TESTMAKER\_1.0
+\item
+  测试项:
 
   \begin{itemize}
   \tightlist
@@ -436,19 +542,23 @@ CSTQB4.0-TP1.0 & 2021 年4 月1 日 & 建立更完善的出题系统的测试计
   \item
     其他角色无权改变考题的状态
   \end{itemize}
-\end{itemize}
+\end{enumerate}
 
-\hypertarget{ux518dux5ba1ux8003ux9898ux72b6ux6001-ux518dux5ba1-ux89d2ux8272-ux8d28ux7ba1ux5458}{%
-\subsection{再审考题(状态: 再审; 角色:
-质管员)}\label{ux518dux5ba1ux8003ux9898ux72b6ux6001-ux518dux5ba1-ux89d2ux8272-ux8d28ux7ba1ux5458}}
+\hypertarget{ux518dux5ba1ux8003ux9898}{%
+\subsubsection{再审考题}\label{ux518dux5ba1ux8003ux9898}}
 
 \hypertarget{ux8d28ux7ba1ux5458ux8bbeux7f6eux518dux5ba1ux7ed3ux679cux4e3aux53efux53d1ux5e03}{%
-\subsubsection{质管员设置再审结果为``可发布''}\label{ux8d28ux7ba1ux5458ux8bbeux7f6eux518dux5ba1ux7ed3ux679cux4e3aux53efux53d1ux5e03}}
+\paragraph{质管员设置再审结果为``可发布''}\label{ux8d28ux7ba1ux5458ux8bbeux7f6eux518dux5ba1ux7ed3ux679cux4e3aux53efux53d1ux5e03}}
 
-\begin{itemize}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
   先决条件：登陆用户角色为质管员并有需要此用户再审的考题
+\item
+  代码版本：CS\_TESTMAKER\_1.0
+\item
+  测试项:
 
   \begin{itemize}
   \tightlist
@@ -457,15 +567,20 @@ CSTQB4.0-TP1.0 & 2021 年4 月1 日 & 建立更完善的出题系统的测试计
   \item
     系统在状态改变后能够通过邮件提醒主持人。
   \end{itemize}
-\end{itemize}
+\end{enumerate}
 
 \hypertarget{ux8d28ux7ba1ux5458ux8bbeux7f6eux518dux5ba1ux7ed3ux679cux4e3aux9700ux4feeux6539}{%
-\subsubsection{质管员设置再审结果为``需修改''}\label{ux8d28ux7ba1ux5458ux8bbeux7f6eux518dux5ba1ux7ed3ux679cux4e3aux9700ux4feeux6539}}
+\paragraph{质管员设置再审结果为``需修改''}\label{ux8d28ux7ba1ux5458ux8bbeux7f6eux518dux5ba1ux7ed3ux679cux4e3aux9700ux4feeux6539}}
 
-\begin{itemize}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
   先决条件：登陆用户角色为质管员并有需要此用户再审的考题
+\item
+  代码版本：CS\_TESTMAKER\_1.0
+\item
+  测试项:
 
   \begin{itemize}
   \tightlist
@@ -474,15 +589,20 @@ CSTQB4.0-TP1.0 & 2021 年4 月1 日 & 建立更完善的出题系统的测试计
   \item
     系统在状态改变后能够通过邮件提醒作者。
   \end{itemize}
-\end{itemize}
+\end{enumerate}
 
 \hypertarget{ux8d28ux7ba1ux5458ux8bbeux7f6eux518dux5ba1ux7ed3ux679cux4e3aux9700ux4f5cux5e9f}{%
-\subsubsection{质管员设置再审结果为``需作废''}\label{ux8d28ux7ba1ux5458ux8bbeux7f6eux518dux5ba1ux7ed3ux679cux4e3aux9700ux4f5cux5e9f}}
+\paragraph{质管员设置再审结果为``需作废''}\label{ux8d28ux7ba1ux5458ux8bbeux7f6eux518dux5ba1ux7ed3ux679cux4e3aux9700ux4f5cux5e9f}}
 
-\begin{itemize}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
   先决条件：登陆用户角色为质管员并有需要此用户再审的考题
+\item
+  代码版本：CS\_TESTMAKER\_1.0
+\item
+  测试项:
 
   \begin{itemize}
   \tightlist
@@ -491,15 +611,20 @@ CSTQB4.0-TP1.0 & 2021 年4 月1 日 & 建立更完善的出题系统的测试计
   \item
     系统在状态改变后能够通过邮件提醒主持人。
   \end{itemize}
-\end{itemize}
+\end{enumerate}
 
 \hypertarget{ux8d28ux7ba1ux5458ux518dux5ba1ux6743ux9650}{%
-\subsubsection{质管员再审权限}\label{ux8d28ux7ba1ux5458ux518dux5ba1ux6743ux9650}}
+\paragraph{质管员再审权限}\label{ux8d28ux7ba1ux5458ux518dux5ba1ux6743ux9650}}
 
-\begin{itemize}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
   先决条件：登陆用户角色为质管员，考题处于``再审''状态
+\item
+  代码版本：CS\_TESTMAKER\_1.0
+\item
+  测试项:
 
   \begin{itemize}
   \tightlist
@@ -526,36 +651,30 @@ CSTQB4.0-TP1.0 & 2021 年4 月1 日 & 建立更完善的出题系统的测试计
   \item
     其余角色无权改变考题的状态
   \end{itemize}
-\end{itemize}
+\end{enumerate}
 
-\hypertarget{ux4feeux6539ux8003ux9898ux72b6ux6001-ux4feeux6539-ux89d2ux8272-ux4f5cux8005}{%
-\subsection{修改考题(状态: 修改; 角色:
-作者)}\label{ux4feeux6539ux8003ux9898ux72b6ux6001-ux4feeux6539-ux89d2ux8272-ux4f5cux8005}}
+\hypertarget{ux4feeux6539ux8003ux9898}{%
+\subsubsection{修改考题}\label{ux4feeux6539ux8003ux9898}}
 
 \hypertarget{ux4f5cux8005ux4feeux6539ux8003ux9898}{%
-\subsubsection{作者修改考题}\label{ux4f5cux8005ux4feeux6539ux8003ux9898}}
+\paragraph{作者修改考题}\label{ux4f5cux8005ux4feeux6539ux8003ux9898}}
 
-\begin{itemize}
-\tightlist
-\item
-  先决条件：登陆用户角色为作者，考题处于修改状态
-
-  \begin{itemize}
-  \tightlist
-  \item
-    作者能够阅读修改要求及意见。
-  \item
-    作者将题目状态设置为``评审''后，系统自动给评审员发送状态变化的邮件提醒。
-  \end{itemize}
-\end{itemize}
+1 先决条件：登陆用户角色为作者，考题处于修改状态 2.
+代码版本：CS\_TESTMAKER\_1.0 3. 测试项: - 作者能够阅读修改要求及意见。 -
+作者将题目状态设置为``评审''后，系统自动给评审员发送状态变化的邮件提醒。
 
 \hypertarget{ux4f5cux8005ux4feeux6539ux6743ux9650}{%
-\subsubsection{作者修改权限}\label{ux4f5cux8005ux4feeux6539ux6743ux9650}}
+\paragraph{作者修改权限}\label{ux4f5cux8005ux4feeux6539ux6743ux9650}}
 
-\begin{itemize}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
   先决条件：考题处于``修改''状态
+\item
+  代码版本：CS\_TESTMAKER\_1.0
+\item
+  测试项:
 
   \begin{itemize}
   \tightlist
@@ -588,19 +707,43 @@ CSTQB4.0-TP1.0 & 2021 年4 月1 日 & 建立更完善的出题系统的测试计
   \item
     其余角色无权改变考题的状态从``修改''到其他状态
   \end{itemize}
-\end{itemize}
+\end{enumerate}
 
-\hypertarget{ux53d1ux5e03ux8003ux9898ux72b6ux6001-ux53d1ux5e03-ux89d2ux8272-ux4e3bux6301ux4eba}{%
-\subsection{发布考题(状态: 发布; 角色:
-主持人)}\label{ux53d1ux5e03ux8003ux9898ux72b6ux6001-ux53d1ux5e03-ux89d2ux8272-ux4e3bux6301ux4eba}}
+\hypertarget{ux4feeux6539ux6b21ux6570ux8d85ux8fc7ux63d0ux9192}{%
+\paragraph{修改次数超过提醒}\label{ux4feeux6539ux6b21ux6570ux8d85ux8fc7ux63d0ux9192}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  先决条件：考题进入修改状态超过3次
+\item
+  代码版本：CS\_TESTMAKER\_2.0
+\item
+  测试项:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    如果考题进入修改状态超过3次，系统会给主持人发送邮件提示。
+  \end{itemize}
+\end{enumerate}
+
+\hypertarget{ux53d1ux5e03ux8003ux9898}{%
+\subsubsection{发布考题}\label{ux53d1ux5e03ux8003ux9898}}
 
 \hypertarget{ux4e3bux6301ux4ebaux5bfcux51faux53d1ux5e03ux8003ux9898}{%
-\subsubsection{主持人导出发布考题}\label{ux4e3bux6301ux4ebaux5bfcux51faux53d1ux5e03ux8003ux9898}}
+\paragraph{主持人导出发布考题}\label{ux4e3bux6301ux4ebaux5bfcux51faux53d1ux5e03ux8003ux9898}}
 
-\begin{itemize}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
   先决条件：考题处于``发布''状态
+\item
+  代码版本：CS\_TESTMAKER\_1.0
+\item
+  测试项:
 
   \begin{itemize}
   \tightlist
@@ -629,15 +772,20 @@ CSTQB4.0-TP1.0 & 2021 年4 月1 日 & 建立更完善的出题系统的测试计
   \item
     其余角色不可以修改考题的状态
   \end{itemize}
-\end{itemize}
+\end{enumerate}
 
 \hypertarget{ux4e3bux6301ux4ebaux5bfcux5165ux9898ux5e93}{%
-\subsubsection{主持人导入题库}\label{ux4e3bux6301ux4ebaux5bfcux5165ux9898ux5e93}}
+\paragraph{主持人导入题库}\label{ux4e3bux6301ux4ebaux5bfcux5165ux9898ux5e93}}
 
-\begin{itemize}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
   先决条件：考题已发布，并由主持人以XML或Excel形式导出
+\item
+  代码版本：CS\_TESTMAKER\_1.0
+\item
+  测试项:
 
   \begin{itemize}
   \tightlist
@@ -654,19 +802,23 @@ CSTQB4.0-TP1.0 & 2021 年4 月1 日 & 建立更完善的出题系统的测试计
   \item
     其他角色不可以将任意XML或Excel文件导入题库
   \end{itemize}
-\end{itemize}
+\end{enumerate}
 
-\hypertarget{ux4f5cux5e9fux8003ux9898ux72b6ux6001-ux4f5cux5e9f-ux89d2ux8272-ux4e3bux6301ux4eba}{%
-\subsection{作废考题(状态: 作废; 角色:
-主持人)}\label{ux4f5cux5e9fux8003ux9898ux72b6ux6001-ux4f5cux5e9f-ux89d2ux8272-ux4e3bux6301ux4eba}}
+\hypertarget{ux4f5cux5e9fux8003ux9898}{%
+\subsubsection{作废考题}\label{ux4f5cux5e9fux8003ux9898}}
 
 \hypertarget{ux4e3bux6301ux4ebaux5e9fux9664ux4f5cux5e9fux8003ux9898}{%
-\subsubsection{主持人废除作废考题}\label{ux4e3bux6301ux4ebaux5e9fux9664ux4f5cux5e9fux8003ux9898}}
+\paragraph{主持人废除作废考题}\label{ux4e3bux6301ux4ebaux5e9fux9664ux4f5cux5e9fux8003ux9898}}
 
-\begin{itemize}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
   先决条件：考题处于作废状态
+\item
+  代码版本：CS\_TESTMAKER\_1.0
+\item
+  测试项:
 
   \begin{itemize}
   \tightlist
@@ -687,15 +839,20 @@ CSTQB4.0-TP1.0 & 2021 年4 月1 日 & 建立更完善的出题系统的测试计
   \item
     其余角色不能修改考题的状态
   \end{itemize}
-\end{itemize}
+\end{enumerate}
 
 \hypertarget{ux4e3bux6301ux4ebaux91cdux542fux51faux9898ux6d41ux7a0b}{%
-\subsubsection{主持人重启出题流程}\label{ux4e3bux6301ux4ebaux91cdux542fux51faux9898ux6d41ux7a0b}}
+\paragraph{主持人重启出题流程}\label{ux4e3bux6301ux4ebaux91cdux542fux51faux9898ux6d41ux7a0b}}
 
-\begin{itemize}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
   先决条件：主持人对于处于作废状态的考题进行判断后，发现无法达成出题目的和要求
+\item
+  代码版本：CS\_TESTMAKER\_1.0
+\item
+  测试项:
 
   \begin{itemize}
   \tightlist
@@ -706,6 +863,132 @@ CSTQB4.0-TP1.0 & 2021 年4 月1 日 & 建立更完善的出题系统的测试计
   \item
     主持人重启项目后，新项目中的考题能够正常编写及被评审
   \end{itemize}
+\end{enumerate}
+
+\hypertarget{ux9898ux5e93ux7ba1ux7406ux7cfbux7edf}{%
+\subsection{题库管理系统}\label{ux9898ux5e93ux7ba1ux7406ux7cfbux7edf}}
+
+\hypertarget{ux8003ux9898ux5904ux7406}{%
+\subsubsection{考题处理}\label{ux8003ux9898ux5904ux7406}}
+
+\hypertarget{ux6709ux6743ux9650ux7528ux6237ux67e5ux9605ux8003ux9898}{%
+\paragraph{有权限用户查阅考题}\label{ux6709ux6743ux9650ux7528ux6237ux67e5ux9605ux8003ux9898}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  先决条件：登陆用户为主持人或具有查看权限的用户
+\item
+  代码版本：CS\_TESTMAKER\_2.0
+\item
+  测试项：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    可以按照考题属性搜索查阅相关考题
+  \end{itemize}
+\end{enumerate}
+
+\hypertarget{ux751fux6210ux8003ux5377}{%
+\paragraph{生成考卷}\label{ux751fux6210ux8003ux5377}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  先决条件：登陆用户为主持人或具有查看权限的用户
+\item
+  代码版本：CS\_TESTMAKER\_2.0
+\item
+  测试项：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    系统可以根据考卷组成规则（见出题系统需求文档发布版3.0附录2）自动从题库中抽取已经出好的题生成考卷
+  \item
+    系统在题库内题目不足以构成考卷时提示，并终止生成考卷
+  \item
+    生成考卷同时可以同时生成正确的答案
+  \end{itemize}
+\end{enumerate}
+
+\hypertarget{ux8003ux8bd5ux7cfbux7edf}{%
+\subsection{考试系统}\label{ux8003ux8bd5ux7cfbux7edf}}
+
+\hypertarget{ux6279ux6539}{%
+\subsubsection{批改}\label{ux6279ux6539}}
+
+\hypertarget{ux6279ux6539ux8003ux9898}{%
+\paragraph{批改考题}\label{ux6279ux6539ux8003ux9898}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  先决条件：已有用户作答的考卷数据与正确答案
+\item
+  代码版本：CS\_TESTMAKER\_2.0
+\item
+  测试项：
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  考试系统可以自动批改试卷并给出相应得分。
+\end{itemize}
+
+\hypertarget{ux5728ux7ebfux62a5ux540dux8003ux751fux7ba1ux7406ux7cfbux7edf}{%
+\subsection{在线报名考生管理系统}\label{ux5728ux7ebfux62a5ux540dux8003ux751fux7ba1ux7406ux7cfbux7edf}}
+
+\hypertarget{ux767bux9646ux53caux67e5ux770b}{%
+\subsubsection{登陆及查看}\label{ux767bux9646ux53caux67e5ux770b}}
+
+\hypertarget{ux7528ux6237ux767bux5f55ux6821ux9a8c-1}{%
+\paragraph{用户登录校验}\label{ux7528ux6237ux767bux5f55ux6821ux9a8c-1}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  先决条件：用户已经成功在系统中注册过自己的用户名和密码
+\item
+  代码版本：CS\_TESTMAKER\_2.0
+\item
+  测试项：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    用户输入正确用户名和密码可以成功登录，登录状态由``未登录''变为对应用户名。
+  \item
+    用户输入错误用户名和密码无法登陆系统，提示``用户名或密码''错误，允许继续输入。
+  \end{itemize}
+\end{enumerate}
+
+\hypertarget{ux67e5ux770bux8003ux5377}{%
+\paragraph{查看考卷}\label{ux67e5ux770bux8003ux5377}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  先决条件：用户已经成功在系统中登陆
+\item
+  代码版本：CS\_TESTMAKER\_2.0
+\item
+  测试项：
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  用户可以查看自己将要作答的考卷并在规定时间内作答
+\item
+  用户在作答后可以看见自己的考试成绩
 \end{itemize}
 
 \hypertarget{ux7cfbux7edfux8d28ux91cf}{%
@@ -1870,7 +2153,7 @@ CSTQB4.0-TP1.0 & 2021 年4 月1 日 & 建立更完善的出题系统的测试计
   \begin{itemize}
   \tightlist
   \item
-    培训师：王宸
+    培训师：Chen Wang
   \item
     资质：参与多次大型项目开发与测试工作，熟悉当今流行的测试工具
   \end{itemize}
@@ -1880,7 +2163,7 @@ CSTQB4.0-TP1.0 & 2021 年4 月1 日 & 建立更完善的出题系统的测试计
   \begin{itemize}
   \tightlist
   \item
-    培训师：刘佳兴
+    培训师：Jiaxing Liu
   \item
     资质：上市公司合作人，具有丰富的管理经验，可以轻松协调安排组内成员测试的规范性和一致性
   \end{itemize}
