@@ -106,9 +106,7 @@ references:
 
 ---
 
-```{r eval=FALSE, include=FALSE}
-tinytex::install_tinytex()
-```
+
 
 \newpage
 

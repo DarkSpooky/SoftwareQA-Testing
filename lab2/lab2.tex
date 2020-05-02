@@ -1,0 +1,396 @@
+\documentclass[hyperref, a4paper]{ctexart}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{xltxtra,xunicode}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\usepackage[usenames,dvipsnames]{color}
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={Tian, Jiahe; Hu, Xiaoxiao; Huang, Jiani; Liu, Jiaxing; Shi, Ruixin; Wu, Chenning; Zhang, Cenyuan; Zhang, Yihan; Wang, Chen},
+            pdftitle={ 出题系统功能开发与重构功能实现报告},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+
+\title{\vspace{2in} 出题系统功能开发与重构功能实现报告\\\vspace{0.5em}{\large 软件质量保障与测试课程Lab2课程作业（第9组）}}
+\author{Tian, Jiahe\footnote{Equal Contribution, Fudan University, 17307130313
+  (\href{mailto:tianjh17@fudan.edu.cn}{\nolinkurl{tianjh17@fudan.edu.cn}})} \and Hu, Xiaoxiao\footnote{Equal Contribution, Fudan University, 17302010077
+  (\href{mailto:xxhu17@fudan.edu.cn}{\nolinkurl{xxhu17@fudan.edu.cn}})} \and Huang, Jiani\footnote{Equal Contribution, Fudan University, 17302010063
+  (\href{mailto:huangjn17@fudan.edu.cn}{\nolinkurl{huangjn17@fudan.edu.cn}})} \and Liu, Jiaxing\footnote{Equal Contribution, Fudan University, 17302010049
+  (\href{mailto:jiaxingliu17@fudan.edu.cn}{\nolinkurl{jiaxingliu17@fudan.edu.cn}})} \and Shi, Ruixin\footnote{Equal Contribution, Fudan University, 17302010065
+  (\href{mailto:rxshi17@fudan.edu.cn}{\nolinkurl{rxshi17@fudan.edu.cn}})} \and Wu, Chenning\footnote{Equal Contribution, Fudan University, 17302010066
+  (\href{mailto:cnwu17@fudan.edu.cn}{\nolinkurl{cnwu17@fudan.edu.cn}})} \and Zhang, Cenyuan\footnote{Equal Contribution, Fudan University,
+  17302010068
+  (\href{mailto:cenyuanzhang17@fudan.edu.cn}{\nolinkurl{cenyuanzhang17@fudan.edu.cn}})} \and Zhang, Yihan\footnote{Equal Contribution, Fudan University, 17302010076
+  (\href{mailto:zhangyihan17@fudan.edu.cn}{\nolinkurl{zhangyihan17@fudan.edu.cn}})} \and Wang, Chen\footnote{Equal Contribution, Fudan University, 16307110064
+  (\href{mailto:wangc16@fudan.edu.cn}{\nolinkurl{wangc16@fudan.edu.cn}})}}
+\date{2020年4月10日}
+
+
+
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\begin{document}
+\maketitle
+
+\newpage
+
+\LARGE
+
+\begin{center}
+\textbf{出题系统功能开发与重构功能实现报告}
+\end{center}
+
+\large
+\begin{center}
+\textbf{\emph{出题系统功能开发与重构功能实现报告}}
+\end{center}
+
+\hypertarget{ux6458ux8981}{%
+\section*{摘要}\label{ux6458ux8981}}
+\addcontentsline{toc}{section}{摘要}
+
+本次作业为软件质量保障与测试课程的Lab2课程作业，需要我们以小组为单位对出题系统进行新功能开发以及既有结构重构。
+
+我小组通过小组会议进行需求分析与确定，通过GitHub平台以私有仓库的形式进行协同工作，利用GitHub平台上的Security
+Alerts工具进行代码安全漏洞检查与依赖安全性检验，利用Javadoc来清晰地记录对代码的修改过程与完成对所修改的代码的记录和说明过程。
+
+本报告分为四小节。第一节，新增需求描述，对本小组所完成的新增功能以及改进的需求进行了描述和说明；第二节，对原有需求重构后改造的类与方法列表，对本小组作业中所有对原有的方法进行更改的部分进行了记录和说明；第三节，新增类与方法列表，对本小组作业中所有新增类和方法的部分进行了记录和说明；第四节，新/改造功能的运行界面截图及说明，对本小组本次作业中完成的新增功能进行了截屏记录和说明。
+
+除了本文档的记录之外，本小组还将所有改动部分的代码进行了完整的javadoc记录和编译，javadoc编写规范符合了Oracle
+Java EE
+Javadoc编写规范，作为本次文档提交内容的一部分，javadoc的编译结果也将会被提交，从而方便他人通过具有搜索等功能的交互式网页对本小组进行完成的开发工作的代码部分工作进行了解。
+
+\hypertarget{ux5173ux952eux8bcd}{%
+\section*{关键词}\label{ux5173ux952eux8bcd}}
+\addcontentsline{toc}{section}{关键词}
+
+新功能开发; 系统重构; 实现报告
+
+\normalsize
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\hypertarget{ux65b0ux589eux9700ux6c42ux63cfux8ff0}{%
+\section{新增需求描述}\label{ux65b0ux589eux9700ux6c42ux63cfux8ff0}}
+
+\hypertarget{ux65b0ux589eux6a21ux5757}{%
+\subsection{新增模块}\label{ux65b0ux589eux6a21ux5757}}
+
+新增模块需求指的是相对于原有的出题系统的``出题''这一功能模块，新增的较为具有系统性的、能够独立完成一定功能任务的子系统。
+
+我小组独立开发了组卷系统模块和考试系统模块这两个重大新增功能模块，每一个模块均有着完整的功能流程。以下为我小组在开发的过程中新开发的具有独立性和完整性的模块的具体说明。
+
+\hypertarget{ux7ec4ux5377ux7cfbux7edfux6a21ux5757}{%
+\subsubsection{组卷系统模块}\label{ux7ec4ux5377ux7cfbux7edfux6a21ux5757}}
+
+该模块允许具有组卷权限的用户，根据个性化需求填写相应的限制条件，由系统自动生成对应考卷，用户可对生成考卷进行预览。
+
+\hypertarget{ux81eaux52a8ux7ec4ux5377}{%
+\paragraph{自动组卷}\label{ux81eaux52a8ux7ec4ux5377}}
+
+\begin{itemize}
+\tightlist
+\item
+  关键词：选择~限制条件
+\item
+  用户可以对试卷进行一系列条件的设置，设定考卷的名称、题目数量、难易程度、涉及章节和知识点以及允许作答的用户，系统会自动生成符合条件的考卷。
+\item
+  验收标准：用户可以成功输入限制条件、创建考卷。
+\end{itemize}
+
+\hypertarget{ux8bd5ux5377ux9884ux89c8}{%
+\paragraph{试卷预览}\label{ux8bd5ux5377ux9884ux89c8}}
+
+\begin{itemize}
+\tightlist
+\item
+  关键词：预览~数学公式
+\item
+  用户可以在试卷查看界面看到自己生成的所有试卷，并点击试卷进行试卷内容预览。
+\item
+  在包含以\(\LaTeX\)格式输入数学公式的试卷中，预览界面需正确解析\(\LaTeX\)公式，显示标准格式的数学公式。
+\item
+  验收标准：用户可以正确查看带数学公式的试卷。
+\end{itemize}
+
+\hypertarget{ux8003ux8bd5ux7cfbux7edfux6a21ux5757}{%
+\subsubsection{考试系统模块}\label{ux8003ux8bd5ux7cfbux7edfux6a21ux5757}}
+
+该模块允许已注册的考生，登录系统查看自己的考卷，进行考试并查看成绩。
+
+\hypertarget{ux8003ux751fux767bux5f55}{%
+\paragraph{考生登录}\label{ux8003ux751fux767bux5f55}}
+
+\begin{itemize}
+\tightlist
+\item
+  关键词：登录
+\item
+  考生可以通过学号密码登录，进入考试系统。
+\item
+  验收标准：用户可以成功登录系统。
+\end{itemize}
+
+\hypertarget{ux8bd5ux5377ux67e5ux770b}{%
+\paragraph{试卷查看}\label{ux8bd5ux5377ux67e5ux770b}}
+
+\begin{itemize}
+\tightlist
+\item
+  关键词：查看
+\item
+  用户可以在查看界面看到自己可以进行考试的所有试卷，并点击试卷进行考试。
+\item
+  验收标准：用户可以正确查看所有属于自己的考卷。
+\end{itemize}
+
+\hypertarget{ux8fdbux5165ux8003ux8bd5}{%
+\paragraph{进入考试}\label{ux8fdbux5165ux8003ux8bd5}}
+
+\begin{itemize}
+\tightlist
+\item
+  关键词：考试
+\item
+  用户可以查看题目，并且可以选择答案并提交。
+\item
+  验收标准：用户开始考试，选择答案并提交。
+\end{itemize}
+
+\hypertarget{ux67e5ux770bux6210ux7ee9}{%
+\paragraph{查看成绩}\label{ux67e5ux770bux6210ux7ee9}}
+
+\begin{itemize}
+\tightlist
+\item
+  关键词：查看成绩
+\item
+  提交后用户可以查看自己的成绩。
+\item
+  验收标准：用户能正确查看自己的考试的成绩。
+\end{itemize}
+
+\hypertarget{ux65b0ux589eux975eux6a21ux5757ux529fux80fd}{%
+\subsection{新增非模块功能}\label{ux65b0ux589eux975eux6a21ux5757ux529fux80fd}}
+
+除了完整的新增模块化功能之外，我小组还额外新增了数个独立的功能。这些功能或者是上述新增功能模块的一部分但可以从上述新增功能模块中独立出来，成为单独的功能并应用到多个功能模块中；或者是与上述模块无关的，单独增添的功能。
+
+\hypertarget{ux9898ux76eeux663eux793aux4e2dux5bf9latexux516cux5f0fux7684ux652fux6301}{%
+\subsubsection{\texorpdfstring{题目显示中对\(\LaTeX\)公式的支持}{题目显示中对\textbackslash LaTeX公式的支持}}\label{ux9898ux76eeux663eux793aux4e2dux5bf9latexux516cux5f0fux7684ux652fux6301}}
+
+\begin{itemize}
+\tightlist
+\item
+  关键词：题目显示~数学公式
+\item
+  在包含以\(\LaTeX\)格式输入数学公式的试卷中，预览界面需正确解析\(\LaTeX\)公式，显示标准格式的数学公式。
+\item
+  验收标准：用户可以正确查看带数学公式的试卷。
+\end{itemize}
+
+\pagebreak
+
+\hypertarget{ux5bf9ux539fux6709ux9700ux6c42ux91cdux6784ux540eux6539ux9020ux7684ux7c7bux4e0eux65b9ux6cd5ux5217ux8868}{%
+\section{对原有需求重构后改造的类与方法列表}\label{ux5bf9ux539fux6709ux9700ux6c42ux91cdux6784ux540eux6539ux9020ux7684ux7c7bux4e0eux65b9ux6cd5ux5217ux8868}}
+
+我小组对重构代码的类和方法列表进行了详细的整理，为了有更好的交互体验与更方便的查阅功能，请参阅：\url{https://straybird-atsh.github.io/TestMakerRefactoredFeaturesDoc/}
+
+\pagebreak
+
+\hypertarget{ux65b0ux589eux7c7bux4e0eux65b9ux6cd5ux5217ux8868}{%
+\section{新增类与方法列表}\label{ux65b0ux589eux7c7bux4e0eux65b9ux6cd5ux5217ux8868}}
+
+我小组对重构代码的类和方法列表进行了详细的整理，为了有更好的交互体验与更方便的查阅功能，请参阅：\url{https://straybird-atsh.github.io/TestMakerNewFeaturesDoc/}
+
+其中我们将所有和新增功能相关的类和方法均列入了此处。而不与新增的功能相关的改动列入了第二节中。
+
+\pagebreak
+
+\hypertarget{ux65b0ux6539ux9020ux529fux80fdux7684ux8fd0ux884cux754cux9762ux622aux56feux53caux8bf4ux660e}{%
+\section{新/改造功能的运行界面截图及说明}\label{ux65b0ux6539ux9020ux529fux80fdux7684ux8fd0ux884cux754cux9762ux622aux56feux53caux8bf4ux660e}}
+
+我小组对各类新开发的功能及改造原有的功能进行了详细的功能介绍与截图说明。
+
+\hypertarget{ux65b0ux589eux529fux80fdux8fd0ux884cux754cux9762ux622aux56feux53caux8bf4ux660e}{%
+\subsection{新增功能运行界面截图及说明}\label{ux65b0ux589eux529fux80fdux8fd0ux884cux754cux9762ux622aux56feux53caux8bf4ux660e}}
+
+\hypertarget{ux8bd5ux5377ux7cfbux7edfux6a21ux5757}{%
+\subsubsection{试卷系统模块}\label{ux8bd5ux5377ux7cfbux7edfux6a21ux5757}}
+
+\hypertarget{ux9650ux5236ux6761ux4ef6ux754cux9762}{%
+\paragraph{限制条件界面}\label{ux9650ux5236ux6761ux4ef6ux754cux9762}}
+
+在【组卷系统】下选择【生成考卷】，进入考卷限制条件页面，用户可以输入试卷名称，选择考卷题目数量（系统预先设定选择范围在10，15，20，25，30之间），设置试卷难易程度（简单、一般、困难）、选择试卷相关的章节以及设置有权参与考试的学生。
+
+\includegraphics{pics/page_generate_1.png}
+
+\hypertarget{ux751fux6210ux8003ux5377}{%
+\paragraph{生成考卷}\label{ux751fux6210ux8003ux5377}}
+
+用户在完成限制条件的设置后，点击按钮【生成考卷】，页面显示试卷生成成功或失败的提示信息。若试卷生成成功，则可在【查看考卷】栏目下，点击查看对应考卷
+
+\includegraphics{pics/page_generate_2.png}
+
+\hypertarget{ux6570ux5b66ux516cux5f0fux663eux793a}{%
+\paragraph{数学公式显示}\label{ux6570ux5b66ux516cux5f0fux663eux793a}}
+
+在题目显示时，如果题库中包含以\(\LaTeX\)格式输入的数学公式，界面会将其转化为标准数学公式形式进行显示
+
+\includegraphics{pics/math.jpeg}
+
+\hypertarget{ux67e5ux770bux6240ux6709ux8bd5ux5377}{%
+\paragraph{查看所有试卷}\label{ux67e5ux770bux6240ux6709ux8bd5ux5377}}
+
+在【组卷系统】下选择【查看考卷】，首先进入所有考卷界面，用户可以选择相应的试卷进行预览
+
+\includegraphics{pics/list_pages.png}
+
+\hypertarget{ux8bd5ux5377ux9884ux89c8-1}{%
+\paragraph{试卷预览}\label{ux8bd5ux5377ux9884ux89c8-1}}
+
+选择对应标题的试卷，进入试卷预览界面：
+
+\includegraphics{pics/paper_preview.png}
+
+\hypertarget{ux8003ux751fux8003ux8bd5ux7cfbux7edf}{%
+\subsubsection{考生考试系统}\label{ux8003ux751fux8003ux8bd5ux7cfbux7edf}}
+
+\hypertarget{ux8003ux751fux767bux9646ux9875ux9762}{%
+\paragraph{考生登陆页面}\label{ux8003ux751fux767bux9646ux9875ux9762}}
+
+考生可以通过输入登录网址进入考生登录页面，通过输入学号密码进入考生考试系统。
+
+\includegraphics{pics/student_login.jpeg}
+
+\hypertarget{ux603bux754cux9762}{%
+\paragraph{总界面}\label{ux603bux754cux9762}}
+
+考生进入系统后看到的界面。
+
+\includegraphics{pics/student_papers.jpeg}
+
+\hypertarget{ux8bd5ux5377ux67e5ux770bux754cux9762}{%
+\paragraph{试卷查看界面}\label{ux8bd5ux5377ux67e5ux770bux754cux9762}}
+
+考生可以点击侧边菜单栏中的【查看考卷】，看到可以考试的所有试卷。
+
+\includegraphics{pics/student_papers_show.jpeg}
+
+\hypertarget{ux8003ux8bd5ux754cux9762}{%
+\paragraph{考试界面}\label{ux8003ux8bd5ux754cux9762}}
+
+考生可以在查看考卷页面点击试卷，然后进入开始考试。
+
+\includegraphics{pics/student_test_papers.jpeg}
+
+\hypertarget{ux5206ux6570ux67e5ux770bux754cux9762}{%
+\paragraph{分数查看界面}\label{ux5206ux6570ux67e5ux770bux754cux9762}}
+
+考生可以点击侧边菜单栏中的【查看分数】，看到可以上一场考试的成绩。
+
+\includegraphics{pics/student_score.jpeg}
+
+\hypertarget{ux6539ux9020ux529fux80fdux8fd0ux884cux754cux9762ux622aux56feux53caux8bf4ux660e}{%
+\subsection{改造功能运行界面截图及说明}\label{ux6539ux9020ux529fux80fdux8fd0ux884cux754cux9762ux622aux56feux53caux8bf4ux660e}}
+
+\pagebreak
+
+\hypertarget{ux53c2ux8003ux6587ux732e}{%
+\section*{参考文献}\label{ux53c2ux8003ux6587ux732e}}
+\addcontentsline{toc}{section}{参考文献}
+
+\hypertarget{refs}{}
+\leavevmode\hypertarget{ref-innovativeInternationalisation}{}%
+International Organization for Standardization. 2014. \emph{Systems and
+Software Engineering --- Systems and Software Quality Requirements and
+Evaluation (SQuaRE) --- Guide to SQuaRE}. \emph{International
+Organization for Standardization}. Vol. 2014.
+\url{https://www.iso.org/standard/64764.html}.
+
+\leavevmode\hypertarget{ref-innovative1}{}%
+中国国家标准化管理委员会. 2016. \emph{GB/T
+25000.51-2016《系统与软件工程系统与软件质量要求和评价 (SQuaRE) 第 51
+部分 : 就绪可用软件产品 (RUSP) 的质量要求和测试细则》}.
+\emph{系统与软件工程系统与软件质量要求和评价 (SQuaRE)}. Vol. 51.
+中国国家标准化管理委员会. \url{http://openstd.samr.gov.cn}.
+
+\leavevmode\hypertarget{ref-innovative3}{}%
+---------. 2017a. \emph{GB/T 25000.12-2017《系统与软件工程
+系统与软件质量要求和评价(SQuaRE) 第12部分：数据质量模型》}.
+\emph{系统与软件工程系统与软件质量要求和评价 (SQuaRE)}. Vol. 12.
+中国国家标准化管理委员会. \url{http://openstd.samr.gov.cn}.
+
+\leavevmode\hypertarget{ref-innovative4}{}%
+---------. 2017b. \emph{GB/T 25000.24-2017《系统与软件工程
+系统与软件质量要求和评价(SQuaRE) 第24部分：数据质量测量》}.
+\emph{系统与软件工程系统与软件质量要求和评价 (SQuaRE)}. Vol. 24.
+中国国家标准化管理委员会. \url{http://openstd.samr.gov.cn}.
+
+\leavevmode\hypertarget{ref-innovative5}{}%
+---------. 2018. \emph{GB/T 25000.40-201《系统与软件工程
+系统与软件质量要求和评价(SQuaRE) 第40部分：评价过程》}.
+\emph{系统与软件工程系统与软件质量要求和评价 (SQuaRE)}. Vol. 40.
+中国国家标准化管理委员会. \url{http://openstd.samr.gov.cn}.
+
+\leavevmode\hypertarget{ref-innovative2}{}%
+---------. 2019. \emph{GB/T 25000.23-2019《系统与软件工程
+系统与软件质量要求和评价(SQuaRE) 第23部分：系统与软件产品质量测量》}.
+\emph{系统与软件工程系统与软件质量要求和评价 (SQuaRE)}. Vol. 23.
+中国国家标准化管理委员会. \url{http://openstd.samr.gov.cn}.
+
+\end{document}
