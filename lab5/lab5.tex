@@ -33,7 +33,7 @@
 \hypersetup{breaklinks=true,
             bookmarks=true,
             pdfauthor={Tian, Jiahe; Hu, Xiaoxiao; Huang, Jiani; Liu, Jiaxing; Shi, Ruixin; Wu, Chenning; Zhang, Cenyuan; Zhang, Yihan; Wang, Chen},
-            pdftitle={ 出题系统需求文档},
+            pdftitle={ 黑盒测试设计与执行},
             colorlinks=true,
             citecolor=blue,
             urlcolor=blue,
@@ -45,7 +45,7 @@
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
 
-\title{\vspace{2in} 出题系统需求文档\\\vspace{0.5em}{\large 软件质量保障与测试课程Lab5课程作业（第9组）}}
+\title{\vspace{2in} 黑盒测试设计与执行\\\vspace{0.5em}{\large 软件质量保障与测试课程Lab5课程作业（第9组）}}
 \author{Tian, Jiahe\footnote{Equal Contribution, Fudan University, 17307130313
   (\href{mailto:tianjh17@fudan.edu.cn}{\nolinkurl{tianjh17@fudan.edu.cn}})} \and Hu, Xiaoxiao\footnote{Equal Contribution, Fudan University, 17302010077
   (\href{mailto:xxhu17@fudan.edu.cn}{\nolinkurl{xxhu17@fudan.edu.cn}})} \and Huang, Jiani\footnote{Equal Contribution, Fudan University, 17302010063
@@ -79,7 +79,7 @@
 \LARGE
 
 \begin{center}
-\textbf{出题系统测试文档（黑盒测试部分）}
+\textbf{黑盒测试设计与执行}
 \end{center}
 
 \large
@@ -91,7 +91,7 @@
 \section*{摘要}\label{ux6458ux8981}}
 \addcontentsline{toc}{section}{摘要}
 
-本次作业为软件质量保障与测试课程的Lab3课程作业，需要我们以小组为单位撰写在线出题考试系统的IEEE829测试文档.
+本次作业为软件质量保障与测试课程的Lab5课程作业，需要我们以小组为单位撰写在线出题考试系统的IEEE829测试文档.
 
 \hypertarget{ux5173ux952eux8bcd}{%
 \section*{关键词}\label{ux5173ux952eux8bcd}}
@@ -107,20 +107,32 @@
 
 \newpage
 
-\hypertarget{ux5173ux952eux5b57ux9a71ux52a8ux6d4bux8bd5ux6846ux67b6}{%
-\section{关键字驱动测试框架}\label{ux5173ux952eux5b57ux9a71ux52a8ux6d4bux8bd5ux6846ux67b6}}
+\hypertarget{ux6d4bux8bd5ux6846ux67b6ux8bbeux8ba1}{%
+\section{测试框架设计}\label{ux6d4bux8bd5ux6846ux67b6ux8bbeux8ba1}}
 
-\hypertarget{ux6d4bux8bd5ux5173ux952eux5b57ux8bbeux8ba1}{%
-\section{测试关键字设计}\label{ux6d4bux8bd5ux5173ux952eux5b57ux8bbeux8ba1}}
+\hypertarget{ux9ed1ux76d2ux6d4bux8bd5ux6846ux67b6ux56fe}{%
+\subsection{黑盒测试框架图}\label{ux9ed1ux76d2ux6d4bux8bd5ux6846ux67b6ux56fe}}
 
-\hypertarget{ux6d4bux8bd5ux6570ux636eux8bbeux8ba1}{%
-\section{测试数据设计}\label{ux6d4bux8bd5ux6570ux636eux8bbeux8ba1}}
+\hypertarget{ux9ed1ux76d2ux6d4bux8bd5ux6846ux67b6ux56feux8bf4ux660e}{%
+\subsection{黑盒测试框架图说明}\label{ux9ed1ux76d2ux6d4bux8bd5ux6846ux67b6ux56feux8bf4ux660e}}
 
-\hypertarget{ux6d4bux8bd5ux7528ux4f8bux53caux6d4bux8bd5ux9879ux8bbeux8ba1}{%
-\section{测试用例及测试项设计}\label{ux6d4bux8bd5ux7528ux4f8bux53caux6d4bux8bd5ux9879ux8bbeux8ba1}}
+\hypertarget{ux5173ux952eux5b57ux53caux6d4bux8bd5ux6570ux636eux8bbeux8ba1}{%
+\section{关键字及测试数据设计}\label{ux5173ux952eux5b57ux53caux6d4bux8bd5ux6570ux636eux8bbeux8ba1}}
 
-\hypertarget{ux6d4bux8bd5ux7ed3ux679c}{%
-\section{测试结果}\label{ux6d4bux8bd5ux7ed3ux679c}}
+\hypertarget{ux6d4bux8bd5ux5173ux952eux5b57}{%
+\subsection{测试关键字}\label{ux6d4bux8bd5ux5173ux952eux5b57}}
+
+\hypertarget{ux6d4bux8bd5ux6570ux636e}{%
+\subsection{测试数据}\label{ux6d4bux8bd5ux6570ux636e}}
+
+\hypertarget{ux6d4bux8bd5ux811aux672cux5b9eux73b0ux53caux8fd0ux884c}{%
+\section{测试脚本实现及运行}\label{ux6d4bux8bd5ux811aux672cux5b9eux73b0ux53caux8fd0ux884c}}
+
+\hypertarget{ux811aux672cux5b9eux73b0ux65b9ux5f0f}{%
+\subsection{脚本实现方式}\label{ux811aux672cux5b9eux73b0ux65b9ux5f0f}}
+
+\hypertarget{ux8fd0ux884cux622aux56feux53caux8bf4ux660e}{%
+\subsection{运行截图及说明}\label{ux8fd0ux884cux622aux56feux53caux8bf4ux660e}}
 
 \pagebreak
 
