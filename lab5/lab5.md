@@ -245,8 +245,8 @@ references:
 </table>
 
 边界值分析适用于具有连续取值的参数分析，题目中具有连续取值的只有出题日期与评审日期。
-其中出题开始日期不存在边界限定，顾不考虑。而对于评审结束日期，它的边界值与评审开始日期和出题结束日期相关。而这两个日期不存在约束关系，
-顾它的多个边界值条件可以同时成立。
+其中出题开始日期不存在边界限定，故不考虑。而对于评审结束日期，它的边界值与评审开始日期和出题结束日期相关。而这两个日期不存在约束关系，
+故它的多个边界值条件可以同时成立。
 
 **边界值分析**
 <table>
@@ -264,7 +264,7 @@ references:
 </tr>
 <tr>
     <td>Review finish date</td>
-    <td>[32]与Review start date相同 [33]Review start date后一天 [34]Finish date前一天 
+    <td>[32]与Review start date相同 [33]Review start date后一天 [34]Finish date前一天
     [35]与Finish date相同  [36]Finish date后一天</td>
 </tr>
 </table>
