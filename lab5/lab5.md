@@ -146,18 +146,136 @@ references:
 # 关键字及测试数据设计
 
 ## 测试关键字
+### 登录
+### 创建考题
+创建考题需要完成考题的相关设定。这些设定包括选择章节、选择知识点、设置作者、设置评审
+、设置质管、设置类型、设置语言、设置出题日期、设置评审日期。而创建考题作为一个独立的UI测试，登录是一个基础环节。于是我们针对上述的关键步骤设计了以下关键字：
++ loginActions 登录系统
++ navigateToAddQuestion 页面导航
++ showEditQuestion 选择添加考题
++ chooseChapter 选择章节
++ chooseKnowledgePoint 选择知识点
++ chooseAuthor 设置作者
++ chooseReviewer 设置评审
++ chooseQA 设置质管
++ chooseType 设置题目类型
++ startDate 设置出题开始日期
++ finishDate 设置出题结束日期
++ reviewStartDate 设置评审开始日期
++ reviewFinishDate 设置评审结束日期
++ chooseLanguage 选择语言
++ saveQuestion 保存考题
+
+其中我们没有将登录拆分为更加细致的行为，这是因为登录对于创建考题环节而言是比较基础和简单的。它不是本黑盒测试的考察内容。
 
 ## 测试数据
+
+### 登录
+####等价类划分与边界值分析
+
+####测试数据
+
+### 创建考题
+####等价类划分与边界值分析
+创建考题的UI测试具备多个输入参数，并且这些参数的取值也多种多样。我们对输入参数进行等价类划分和边界值分析。
+
+
+**等价类划分**
+<table>
+<tr>
+    <th>输入参数</th>
+    <th>有效等价类</th>
+    <th>无效等价类</th>
+</tr>
+<tr>
+    <td>chapter</td>
+    <td>[1]任何章节</td>
+    <td>[2]为空</td>
+</tr>
+<tr>
+    <td>Knowledge point</td>
+    <td>[3]章节下任意知识点</td>
+    <td>[4]为空</td>
+</tr>
+<tr>
+    <td>Author</td>
+    <td>[5]任意用户</td>
+    <td>[6]为空</td>
+</tr>
+<tr>
+    <td>Reviewer</td>
+    <td>[7]除author外用户</td>
+    <td>[8]author [9]为空</td>
+</tr>
+<tr>
+    <td>QA</td>
+    <td>[10]除author，reviewer外用户</td>
+    <td>[11]author或reviewer [12]为空</td>
+</tr>
+<tr>
+    <td>Type</td>
+    <td>[13]任意类型</td>
+    <td>[14]为空</td>
+</tr>
+<tr>
+    <td>Start date</td>
+    <td>[15]任意日期</td>
+    <td>[16]为空</td>
+</tr>
+<tr>
+    <td>Finish date</td>
+    <td>[17]在开始日期及之后的日期</td>
+    <td>[18]为空</td>
+</tr>
+<tr>
+    <td>Review start date</td>
+    <td>[19]出题开始日期及之后日期</td>
+    <td>[20]为空 [21]出题开始日期之前</td>
+</tr>
+<tr>
+    <td>Review finish date</td>
+    <td>[22]在评审开始日期及之后的日期，并且不早于出题结束日期</td>
+    <td>[23]为空 [24]出题结束日期之前</td>
+</tr>
+<tr>
+    <td>language</td>
+    <td>[25]任意语言</td>
+    <td>[26]为空</td>
+</tr>
+</table>
+
+边界值分析适用于具有连续取值的参数分析，题目中具有连续取值的只有出题日期与评审日期。
+其中出题开始日期不存在边界限定，顾不考虑。而对于评审结束日期，它的边界值与评审开始日期和出题结束日期相关。而这两个日期不存在约束关系，
+顾它的多个边界值条件可以同时成立。
+
+**边界值分析**
+<table>
+<tr>
+    <th>输入参数</th>
+    <th>边界值</th>
+</tr>
+<tr>
+    <td>Finish date</td>
+    <td>[27]与Start date相同 [28]Start date后一天</td>
+</tr>
+<tr>
+    <td>Review start date</td>
+    <td>[29]Start date前一天 [30]与Start date相同 [31]Start date后一天</td>
+</tr>
+<tr>
+    <td>Review finish date</td>
+    <td>[32]与Review start date相同 [33]Review start date后一天 [34]Finish date前一天 
+    [35]与Finish date相同  [36]Finish date后一天</td>
+</tr>
+</table>
+
+####测试数据
+
+**等价类划分**
 <table>
     <tr>
         <td>ID</td>
         <td>覆盖的类</td>
-        <td colspan="11">input</td>
-        <td>预期输出</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
         <td>chapter</td>
         <td>knowledge point</td>
         <td>author</td>
@@ -169,7 +287,7 @@ references:
         <td>review start date</td>
         <td>review finish date</td>
         <td>language</td>
-        <td></td>
+        <td>预期结果</td>
     </tr>
     <tr>
         <td>1</td>
@@ -444,16 +562,12 @@ references:
         <td>失败</td>
     </tr>
 </table>
+
+**边界值分析**
 <table>
-<tr>
+    <tr>
         <td>ID</td>
         <td>覆盖的类</td>
-        <td colspan="11">input</td>
-        <td>预期输出</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
         <td>chapter</td>
         <td>knowledge point</td>
         <td>author</td>
@@ -465,40 +579,72 @@ references:
         <td>review start date</td>
         <td>review finish date</td>
         <td>language</td>
-        <td></td>
+        <td>预期结果</td>
     </tr>
     <tr>
-            <td>18</td>
-            <td>27,29,31</td>
-            <td>1</td>
-            <td>1.2.1</td>
-            <td>testadmin</td>
-            <td>jmeter022</td>
-            <td>jmeter023</td>
-            <td>情景题</td>
-            <td>2020-05-03</td>
-            <td>2020-05-03</td>
-            <td>2020-05-03</td>
-            <td>2020-05-03</td>
-            <td>中文</td>
-            <td>成功</td>
-        </tr>
-        <tr>
-            <td>19</td>
-            <td>28,30,32</td>
-            <td>1</td>
-            <td>1.2.1</td>
-            <td>jmeter002</td>
-            <td>jmeter003</td>
-            <td>jmeter004</td>
-            <td>视频题</td>
-            <td>2020-05-03</td>
-            <td>2020-05-04</td>
-            <td>2020-05-04</td>
-            <td>2020-05-05</td>
-            <td>英文</td>
-            <td>成功</td>
-        </tr>
+        <td>18</td>
+        <td>27,30,32,35</td>
+        <td>1</td>
+        <td>1.2.1</td>
+        <td>testadmin</td>
+        <td>jmeter022</td>
+        <td>jmeter023</td>
+        <td>情景题</td>
+        <td>2020-05-03</td>
+        <td>2020-05-03</td>
+        <td>2020-05-03</td>
+        <td>2020-05-03</td>
+        <td>中文</td>
+        <td>成功</td>
+    </tr>
+    <tr>
+        <td>19</td>
+        <td>28,31,33,36</td>
+        <td>1</td>
+        <td>1.2.1</td>
+        <td>testadmin</td>
+        <td>jmeter022</td>
+        <td>jmeter023</td>
+        <td>情景题</td>
+        <td>2020-05-03</td>
+        <td>2020-05-04</td>
+        <td>2020-05-04</td>
+        <td>2020-05-05</td>
+        <td>中文</td>
+        <td>成功</td>
+    </tr>
+    <tr>
+        <td>20</td>
+        <td>29</td>
+        <td>1</td>
+        <td>1.2.1</td>
+        <td>testadmin</td>
+        <td>jmeter022</td>
+        <td>jmeter023</td>
+        <td>情景题</td>
+        <td>2020-05-03</td>
+        <td>2020-05-04</td>
+        <td>2020-05-02</td>
+        <td>2020-05-04</td>
+        <td>中文</td>
+        <td>失败</td>
+    </tr>
+    <tr>
+        <td>21</td>
+        <td>34</td>
+        <td>1</td>
+        <td>1.2.1</td>
+        <td>testadmin</td>
+        <td>jmeter022</td>
+        <td>jmeter023</td>
+        <td>情景题</td>
+        <td>2020-05-03</td>
+        <td>2020-05-04</td>
+        <td>2020-05-03</td>
+        <td>2020-05-03</td>
+        <td>中文</td>
+        <td>失败</td>
+    </tr>
 </table>
 
 # 测试脚本实现及运行
