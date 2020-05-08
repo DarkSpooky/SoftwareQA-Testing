@@ -169,7 +169,6 @@ references:
 其中我们没有将登录拆分为更加细致的行为，这是因为登录对于创建考题环节而言是比较基础和简单的。它不是本黑盒测试的考察内容。
 
 ## 测试数据
-
 ### 登录
 ####等价类划分与边界值分析
 
@@ -181,471 +180,72 @@ references:
 
 
 **等价类划分**
-<table>
-<tr>
-    <th>输入参数</th>
-    <th>有效等价类</th>
-    <th>无效等价类</th>
-</tr>
-<tr>
-    <td>chapter</td>
-    <td>[1]任何章节</td>
-    <td>[2]为空</td>
-</tr>
-<tr>
-    <td>Knowledge point</td>
-    <td>[3]章节下任意知识点</td>
-    <td>[4]为空</td>
-</tr>
-<tr>
-    <td>Author</td>
-    <td>[5]任意用户</td>
-    <td>[6]为空</td>
-</tr>
-<tr>
-    <td>Reviewer</td>
-    <td>[7]除author外用户</td>
-    <td>[8]author [9]为空</td>
-</tr>
-<tr>
-    <td>QA</td>
-    <td>[10]除author，reviewer外用户</td>
-    <td>[11]author或reviewer [12]为空</td>
-</tr>
-<tr>
-    <td>Type</td>
-    <td>[13]任意类型</td>
-    <td>[14]为空</td>
-</tr>
-<tr>
-    <td>Start date</td>
-    <td>[15]任意日期</td>
-    <td>[16]为空</td>
-</tr>
-<tr>
-    <td>Finish date</td>
-    <td>[17]在开始日期及之后的日期</td>
-    <td>[18]为空</td>
-</tr>
-<tr>
-    <td>Review start date</td>
-    <td>[19]出题开始日期及之后日期</td>
-    <td>[20]为空 [21]出题开始日期之前</td>
-</tr>
-<tr>
-    <td>Review finish date</td>
-    <td>[22]在评审开始日期及之后的日期，并且不早于出题结束日期</td>
-    <td>[23]为空 [24]出题结束日期之前</td>
-</tr>
-<tr>
-    <td>language</td>
-    <td>[25]任意语言</td>
-    <td>[26]为空</td>
-</tr>
-</table>
+| 输入参数               | 有效等价类                         | 无效等价类                       |
+| ------------------ | ----------------------------- | --------------------------- |
+| chapter            | [1]任何章节                       | [2]为空                       |
+| Knowledge point    | [3]章节下任意知识点                   | [4]为空                       |
+| Author             | [5]任意用户                       | [6]为空                       |
+| Reviewer           | [7]除author外用户                 | [8]author
+[9]为空             |
+| QA                 | [10]除author,reviewer外用户       | [11]author或reviewer
+[12]为空  |
+| Type               | [13]任意类型                      | [14]为空                      |
+| Start date         | [15]任意日期                      | [16]为空                      |
+| Finish date        | [17]在开始日期及之后的日期               | [18]为空                      |
+| Review start date  | [19]出题开始日期及之后日期               | [20]为空
+[21]出题开始日期之前         |
+| Review finish date | [22]在评审开始日期及之后的日期，并且不早于出题结束日期 | [23]为空
+[24]出题结束日期之前         |
+| language           | [25]任意语言                      | [26]为空                      |
 
 边界值分析适用于具有连续取值的参数分析，题目中具有连续取值的只有出题日期与评审日期。
 其中出题开始日期不存在边界限定，故不考虑。而对于评审结束日期，它的边界值与评审开始日期和出题结束日期相关。而这两个日期不存在约束关系，
 故它的多个边界值条件可以同时成立。
 
 **边界值分析**
-<table>
-<tr>
-    <th>输入参数</th>
-    <th>边界值</th>
-</tr>
-<tr>
-    <td>Finish date</td>
-    <td>[27]与Start date相同 [28]Start date后一天</td>
-</tr>
-<tr>
-    <td>Review start date</td>
-    <td>[29]Start date前一天 [30]与Start date相同 [31]Start date后一天</td>
-</tr>
-<tr>
-    <td>Review finish date</td>
-    <td>[32]与Review start date相同 [33]Review start date后一天 [34]Finish date前一天
-    [35]与Finish date相同  [36]Finish date后一天</td>
-</tr>
-</table>
+| 输入参数               | 边界值                                                                                                            |
+| ------------------ | -------------------------------------------------------------------------------------------------------------- |
+| Finish date        | [27]与Start date相同
+[28]Start date后一天                                                                            |
+| Review start date  | [29]Start date前一天
+[30]与Start date相同
+[31]Start date后一天                                                          |
+| Review finish date | [32]与Review start date相同
+[33]Review start date后一天
+[34]Finish date前一天
+[35]与Finish date相同
+[36]Finish date后一天     |
 
 ####测试数据
 
 **等价类划分**
-<table>
-    <tr>
-        <td>ID</td>
-        <td>覆盖的类</td>
-        <td>chapter</td>
-        <td>knowledge point</td>
-        <td>author</td>
-        <td>reviewer</td>
-        <td>QA</td>
-        <td>type</td>
-        <td>start date</td>
-        <td>finish date</td>
-        <td>review start date</td>
-        <td>review finish date</td>
-        <td>language</td>
-        <td>预期结果</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>1,3,5,7,10,13,15,17,19,22,25</td>
-        <td>1</td>
-        <td>1.2.1</td>
-        <td>testadmin</td>
-        <td>jmeter022</td>
-        <td>jmeter023</td>
-        <td>情景题</td>
-        <td>2020-05-03</td>
-        <td>2020-05-03</td>
-        <td>2020-05-03</td>
-        <td>2020-05-03</td>
-        <td>中文</td>
-        <td>成功</td>
-    </tr>
-    <tr>
-        <td>2</td>
-        <td>1,3,5,7,10,13,15,17,19,22,25</td>
-        <td>1</td>
-        <td>1.2.1</td>
-        <td>jmeter002</td>
-        <td>jmeter003</td>
-        <td>jmeter004</td>
-        <td>视频题</td>
-        <td>2020-05-03</td>
-        <td>2020-05-04</td>
-        <td>2020-05-03</td>
-        <td>2020-05-04</td>
-        <td>英文</td>
-        <td>成功</td>
-    </tr>
-    <tr>
-        <td>3</td>
-        <td>2</td>
-        <td>空</td>
-        <td>空</td>
-        <td>jmeter002</td>
-        <td>jmeter003</td>
-        <td>jmeter004</td>
-        <td>视频题</td>
-        <td>2020-05-03</td>
-        <td>2020-05-04</td>
-        <td>2020-05-03</td>
-        <td>2020-05-04</td>
-        <td>英文</td>
-        <td>失败</td>
-    </tr>
-    <tr>
-        <td>4</td>
-        <td>4</td>
-        <td>1</td>
-        <td>空</td>
-        <td>jmeter002</td>
-        <td>jmeter003</td>
-        <td>jmeter004</td>
-        <td>视频题</td>
-        <td>2020-05-03</td>
-        <td>2020-05-04</td>
-        <td>2020-05-03</td>
-        <td>2020-05-04</td>
-        <td>英文</td>
-        <td>失败</td>
-    </tr>
-    <tr>
-        <td>5</td>
-        <td>6</td>
-        <td>1</td>
-        <td>1.2.1</td>
-        <td>空</td>
-        <td>jmeter022</td>
-        <td>jmeter023</td>
-        <td>情景题</td>
-        <td>2020-04-29</td>
-        <td>2020-04-30</td>
-        <td>2020-04-29</td>
-        <td>2020-04-30</td>
-        <td>中文</td>
-        <td>失败</td>
-    </tr>
-    <tr>
-        <td>6</td>
-        <td>9</td>
-        <td>1</td>
-        <td>1.2.1</td>
-        <td>testadmin</td>
-        <td>空</td>
-        <td>jmeter023</td>
-        <td>情景题</td>
-        <td>2020-05-03</td>
-        <td>2020-05-04</td>
-        <td>2020-05-03</td>
-        <td>2020-05-04</td>
-        <td>中文</td>
-        <td>失败</td>
-    </tr>
-    <tr>
-        <td>7</td>
-        <td>8</td>
-        <td>1</td>
-        <td>1.2.1</td>
-        <td>testadmin</td>
-        <td>testadmin</td>
-        <td>jmeter023</td>
-        <td>情景题</td>
-        <td>2020-05-03</td>
-        <td>2020-05-04</td>
-        <td>2020-05-03</td>
-        <td>2020-05-04</td>
-        <td>中文</td>
-        <td>失败</td>
-    </tr>
-    <tr>
-        <td>8</td>
-        <td>12</td>
-        <td>1</td>
-        <td>1.2.1</td>
-        <td>testadmin</td>
-        <td>jmeter022</td>
-        <td>空</td>
-        <td>情景题</td>
-        <td>2020-05-03</td>
-        <td>2020-05-04</td>
-        <td>2020-05-03</td>
-        <td>2020-05-04</td>
-        <td>中文</td>
-        <td>失败</td>
-    </tr>
-    <tr>
-        <td>9</td>
-        <td>11</td>
-        <td>1</td>
-        <td>1.2.1</td>
-        <td>testadmin</td>
-        <td>jmeter022</td>
-        <td>jmeter022</td>
-        <td>情景题</td>
-        <td>2020-05-03</td>
-        <td>2020-05-04</td>
-        <td>2020-05-03</td>
-        <td>2020-05-04</td>
-        <td>中文</td>
-        <td>失败</td>
-    </tr>
-    <tr>
-        <td>10</td>
-        <td>14</td>
-        <td>1</td>
-        <td>1.2.1</td>
-        <td>testadmin</td>
-        <td>jmeter022</td>
-        <td>jmeter023</td>
-        <td>空</td>
-        <td>2020-05-03</td>
-        <td>2020-05-04</td>
-        <td>2020-05-03</td>
-        <td>2020-05-04</td>
-        <td>中文</td>
-        <td>失败</td>
-    </tr>
-    <tr>
-        <td>11</td>
-        <td>16</td>
-        <td>1</td>
-        <td>1.2.1</td>
-        <td>testadmin</td>
-        <td>jmeter022</td>
-        <td>jmeter023</td>
-        <td>情景题</td>
-        <td>空</td>
-        <td>2020-05-04</td>
-        <td>2020-05-03</td>
-        <td>2020-05-04</td>
-        <td>中文</td>
-        <td>失败</td>
-    </tr>
-    <tr>
-        <td>12</td>
-        <td>18</td>
-        <td>1</td>
-        <td>1.2.1</td>
-        <td>testadmin</td>
-        <td>jmeter022</td>
-        <td>jmeter023</td>
-        <td>情景题</td>
-        <td>2020-05-03</td>
-        <td>空</td>
-        <td>2020-05-03</td>
-        <td>2020-05-04</td>
-        <td>中文</td>
-        <td>失败</td>
-    </tr>
-    <tr>
-        <td>13</td>
-        <td>20</td>
-        <td>1</td>
-        <td>1.2.1</td>
-        <td>testadmin</td>
-        <td>jmeter022</td>
-        <td>jmeter023</td>
-        <td>情景题</td>
-        <td>2020-05-03</td>
-        <td>2020-05-04</td>
-        <td>空</td>
-        <td>2020-05-04</td>
-        <td>中文</td>
-        <td>失败</td>
-    </tr>
-    <tr>
-        <td>14</td>
-        <td>23</td>
-        <td>1</td>
-        <td>1.2.1</td>
-        <td>testadmin</td>
-        <td>jmeter022</td>
-        <td>jmeter023</td>
-        <td>情景题</td>
-        <td>2020-05-03</td>
-        <td>2020-05-04</td>
-        <td>2020-05-03</td>
-        <td>空</td>
-        <td>中文</td>
-        <td>失败</td>
-    </tr>
-    <tr>
-        <td>15</td>
-        <td>26</td>
-        <td>1</td>
-        <td>1.2.1</td>
-        <td>testadmin</td>
-        <td>jmeter022</td>
-        <td>jmeter023</td>
-        <td>情景题</td>
-        <td>2020-05-03</td>
-        <td>2020-05-04</td>
-        <td>2020-05-03</td>
-        <td>2020-05-04</td>
-        <td>空</td>
-        <td>失败</td>
-    </tr>
-    <tr>
-        <td>16</td>
-        <td>21</td>
-        <td>1</td>
-        <td>1.2.1</td>
-        <td>testadmin</td>
-        <td>jmeter022</td>
-        <td>jmeter023</td>
-        <td>情景题</td>
-        <td>2020-05-03</td>
-        <td>2020-05-04</td>
-        <td>2020-04-30</td>
-        <td>2020-05-04</td>
-        <td>中文</td>
-        <td>失败</td>
-    </tr>
-    <tr>
-        <td>17</td>
-        <td>24</td>
-        <td>1</td>
-        <td>1.2.1</td>
-        <td>testadmin</td>
-        <td>jmeter022</td>
-        <td>jmeter023</td>
-        <td>情景题</td>
-        <td>2020-05-03</td>
-        <td>2020-05-04</td>
-        <td>2020-05-03</td>
-        <td>2020-05-03</td>
-        <td>中文</td>
-        <td>失败</td>
-    </tr>
-</table>
+| ID  | 覆盖的类                         | chapter | knowledge point | author    | reviewer  | QA        | type | start date | finish date | review start date | review finish date | language | 预期输出 |
+| --- | ---------------------------- | ------- | --------------- | --------- | --------- | --------- | ---- | ---------- | ----------- | ----------------- | ------------------ | -------- | ---- |
+| 1   | 1,3,5,7,10,13,15,17,19,22,25 | 1       | 1.2.1           | testadmin | jmeter022 | jmeter023 | 情景题  | 2020-05-03 | 2020-05-03  | 2020-05-03        | 2020-05-03         | 中文       | 成功   |
+| 2   | 1,3,5,7,10,13,15,17,19,22,25 | 1       | 1.2.1           | jmeter002 | jmeter003 | jmeter004 | 视频题  | 2020-05-03 | 2020-05-04  | 2020-05-03        | 2020-05-04         | 英文       | 成功   |
+| 3   | 2                            | 空       | 空               | jmeter002 | jmeter003 | jmeter004 | 视频题  | 2020-05-03 | 2020-05-04  | 2020-05-03        | 2020-05-04         | 英文       | 失败   |
+| 4   | 4                            | 1       | 空               | jmeter002 | jmeter003 | jmeter004 | 视频题  | 2020-05-03 | 2020-05-04  | 2020-05-03        | 2020-05-04         | 英文       | 失败   |
+| 5   | 6                            | 1       | 1.2.1           | 空         | jmeter022 | jmeter023 | 情景题  | 2020-04-29 | 2020-04-30  | 2020-04-29        | 2020-04-30         | 中文       | 失败   |
+| 6   | 9                            | 1       | 1.2.1           | testadmin | 空         | jmeter023 | 情景题  | 2020-05-03 | 2020-05-04  | 2020-05-03        | 2020-05-04         | 中文       | 失败   |
+| 7   | 8                            | 1       | 1.2.1           | testadmin | testadmin | jmeter023 | 情景题  | 2020-05-03 | 2020-05-04  | 2020-05-03        | 2020-05-04         | 中文       | 失败   |
+| 8   | 12                           | 1       | 1.2.1           | testadmin | jmeter022 | 空         | 情景题  | 2020-05-03 | 2020-05-04  | 2020-05-03        | 2020-05-04         | 中文       | 失败   |
+| 9   | 11                           | 1       | 1.2.1           | testadmin | jmeter022 | jmeter022 | 情景题  | 2020-05-03 | 2020-05-04  | 2020-05-03        | 2020-05-04         | 中文       | 失败   |
+| 10  | 14                           | 1       | 1.2.1           | testadmin | jmeter022 | jmeter023 | 空    | 2020-05-03 | 2020-05-04  | 2020-05-03        | 2020-05-04         | 中文       | 失败   |
+| 11  | 16                           | 1       | 1.2.1           | testadmin | jmeter022 | jmeter023 | 情景题  | 空          | 2020-05-04  | 2020-05-03        | 2020-05-04         | 中文       | 失败   |
+| 12  | 18                           | 1       | 1.2.1           | testadmin | jmeter022 | jmeter023 | 情景题  | 2020-05-03 | 空           | 2020-05-03        | 2020-05-04         | 中文       | 失败   |
+| 13  | 20                           | 1       | 1.2.1           | testadmin | jmeter022 | jmeter023 | 情景题  | 2020-05-03 | 2020-05-04  | 空                 | 2020-05-04         | 中文       | 失败   |
+| 14  | 23                           | 1       | 1.2.1           | testadmin | jmeter022 | jmeter023 | 情景题  | 2020-05-03 | 2020-05-04  | 2020-05-03        | 空                  | 中文       | 失败   |
+| 15  | 26                           | 1       | 1.2.1           | testadmin | jmeter022 | jmeter023 | 情景题  | 2020-05-03 | 2020-05-04  | 2020-05-03        | 2020-05-04         | 空        | 失败   |
+| 16  | 21                           | 1       | 1.2.1           | testadmin | jmeter022 | jmeter023 | 情景题  | 2020-05-03 | 2020-05-04  | 2020-04-30        | 2020-05-04         | 中文       | 失败   |
+| 17  | 24                           | 1       | 1.2.1           | testadmin | jmeter022 | jmeter023 | 情景题  | 2020-05-03 | 2020-05-04  | 2020-05-03        | 2020-05-03         | 中文       | 失败   |
 
 **边界值分析**
-<table>
-    <tr>
-        <td>ID</td>
-        <td>覆盖的类</td>
-        <td>chapter</td>
-        <td>knowledge point</td>
-        <td>author</td>
-        <td>reviewer</td>
-        <td>QA</td>
-        <td>type</td>
-        <td>start date</td>
-        <td>finish date</td>
-        <td>review start date</td>
-        <td>review finish date</td>
-        <td>language</td>
-        <td>预期结果</td>
-    </tr>
-    <tr>
-        <td>18</td>
-        <td>27,30,32,35</td>
-        <td>1</td>
-        <td>1.2.1</td>
-        <td>testadmin</td>
-        <td>jmeter022</td>
-        <td>jmeter023</td>
-        <td>情景题</td>
-        <td>2020-05-03</td>
-        <td>2020-05-03</td>
-        <td>2020-05-03</td>
-        <td>2020-05-03</td>
-        <td>中文</td>
-        <td>成功</td>
-    </tr>
-    <tr>
-        <td>19</td>
-        <td>28,31,33,36</td>
-        <td>1</td>
-        <td>1.2.1</td>
-        <td>testadmin</td>
-        <td>jmeter022</td>
-        <td>jmeter023</td>
-        <td>情景题</td>
-        <td>2020-05-03</td>
-        <td>2020-05-04</td>
-        <td>2020-05-04</td>
-        <td>2020-05-05</td>
-        <td>中文</td>
-        <td>成功</td>
-    </tr>
-    <tr>
-        <td>20</td>
-        <td>29</td>
-        <td>1</td>
-        <td>1.2.1</td>
-        <td>testadmin</td>
-        <td>jmeter022</td>
-        <td>jmeter023</td>
-        <td>情景题</td>
-        <td>2020-05-03</td>
-        <td>2020-05-04</td>
-        <td>2020-05-02</td>
-        <td>2020-05-04</td>
-        <td>中文</td>
-        <td>失败</td>
-    </tr>
-    <tr>
-        <td>21</td>
-        <td>34</td>
-        <td>1</td>
-        <td>1.2.1</td>
-        <td>testadmin</td>
-        <td>jmeter022</td>
-        <td>jmeter023</td>
-        <td>情景题</td>
-        <td>2020-05-03</td>
-        <td>2020-05-04</td>
-        <td>2020-05-03</td>
-        <td>2020-05-03</td>
-        <td>中文</td>
-        <td>失败</td>
-    </tr>
-</table>
+| ID  | 覆盖的类                 | chapter | knowledge point | author    | reviewer  | QA        | type | start date | finish date | review start date | review finish date | language | 预期输出 |
+| --- | -------------------- | ------- | --------------- | --------- | --------- | --------- | ---- | ---------- | ----------- | ----------------- | ------------------ | -------- | ---- |
+| 18   | 27,30,32,35 | 1       | 1.2.1           | testadmin | jmeter022 | jmeter023 | 情景题  | 2020-05-03 | 2020-05-03  | 2020-05-03        | 2020-05-03         | 中文       | 成功   |
+| 19   | 28,31,33,36 | 1       | 1.2.1           | testadmin | jmeter022 | jmeter023 | 情景题  | 2020-05-03 | 2020-05-04  | 2020-05-04        | 2020-05-05         | 中文       | 成功   |
+| 20   | 29          | 1       | 1.2.1           | testadmin | jmeter022 | jmeter023 | 情景题  | 2020-05-03 | 2020-05-04  | 2020-05-02        | 2020-05-04         | 中文       | 失败   |
+| 21   | 34          | 1       | 1.2.1           | testadmin | jmeter022 | jmeter023 | 情景题  | 2020-05-03 | 2020-05-04  | 2020-05-03        | 2020-05-03         | 中文       | 失败   |
 
 # 测试脚本实现及运行
 
