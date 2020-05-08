@@ -173,7 +173,7 @@ references:
     </tr>
     <tr>
         <td>1</td>
-        <td>1,3,5,7,10,13,15,17,19,22,25,27,29</td>
+        <td>1,3,5,7,10,13,15,17,19,22,25</td>
         <td>1</td>
         <td>1.2.1</td>
         <td>testadmin</td>
@@ -189,7 +189,7 @@ references:
     </tr>
     <tr>
         <td>2</td>
-        <td>1,3,5,7,10,13,15,17,19,22,25,28,30</td>
+        <td>1,3,5,7,10,13,15,17,19,22,25</td>
         <td>1</td>
         <td>1.2.1</td>
         <td>jmeter002</td>
@@ -444,6 +444,63 @@ references:
         <td>失败</td>
     </tr>
 </table>
+<table>
+<tr>
+        <td>ID</td>
+        <td>覆盖的类</td>
+        <td colspan="11">input</td>
+        <td>预期输出</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>chapter</td>
+        <td>knowledge point</td>
+        <td>author</td>
+        <td>reviewer</td>
+        <td>QA</td>
+        <td>type</td>
+        <td>start date</td>
+        <td>finish date</td>
+        <td>review start date</td>
+        <td>review finish date</td>
+        <td>language</td>
+        <td></td>
+    </tr>
+    <tr>
+            <td>18</td>
+            <td>27,29,31</td>
+            <td>1</td>
+            <td>1.2.1</td>
+            <td>testadmin</td>
+            <td>jmeter022</td>
+            <td>jmeter023</td>
+            <td>情景题</td>
+            <td>2020-05-03</td>
+            <td>2020-05-03</td>
+            <td>2020-05-03</td>
+            <td>2020-05-03</td>
+            <td>中文</td>
+            <td>成功</td>
+        </tr>
+        <tr>
+            <td>19</td>
+            <td>28,30,32</td>
+            <td>1</td>
+            <td>1.2.1</td>
+            <td>jmeter002</td>
+            <td>jmeter003</td>
+            <td>jmeter004</td>
+            <td>视频题</td>
+            <td>2020-05-03</td>
+            <td>2020-05-04</td>
+            <td>2020-05-04</td>
+            <td>2020-05-05</td>
+            <td>英文</td>
+            <td>成功</td>
+        </tr>
+</table>
+
 # 测试脚本实现及运行
 
 ## 脚本实现方式

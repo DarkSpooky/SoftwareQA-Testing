@@ -150,6 +150,7 @@ tinytex::install_tinytex()
 ## 测试关键字
 
 ## 测试数据
+
 \begin{table}
     \begin{tabular}{llllllllllllll}
     ID & 覆盖的类                               & \multicolumn{11}{l}{input} & 预期输出 \\
@@ -171,6 +172,15 @@ tinytex::install_tinytex()
     15 & 26                                 & 1       & 1.2.1           & testadmin & jmeter022 & jmeter023 & 情景题  & 2020-05-03 & 2020-05-04  & 2020-05-03        & 2020-05-04         & 空        & 失败   \\
     16 & 21                                 & 1       & 1.2.1           & testadmin & jmeter022 & jmeter023 & 情景题  & 2020-05-03 & 2020-05-04  & 2020-04-30        & 2020-05-04         & 中文       & 失败   \\
     17 & 24                                 & 1       & 1.2.1           & testadmin & jmeter022 & jmeter023 & 情景题  & 2020-05-03 & 2020-05-04  & 2020-05-03        & 2020-05-03         & 中文       & 失败   \\
+    \end{tabular}
+\end{table}
+
+\begin{table}
+ \begin{tabular}{llllllllllllll}
+    ID & 覆盖的类                               & \multicolumn{11}{l}{input} & 预期输出 \\
+    ~  & ~                                  & chapter & knowledge point & author    & reviewer  & QA        & type & start date & finish date & review start date & review finish date & language & ~    \\
+    18  & 27,29,31 & 1       & 1.2.1           & testadmin & jmeter022 & jmeter023 & 情景题  & 2020-05-03 & 2020-05-03  & 2020-05-03        & 2020-05-03         & 中文       & 成功   \\
+    19  & 28,30,32 & 1       & 1.2.1           & jmeter002 & jmeter003 & jmeter004 & 视频题  & 2020-05-03 & 2020-05-04  & 2020-05-04        & 2020-05-05         & 英文       & 成功   \\
     \end{tabular}
 \end{table}
 
