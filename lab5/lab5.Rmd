@@ -186,7 +186,7 @@ tinytex::install_tinytex()
   \caption{等价类划分}
   \label{Tab:bookRWCal}
   \centering
-  \begin{tabular}{|p{3.5cm}|p{4.5cm}|p{4.5cm}|}
+  \begin{tabular}{|p{3.5cm}|p{4.9cm}|p{4.1cm}|}
   \hline
   \textbf{输入参数} &\textbf{有效等价类果} &\textbf{无效等价类 }\\
   \hline
