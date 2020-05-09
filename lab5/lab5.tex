@@ -40,7 +40,6 @@
             linkcolor=magenta,
             pdfborder={0 0 0}}
 \urlstyle{same}  % don't use monospace font for urls
-\usepackage{longtable,booktabs}
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -131,15 +130,42 @@
 
 创建考题需要完成考题的相关设定。这些设定包括选择章节、选择知识点、设置作者、设置评审
 、设置质管、设置类型、设置语言、设置出题日期、设置评审日期。而创建考题作为一个独立的UI测试，登录是一个基础环节。于是我们针对上述的关键步骤设计了以下关键字：
-+ loginActions 登录系统 + navigateToAddQuestion 页面导航 +
-showEditQuestion 选择添加考题 + chooseChapter 选择章节 +
-chooseKnowledgePoint 选择知识点 + chooseAuthor 设置作者 + chooseReviewer
-设置评审 + chooseQA 设置质管 + chooseType 设置题目类型 + startDate
-设置出题开始日期 + finishDate 设置出题结束日期 + reviewStartDate
-设置评审开始日期 + reviewFinishDate 设置评审结束日期 + chooseLanguage
-选择语言 + saveQuestion 保存考题
 
-其中我们没有将登录拆分为更加细致的行为，这是因为登录对于创建考题环节而言是比较基础和简单的。它不是本黑盒测试的考察内容。
+\begin{itemize}
+\tightlist
+\item
+  loginActions 登录系统
+\item
+  navigateToAddQuestion 页面导航
+\item
+  showEditQuestion 选择添加考题
+\item
+  chooseChapter 选择章节
+\item
+  chooseKnowledgePoint 选择知识点
+\item
+  chooseAuthor 设置作者
+\item
+  chooseReviewer 设置评审
+\item
+  chooseQA 设置质管
+\item
+  chooseType 设置题目类型
+\item
+  startDate 设置出题开始日期
+\item
+  finishDate 设置出题结束日期
+\item
+  reviewStartDate 设置评审开始日期
+\item
+  reviewFinishDate 设置评审结束日期
+\item
+  chooseLanguage 选择语言
+\item
+  saveQuestion 保存考题
+\end{itemize}
+
+其中我们没有将登录拆分为更加细致的行为，这是因为登录对于创建考题环节而言是比较基础和简单的。它不是创建考题黑盒测试的考察内容。
 
 \hypertarget{ux6d4bux8bd5ux6570ux636e}{%
 \subsection{测试数据}\label{ux6d4bux8bd5ux6570ux636e}}
@@ -147,765 +173,157 @@ chooseKnowledgePoint 选择知识点 + chooseAuthor 设置作者 + chooseReviewe
 \hypertarget{ux767bux5f55-1}{%
 \subsubsection{登录}\label{ux767bux5f55-1}}
 
-\#\#\#\#等价类划分与边界值分析
+\hypertarget{ux7b49ux4ef7ux7c7bux5212ux5206}{%
+\paragraph{等价类划分}\label{ux7b49ux4ef7ux7c7bux5212ux5206}}
 
-\#\#\#\#测试数据
+\hypertarget{ux8fb9ux754cux503cux5206ux6790}{%
+\paragraph{边界值分析}\label{ux8fb9ux754cux503cux5206ux6790}}
 
 \hypertarget{ux521bux5efaux8003ux9898-1}{%
 \subsubsection{创建考题}\label{ux521bux5efaux8003ux9898-1}}
 
-\#\#\#\#等价类划分与边界值分析
-创建考题的UI测试具备多个输入参数，并且这些参数的取值也多种多样。我们对输入参数进行等价类划分和边界值分析。
+\hypertarget{ux7b49ux4ef7ux7c7bux5212ux5206-1}{%
+\paragraph{等价类划分}\label{ux7b49ux4ef7ux7c7bux5212ux5206-1}}
 
-\textbf{等价类划分}
+创建考题的UI测试具备多个输入参数，并且这些参数的取值也多种多样。我们对输入参数进行等价类划分:
 
-\begin{longtable}[]{@{}lll@{}}
-\toprule
-输入参数 & 有效等价类 & 无效等价类\tabularnewline
-\midrule
-\endhead
-chapter & {[}1{]}任何章节 & {[}2{]}为空\tabularnewline
-Knowledge point & {[}3{]}章节下任意知识点 & {[}4{]}为空\tabularnewline
-Author & {[}5{]}任意用户 & {[}6{]}为空\tabularnewline
-Reviewer & {[}7{]}除author外用户 & {[}8{]}author
-{[}9{]}为空\tabularnewline
-QA & {[}10{]}除author,reviewer外用户 & {[}11{]}author或reviewer
-{[}12{]}为空\tabularnewline
-Type & {[}13{]}任意类型 & {[}14{]}为空\tabularnewline
-Start date & {[}15{]}任意日期 & {[}16{]}为空\tabularnewline
-Finish date & {[}17{]}在开始日期及之后的日期 &
-{[}18{]}为空\tabularnewline
-Review start date & {[}19{]}出题开始日期及之后日期 & {[}20{]}为空
-{[}21{]}出题开始日期之前\tabularnewline
-Review finish date &
-{[}22{]}在评审开始日期及之后的日期，并且不早于出题结束日期 &
-{[}23{]}为空 {[}24{]}出题结束日期之前\tabularnewline
-language & {[}25{]}任意语言 & {[}26{]}为空\tabularnewline
-\bottomrule
-\end{longtable}
+\begin{table}[!htbp]
+  \caption{等价类划分}
+  \label{Tab:bookRWCal}
+  \centering
+  \begin{tabular}{|p{3.5cm}|p{4.5cm}|p{4.5cm}|}
+  \hline
+  \textbf{输入参数} &\textbf{有效等价类果} &\textbf{无效等价类 }\\
+  \hline
+  Chapter     & [1]任何章节     & [2]为空 \\
+  \hline
+  Knowledge point  & [3]章节下任意知识点    & [4]为空  \\
+  \hline
+  Author   & [5]任意用户    & [6]为空 \\
+  \hline
+  Reviewer    & [7]除author外用户       & [8]author \newline [9]为空 \\
+  \hline
+  QA     & [10]除author，reviewer外用户      & [11]author或reviewer
+\newline [12]为空 \\
+  \hline
+  Type     & [13]任意类型       & [14]为空  \\
+  \hline
+  Start date   & [15]任意日期       & 16]为空  \\
+  \hline
+  Finish date      & [17]在开始日期及之后的日期    & [18]为空 \\
+  \hline
+  Review start date    & [19]出题开始日期及之后日期        & [20]为空 \newline [21]出题开始日期之前 \\
+  \hline
+  Review finish date   & [22]在评审开始日期及之后的日期，并且不早于出题结束日期      & [23]为空 \newline  [24]出题结束日期之前 \\
+  \hline
+  Language    & [25]任意语言    & [26]为空 \\
+  \hline
+  \end{tabular}
+\end{table}
+
+表2是根据等价类划分设计的测试用例，其中c0表示第一个章节，k0表示该章节第一个知识点，u0表示成员1，u1表示成员2，u2表示成员3，t0表示类型为情景题，l0表示语言为中文。
+
+\begin{table}[!htbp]
+  \caption{等价类划分测试数据}
+  \centering
+  \begin{tabular}{|p{0.35cm}|p{1.2cm}|p{0.22cm}|p{0.22cm}|p{0.22cm}|p{0.22cm}|p{0.22cm}|p{0.22cm}|p{0.9cm}|p{0.9cm}|p{0.9cm}|p{0.9cm}|p{0.22cm}|p{0.8cm}|}
+  \hline
+  \textbf{ID} & \textbf{类} & \multicolumn{11}{c|}{\textbf{输入参数}} & \textbf{预期}  \\ 
+  \hline
+1   & 1,3,5,7, 10,13,15, 17,19,22, 25 & c0  & k0 & u0 & u1 & u2 & t0  & 2020-05-03 & 2020-05-03 & 2020-05-03 & 2020-05-03 & l0 & 成功   \\
+  \hline
+2   & 2  & 空 & k0  & u0 & u1 & u2 & t0  & 2020-05-03 & 2020-05-03  
+& 2020-05-03 & 2020-05-03 & l0 & 失败   \\
+  \hline
+3   & 4  & c0 & 空 & u0 & u1 & u2 & t0  & 2020-05-03 & 2020-05-04  
+& 2020-05-03 & 2020-05-04 & l0 & 失败   \\
+  \hline
+4   & 6  & c0 & k0  & 空 & u1 & u2 & t0  & 2020-05-03 & 2020-05-04  
+& 2020-05-03 & 2020-05-04 & l0 & 失败   \\
+  \hline
+5   & 8  & c0 & k0  & u0 & u0 & u2 & t0  & 2020-05-03 & 2020-05-04  
+& 2020-05-03 & 2020-05-04 & l0 & 失败   \\
+  \hline
+6   & 9  & c0 & k0  & u0 & 空 & u2 & t0  & 2020-05-03 & 2020-05-04  
+& 2020-05-03 & 2020-05-04 & l0 & 失败   \\
+  \hline
+7   & 11 & c0 & k0  & u0 & u1 & u1 & t0  & 2020-05-03 & 2020-05-04  
+& 2020-05-03 & 2020-05-04 & 0  & 失败   \\
+  \hline
+8   & 12 & c0 & k0  & u0 & u1 & 空 & t0  & 2020-05-03 & 2020-05-04  
+& 2020-05-03 & 2020-05-04 & l0 & 失败   \\
+  \hline
+9   & 14 & c0 & k0  & u0 & u1 & u2 & 空  & 2020-05-03 & 2020-05-04  
+& 2020-05-03 & 2020-05-04 & l0 & 失败   \\
+  \hline 
+10  & 16 & c0 & k0  & u0 & u1 & u2 & t0  & 空         & 2020-05-04  
+& 2020-05-03 & 2020-05-04 & l0 & 失败   \\
+  \hline
+11  & 18 & c0 & k0  & u0 & u1 & u2 & t0  & 2020-05-03 & 空  
+& 2020-05-03 & 2020-05-04 & l0 & 失败   \\
+  \hline
+12  & 20 & c0 & k0  & u0 & u1 & u2 & t0  & 2020-05-03 & 2020-05-04  
+& 空         & 2020-05-04 & l0 & 失败   \\
+  \hline
+13  & 21 & c0 & k0  & u0 & u1 & u2 & t0  & 2020-05-03 & 2020-05-04  
+& 2020-04-30 & 2020-05-04 & l0 & 失败   \\
+  \hline
+14  & 23 & c0 & k0  & u0 & u1 & u2 & t0  & 2020-05-03 & 2020-05-04  
+& 2020-05-03 & 空         & l0 & 失败   \\
+  \hline
+15  & 24 & c0 & k0  & u0 & u1 & u2 & t0  & 2020-05-03 & 2020-05-04  
+& 2020-05-03 & 2020-05-03 & l0 & 失败   \\
+  \hline
+16  & 26 & 0  & 0  & u0 & u1 & u2 & t0  & 2020-05-03 & 2020-05-04  
+& 2020-05-03 & 2020-05-04 & 空 & 失败   \\
+
+  \hline
+  \end{tabular}
+\end{table}
+
+\hypertarget{ux8fb9ux754cux503cux5206ux6790-1}{%
+\paragraph{边界值分析}\label{ux8fb9ux754cux503cux5206ux6790-1}}
 
 边界值分析适用于具有连续取值的参数分析，题目中具有连续取值的只有出题日期与评审日期。
 其中出题开始日期不存在边界限定，故不考虑。而对于评审结束日期，它的边界值与评审开始日期和出题结束日期相关。而这两个日期不存在约束关系，
-故它的多个边界值条件可以同时成立。
+故它的多个边界值条件可以同时成立。对于不存在连续取值的参数，这里的边界值分析不再进行罗列，在测试数据中会使用固定的取值。
 
-\textbf{边界值分析}
+\begin{table}[!htbp]
+  \caption{边界值分析}
+  \label{Tab:bookRWCal}
+  \centering
+  \begin{tabular}{|p{6.0cm}|p{6.5cm}|}
+  \hline
+  \textbf{输入参数} &\textbf{边界值} \\
+  \hline
+  Finish date     & [27]与start date相同   \newline [28] start date后一天 \\
+  \hline
+  Review start date     & [29]Start date前一天     \newline [30]与Start date相同  \newline  [31]Start date后一天 \\
+  \hline
+  Review finish date     & [32]与Review start date相同     \newline [33]Review start date后一天 \newline [34]Finish date前一天 \newline [35]与Finish date相同  \newline  [36]Finish date后一天\\
+  \hline
+  \end{tabular}
+\end{table}
 
-\begin{longtable}[]{@{}ll@{}}
-\toprule
-\begin{minipage}[b]{0.13\columnwidth}\raggedright
-输入参数\strut
-\end{minipage} & \begin{minipage}[b]{0.81\columnwidth}\raggedright
-边界值\strut
-\end{minipage}\tabularnewline
-\midrule
-\endhead
-\begin{minipage}[t]{0.13\columnwidth}\raggedright
-Finish date\strut
-\end{minipage} & \begin{minipage}[t]{0.81\columnwidth}\raggedright
-{[}27{]}与Start date相同 {[}28{]}Start date后一天\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.13\columnwidth}\raggedright
-Review start date\strut
-\end{minipage} & \begin{minipage}[t]{0.81\columnwidth}\raggedright
-{[}29{]}Start date前一天 {[}30{]}与Start date相同 {[}31{]}Start
-date后一天\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.13\columnwidth}\raggedright
-Review finish date\strut
-\end{minipage} & \begin{minipage}[t]{0.81\columnwidth}\raggedright
-{[}32{]}与Review start date相同 {[}33{]}Review start date后一天
-{[}34{]}Finish date前一天 {[}35{]}与Finish date相同 {[}36{]}Finish
-date后一天\strut
-\end{minipage}\tabularnewline
-\bottomrule
-\end{longtable}
+表4是根据根据边界值分析设计的测试用例。
 
-\#\#\#\#测试数据
-
-\textbf{等价类划分}
-
-\begin{longtable}[]{@{}llllllllllllll@{}}
-\toprule
-\begin{minipage}[b]{0.01\columnwidth}\raggedright
-ID\strut
-\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\raggedright
-覆盖的类\strut
-\end{minipage} & \begin{minipage}[b]{0.03\columnwidth}\raggedright
-chapter\strut
-\end{minipage} & \begin{minipage}[b]{0.06\columnwidth}\raggedright
-knowledge point\strut
-\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedright
-author\strut
-\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedright
-reviewer\strut
-\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedright
-QA\strut
-\end{minipage} & \begin{minipage}[b]{0.02\columnwidth}\raggedright
-type\strut
-\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedright
-start date\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright
-finish date\strut
-\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\raggedright
-review start date\strut
-\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\raggedright
-review finish date\strut
-\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedright
-language\strut
-\end{minipage} & \begin{minipage}[b]{0.02\columnwidth}\raggedright
-预期输出\strut
-\end{minipage}\tabularnewline
-\midrule
-\endhead
-\begin{minipage}[t]{0.01\columnwidth}\raggedright
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-1,3,5,7,10,13,15,17,19,22,25\strut
-\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedright
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-1.2.1\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-testadmin\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter022\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter023\strut
-\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedright
-情景题\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-中文\strut
-\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedright
-成功\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.01\columnwidth}\raggedright
-2\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-1,3,5,7,10,13,15,17,19,22,25\strut
-\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedright
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-1.2.1\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter002\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter003\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter004\strut
-\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedright
-视频题\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-2020-05-04\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
-2020-05-04\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-英文\strut
-\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedright
-成功\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.01\columnwidth}\raggedright
-3\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-2\strut
-\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedright
-空\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-空\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter002\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter003\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter004\strut
-\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedright
-视频题\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-2020-05-04\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
-2020-05-04\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-英文\strut
-\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedright
-失败\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.01\columnwidth}\raggedright
-4\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-4\strut
-\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedright
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-空\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter002\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter003\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter004\strut
-\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedright
-视频题\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-2020-05-04\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
-2020-05-04\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-英文\strut
-\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedright
-失败\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.01\columnwidth}\raggedright
-5\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-6\strut
-\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedright
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-1.2.1\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-空\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter022\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter023\strut
-\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedright
-情景题\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-2020-04-29\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-2020-04-30\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedright
-2020-04-29\strut
-\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
-2020-04-30\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-中文\strut
-\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedright
-失败\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.01\columnwidth}\raggedright
-6\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-9\strut
-\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedright
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-1.2.1\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-testadmin\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-空\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter023\strut
-\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedright
-情景题\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-2020-05-04\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
-2020-05-04\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-中文\strut
-\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedright
-失败\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.01\columnwidth}\raggedright
-7\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-8\strut
-\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedright
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-1.2.1\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-testadmin\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-testadmin\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter023\strut
-\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedright
-情景题\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-2020-05-04\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
-2020-05-04\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-中文\strut
-\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedright
-失败\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.01\columnwidth}\raggedright
-8\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-12\strut
-\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedright
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-1.2.1\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-testadmin\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter022\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-空\strut
-\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedright
-情景题\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-2020-05-04\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
-2020-05-04\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-中文\strut
-\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedright
-失败\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.01\columnwidth}\raggedright
-9\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-11\strut
-\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedright
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-1.2.1\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-testadmin\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter022\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter022\strut
-\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedright
-情景题\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-2020-05-04\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
-2020-05-04\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-中文\strut
-\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedright
-失败\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.01\columnwidth}\raggedright
-10\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-14\strut
-\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedright
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-1.2.1\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-testadmin\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter022\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter023\strut
-\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedright
-空\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-2020-05-04\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
-2020-05-04\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-中文\strut
-\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedright
-失败\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.01\columnwidth}\raggedright
-11\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-16\strut
-\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedright
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-1.2.1\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-testadmin\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter022\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter023\strut
-\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedright
-情景题\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-空\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-2020-05-04\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
-2020-05-04\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-中文\strut
-\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedright
-失败\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.01\columnwidth}\raggedright
-12\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-18\strut
-\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedright
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-1.2.1\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-testadmin\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter022\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter023\strut
-\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedright
-情景题\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-空\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
-2020-05-04\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-中文\strut
-\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedright
-失败\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.01\columnwidth}\raggedright
-13\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-20\strut
-\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedright
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-1.2.1\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-testadmin\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter022\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter023\strut
-\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedright
-情景题\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-2020-05-04\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedright
-空\strut
-\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
-2020-05-04\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-中文\strut
-\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedright
-失败\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.01\columnwidth}\raggedright
-14\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-23\strut
-\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedright
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-1.2.1\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-testadmin\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter022\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter023\strut
-\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedright
-情景题\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-2020-05-04\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
-空\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-中文\strut
-\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedright
-失败\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.01\columnwidth}\raggedright
-15\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-26\strut
-\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedright
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-1.2.1\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-testadmin\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter022\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter023\strut
-\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedright
-情景题\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-2020-05-04\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
-2020-05-04\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-空\strut
-\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedright
-失败\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.01\columnwidth}\raggedright
-16\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-21\strut
-\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedright
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-1.2.1\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-testadmin\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter022\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter023\strut
-\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedright
-情景题\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-2020-05-04\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedright
-2020-04-30\strut
-\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
-2020-05-04\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-中文\strut
-\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedright
-失败\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.01\columnwidth}\raggedright
-17\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-24\strut
-\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedright
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-1.2.1\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-testadmin\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter022\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter023\strut
-\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedright
-情景题\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-2020-05-04\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-中文\strut
-\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedright
-失败\strut
-\end{minipage}\tabularnewline
-\bottomrule
-\end{longtable}
-
-\textbf{边界值分析}
-
-\begin{longtable}[]{@{}llllllllllllll@{}}
-\toprule
-\begin{minipage}[b]{0.02\columnwidth}\raggedright
-ID\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright
-覆盖的类\strut
-\end{minipage} & \begin{minipage}[b]{0.03\columnwidth}\raggedright
-chapter\strut
-\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\raggedright
-knowledge point\strut
-\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedright
-author\strut
-\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedright
-reviewer\strut
-\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedright
-QA\strut
-\end{minipage} & \begin{minipage}[b]{0.03\columnwidth}\raggedright
-type\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright
-start date\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright
-finish date\strut
-\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\raggedright
-review start date\strut
-\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\raggedright
-review finish date\strut
-\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedright
-language\strut
-\end{minipage} & \begin{minipage}[b]{0.02\columnwidth}\raggedright
-预期输出\strut
-\end{minipage}\tabularnewline
-\midrule
-\endhead
-\begin{minipage}[t]{0.02\columnwidth}\raggedright
-18\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-27,30,32,35\strut
-\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedright
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedright
-1.2.1\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-testadmin\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter022\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter023\strut
-\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedright
-情景题\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-中文\strut
-\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedright
-成功\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.02\columnwidth}\raggedright
-19\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-28,31,33,36\strut
-\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedright
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedright
-1.2.1\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-testadmin\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter022\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter023\strut
-\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedright
-情景题\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-2020-05-04\strut
-\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
-2020-05-04\strut
-\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
-2020-05-05\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-中文\strut
-\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedright
-成功\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.02\columnwidth}\raggedright
-20\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-29\strut
-\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedright
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedright
-1.2.1\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-testadmin\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter022\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter023\strut
-\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedright
-情景题\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-2020-05-04\strut
-\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
-2020-05-02\strut
-\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
-2020-05-04\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-中文\strut
-\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedright
-失败\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.02\columnwidth}\raggedright
-21\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-34\strut
-\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedright
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedright
-1.2.1\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-testadmin\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter022\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-jmeter023\strut
-\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedright
-情景题\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-2020-05-04\strut
-\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
-2020-05-03\strut
-\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
-中文\strut
-\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\raggedright
-失败\strut
-\end{minipage}\tabularnewline
-\bottomrule
-\end{longtable}
+\begin{table}[!htbp]
+  \caption{边界值分析测试数据}
+  \centering
+  \begin{tabular}{|p{0.35cm}|p{1.2cm}|p{0.22cm}|p{0.22cm}|p{0.22cm}|p{0.22cm}|p{0.22cm}|p{0.22cm}|p{0.9cm}|p{0.9cm}|p{0.9cm}|p{0.9cm}|p{0.22cm}|p{0.8cm}|}
+  \hline
+  \textbf{ID} & \textbf{类} & \multicolumn{11}{c|}{\textbf{输入参数}} & \textbf{预期}  \\ 
+  \hline
+17   & 27,30, 32,35 & c0  & k0  & u0 & u1 & u2 & t0  & 2020-05-03 & 2020-05-03 & 2020-05-03 & 2020-05-03 & l0 & 成功   \\
+  \hline
+18   & 28,31, 33,36 & c0  & k0  & u0 & u1 & u2 & t0  & 2020-05-03 & 2020-05-04 & 2020-05-04 & 2020-05-05 & l0 & 成功   \\
+  \hline
+19   & 29           & c0  & 空  & u0 & u1 & u2 & t0  & 2020-05-03 & 2020-05-04 & 2020-05-02 & 2020-05-04 & l0 & 失败   \\
+  \hline
+20   & 34           & c0  & k0  & 空 & u1 & u2 & t0  & 2020-05-03 & 2020-05-04 & 2020-05-03 & 2020-05-03 & l0 & 失败   \\
+  \hline
+  \end{tabular}
+\end{table}
 
 \hypertarget{ux6d4bux8bd5ux811aux672cux5b9eux73b0ux53caux8fd0ux884c}{%
 \section{测试脚本实现及运行}\label{ux6d4bux8bd5ux811aux672cux5b9eux73b0ux53caux8fd0ux884c}}
