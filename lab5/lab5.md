@@ -185,17 +185,13 @@ references:
 | chapter            | [1]任何章节                       | [2]为空                       |
 | Knowledge point    | [3]章节下任意知识点                   | [4]为空                       |
 | Author             | [5]任意用户                       | [6]为空                       |
-| Reviewer           | [7]除author外用户                 | [8]author
-[9]为空             |
-| QA                 | [10]除author,reviewer外用户       | [11]author或reviewer
-[12]为空  |
+| Reviewer           | [7]除author外用户                 | [8]author [9]为空             |
+| QA                 | [10]除author,reviewer外用户       | [11]author或reviewer [12]为空  |
 | Type               | [13]任意类型                      | [14]为空                      |
 | Start date         | [15]任意日期                      | [16]为空                      |
 | Finish date        | [17]在开始日期及之后的日期               | [18]为空                      |
-| Review start date  | [19]出题开始日期及之后日期               | [20]为空
-[21]出题开始日期之前         |
-| Review finish date | [22]在评审开始日期及之后的日期，并且不早于出题结束日期 | [23]为空
-[24]出题结束日期之前         |
+| Review start date  | [19]出题开始日期及之后日期               | [20]为空 [21]出题开始日期之前         |
+| Review finish date | [22]在评审开始日期及之后的日期，并且不早于出题结束日期 | [23]为空 [24]出题结束日期之前         |
 | language           | [25]任意语言                      | [26]为空                      |
 
 边界值分析适用于具有连续取值的参数分析，题目中具有连续取值的只有出题日期与评审日期。
@@ -205,16 +201,9 @@ references:
 **边界值分析**
 | 输入参数               | 边界值                                                                                                            |
 | ------------------ | -------------------------------------------------------------------------------------------------------------- |
-| Finish date        | [27]与Start date相同
-[28]Start date后一天                                                                            |
-| Review start date  | [29]Start date前一天
-[30]与Start date相同
-[31]Start date后一天                                                          |
-| Review finish date | [32]与Review start date相同
-[33]Review start date后一天
-[34]Finish date前一天
-[35]与Finish date相同
-[36]Finish date后一天     |
+| Finish date        | [27]与Start date相同 [28]Start date后一天                                                                            |
+| Review start date  | [29]Start date前一天 [30]与Start date相同 [31]Start date后一天                                             |
+| Review finish date | [32]与Review start date相同 [33]Review start date后一天 [34]Finish date前一天 [35]与Finish date相同 [36]Finish date后一天     |
 
 ####测试数据
 
