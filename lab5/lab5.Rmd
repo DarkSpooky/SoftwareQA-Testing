@@ -464,6 +464,8 @@ tinytex::install_tinytex()
   \end{tabular}
 \end{table}
 
+\pagebreak
+
 # 测试脚本实现及运行
 
 ## 脚本实现方式
