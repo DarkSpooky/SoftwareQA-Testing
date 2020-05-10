@@ -470,7 +470,13 @@ StartEngine的入口方法以代表场景的KeyWord类的实例作为参数，�
 
 ## 运行截图及说明
 
+## 测试用例运行过程记录
 
+本小组对本次黑盒测试的过程进行了记录，这些记录的内容完整地展现了本小组的黑盒测试用例设计以及测试环境、测试流程。测试过程视频可以通过如下方式进行查看，各平台的内容一致：
+
+  - 优酷视频（访问密码为FudanUniversitySoftwareSchool）：https://v.youku.com/v_show/id_XNDY2NzE4NzQxMg==.html
+  - 搜狐视频（访问密码为FudanUniversitySoftwareSchool）：https://tv.sohu.com/v/dXMvMTI2MDUwODM0LzE5MzY2NDI2OS5zaHRtbA==.html
+  - 百度网盘（提取码为ut6f）：https://pan.baidu.com/s/1FI7FPEp3_piM6QpkU1B7WQ
 
 \pagebreak
 
