@@ -151,6 +151,12 @@ references:
   \caption{黑盒测试流程图}\label{1}
 \end{figure}
 
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.75]{./ClassDiagram.pdf}
+  \caption{黑盒测试整体框架图}\label{1}
+\end{figure}
+
 \pagebreak
 
 ## 黑盒测试框架图说明
