@@ -155,15 +155,15 @@ tinytex::install_tinytex()
 
 *框架主体结构有config，script，util三部分。*
 
-config部分中的类（LoginActionKeyWords，AddQuestionKeyWords，它们都继承具有通用方法（如开始，结束，寻找页面元素）的BasicKeyWords）是测试场景的关键字汇总，需要测试的测试用例都能够拆分为类中的关键字，通过关键字的组合来实现测试用例的执行。
+`config`部分中的类（`LoginActionKeyWords`，`AddQuestionKeyWords`，它们都继承具有通用方法（如开始，结束，寻找页面元素）的`BasicKeyWords`）是测试场景的关键字汇总，需要测试的测试用例都能够拆分为类中的关键字，通过关键字的组合来实现测试用例的执行。
 
-script部分是测试脚本的执行入口，通过调用Engine类来开始测试。
+`script`部分是测试脚本的执行入口，通过调用`Engine`类来开始测试。
 
-util部分包含工具类和Engine类。工具类为读入Excel文件的ExcelUtils，记录需要使用的常量（如数据文件路径，记录测试用例的表名称等）的Constants，以及StartEngine和ActionEngine。
+`util`部分包含工具类和`Engine`类。工具类为读入Excel文件的`ExcelUtils`，记录需要使用的常量（如数据文件路径，记录测试用例的表名称等）的`Constants`，以及`StartEngine`和`ActionEngine`。
 
-StartEngine的入口方法以代表场景的KeyWord类的实例作为参数，循环读取suitSheet里面的值，找出运行的场景，找到运行场景后根据stepTestSuiteId在caseSheet中循环查找相对应的执行步骤。
+`StartEngine`的入口方法以代表场景的`KeyWord`类的实例作为参数，循环读取`suitSheet`里面的值，找出运行的场景，找到运行场景后根据`stepTestSuiteId`在`caseSheet`中循环查找相对应的执行步骤。
 
-对于caseSheet（也即一个测试用例）的具体某行（也即场景中的某个关键字），则调用ActionEngine来执行，ActionEngine检查该行的关键字是否对应关键字类中的一个方法，如果是则调用该方法并传入可能有的参数，进行代表该关键字的步骤的执行。
+对于`caseSheet`（也即一个测试用例）的具体某行（也即场景中的某个关键字），则调用`ActionEngine`来执行，`ActionEngine`检查该行的关键字是否对应关键字类中的一个方法，如果是则调用该方法并传入可能有的参数，进行代表该关键字的步骤的执行。
 
 # 关键字及测试数据设计
 
