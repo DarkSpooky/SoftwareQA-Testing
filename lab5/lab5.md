@@ -498,7 +498,7 @@ references:
 ### 运行说明
 \begin{figure}
   \centering
-  \includegraphics[scale=0.33]{./screenshots/result.jpg}
+  \includegraphics[scale=0.7]{./screenshots/result.jpg}
   \caption{result screenshot}\label{4}
 \end{figure}
 测试用例2和测试用例3保存题目预期结果应该是失败，但由于系统存在bug，并不会对章节和知识点的缺失进行检查，所以实际UI测试的结果并不是失败。
@@ -506,8 +506,8 @@ references:
 ### 控制台截图
 \begin{figure}
   \centering
-  \includegraphics[scale=0.33]{./screenshots/console.jpg}
-  \caption{console screenshot}\label{4}
+  \includegraphics[scale=0.5]{./screenshots/console.jpg}
+  \caption{console screenshot}\label{5}
 \end{figure}
 
 
