@@ -519,18 +519,51 @@ references:
 \begin{figure}
   \centering
   \includegraphics[scale=0.7]{./screenshots/result.jpg}
-  \caption{result screenshot}\label{4}
+  \caption{运行结果说明截图}\label{4}
 \end{figure}
 测试用例2和测试用例3保存题目预期结果应该是失败，但由于系统存在bug，并不会对章节和知识点的缺失进行检查，所以实际UI测试的结果并不是失败。
 
+\pagebreak
+
+### 运行过程截图
+
+图6-图9展示的是测试运行过程中浏览器的情况。
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.1]{./screenshots/login.jpg}
+  \caption{登录测试截图}\label{6}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.1]{./screenshots/CreateQ1.jpg}
+  \caption{创建考题测试截图1}\label{7}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.1]{./screenshots/CreateQ2.jpg}
+  \caption{创建考题测试截图2}\label{8}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.1]{./screenshots/CreateQ3.jpg}
+  \caption{创建考题测试截图3}\label{9}
+\end{figure}
+
+\pagebreak
+
 ### 控制台截图
+
+图10展示的为运行完测试之后的控制台日志输出情况
+
 \begin{figure}
   \centering
   \includegraphics[scale=0.5]{./screenshots/console.jpg}
-  \caption{console screenshot}\label{5}
+  \caption{控制台说明截图}\label{5}
 \end{figure}
-
-
 
 ## 测试用例运行过程记录
 
