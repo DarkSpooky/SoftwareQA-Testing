@@ -469,8 +469,37 @@ tinytex::install_tinytex()
 # 测试脚本实现及运行
 
 ## 脚本实现方式
+脚本的实现主要参照https://my.oschina.net/hellotest/blog/531932中，通过java反射机制，使用poi包操作excel关键字表，使用selenium的jar包进行自动化录制测试操作，以完成自动化测试框架。
+### 出题测试脚本实现
+
+#### 执行流程
+  - 登陆
+  - 导航到添加题目
+  - 显示添加题目对话框
+  - 选择章节
+  - 选择知识点
+  - 选择作者
+  - 选择审核者
+  - 选择质量审核
+  - 选择种类
+  - 填写开始日期
+  - 填写结束日期
+  - 填写审核开始日期
+  - 填写审核结束日期
+  - 选择语言
+  - 保存问题
 
 ## 运行截图及说明
+
+
+### 控制台截图
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.33]{./screenshots/console.jpg}
+  \caption{console screenshot}\label{4}
+\end{figure}
+
+### 运行说明
 
 ## 测试用例运行过程记录
 
