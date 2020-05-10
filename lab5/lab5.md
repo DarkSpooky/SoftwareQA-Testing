@@ -425,6 +425,8 @@ references:
   \end{tabular}
 \end{table}
 
+\pagebreak
+
 #### 边界值分析
 
 边界值分析适用于具有连续取值的参数分析，题目中具有连续取值的只有出题日期与评审日期。
