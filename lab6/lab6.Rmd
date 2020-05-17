@@ -160,26 +160,11 @@ tinytex::install_tinytex()
 
 并发数达到80后，吞吐量不再有太大的增长，说明系统处理能力已经接近饱和。
 
-<<<<<<< HEAD
 登录部分的性能测试未能达到指标，可能是由于在本地服务器上进行的测试。但在并发数超过指标20%以上的情况下，虽然响应时间变长，但系统仍然能保持功能完整性，没有失效，说明系统在压力下仍能正常运行，稳定性较好。
-=======
-## 登录
-
-1. 100 个用户同时在线
-
-![](resources/wcn/login_100.png)
-
-
-2. 20 ～ 140 个用户同时在线，每次递增20个用户，对系统性能进行并发测试
-
-![](resources/wcn/login_aggregate.png)
-
->>>>>>> c4ddcf8fec1f4cb8297ab71fcd9322f2f0cff205
 
 ## 创建考题
 
 1. 20道考题的并发创建
-<<<<<<< HEAD
 ![](resources/wcn/create_question_20.png)
 从结果中可以看出，在并发数为20的情况下， 响应时间平均为1.9秒，最大不超过2.5秒。所以创建考题部分较好地达到了性能指标。
 
@@ -187,17 +172,6 @@ tinytex::install_tinytex()
 ![](resources/wcn/create_question_aggregate.png)
 从表中可以看出，随着并发数的上升，响应时间有明显的增加。但在超过指标100%以上的情况下，服务仍然能够正常运行，且以用户满意度曲线为参考，响应时间较为合理，所以这一服务拥有很高的可扩展性。
 吞吐量同样在并发数达到80后趋于稳定，说明系统处理能力趋于饱和。
-=======
-
-![](resources/wcn/create_question_20.png)
-
-
-2. 20 ~ 100 道考题并发创建，每次递增20道考题创建量，对系统性能进行并发测试
-
-![](resources/wcn/create_question_aggregate.png)
-
-
->>>>>>> c4ddcf8fec1f4cb8297ab71fcd9322f2f0cff205
 
 \pagebreak
 
