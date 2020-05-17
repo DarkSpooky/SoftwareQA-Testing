@@ -189,6 +189,7 @@ tinytex::install_tinytex()
 ## 服务器性能
 
 本次性能测试服务器使用本地服务器，运行环境如下：
+
 ![](resources/wcn/environment.png)
 
 \pagebreak

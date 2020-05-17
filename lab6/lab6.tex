@@ -33,19 +33,28 @@
 \hypersetup{breaklinks=true,
             bookmarks=true,
             pdfauthor={Tian, Jiahe; Hu, Xiaoxiao; Huang, Jiani; Liu, Jiaxing; Shi, Ruixin; Wu, Chenning; Zhang, Cenyuan; Zhang, Yihan; Wang, Chen},
-            pdftitle={ 黑盒测试设计与执行},
+            pdftitle={ 性能测试设计与执行},
             colorlinks=true,
             citecolor=blue,
             urlcolor=blue,
             linkcolor=magenta,
             pdfborder={0 0 0}}
 \urlstyle{same}  % don't use monospace font for urls
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
 
-\title{\vspace{2in} 黑盒测试设计与执行\\\vspace{0.5em}{\large 软件质量保障与测试课程Lab6课程作业（第9组）}}
+\title{\vspace{2in} 性能测试设计与执行\\\vspace{0.5em}{\large 软件质量保障与测试课程Lab6课程作业（第9组）}}
 \author{Tian, Jiahe\footnote{Equal Contribution, Fudan University, 17307130313
   (\href{mailto:tianjh17@fudan.edu.cn}{\nolinkurl{tianjh17@fudan.edu.cn}})} \and Hu, Xiaoxiao\footnote{Equal Contribution, Fudan University, 17302010077
   (\href{mailto:xxhu17@fudan.edu.cn}{\nolinkurl{xxhu17@fudan.edu.cn}})} \and Huang, Jiani\footnote{Equal Contribution, Fudan University, 17302010063
@@ -79,7 +88,7 @@
 \LARGE
 
 \begin{center}
-\textbf{黑盒测试设计与执行}
+\textbf{性能测试设计与执行}
 \end{center}
 
 \large
@@ -91,7 +100,7 @@
 \section*{摘要}\label{ux6458ux8981}}
 \addcontentsline{toc}{section}{摘要}
 
-本次作业为软件质量保障与测试课程的Lab5课程作业，需要我们以小组为单位完成对出题系统的黑盒测试。本文档分为三小节。第一小节介绍了本小组设计的黑盒测试整体框架以及测试流程；第二小节介绍了黑盒测试中的关键字以及测试数据设计；第三小节介绍了本小组对黑盒测试任务的具体脚本实现以及运行情况介绍。
+本次作业为软件质量保障与测试课程的Lab6课程作业，需要我们以小组为单位完成对出题系统的性能测试。本文档分为两小节。第一小节介绍了本小组进行性能测试采用的策略；第二小节介绍了性能测试的结果及系统性能分析。
 
 \hypertarget{ux5173ux952eux8bcd}{%
 \section*{关键词}\label{ux5173ux952eux8bcd}}
@@ -107,14 +116,86 @@
 
 \newpage
 
-\hypertarget{ux6d4bux8bd5ux6846ux67b6ux8bbeux8ba1}{%
-\section{测试框架设计}\label{ux6d4bux8bd5ux6846ux67b6ux8bbeux8ba1}}
+\hypertarget{ux6d4bux8bd5ux7b56ux7565}{%
+\section{测试策略}\label{ux6d4bux8bd5ux7b56ux7565}}
 
-\hypertarget{ux6027ux80fdux6d4bux8bd5ux6307ux6807}{%
-\section{性能测试指标}\label{ux6027ux80fdux6d4bux8bd5ux6307ux6807}}
+本次测试的对象是出题系统中的登录和创建考题功能。登录功能分为认证以及选择项目两部分，创建考题功能则包括主持人创建新考题，完成属性配置、角色分配等活动，到将考题保存为止。性能指标为系统同时在线100人，20个并发访问。
+为了产生必要的负载，需要依赖工具来进行性能测试。鉴于作为测试对象的出题系统是一个web应用，所以选择了开源的测试工具Jmeter来进行测试。通过Jmeter产生的聚合报告中的响应时间、吞吐量等来对系统性能进行分析。
+测试中采用的策略包括并发测试和负载测试。并发测试主要用于检验系统是否能够达到给定的性能指标，即在给定条件下相应用户输入的能力是否达到要求。负载测试中则是通过不同并发数下的测试，对比响应时间、吞吐量等的变化，来分析系统性能的可扩展性，系统处理能力何时达到饱和状态，以及观察在并发数超出给定指标的情况下，系统能否继续正常运行。
+并发测试中，对应在线100人的要求的是发出100个登录请求；对应20个并发访问的要求，发出20个创建考题的请求。我们使用了Jmeter工具中的定时器来让请求同时发送，以观察并发状况下服务的行为表现。同一时间对后端服务进行调用能更好地发现资源竞争、资源死锁等问题。
+负载测试中，则是调整了并发数，将不同并发数下的聚合报告。对于在线人数的要求，进行了从20到140个用户同时在线的测试，每相隔20数量进行一次测试。对于并发访问的要求，进行了创建20到100个考题的测试，每次增量为20。通过这一策略，逐步增加系统的负载，直到超出指标，来寻找系统的性能上限，系统的处理能力，及系统在高负载情况下的稳定性。
 
-\hypertarget{ux6d4bux8bd5ux811aux672cux5b9eux73b0ux53caux8fd0ux884cux7ed3ux679c}{%
-\section{测试脚本实现及运行结果}\label{ux6d4bux8bd5ux811aux672cux5b9eux73b0ux53caux8fd0ux884cux7ed3ux679c}}
+\hypertarget{ux7cfbux7edfux6027ux80fdux53caux6d4bux8bd5ux7ed3ux679cux5206ux6790}{%
+\section{系统性能及测试结果分析}\label{ux7cfbux7edfux6027ux80fdux53caux6d4bux8bd5ux7ed3ux679cux5206ux6790}}
+
+\hypertarget{ux767bux5f55}{%
+\subsection{登录}\label{ux767bux5f55}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  100 个用户同时在线
+\end{enumerate}
+
+\includegraphics{resources/wcn/login_100.png}
+
+从结果中可以看出，在并发数为100的情况下，认证步骤的平均响应时间为9.4秒，选择项目的平均响应时间为1.1秒，整个登录步骤的平均响应时间约为10.5秒。根据用户满意度曲线来看，在并发数100的情况下，系统的响应时间有些过长，性能指标没有很好的达到。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  20 ～ 140 个用户同时在线，每次递增20个用户，对系统性能进行并发测试
+\end{enumerate}
+
+\includegraphics{resources/wcn/login_aggregate.png}
+
+在上一小节中，我们小组根据助教给出的指标进行了测试，发现测试的情况并不能达到在100并发的情况下有较好的响应性能。因此，我们小组进一步进行了更为深入的并发测试。在这一测试中，我们选取了上一小节中测试的并发数的20\%作为初始值，并以上述并发数的20\%作为步长进行阶梯并发测试，最终以上述并发数目的140\%作为终止值。从而进一步探究这一系统在不同的并发数下的性能情况，并从这一测试的结果中得到这一系统能够支撑的较大并发数目。
+
+下面对这一部分测试的结果情况进行分析：
+
+从表中可以看出，登录的选择部分的响应时间随着并发数的增加变化不大，说明这一服务有较大的可扩展性。而认证部分随着并发数增加，响应时间明显变长。所以对于登录功能来说，认证部分是性能的瓶颈所在，调优时应重点关注。
+
+并发数达到80后，吞吐量不再有太大的增长，说明系统处理能力已经接近饱和。
+
+登录部分的性能测试未能达到指标，可能是由于在本地服务器上进行的测试。但在并发数超过指标20\%以上的情况下，虽然响应时间变长，但系统仍然能保持功能完整性，没有失效，说明系统在压力下仍能正常运行，稳定性较好。
+
+\hypertarget{ux521bux5efaux8003ux9898}{%
+\subsection{创建考题}\label{ux521bux5efaux8003ux9898}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  20道考题的并发创建
+\end{enumerate}
+
+\includegraphics{resources/wcn/create_question_20.png}
+
+从结果中可以看出，在并发数为20的情况下，
+响应时间平均为1.9秒，最大不超过2.5秒。所以创建考题部分较好地达到了性能指标。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  20 \textasciitilde{} 100
+  道考题并发创建，每次递增20道考题创建量，对系统性能进行并发测试
+\end{enumerate}
+
+\includegraphics{resources/wcn/create_question_aggregate.png}
+
+从表中可以看出，随着并发数的上升，响应时间有明显的增加。但在超过指标100\%以上的情况下，服务仍然能够正常运行，且以用户满意度曲线为参考，响应时间较为合理，所以这一服务拥有很高的可扩展性。
+
+\hypertarget{ux670dux52a1ux5668ux6027ux80fd}{%
+\subsection{服务器性能}\label{ux670dux52a1ux5668ux6027ux80fd}}
+
+本次性能测试服务器使用本地服务器，运行环境如下：
+
+\includegraphics{resources/wcn/environment.png}
 
 \pagebreak
 
