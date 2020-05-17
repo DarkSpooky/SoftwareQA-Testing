@@ -165,6 +165,10 @@ tinytex::install_tinytex()
 2. 20 ~ 100 道考题并发创建，每次递增20道考题创建量，对系统性能进行并发测试
 ![](resources/wcn/create_question_aggregate.png)
 
+## 服务器性能
+
+本次性能测试服务器使用本地服务器，运行环境如下：
+![](resources/wcn/environment.png)
 
 \pagebreak
 
