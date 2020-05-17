@@ -1,0 +1,153 @@
+---
+title: \vspace{2in} 黑盒测试设计与执行
+subtitle: "软件质量保障与测试课程Lab6课程作业（第9组）"
+author:
+  - Tian, Jiahe^[Equal Contribution, Fudan University, 17307130313 (tianjh17@fudan.edu.cn)]
+  - Hu, Xiaoxiao^[Equal Contribution, Fudan University, 17302010077 (xxhu17@fudan.edu.cn)]
+  - Huang, Jiani^[Equal Contribution, Fudan University, 17302010063 (huangjn17@fudan.edu.cn)]
+  - Liu, Jiaxing^[Equal Contribution, Fudan University, 17302010049 (jiaxingliu17@fudan.edu.cn)]
+  - Shi, Ruixin^[Equal Contribution, Fudan University, 17302010065 (rxshi17@fudan.edu.cn)]
+  - Wu, Chenning^[Equal Contribution, Fudan University, 17302010066 (cnwu17@fudan.edu.cn)]
+  - Zhang, Cenyuan^[Equal Contribution, Fudan University, 17302010068 (cenyuanzhang17@fudan.edu.cn)]
+  - Zhang, Yihan^[Equal Contribution, Fudan University, 17302010076 (zhangyihan17@fudan.edu.cn)]
+  - Wang, Chen^[Equal Contribution, Fudan University, 16307110064 (wangc16@fudan.edu.cn)]
+
+date: "2020年5月14日"
+documentclass: ctexart
+output:
+  rticles::ctex:
+    fig_caption: yes
+    number_sections: yes
+    keep_md: yes
+    keep_tex: yes
+classoption: "hyperref, a4paper"
+nocite: |
+  @innovativeInternationalisation, @innovative1, @innovative2, @innovative3, @innovative4, @innovative5, @innovative6, @innovative7, @innovative8, @innovative9, @innovative10, @innovative11, @innovative12, @innovative13, @innovative14, @innovative15, @innovative16
+references:
+- id: innovativeInternationalisation
+  title: "Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Guide to SQuaRE"
+  author:
+  - family: International Organization for Standardization
+  container-title: International Organization for Standardization
+  volume: 2014
+  URL: 'https://www.iso.org/standard/64764.html'
+  issue: 2
+  #publisher: Kluwer Academic Publishers
+  #page: 249-275
+  type: book
+  issued:
+    year: 2014
+    month: 3
+
+- id: innovative1
+  title: "GB/T 25000.51-2016《系统与软件工程系统与软件质量要求和评价 (SQuaRE) 第 51 部分 : 就绪可用软件产品 (RUSP) 的质量要求和测试细则》"
+  author:
+  - family: 中国国家标准化管理委员会
+  container-title: 系统与软件工程系统与软件质量要求和评价 (SQuaRE)
+  volume: 51
+  URL: 'http://openstd.samr.gov.cn'
+  publisher: 中国国家标准化管理委员会
+  type: book
+  issued:
+    year: 2016
+    month: 1
+    
+- id: innovative2
+  title: "GB/T 25000.23-2019《系统与软件工程 系统与软件质量要求和评价(SQuaRE) 第23部分：系统与软件产品质量测量》"
+  author:
+  - family: 中国国家标准化管理委员会
+  container-title: 系统与软件工程系统与软件质量要求和评价 (SQuaRE)
+  volume: 23
+  URL: 'http://openstd.samr.gov.cn'
+  publisher: 中国国家标准化管理委员会
+  type: book
+  issued:
+    year: 2019
+    month: 8
+    
+- id: innovative3
+  title: "GB/T 25000.12-2017《系统与软件工程 系统与软件质量要求和评价(SQuaRE) 第12部分：数据质量模型》"
+  author:
+  - family: 中国国家标准化管理委员会
+  container-title: 系统与软件工程系统与软件质量要求和评价 (SQuaRE)
+  volume: 12
+  URL: 'http://openstd.samr.gov.cn'
+  publisher: 中国国家标准化管理委员会
+  type: book
+  issued:
+    year: 2017
+    month: 11
+    
+- id: innovative4
+  title: "GB/T 25000.24-2017《系统与软件工程 系统与软件质量要求和评价(SQuaRE) 第24部分：数据质量测量》"
+  author:
+  - family: 中国国家标准化管理委员会
+  container-title: 系统与软件工程系统与软件质量要求和评价 (SQuaRE)
+  volume: 24
+  URL: 'http://openstd.samr.gov.cn'
+  publisher: 中国国家标准化管理委员会
+  type: book
+  issued:
+    year: 2017
+    month: 11
+    
+- id: innovative5
+  title: "GB/T 25000.40-201《系统与软件工程 系统与软件质量要求和评价(SQuaRE) 第40部分：评价过程》"
+  author:
+  - family: 中国国家标准化管理委员会
+  container-title: 系统与软件工程系统与软件质量要求和评价 (SQuaRE)
+  volume: 40
+  URL: 'http://openstd.samr.gov.cn'
+  publisher: 中国国家标准化管理委员会
+  type: book
+  issued:
+    year: 2018
+    month: 12
+    
+---
+
+
+
+\newpage
+
+\LARGE
+
+\begin{center}
+\textbf{黑盒测试设计与执行}
+\end{center}
+
+\large
+\begin{center}
+\textbf{\emph{软件质量保障与测试课程Lab6课程作业}}
+\end{center}
+
+# 摘要 {-}
+
+本次作业为软件质量保障与测试课程的Lab5课程作业，需要我们以小组为单位完成对出题系统的黑盒测试。本文档分为三小节。第一小节介绍了本小组设计的黑盒测试整体框架以及测试流程；第二小节介绍了黑盒测试中的关键字以及测试数据设计；第三小节介绍了本小组对黑盒测试任务的具体脚本实现以及运行情况介绍。
+
+# 关键词 {-}
+
+系统与软件工程; 系统与软件质量要求和评价; 测试文档
+
+\normalsize
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+# 测试框架设计
+
+
+
+# 性能测试指标
+
+
+
+# 测试脚本实现及运行结果
+
+
+\pagebreak
+
+# 参考文献 {-}
