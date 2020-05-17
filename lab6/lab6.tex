@@ -100,7 +100,7 @@
 \section*{摘要}\label{ux6458ux8981}}
 \addcontentsline{toc}{section}{摘要}
 
-本次作业为软件质量保障与测试课程的Lab5课程作业，需要我们以小组为单位完成对出题系统的黑盒测试。本文档分为三小节。第一小节介绍了本小组设计的黑盒测试整体框架以及测试流程；第二小节介绍了黑盒测试中的关键字以及测试数据设计；第三小节介绍了本小组对黑盒测试任务的具体脚本实现以及运行情况介绍。
+本次作业为软件质量保障与测试课程的Lab6课程作业，需要我们以小组为单位完成对出题系统的性能测试。本文档分为两小节。第一小节介绍了本小组进行性能测试采用的策略；第二小节介绍了性能测试的结果及系统性能分析。
 
 \hypertarget{ux5173ux952eux8bcd}{%
 \section*{关键词}\label{ux5173ux952eux8bcd}}
@@ -116,14 +116,17 @@
 
 \newpage
 
-\hypertarget{ux6d4bux8bd5ux6846ux67b6ux8bbeux8ba1}{%
-\section{测试框架设计}\label{ux6d4bux8bd5ux6846ux67b6ux8bbeux8ba1}}
+\hypertarget{ux6d4bux8bd5ux7b56ux7565}{%
+\section{测试策略}\label{ux6d4bux8bd5ux7b56ux7565}}
 
-\hypertarget{ux6027ux80fdux6d4bux8bd5ux6307ux6807}{%
-\section{性能测试指标}\label{ux6027ux80fdux6d4bux8bd5ux6307ux6807}}
+采用的是并发测试和负载测试的策略。性能指标为系统同时在线100人，20个并发访问。
+我们使用Jmeter工具来进行性能测试。
 
-\hypertarget{ux6d4bux8bd5ux811aux672cux5b9eux73b0ux53caux8fd0ux884cux7ed3ux679c}{%
-\section{测试脚本实现及运行结果}\label{ux6d4bux8bd5ux811aux672cux5b9eux73b0ux53caux8fd0ux884cux7ed3ux679c}}
+并发测试中，对应在线100人的要求，发出100个登录请求，对应20个并发访问的要求，发出20个创建考题的请求，使用定时器让请求同时发送，以观察并发状况下服务的行为表现。
+负载测试中，进行了从20到140个用户同时在线的测试，和同时创建20到100个考题的测试，每次增量为20。通过这一策略来寻找系统的性能上限。
+
+\hypertarget{ux7cfbux7edfux6027ux80fdux53caux6d4bux8bd5ux7ed3ux679cux5206ux6790}{%
+\section{系统性能及测试结果分析}\label{ux7cfbux7edfux6027ux80fdux53caux6d4bux8bd5ux7ed3ux679cux5206ux6790}}
 
 \hypertarget{ux767bux5f55}{%
 \subsection{登录}\label{ux767bux5f55}}
@@ -137,6 +140,8 @@
 
 \includegraphics{resources/wcn/login_100.png}
 
+从结果中可以看出，在并发数为100的情况下，认证步骤的平均响应时间为9.4秒，选择项目的平均响应时间为1.1秒，整个登录步骤的平均响应时间约为10.5秒。根据用户满意度曲线来看，在并发数100的情况下，系统的响应时间有些过长，性能指标没有很好的达到。
+
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{1}
@@ -146,6 +151,12 @@
 \end{enumerate}
 
 \includegraphics{resources/wcn/login_aggregate.png}
+
+从表中可以看出，登录的选择部分的响应时间随着并发数的增加变化不大，说明这一服务有较大的可扩展性。而认证部分随着并发数增加，响应时间明显变长。所以对于登录功能来说，认证部分是性能的瓶颈所在，调优时应重点关注。
+
+并发数达到80后，吞吐量不再有太大的增长，说明系统处理能力已经接近饱和。
+
+登录部分的性能测试未能达到指标，可能是由于在本地服务器上进行的测试。但在并发数超过指标20\%以上的情况下，虽然响应时间变长，但系统仍然能保持功能完整性，没有失效，说明系统在压力下仍能正常运行，稳定性较好。
 
 \hypertarget{ux521bux5efaux8003ux9898}{%
 \subsection{创建考题}\label{ux521bux5efaux8003ux9898}}
@@ -159,6 +170,9 @@
 
 \includegraphics{resources/wcn/create_question_20.png}
 
+从结果中可以看出，在并发数为20的情况下，
+响应时间平均为1.9秒，最大不超过2.5秒。所以创建考题部分较好地达到了性能指标。
+
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{1}
@@ -169,6 +183,9 @@
 \end{enumerate}
 
 \includegraphics{resources/wcn/create_question_aggregate.png}
+
+从表中可以看出，随着并发数的上升，响应时间有明显的增加。但在超过指标100\%以上的情况下，服务仍然能够正常运行，且以用户满意度曲线为参考，响应时间较为合理，所以这一服务拥有很高的可扩展性。
+吞吐量同样在并发数达到80后趋于稳定，说明系统处理能力趋于饱和。
 
 \pagebreak
 
