@@ -40,6 +40,15 @@
             linkcolor=magenta,
             pdfborder={0 0 0}}
 \urlstyle{same}  % don't use monospace font for urls
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -115,6 +124,51 @@
 
 \hypertarget{ux6d4bux8bd5ux811aux672cux5b9eux73b0ux53caux8fd0ux884cux7ed3ux679c}{%
 \section{测试脚本实现及运行结果}\label{ux6d4bux8bd5ux811aux672cux5b9eux73b0ux53caux8fd0ux884cux7ed3ux679c}}
+
+\hypertarget{ux767bux5f55}{%
+\subsection{登录}\label{ux767bux5f55}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  100 个用户同时在线
+\end{enumerate}
+
+\includegraphics{resources/wcn/login_100.png}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  20 ～ 140 个用户同时在线，每次递增20个用户，对系统性能进行并发测试
+\end{enumerate}
+
+\includegraphics{resources/wcn/login_aggregate.png}
+
+\hypertarget{ux521bux5efaux8003ux9898}{%
+\subsection{创建考题}\label{ux521bux5efaux8003ux9898}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  20道考题的并发创建
+\end{enumerate}
+
+\includegraphics{resources/wcn/create_question_20.png}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  20 \textasciitilde{} 100
+  道考题并发创建，每次递增20道考题创建量，对系统性能进行并发测试
+\end{enumerate}
+
+\includegraphics{resources/wcn/create_question_aggregate.png}
 
 \pagebreak
 
