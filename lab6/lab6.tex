@@ -129,32 +129,37 @@
 
 负载测试中，则是调整了并发数，将不同并发数下的聚合报告。对于在线人数的要求，进行了从20到140个用户同时在线的测试，每相隔20数量进行一次测试。对于并发访问的要求，进行了创建20到100个考题的测试，每次增量为20。通过这一策略，逐步增加系统的负载，直到超出指标，来寻找系统的性能上限，系统的处理能力，及系统在高负载情况下的稳定性。
 
+\pagebreak
+
 \hypertarget{ux7cfbux7edfux6027ux80fdux53caux6d4bux8bd5ux7ed3ux679cux5206ux6790}{%
 \section{系统性能及测试结果分析}\label{ux7cfbux7edfux6027ux80fdux53caux6d4bux8bd5ux7ed3ux679cux5206ux6790}}
 
 \hypertarget{ux767bux5f55}{%
 \subsection{登录}\label{ux767bux5f55}}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  100 个用户同时在线
-\end{enumerate}
+\hypertarget{ux5bf9ux6d4bux8bd5ux9700ux6c42ux4e2dux6807ux5b9aux7684ux6807ux51c6ux8fdbux884cux7684ux767bux5f55ux6d4bux8bd5}{%
+\subsubsection{对测试需求中标定的标准进行的登录测试}\label{ux5bf9ux6d4bux8bd5ux9700ux6c42ux4e2dux6807ux5b9aux7684ux6807ux51c6ux8fdbux884cux7684ux767bux5f55ux6d4bux8bd5}}
 
+本小组对100个用户同时在线的测试情况如图1所示。
+
+\begin{figure}
+\centering
 \includegraphics{resources/wcn/login_100.png}
+\caption{100 个用户同时在线的测试}
+\end{figure}
 
 从结果中可以看出，在并发数为100的情况下，认证步骤的平均响应时间为9.4秒，选择项目的平均响应时间为1.1秒，整个登录步骤的平均响应时间约为10.5秒。根据用户满意度曲线来看，在并发数100的情况下，系统的响应时间有些过长，性能指标没有很好的达到。
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{1}
-\tightlist
-\item
-  20 ～ 140 个用户同时在线，每次递增20个用户，对系统性能进行并发测试
-\end{enumerate}
+\hypertarget{ux767bux5f55ux90e8ux5206ux7684ux8d1fux8f7dux6d4bux8bd5}{%
+\subsubsection{登录部分的负载测试}\label{ux767bux5f55ux90e8ux5206ux7684ux8d1fux8f7dux6d4bux8bd5}}
 
+在这一部分，我们通过调整20～140个用户同时在线，每次递增20个用户，对系统性能进行并发测试，结果如图2所示。
+
+\begin{figure}
+\centering
 \includegraphics{resources/wcn/login_aggregate.png}
+\caption{登录功能的负载测试}
+\end{figure}
 
 在上一小节中，我们小组根据助教给出的指标进行了测试，发现测试的情况并不能达到在100并发的情况下有较好的响应性能。因此，我们小组进一步进行了更为深入的并发测试。在这一测试中，我们选取了上一小节中测试的并发数的20\%作为初始值，并以上述并发数的20\%作为步长进行阶梯并发测试，最终以上述并发数目的140\%作为终止值。从而进一步探究这一系统在不同的并发数下的性能情况，并从这一测试的结果中得到这一系统能够支撑的较大并发数目。
 
@@ -167,37 +172,43 @@
 \hypertarget{ux521bux5efaux8003ux9898}{%
 \subsection{创建考题}\label{ux521bux5efaux8003ux9898}}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  20道考题的并发创建
-\end{enumerate}
+\hypertarget{ux5bf9ux6d4bux8bd5ux9700ux6c42ux4e2dux6807ux5b9aux7684ux6807ux51c6ux8fdbux884cux7684ux521bux5efaux8003ux9898ux6d4bux8bd5}{%
+\subsubsection{对测试需求中标定的标准进行的创建考题测试}\label{ux5bf9ux6d4bux8bd5ux9700ux6c42ux4e2dux6807ux5b9aux7684ux6807ux51c6ux8fdbux884cux7684ux521bux5efaux8003ux9898ux6d4bux8bd5}}
 
+本小组对创建20道考题的并发测试情况如图3所示。
+
+\begin{figure}
+\centering
 \includegraphics{resources/wcn/create_question_20.png}
+\caption{创建20道考题的并发测试}
+\end{figure}
 
 从结果中可以看出，在并发数为20的情况下，
 响应时间平均为1.9秒，最大不超过2.5秒。所以创建考题部分较好地达到了性能指标。
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{1}
-\tightlist
-\item
-  20 \textasciitilde{} 100
-  道考题并发创建，每次递增20道考题创建量，对系统性能进行并发测试
-\end{enumerate}
+\hypertarget{ux521bux5efaux8003ux9898ux90e8ux5206ux7684ux8d1fux8f7dux6d4bux8bd5}{%
+\subsubsection{创建考题部分的负载测试}\label{ux521bux5efaux8003ux9898ux90e8ux5206ux7684ux8d1fux8f7dux6d4bux8bd5}}
 
+在这一部分中，我们通过调整20\textasciitilde{}100道考题的并发创建，每次递增20道考题创建量，对系统性能进行并发测试，测试结果如图4所示。
+
+\begin{figure}
+\centering
 \includegraphics{resources/wcn/create_question_aggregate.png}
+\caption{创建考题功能的负载测试}
+\end{figure}
 
 上一小节的测试中，根据性能指标中的要求，我们小组进行了并发数为20的测试。在这一测试中，系统有着较好的响应性能。在这一节中，基于负载测试的策略，我们以20为并发数的初始值，步长为20进行了阶梯并发测试，来对这一服务的性能进行进一步的了解。从这一部分测试结果可以看出，随着并发数的上升，响应时间有明显的增加。但在超过指标100\%以上的情况下，服务仍然能够正常运行，且以用户满意度曲线为参考，响应时间较为合理，所以这一服务拥有很高的可扩展性。
 
 \hypertarget{ux670dux52a1ux5668ux6027ux80fd}{%
 \subsection{服务器性能}\label{ux670dux52a1ux5668ux6027ux80fd}}
 
-本次性能测试服务器使用本地服务器，运行环境如下：
+本次性能测试服务器使用本地服务器，运行环境如图5所示。
 
+\begin{figure}
+\centering
 \includegraphics{resources/wcn/environment.png}
+\caption{服务器测试环境}
+\end{figure}
 
 \pagebreak
 
