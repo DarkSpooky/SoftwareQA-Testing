@@ -153,9 +153,13 @@ references:
 
 ## 测试结果完整报告
 
-(currently left blank)
+请通过网址[第9组P3C报告网站](https://straybird-atsh.github.io/SoftwareQA-Testing/P3CReport.html)来访问本小组的P3C完整报告。
+
 
 ## 测试结果核心内容截图
+如图所示，可分为Blocker、Critical、Major三部分。
+![截图1](screenshots/pic1.jpg)
+![截图2](screenshots/pic2.jpg)
 
 ## 测试结果分析
 
