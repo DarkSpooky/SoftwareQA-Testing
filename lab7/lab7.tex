@@ -40,6 +40,15 @@
             linkcolor=magenta,
             pdfborder={0 0 0}}
 \urlstyle{same}  % don't use monospace font for urls
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -127,10 +136,14 @@
 \hypertarget{ux6d4bux8bd5ux7ed3ux679cux5b8cux6574ux62a5ux544a-1}{%
 \subsection{测试结果完整报告}\label{ux6d4bux8bd5ux7ed3ux679cux5b8cux6574ux62a5ux544a-1}}
 
-(currently left blank)
+请通过网址\href{https://straybird-atsh.github.io/SoftwareQA-Testing/P3CReport.html}{第9组P3C报告网站}来访问本小组的P3C完整报告。
 
 \hypertarget{ux6d4bux8bd5ux7ed3ux679cux6838ux5fc3ux5185ux5bb9ux622aux56fe-1}{%
 \subsection{测试结果核心内容截图}\label{ux6d4bux8bd5ux7ed3ux679cux6838ux5fc3ux5185ux5bb9ux622aux56fe-1}}
+
+如图所示，可分为Blocker、Critical、Major三部分。
+\includegraphics{screenshots/pic1.jpg}
+\includegraphics{screenshots/pic2.jpg}
 
 \hypertarget{ux6d4bux8bd5ux7ed3ux679cux5206ux6790-1}{%
 \subsection{测试结果分析}\label{ux6d4bux8bd5ux7ed3ux679cux5206ux6790-1}}
