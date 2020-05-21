@@ -163,6 +163,19 @@ references:
 
 ## 测试结果分析
 
+# jshint工具静态测试
+
+## 测试结果完整报告
+
+(currently left blank)
+
+## 测试结果核心内容截图
+如图所示，共发现236个failures，1个error和235个warnings。其中每一项都标明了具体的行数、问题代码和问题原因。
+![截图1](screenshots/pic3.jpg)
+![截图2](screenshots/pic3.jpg)
+
+## 测试结果分析
+
 # 不同工具之间的对比分析
 
 # 测试总结
