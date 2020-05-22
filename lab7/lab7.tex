@@ -93,7 +93,7 @@
 
 \large
 \begin{center}
-\textbf{\emph{软件质量保障与测试课程Lab6课程作业}}
+\textbf{\emph{软件质量保障与测试课程Lab7课程作业}}
 \end{center}
 
 \hypertarget{ux6458ux8981}{%
@@ -148,6 +148,70 @@
 \hypertarget{ux6d4bux8bd5ux7ed3ux679cux5206ux6790-1}{%
 \subsection{测试结果分析}\label{ux6d4bux8bd5ux7ed3ux679cux5206ux6790-1}}
 
+P3C是阿里巴巴推出的《阿里巴巴 Java 开发规约》扫描插件，目前在 IDEA 和
+Eclipse 都有较好的支持。P3C扫描结果文档给出了项目的 bug，并根据 bug
+的严重程度分为三个级别展示。三个级别分别是：Blocker, Critical,
+Major，严重程度由高到低。
+
+\hypertarget{ux963fux91ccux5df4ux5df4-java-ux5f00ux53d1ux624bux518c}{%
+\subsubsection{阿里巴巴 JAVA
+开发手册}\label{ux963fux91ccux5df4ux5df4-java-ux5f00ux53d1ux624bux518c}}
+
+根据《阿里巴巴 JAVA
+开发手册》版本1.3.0，我们可以对扫描结果进行分析。该版本对 JAVA
+开发的规约含有编程规约、异常日志、单元测试、安全规约等六大类，而本项目的扫描结果重点体现的是编程规约。编程规约在开发手册共分为9类：
+
+\begin{itemize}
+\tightlist
+\item
+  命名规范
+\item
+  常量定义
+\item
+  代码格式
+\item
+  OOP 规约
+\item
+  集和处理
+\item
+  并发处理
+\item
+  控制语句
+\item
+  注释规约
+\item
+  其他
+\end{itemize}
+
+\hypertarget{ux626bux63cfux6548ux679c}{%
+\subsubsection{扫描效果}\label{ux626bux63cfux6548ux679c}}
+
+根据扫描结果可以发现：同一类型的编程规约由于其严重性不同可以划分为不同级别的
+bug。比如注释规约中，抽象方法的 javadoc 注释属于
+Major，而枚举字段的注释属于 Critical;
+命名规范中也有类似的例子。另外，bug
+的严重程度分类比较合理。注释规约、命名规范的约定内容严重程度较低，并发处理、控制语句的约定内容严重程度较高。\textbf{整体上，P3C扫描插件发现的问题比较基础，它侧重
+JAVA 编程细节可能导致的系统失效。}
+
+\hypertarget{ux63d2ux4ef6ux4f7fux7528}{%
+\subsubsection{插件使用}\label{ux63d2ux4ef6ux4f7fux7528}}
+
+P3C插件有以下的优点：
+
+\begin{itemize}
+\tightlist
+\item
+  基本满足代码规范检测的需求。
+\item
+  能够检测出细致和易忽略的问题，可以提高开发过程中对代码细枝末节的注意。
+\item
+  Quick fix，检测出问题后可以快速查看 bug 位置、解决方案并一键替换。
+\item
+  中文提示，解释内容与开发手册一致。
+\end{itemize}
+
+此外P3C插件也存在平台限制、功能不成熟、扫描能力有限等问题。
+
 \hypertarget{jshintux5de5ux5177ux9759ux6001ux6d4bux8bd5}{%
 \section{jshint工具静态测试}\label{jshintux5de5ux5177ux9759ux6001ux6d4bux8bd5}}
 
@@ -165,6 +229,74 @@
 
 \hypertarget{ux6d4bux8bd5ux7ed3ux679cux5206ux6790-2}{%
 \subsection{测试结果分析}\label{ux6d4bux8bd5ux7ed3ux679cux5206ux6790-2}}
+
+JSHint 是由Anton Kovalyov基于 JSLint 的代码实现的开源项目，JSHint 与
+JSLint
+相比较之下，更友好，也更容易配置，所以发展很快并得到了众多IDE和编辑器的支持。
+JSHint 是一个 JavaScript
+语法和风格的检查工具，但检查不出逻辑问题。它可以根据配置参数扫描
+JavaScript代码，分析其中的语法与风格从而给出代码质量报告。
+
+\hypertarget{ux914dux7f6eux9879}{%
+\subsubsection{配置项}\label{ux914dux7f6eux9879}}
+
+\includegraphics{screenshots/jshintrc.png} JSHint
+工具使用的关键是配置项。如果不设置配置项，那么可能会有很多``假''错误或警告。比如自定义全局变量，不同脚本上下文的符号引用。这些内容既不算错误的语法，也不算差劲的风格，可是
+JSHint 依旧把他们认错了。JSHint 有一些常见的配置项：
+
+\begin{itemize}
+\tightlist
+\item
+  ``strict'': true 严格模式
+\item
+  ``asi'': true 允许省略分号
+\item
+  ``bitwise'': true 禁止使用位运算符，比如经常把\&\&写错\& 规避此错误
+\item
+  ``eqeqeq'': true 禁止使用== 和 ！= 强制使用=== 和 ！==
+\item
+  ``undef'': true 禁止使用不在全局变量列表中的未定义变量
+\item
+  ``curly'': true 循环或者条件语句必须使用花括号包住
+\item
+  ``devel'': true 定义用于调试的全局变量：console,alert
+\item
+  ``jquery'': true 定义全局暴露的jQuery库 （可以去掉）
+\item
+  ``browser'': true 暴露浏览器属性的全局变量 如window document
+\item
+  ``globals'': \{``\$'':true,``require'':true,"\_":true\}
+\end{itemize}
+
+JSHint 的配置项一般是放入项目根目录下的 .jshintrc 文件中，JSHint
+工具在扫描的时候就会运用这些配置项。配置项的作用一方面是明确项目的编程规范，约束开发人员的行为。另一方面是避免某些规范，减轻开发人员的负担（比如允许省略分号等）。
+
+\hypertarget{ux626bux63cfux6548ux679c-1}{%
+\subsubsection{扫描效果}\label{ux626bux63cfux6548ux679c-1}}
+
+不同的配置项扫描结果是不尽相同的。项目最初未定义配置项中的全局变量，这导致了非常多的未定义错误或警告。这显然不是我们需要的扫描结果。完成配置项后，扫描结果报告逐渐明晰，其中报告了出现了缺少分号、使用==和!=错误、缺少\{或\}错误和未定义变量等错误。正如上面所言，JSHint
+可以分析出 JavaScript
+代码的语法和风格，但是它无法识别出项目的逻辑错误，比如冗余代码、死循环、无效代码等问题。它的分析功能是非常基础和有限的。
+
+\hypertarget{ux5de5ux5177ux4f7fux7528}{%
+\subsubsection{工具使用}\label{ux5de5ux5177ux4f7fux7528}}
+
+JSHint 工具不可否认具有一定的优点：
+
+\begin{itemize}
+\tightlist
+\item
+  有了很多参数可以配置
+\item
+  支持配置文件，方便使用
+\item
+  支持了一些常用类库（如jquery等）
+\item
+  支持了基本的ES6
+\end{itemize}
+
+但与其他功能强大的 Web
+项目静态扫描工具比较而言，它具有不支持自定义规则、无法根据错误定位到对应的规则和不提供快捷的修正方式等缺点。不支持自定义规则自然让它只能检测出很基础的预定义规则，无法根据错误定位到对应的规则使得扫描结果不易阅览，不提供快捷的修正方式（不能跳转到指定代码位置和不能提供修正方案）自然无法让开发人员方便的处理扫描结果。
 
 \hypertarget{ux4e0dux540cux5de5ux5177ux4e4bux95f4ux7684ux5bf9ux6bd4ux5206ux6790}{%
 \section{不同工具之间的对比分析}\label{ux4e0dux540cux5de5ux5177ux4e4bux95f4ux7684ux5bf9ux6bd4ux5206ux6790}}
