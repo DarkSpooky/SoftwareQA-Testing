@@ -1,6 +1,6 @@
 ---
 title: \vspace{2in} 性能测试设计与执行
-subtitle: "软件质量保障与测试课程Lab6课程作业（第9组）"
+subtitle: "软件质量保障与测试课程Lab7课程作业（第9组）"
 author:
   - Tian, Jiahe^[Equal Contribution, Fudan University, 17307130313 (tianjh17@fudan.edu.cn)]
   - Hu, Xiaoxiao^[Equal Contribution, Fudan University, 17302010077 (xxhu17@fudan.edu.cn)]
@@ -153,7 +153,7 @@ references:
 
 ## 测试结果完整报告
 
-请通过网址[第9组P3C报告网站](https://straybird-atsh.github.io/SoftwareQA-Testing/P3CReport.html)来访问本小组的P3C完整报告。
+请通过网址[第9组P3C报告网站](https://straybird-atsh.github.io/SoftwareQA-Testing/P3CReport.html)来查看本小组的P3C完整报告。
 
 
 ## 测试结果核心内容截图
@@ -199,7 +199,7 @@ P3C插件有以下的优点：
 
 ## 测试结果完整报告
 
-(currently left blank)
+请通过网址[第9组JSHint报告网站](https://straybird-atsh.github.io/SoftwareQA-Testing/JSHintReport.html)来查看本小组的JSHint完整报告。
 
 ## 测试结果核心内容截图
 如图所示，共发现236个failures，1个error和235个warnings。其中每一项都标明了具体的行数、问题代码和问题原因。

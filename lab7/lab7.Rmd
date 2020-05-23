@@ -1,6 +1,6 @@
 ---
 title: \vspace{2in} 性能测试设计与执行
-subtitle: "软件质量保障与测试课程Lab6课程作业（第9组）"
+subtitle: "软件质量保障与测试课程Lab7课程作业（第9组）"
 author:
   - Tian, Jiahe^[Equal Contribution, Fudan University, 17307130313 (tianjh17@fudan.edu.cn)]
   - Hu, Xiaoxiao^[Equal Contribution, Fudan University, 17302010077 (xxhu17@fudan.edu.cn)]
