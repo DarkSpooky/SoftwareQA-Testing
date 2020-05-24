@@ -143,13 +143,43 @@ tinytex::install_tinytex()
 
 ## 测试结果完整报告
 
-(currently left blank)
+“出题系统”前端(Javascript)检测报告见附件2020-05-24-test-maker-fore-report
+“出题系统”后端(Java)检测报告见附件2020-05-24-my_project-report
 
 ## 测试结果核心内容截图
 
+sonar检测报告网页版视图中，分别以总览、问题、安全热点、指标、代码来记录对代码的分析结果，下面将分别截图这些部分。
+sonar检测报告的文档版的内容与网页版一致，具体报告在附件中可以查看。
+
+### 前端检测报告
+![总览](screenshots/lab7-pic/fore-1.png)
+![问题](screenshots/lab7-pic/fore-2.png)
+![安全热点](screenshots/lab7-pic/fore-3.png)
+![指标](screenshots/lab7-pic/fore-5.png)
+![代码](screenshots/lab7-pic/fore-6.png)
+
+### 后端检测报告
+
+![总览](screenshots/lab7-pic/back-1.png)
+![问题](screenshots/lab7-pic/back-2.png)
+![安全热点](screenshots/lab7-pic/back-3.png)
+![指标](screenshots/lab7-pic/back-5.png)
+![代码](screenshots/lab7-pic/back-6.png)
+
 ## 测试结果分析
 
+Sonar是一个用于代码质量管理的开源平台，用于管理源代码的质量。
 
+### sonar测试报告特点
+
+sonar的code viewer（代码）部分向开发者展示代码源文件和高层次的数据，包含了行数、问题数、单元覆盖率、重复度、代码近期提交信息等。其中，coverage用三种色彩可视化标记，红色表示没有覆盖，橙色表示部分覆盖，绿色表示完全覆盖。duplications计算重复代码的行数并定位。
+
+sonar的issues（问题）部分分析的粒度为类型、严重程度、处理方式、状态、标准、新问题、语言、规则、标签、目录、文件、负责人、作者。严重程度划分为blocker，critical，major，minor，info，对应致命（阻断），关键（严重），主要，微小（次要），未知（提示）。在issues中，sonar还会列出maintainability，documentation，complexity，bulk change，dispositioning等项。
+
+### 扫描效果
+
+选择的是sonar默认的扫描规则，效果非常细致，相对来说扫描过程用时也比较久。sonar将问题分为bud，code_smell和vulnerability，严重程度划分为minor,major,blocked,critical,info。bug类型的问题多涉及到比如比较判断符错误使用，空指针重定向，条件分支不可达等，code_smell类型涉及到方法返回值不能一直不变，方法体不能为空等，vulnerability类型涉及引用了已知有漏洞的函数的代码。
+sonar扫描的问题比较全面，也可以做到持续的代码检查跟进，具有高可用性和较短的反馈循环。提供了多种语言检测支持。
 
 # p3c工具静态测试
 

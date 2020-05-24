@@ -141,9 +141,28 @@ references:
 
 ## 测试结果完整报告
 
-(currently left blank)
+“出题系统”前端(Javascript)检测报告见附件2020-05-24-test-maker-fore-report
+“出题系统”后端(Java)检测报告见附件2020-05-24-my_project-report
 
 ## 测试结果核心内容截图
+
+sonar检测报告网页版视图中，分别以总览、问题、安全热点、指标、代码来记录对代码的分析结果，下面将分别截图这些部分。
+sonar检测报告的文档版的内容与网页版一致，具体报告在附件中可以查看。
+
+### 前端检测报告
+![总览](screenshots/lab7-pic/fore-1.png)
+![问题](screenshots/lab7-pic/fore-2.png)
+![安全热点](screenshots/lab7-pic/fore-3.png)
+![指标](screenshots/lab7-pic/fore-5.png)
+![代码](screenshots/lab7-pic/fore-6.png)
+
+### 后端检测报告
+
+![总览](screenshots/lab7-pic/back-1.png)
+![问题](screenshots/lab7-pic/back-2.png)
+![安全热点](screenshots/lab7-pic/back-3.png)
+![指标](screenshots/lab7-pic/back-5.png)
+![代码](screenshots/lab7-pic/back-6.png)
 
 ## 测试结果分析
 
