@@ -202,11 +202,11 @@ sonar扫描的问题比较全面，也可以做到持续的代码检查跟进，
 
 ## 测试结果核心内容截图
 
-如图所示，可分为Blocker、Critical、Major三部分。
+如图11和12所示，可分为Blocker、Critical、Major三部分。
 
-![截图1](screenshots/pic1.jpg)
+![p3c插件静态扫描结果截图1](screenshots/pic1.jpg)
 
-![截图2](screenshots/pic2.jpg)
+![p3c插件静态扫描结果截图2](screenshots/pic2.jpg)
 
 ## 测试结果分析
 
@@ -220,7 +220,7 @@ P3C是阿里巴巴推出的《阿里巴巴 Java 开发规约》扫描插件，�
 - 常量定义
 - 代码格式
 - OOP 规约
-- 集和处理
+- 集合处理
 - 并发处理
 - 控制语句
 - 注释规约
@@ -250,11 +250,11 @@ P3C插件有以下的优点：
 
 ## 测试结果核心内容截图
 
-如图所示，共发现236个failures，1个error和235个warnings。其中每一项都标明了具体的行数、问题代码和问题原因。
+如图13和14所示所示，共发现236个failures，1个error和235个warnings。其中每一项都标明了具体的行数、问题代码和问题原因。
 
-![截图1](screenshots/pic3.jpg)
+![jshint工具静态扫描结果截图1](screenshots/pic3.jpg)
 
-![截图2](screenshots/pic3.jpg)
+![jshint工具静态扫描结果截图2](screenshots/pic3.jpg)
 
 ## 测试结果分析
 
