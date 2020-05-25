@@ -152,6 +152,23 @@ sonar检测报告的文档版的内容与网页版一致，具体报告在附件
 \hypertarget{ux6d4bux8bd5ux7ed3ux679cux5206ux6790}{%
 \subsection{测试结果分析}\label{ux6d4bux8bd5ux7ed3ux679cux5206ux6790}}
 
+Sonar是一个用于代码质量管理的开源平台，用于管理源代码的质量。
+
+\hypertarget{sonarux6d4bux8bd5ux62a5ux544aux7279ux70b9}{%
+\subsubsection{sonar测试报告特点}\label{sonarux6d4bux8bd5ux62a5ux544aux7279ux70b9}}
+
+sonar的code
+viewer（代码）部分向开发者展示代码源文件和高层次的数据，包含了行数、问题数、单元覆盖率、重复度、代码近期提交信息等。其中，coverage用三种色彩可视化标记，红色表示没有覆盖，橙色表示部分覆盖，绿色表示完全覆盖。duplications计算重复代码的行数并定位。
+
+sonar的issues（问题）部分分析的粒度为类型、严重程度、处理方式、状态、标准、新问题、语言、规则、标签、目录、文件、负责人、作者。严重程度划分为blocker，critical，major，minor，info，对应致命（阻断），关键（严重），主要，微小（次要），未知（提示）。在issues中，sonar还会列出maintainability，documentation，complexity，bulk
+change，dispositioning等项。
+
+\hypertarget{ux626bux63cfux6548ux679c}{%
+\subsubsection{扫描效果}\label{ux626bux63cfux6548ux679c}}
+
+选择的是sonar默认的扫描规则，效果非常细致，相对来说扫描过程用时也比较久。sonar将问题分为bud，code\_smell和vulnerability，严重程度划分为minor,major,blocked,critical,info。bug类型的问题多涉及到比如比较判断符错误使用，空指针重定向，条件分支不可达等，code\_smell类型涉及到方法返回值不能一直不变，方法体不能为空等，vulnerability类型涉及引用了已知有漏洞的函数的代码。
+sonar扫描的问题比较全面，也可以做到持续的代码检查跟进，具有高可用性和较短的反馈循环。提供了多种语言检测支持。
+
 \hypertarget{p3cux5de5ux5177ux9759ux6001ux6d4bux8bd5}{%
 \section{p3c工具静态测试}\label{p3cux5de5ux5177ux9759ux6001ux6d4bux8bd5}}
 
@@ -205,8 +222,8 @@ Major，严重程度由高到低。
   其他
 \end{itemize}
 
-\hypertarget{ux626bux63cfux6548ux679c}{%
-\subsubsection{扫描效果}\label{ux626bux63cfux6548ux679c}}
+\hypertarget{ux626bux63cfux6548ux679c-1}{%
+\subsubsection{扫描效果}\label{ux626bux63cfux6548ux679c-1}}
 
 根据扫描结果可以发现：同一类型的编程规约由于其严重性不同可以划分为不同级别的
 bug。比如注释规约中，抽象方法的 javadoc 注释属于
@@ -293,8 +310,8 @@ JSHint 依旧把他们认错了。JSHint 有一些常见的配置项：
 JSHint 的配置项一般是放入项目根目录下的 .jshintrc 文件中，JSHint
 工具在扫描的时候就会运用这些配置项。配置项的作用一方面是明确项目的编程规范，约束开发人员的行为。另一方面是避免某些规范，减轻开发人员的负担（比如允许省略分号等）。
 
-\hypertarget{ux626bux63cfux6548ux679c-1}{%
-\subsubsection{扫描效果}\label{ux626bux63cfux6548ux679c-1}}
+\hypertarget{ux626bux63cfux6548ux679c-2}{%
+\subsubsection{扫描效果}\label{ux626bux63cfux6548ux679c-2}}
 
 不同的配置项扫描结果是不尽相同的。项目最初未定义配置项中的全局变量，这导致了非常多的未定义错误或警告。这显然不是我们需要的扫描结果。完成配置项后，扫描结果报告逐渐明晰，其中报告了出现了缺少分号、使用==和!=错误、缺少\{或\}错误和未定义变量等错误。正如上面所言，JSHint
 可以分析出 JavaScript
@@ -323,8 +340,24 @@ JSHint 工具不可否认具有一定的优点：
 \hypertarget{ux4e0dux540cux5de5ux5177ux4e4bux95f4ux7684ux5bf9ux6bd4ux5206ux6790}{%
 \section{不同工具之间的对比分析}\label{ux4e0dux540cux5de5ux5177ux4e4bux95f4ux7684ux5bf9ux6bd4ux5206ux6790}}
 
+\begin{itemize}
+\item
+  sonar：定位是代码质量平台，本身不进行代码分析，但可以集成各个静态分析工具以及其他软件开发测试工具，并基于集成工具的结果数据按照一定的质量模型，对软件的质量进行评估。甚至可以选择接入p3c规范进行代码扫描。sonar基于扫描规则进行扫描，因此扫描的问题可以比较全面，本身是代码质量平台，可以做到持续的代码检查跟进，具有高可用性和较短的反馈循环。提供了多种语言检测支持。生成的检测报告也比较详细，数据可视化好。是几个工具中专业性最高的。
+\item
+  p3c是一套自动化的IDE检测插件（主要是IDEA、Eclipse）该插件在扫描代码后，将不符合《手册》的代码按Blocker/Critical/Major三个等级显示在下方，根据错误定位到对应的规则,在IDE中提供快捷修正方式，但p3c扫描检测的问题较为基础，侧重JAVA编程细节可能导致的系统失效，之后仍需要类似FindBugs的插件再次扫描检测bug。
+\item
+  JSHint 是由Anton Kovalyov 基于JSLint
+  的代码实现的开源项目，是一个JavaScript
+  语法和风格检查的命令行工具，不能检查出逻辑问题。它可以根据配置参数扫描JavaScript代码，
+  分析其中的语法风格从而给出代码质量报告。相比于sonar它不支持自定义规则、相比于p3c它无法根据错误定位到对应的规则，也不提供快捷的修正方式，分析功能也非常基础和有限，是并不算强大的web静态扫描工具。
+\end{itemize}
+
 \hypertarget{ux6d4bux8bd5ux603bux7ed3}{%
 \section{测试总结}\label{ux6d4bux8bd5ux603bux7ed3}}
+
+在我们选取的三个测试工具中，sonar定位于代码质量平台，集成各种静态分析工具和其它测试工具，提供持续代码检测跟进，是最强大和专业的静态测试工具。而p3c和JSHint分别是针对Java和JS开发的基于编码及设计实践的静态检测工具，p3c做成了IDE检测插件，JSHint则是命令行工具，由于二者都偏重于代码编写格式，及是否符合编码规范的检验，内置编程规范比较基础，对代码
+bug发现功能较弱。
+但是他们都能快速定位代码隐藏错误和缺陷，显著减少在代码逐行检查上花费的时间，提高软件可靠性并节省软件开发和测试成本。
 
 \pagebreak
 
