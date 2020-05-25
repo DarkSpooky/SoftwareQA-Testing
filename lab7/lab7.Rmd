@@ -1,5 +1,5 @@
 ---
-title: \vspace{2in} 性能测试设计与执行
+title: \vspace{2in} 代码静态测试
 subtitle: "软件质量保障与测试课程Lab7课程作业（第9组）"
 author:
   - Tian, Jiahe^[Equal Contribution, Fudan University, 17307130313 (tianjh17@fudan.edu.cn)]
@@ -12,7 +12,7 @@ author:
   - Zhang, Yihan^[Equal Contribution, Fudan University, 17302010076 (zhangyihan17@fudan.edu.cn)]
   - Wang, Chen^[Equal Contribution, Fudan University, 16307110064 (wangc16@fudan.edu.cn)]
 
-date: "2020年5月14日"
+date: "2020年5月24日"
 documentclass: ctexart
 output:
   rticles::ctex:
@@ -262,7 +262,7 @@ P3C插件有以下的优点：
 
 ![jshint工具静态扫描结果截图1](screenshots/pic3.jpg)
 
-![jshint工具静态扫描结果截图2](screenshots/pic3.jpg)
+![jshint工具静态扫描结果截图2](screenshots/pic4.jpg)
 
 ## 测试结果分析
 
