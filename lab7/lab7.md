@@ -141,7 +141,7 @@ references:
 
 ## 测试结果完整报告
 
-“出题系统”前端(Javascript)检测报告见附件2020-05-24-test-maker-fore-report
+“出题系统”前端(Javascript)检测报告见附件2020-05-25-test-maker-fore-report
 
 “出题系统”后端(Java)检测报告见附件2020-05-24-my_project-report
 
