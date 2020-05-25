@@ -152,29 +152,31 @@ sonar检测报告网页版视图中，分别以总览、问题、安全热点、
 sonar检测报告的文档版的内容与网页版一致，具体报告在附件中可以查看。
 
 ### 前端检测报告
+sonar前端检测报告网页版截图见图1-5，分别为总览、问题、安全热点、指标、代码的网页显示。
 
-![总览](screenshots/lab7-pic/fore-1.png)
+![前端-总览](screenshots/lab7-pic/f-1.png)
 
-![问题](screenshots/lab7-pic/fore-2.png)
+![前端-问题](screenshots/lab7-pic/f-2.png)
 
-![安全热点](screenshots/lab7-pic/fore-3.png)
+![前端-安全热点](screenshots/lab7-pic/f-3.png)
 
-![指标](screenshots/lab7-pic/fore-5.png)
+![前端-指标](screenshots/lab7-pic/f-4.png)
 
-![代码](screenshots/lab7-pic/fore-6.png)
+![前端-代码](screenshots/lab7-pic/f-5.png)
 
 
 ### 后端检测报告
+sonar前端检测报告网页版截图见图6-10，分别截取了总览、问题、安全热点、指标、代码的网页显示。
 
-![总览](screenshots/lab7-pic/back-1.png)
+![后端-总览](screenshots/lab7-pic/back-1.png)
 
-![问题](screenshots/lab7-pic/back-2.png)
+![后端-问题](screenshots/lab7-pic/back-2.png)
 
-![安全热点](screenshots/lab7-pic/back-3.png)
+![后端-安全热点](screenshots/lab7-pic/back-3.png)
 
-![指标](screenshots/lab7-pic/back-5.png)
+![后端-指标](screenshots/lab7-pic/back-5.png)
 
-![代码](screenshots/lab7-pic/back-6.png)
+![后端-代码](screenshots/lab7-pic/back-6.png)
 
 
 ## 测试结果分析
@@ -183,15 +185,19 @@ Sonar是一个用于代码质量管理的开源平台，用于管理源代码的
 
 ### sonar测试报告特点
 
-sonar的code viewer（代码）部分向开发者展示代码源文件和高层次的数据，包含了行数、问题数、单元覆盖率、重复度、代码近期提交信息等。其中，coverage用三种色彩可视化标记，红色表示没有覆盖，橙色表示部分覆盖，绿色表示完全覆盖。duplications计算重复代码的行数并定位。
+sonar的问题（图2，图7）部分分析的粒度为类型、严重程度、处理方式、状态、标准、新问题、语言、规则、标签、目录、文件、负责人、作者。严重程度划分为blocker，critical，major，minor，info，对应致命（阻断），关键（严重），主要，微小（次要），未知（提示）。可以便于之后对跟踪缺陷修改和变化的跟进。
 
-sonar的issues（问题）部分分析的粒度为类型、严重程度、处理方式、状态、标准、新问题、语言、规则、标签、目录、文件、负责人、作者。严重程度划分为blocker，critical，major，minor，info，对应致命（阻断），关键（严重），主要，微小（次要），未知（提示）。在issues中，sonar还会列出maintainability，documentation，complexity，bulk change，dispositioning等项。
+sonar的安全热点（图3，图8）中会给出一些CVE中已收录漏洞在当前代码中的检测，以避免未来可能造成的安全问题。
+
+sonar的指标部分（图4，图9）给出对于代码的可靠性，安全性，可维护性，覆盖率，重复，复杂度等特征的评级，用于帮助优化代码以及判断修复各种缺陷可能需要的开销。
+
+sonar的代码（图5，图10）部分向开发者展示代码源文件和扫描出的缺陷，包含了行数、问题数、单元覆盖率、重复度、代码近期提交信息等。用户可以看见每个缺陷的位置，同时还可以看到此类缺陷系统给出的修改提示和为什么这会是个缺陷的详细解释。
 
 ### 扫描效果
 
-选择的是sonar默认的扫描规则，效果非常细致，相对来说扫描过程用时也比较久。sonar将问题分为bud，code_smell和vulnerability，严重程度划分为minor,major,blocked,critical,info。bug类型的问题多涉及到比如比较判断符错误使用，空指针重定向，条件分支不可达等，code_smell类型涉及到方法返回值不能一直不变，方法体不能为空等，vulnerability类型涉及引用了已知有漏洞的函数的代码。
-
-sonar扫描的问题比较全面，也可以做到持续的代码检查跟进，具有高可用性和较短的反馈循环。提供了多种语言检测支持。
+选择的是sonar默认的扫描规则，效果非常细致，相对来说扫描过程用时也比较久。sonar将问题分为bug，code_smell和vulnerability，严重程度划分为minor,major,blocked,critical,info。
+bug类型的问题多涉及到比如比较判断符错误使用，空指针重定向，条件分支不可达等，code_smell类型涉及到的一般是坏的代码习惯造成的缺陷，例如方法返回值不能一直不变，方法体不能为空需要附加注释等，vulnerability类型则是涉及引用了已知有漏洞的函数的代码。
+sonar扫描的问题比较全面，也可以做到持续的代码检查跟进，具有高可用性和较短的反馈循环。提供了多种语言检测支持。**整体上，sonar扫描的比较全面，还可以与版本控制，开发人员关联起来，有比较好的控制反馈功能，可视化结果也比较直观**
 
 # p3c工具静态测试
 
@@ -228,7 +234,7 @@ P3C是阿里巴巴推出的《阿里巴巴 Java 开发规约》扫描插件，�
 
 ### 扫描效果
 
-根据扫描结果可以发现：同一类型的编程规约由于其严重性不同可以划分为不同级别的 bug。比如注释规约中，抽象方法的 javadoc 注释属于 Major，而枚举字段的注释属于 Critical; 命名规范中也有类似的例子。另外，bug 的严重程度分类比较合理。注释规约、命名规范的约定内容严重程度较低，并发处理、控制语句的约定内容严重程度较高。**整体上，P3C扫描插件发现的问题比较基础，它侧重 JAVA 编程细节可能导致的系统失效。**
+根据扫描结果可以发现：同一类型的编程规约由于其严重性不同可以划分为不同级别的 bug。比如注释规约中，抽象方法的 javadoc 注释属于 Major，而枚举字段的注释属于 Critical; 命名规范中也有类似的例子。另外，bug 的严重程度分类比较合理。注释规约、命名规范的约定内容严重程度较低，并发处理、控制语句的约定内容严重程度较高。报告中给出了命名风格错误（类名UpperCamelCase，方法名、变量名lowerCamelCase）、缺少注释（javadoc注释，类创建信息注释等）、魔法值常量、缺少注解（重新方法注解）、类方法行数过多、集合初始化为指定数量、线程使用高风险、控制语句语句块包括等问题。**整体上，P3C扫描插件发现的问题比较基础，它侧重 JAVA 编程细节可能导致的系统失效。**
 
 ### 插件使用
 
