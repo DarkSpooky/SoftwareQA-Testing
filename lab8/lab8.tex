@@ -110,8 +110,583 @@
 \hypertarget{ux6d4bux8bd5ux8ba1ux5212}{%
 \section{测试计划}\label{ux6d4bux8bd5ux8ba1ux5212}}
 
+\hypertarget{ux767bux5f55ux53caux4e2aux4ebaux4fe1ux606f}{%
+\subsection{登录及个人信息}\label{ux767bux5f55ux53caux4e2aux4ebaux4fe1ux606f}}
+
+\hypertarget{ux767bux5f55}{%
+\subsubsection{登录}\label{ux767bux5f55}}
+
+\begin{itemize}
+\tightlist
+\item
+  输入正确的用户名和密码
+\item
+  输入错误的用户名和密码
+\end{itemize}
+
+\hypertarget{ux4feeux6539ux4e2aux4ebaux4fe1ux606f}{%
+\subsubsection{修改个人信息}\label{ux4feeux6539ux4e2aux4ebaux4fe1ux606f}}
+
+\begin{itemize}
+\tightlist
+\item
+  登录状态下对用户名进行修改
+\item
+  登录状态下对密码进行修改
+\item
+  非登录状态下访问修改个人信息页面
+\end{itemize}
+
+\hypertarget{ux5efaux7acbux65b0ux9879ux76ee}{%
+\subsection{建立新项目}\label{ux5efaux7acbux65b0ux9879ux76ee}}
+
+\hypertarget{ux521bux5efaux9879ux76ee}{%
+\subsubsection{创建项目}\label{ux521bux5efaux9879ux76ee}}
+
+\begin{itemize}
+\tightlist
+\item
+  主持人登录后创建项目，确定项目名称，项目规划
+\end{itemize}
+
+\hypertarget{ux65b0ux5efaux8003ux9898}{%
+\subsubsection{新建考题}\label{ux65b0ux5efaux8003ux9898}}
+
+\begin{itemize}
+\tightlist
+\item
+  主持人创建新考题
+\item
+  主持人设置考题状态为``开始''
+\item
+  开始状态下为考题设置题目属性
+\item
+  开始状态下为考题设置相关管理人员
+\end{itemize}
+
+\hypertarget{ux5f00ux59cbux542fux52a8ux9879ux76ee}{%
+\subsection{开始启动项目}\label{ux5f00ux59cbux542fux52a8ux9879ux76ee}}
+
+\hypertarget{ux8bbeux7f6eux671fux9650}{%
+\subsubsection{设置期限}\label{ux8bbeux7f6eux671fux9650}}
+
+\begin{itemize}
+\tightlist
+\item
+  主持人为开始状态下的考题分配知识点
+\item
+  主持人设定编写考题与评审考题的时间限制
+\end{itemize}
+
+\hypertarget{ux4feeux6539ux72b6ux6001}{%
+\subsubsection{修改状态}\label{ux4feeux6539ux72b6ux6001}}
+
+\begin{itemize}
+\tightlist
+\item
+  主持人在开始状态下完成了对题目属性的设置、知识点的分配、作者、
+  评审员和质管员的设置后，将题目状态改为 ``编写''
+\item
+  主持人在未完成相应设置时修改题目状态为编写
+\end{itemize}
+
+\hypertarget{ux7f16ux5199ux8003ux9898}{%
+\subsection{编写考题}\label{ux7f16ux5199ux8003ux9898}}
+
+\hypertarget{ux8bbeux7f6eux591aux7c7bux578bux8003ux9898}{%
+\subsubsection{设置多类型考题}\label{ux8bbeux7f6eux591aux7c7bux578bux8003ux9898}}
+
+\begin{itemize}
+\tightlist
+\item
+  作者编写纯文字考题
+\item
+  作者编写带有表格的考题
+\item
+  作者编写带有图形的考题
+\item
+  作者以Excel形式将考题导入出题系统
+\item
+  作者以XML形式将考题导入出题系统
+\end{itemize}
+
+\hypertarget{ux4feeux6539ux72b6ux6001-1}{%
+\subsubsection{修改状态}\label{ux4feeux6539ux72b6ux6001-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  作者在编写过程中设置题目状态为``评审''
+\item
+  作者在完成编写后把题目状态设置为``评审''
+\end{itemize}
+
+\hypertarget{ux8bc4ux5ba1ux8003ux9898}{%
+\subsection{评审考题}\label{ux8bc4ux5ba1ux8003ux9898}}
+
+\hypertarget{ux8bc4ux5ba1ux53efux63a5ux53d7}{%
+\subsubsection{评审可接受}\label{ux8bc4ux5ba1ux53efux63a5ux53d7}}
+
+\begin{itemize}
+\tightlist
+\item
+  评审员设置评审结果为``可接受''
+\end{itemize}
+
+\hypertarget{ux8bc4ux5ba1ux88abux62d2ux7edd}{%
+\subsubsection{评审被拒绝}\label{ux8bc4ux5ba1ux88abux62d2ux7edd}}
+
+\begin{itemize}
+\tightlist
+\item
+  评审员设置评审结果为``被拒绝''
+\end{itemize}
+
+\hypertarget{ux8bc4ux5ba1ux9700ux4feeux6539}{%
+\subsubsection{评审需修改}\label{ux8bc4ux5ba1ux9700ux4feeux6539}}
+
+\begin{itemize}
+\tightlist
+\item
+  评审员设置评审结果为``需修改''
+\end{itemize}
+
+\hypertarget{ux8bc4ux5ba1ux6743ux9650ux63a7ux5236}{%
+\subsubsection{评审权限控制}\label{ux8bc4ux5ba1ux6743ux9650ux63a7ux5236}}
+
+\begin{itemize}
+\tightlist
+\item
+  评审员阅读分配属于自己评审的考题
+\item
+  评审员对属于自己评审的考题编写评审意见和建议
+\item
+  评审员改变属于自己评审的考题的状态
+\item
+  主持人阅读该考题
+\item
+  主持人修改和操作该考题
+\end{itemize}
+
+\hypertarget{ux518dux5ba1ux8003ux9898}{%
+\subsection{再审考题}\label{ux518dux5ba1ux8003ux9898}}
+
+\hypertarget{ux518dux5ba1ux53efux53d1ux5e03}{%
+\subsubsection{再审可发布}\label{ux518dux5ba1ux53efux53d1ux5e03}}
+
+\begin{itemize}
+\tightlist
+\item
+  评审员设置题目状态为``发布''
+\end{itemize}
+
+\hypertarget{ux518dux5ba1ux9700ux4feeux6539}{%
+\subsubsection{再审需修改}\label{ux518dux5ba1ux9700ux4feeux6539}}
+
+\begin{itemize}
+\tightlist
+\item
+  评审员设置评审结果为``修改''
+\end{itemize}
+
+\hypertarget{ux518dux5ba1ux9700ux4f5cux5e9f}{%
+\subsubsection{再审需作废}\label{ux518dux5ba1ux9700ux4f5cux5e9f}}
+
+\begin{itemize}
+\tightlist
+\item
+  评审员设置评审结果为``作废''
+\end{itemize}
+
+\hypertarget{ux518dux5ba1ux6743ux9650ux63a7ux5236}{%
+\subsubsection{再审权限控制}\label{ux518dux5ba1ux6743ux9650ux63a7ux5236}}
+
+\begin{itemize}
+\tightlist
+\item
+  主持人修改考题
+\item
+  主持人改变考题状态
+\end{itemize}
+
+\hypertarget{ux4feeux6539ux8003ux9898}{%
+\subsection{修改考题}\label{ux4feeux6539ux8003ux9898}}
+
+\hypertarget{ux4feeux6539ux8003ux9898-1}{%
+\subsubsection{修改考题}\label{ux4feeux6539ux8003ux9898-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  作者阅读意见并修改考题
+\item
+  作者改变考题状态为``评审''
+\end{itemize}
+
+\hypertarget{ux4feeux6539ux6743ux9650ux63a7ux5236}{%
+\subsubsection{修改权限控制}\label{ux4feeux6539ux6743ux9650ux63a7ux5236}}
+
+\begin{itemize}
+\tightlist
+\item
+  主持人修改考题
+\item
+  主持人改变考题状态
+\end{itemize}
+
+\hypertarget{ux53d1ux5e03ux8003ux9898}{%
+\subsection{发布考题}\label{ux53d1ux5e03ux8003ux9898}}
+
+\hypertarget{ux5bfcux51faux53d1ux5e03ux8003ux9898}{%
+\subsubsection{导出发布考题}\label{ux5bfcux51faux53d1ux5e03ux8003ux9898}}
+
+\begin{itemize}
+\tightlist
+\item
+  主持人在考题处于``发布''状态下导出考题
+\item
+  主持人在考题处于``发布''状态下修改考题
+\end{itemize}
+
+\hypertarget{ux5bfcux5165ux9898ux5e93}{%
+\subsubsection{导入题库}\label{ux5bfcux5165ux9898ux5e93}}
+
+\begin{itemize}
+\tightlist
+\item
+  题库系统管理员将已发布并且由主持人导出的考题文件导入题库
+\end{itemize}
+
+\hypertarget{ux4f5cux5e9fux8003ux9898}{%
+\subsection{作废考题}\label{ux4f5cux5e9fux8003ux9898}}
+
+\hypertarget{ux5e9fux9664ux4f5cux5e9fux8003ux9898}{%
+\subsubsection{废除作废考题}\label{ux5e9fux9664ux4f5cux5e9fux8003ux9898}}
+
+\begin{itemize}
+\tightlist
+\item
+  主持人查看作废考题
+\item
+  主持人修改考题或改变状态
+\end{itemize}
+
+\hypertarget{ux91cdux542fux51faux9898ux6d41ux7a0b}{%
+\subsubsection{重启出题流程}\label{ux91cdux542fux51faux9898ux6d41ux7a0b}}
+
+\begin{itemize}
+\tightlist
+\item
+  主持人查看作废考题后重新启动项目
+\end{itemize}
+
+\hypertarget{ux751fux6210ux8003ux5377}{%
+\subsection{生成考卷}\label{ux751fux6210ux8003ux5377}}
+
+\hypertarget{ux586bux5199ux8003ux8bd5ux540dux79f0}{%
+\subsubsection{填写考试名称}\label{ux586bux5199ux8003ux8bd5ux540dux79f0}}
+
+\begin{itemize}
+\tightlist
+\item
+  输入合法的考试名称
+\item
+  输入非法的考试名称
+\end{itemize}
+
+\hypertarget{ux8bbeux7f6eux9898ux76eeux603bux6570}{%
+\subsubsection{设置题目总数}\label{ux8bbeux7f6eux9898ux76eeux603bux6570}}
+
+\begin{itemize}
+\tightlist
+\item
+  输入范围为1\textasciitilde{}5的数字
+\end{itemize}
+
+\hypertarget{ux9009ux62e9ux8bd5ux5377ux96beux5ea6}{%
+\subsubsection{选择试卷难度}\label{ux9009ux62e9ux8bd5ux5377ux96beux5ea6}}
+
+\begin{itemize}
+\tightlist
+\item
+  选择简单
+\item
+  选择一般
+\item
+  选择困难
+\end{itemize}
+
+\hypertarget{ux586bux5199ux5f00ux59cbux65f6ux95f4}{%
+\subsubsection{填写开始时间}\label{ux586bux5199ux5f00ux59cbux65f6ux95f4}}
+
+\begin{itemize}
+\tightlist
+\item
+  填写格式正确的时间
+\item
+  填写格式错误的时间
+\end{itemize}
+
+\hypertarget{ux586bux5199ux7ed3ux675fux65f6ux95f4}{%
+\subsubsection{填写结束时间}\label{ux586bux5199ux7ed3ux675fux65f6ux95f4}}
+
+\begin{itemize}
+\tightlist
+\item
+  填写格式正确的时间
+\item
+  填写格式错误的时间
+\end{itemize}
+
+\hypertarget{ux9009ux62e9ux7ae0ux8282}{%
+\subsubsection{选择章节}\label{ux9009ux62e9ux7ae0ux8282}}
+
+\begin{itemize}
+\tightlist
+\item
+  选择具体的章节
+\end{itemize}
+
+\hypertarget{ux9009ux62e9ux8003ux8bd5ux5b66ux751f}{%
+\subsubsection{选择考试学生}\label{ux9009ux62e9ux8003ux8bd5ux5b66ux751f}}
+
+\begin{itemize}
+\tightlist
+\item
+  选择本次考试的学生
+\end{itemize}
+
+\hypertarget{ux8003ux8bd5}{%
+\subsection{考试}\label{ux8003ux8bd5}}
+
+\hypertarget{ux67e5ux770bux8003ux5377}{%
+\subsubsection{查看考卷}\label{ux67e5ux770bux8003ux5377}}
+
+\begin{itemize}
+\tightlist
+\item
+  点击侧边栏查看考卷
+\end{itemize}
+
+\hypertarget{ux53c2ux52a0ux8003ux8bd5}{%
+\subsubsection{参加考试}\label{ux53c2ux52a0ux8003ux8bd5}}
+
+\begin{itemize}
+\tightlist
+\item
+  点击图标开始开始
+\item
+  点击考题答案的单选框进行选择
+\end{itemize}
+
+\hypertarget{ux63d0ux4ea4ux8003ux5377}{%
+\subsubsection{提交考卷}\label{ux63d0ux4ea4ux8003ux5377}}
+
+\begin{itemize}
+\tightlist
+\item
+  回答完所有题目提交考卷
+\item
+  没有答完所有题目提交考卷
+\end{itemize}
+
+\hypertarget{ux67e5ux770bux5206ux6570}{%
+\subsubsection{查看分数}\label{ux67e5ux770bux5206ux6570}}
+
+\begin{itemize}
+\tightlist
+\item
+  点击查看成绩
+\item
+  没有参加考试时点击查看成绩
+\end{itemize}
+
 \hypertarget{ux6d4bux8bd5ux8303ux56f4ux5236ux5b9a}{%
 \section{测试范围制定}\label{ux6d4bux8bd5ux8303ux56f4ux5236ux5b9a}}
+
+\hypertarget{ux51faux9898ux573aux666f}{%
+\subsection{出题场景}\label{ux51faux9898ux573aux666f}}
+
+\hypertarget{ux767bux5f55ux53caux4e2aux4ebaux4fe1ux606f-1}{%
+\subsubsection{登录及个人信息}\label{ux767bux5f55ux53caux4e2aux4ebaux4fe1ux606f-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  登录
+\item
+  修改个人信息
+\end{itemize}
+
+\hypertarget{ux5efaux7acbux65b0ux9879ux76ee-1}{%
+\subsubsection{建立新项目}\label{ux5efaux7acbux65b0ux9879ux76ee-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  创建项目
+\item
+  新建考题
+\end{itemize}
+
+\hypertarget{ux5f00ux59cbux542fux52a8ux9879ux76ee-1}{%
+\subsubsection{开始启动项目}\label{ux5f00ux59cbux542fux52a8ux9879ux76ee-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  设置期限
+\item
+  修改状态
+\end{itemize}
+
+\hypertarget{ux7f16ux5199ux8003ux9898-1}{%
+\subsubsection{编写考题}\label{ux7f16ux5199ux8003ux9898-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  设置多类型考题
+\item
+  修改状态
+\end{itemize}
+
+\hypertarget{ux8bc4ux5ba1ux8003ux9898-1}{%
+\subsubsection{评审考题}\label{ux8bc4ux5ba1ux8003ux9898-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  评审可接受
+\item
+  评审被拒绝
+\item
+  评审需修改
+\item
+  评审权限控制
+\end{itemize}
+
+\hypertarget{ux518dux5ba1ux8003ux9898-1}{%
+\subsubsection{再审考题}\label{ux518dux5ba1ux8003ux9898-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  再审可接受
+\item
+  再审被拒绝
+\item
+  再审需修改
+\item
+  再审权限控制
+\end{itemize}
+
+\hypertarget{ux53d1ux5e03ux8003ux9898-1}{%
+\subsubsection{发布考题}\label{ux53d1ux5e03ux8003ux9898-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  导出发布考题
+\item
+  导入题库
+\end{itemize}
+
+\hypertarget{ux4f5cux5e9fux8003ux9898-1}{%
+\subsubsection{作废考题}\label{ux4f5cux5e9fux8003ux9898-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  废除作废考题
+\item
+  重启出题流程
+\end{itemize}
+
+\hypertarget{ux521bux5efaux8bd5ux5377ux4e0eux8003ux8bd5ux573aux666f}{%
+\subsection{创建试卷与考试场景}\label{ux521bux5efaux8bd5ux5377ux4e0eux8003ux8bd5ux573aux666f}}
+
+\hypertarget{ux767bux5f55ux53caux4e2aux4ebaux4fe1ux606f-2}{%
+\subsubsection{登录及个人信息}\label{ux767bux5f55ux53caux4e2aux4ebaux4fe1ux606f-2}}
+
+\begin{itemize}
+\tightlist
+\item
+  登录
+\item
+  修改个人信息
+\end{itemize}
+
+\hypertarget{ux751fux6210ux8003ux5377-1}{%
+\subsubsection{生成考卷}\label{ux751fux6210ux8003ux5377-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  填写考试名称
+\item
+  设置题目总数
+\item
+  选择试卷难度
+\item
+  填写开始时间
+\item
+  填写结束时间
+\item
+  选择章节
+\item
+  选择考试学生
+\end{itemize}
+
+\hypertarget{ux53c2ux52a0ux8003ux8bd5ux573aux666f}{%
+\subsection{参加考试场景}\label{ux53c2ux52a0ux8003ux8bd5ux573aux666f}}
+
+\hypertarget{ux767bux5f55-1}{%
+\subsubsection{登录}\label{ux767bux5f55-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  登录
+\end{itemize}
+
+\hypertarget{ux67e5ux770bux8003ux5377-1}{%
+\subsubsection{查看考卷}\label{ux67e5ux770bux8003ux5377-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  查看考卷
+\end{itemize}
+
+\hypertarget{ux53c2ux52a0ux8003ux8bd5-1}{%
+\subsubsection{参加考试}\label{ux53c2ux52a0ux8003ux8bd5-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  参加考试
+\item
+  开始考试
+\end{itemize}
+
+\hypertarget{ux63d0ux4ea4ux8003ux5377-1}{%
+\subsubsection{提交考卷}\label{ux63d0ux4ea4ux8003ux5377-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  提交考卷
+\end{itemize}
+
+\hypertarget{ux67e5ux770bux5206ux6570-1}{%
+\subsubsection{查看分数}\label{ux67e5ux770bux5206ux6570-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  查看分数
+\end{itemize}
 
 \hypertarget{ux6d4bux8bd5ux7ed3ux679cux6574ux7406}{%
 \section{测试结果整理}\label{ux6d4bux8bd5ux7ed3ux679cux6574ux7406}}
@@ -121,6 +696,16 @@
 
 \hypertarget{ux603bux7ed3ux9648ux8bcd}{%
 \section{总结陈词}\label{ux603bux7ed3ux9648ux8bcd}}
+
+\#\#组卷部分
+对于组卷部分，管理员在登录后，点击查看考卷进入到组卷页面。然后依次输入考试名称，选择题目总数、试卷难度，输入开始和结束时间，选择章节以及选择参与这场考试的学生，这些是完成一次成功的组卷所必须经过的步骤。在这部分操作之外，登录及个人信息部分测试了错误的用户名密码的输入，以及修改个人信息。组卷部分对输入非法名称，格式错误的开始和结束时间这两个容易发生的错误操作进行了测试。
+首先，对于组卷功能涉及的一系列操作都已经实现，可以完成一次成功的组卷。对于输入的非法的考试名称（此处使用的是为空的名称进行测试），系统能够给出提示。所以系统在正确使用的前提下可以正常工作，对于操作过程中可能出现的错误，系统也进行了一定的错误处理。但个人信息修改因为功能包含在出题系统中，所以同样没有实现，以及在输入格式错误的时间时，系统给出的提示是http的状态500，对于用户来说可能无法立刻明白出错的原因，但通过修改为正确的格式可以完成组卷。所以系统中还包含了一些未实现的需求以及用户不友好的部分，但并不是致命性的错误。
+系统其他可能存在的风险包括其他的非法输入以及安全性方面的风险。对于非法名称，只测试了为空，而没有测试重复的名称和过长的名称。对于章节和学生选择的多选框如果没有进行选择的情况没有进行测试，以及在没有登录的情况下是否能进入这一界面没有测试。
+
+\#\#考试部分
+考试部分的必经流程包括，学生登录，查看自己参加的所有考试，开始考试并获取试卷，点击单选框选择答案，提交考卷，最后查看自己分数。除了以上的步骤外，包括了使用错误的用户名和密码登录，在没有答完所有题目的情况下提交试卷，以及在没有参加考试时查看分数。
+在操作正确的前提下，参加考试并获取分数这一系列的步骤可以正常完成。对于没有参加的考试，查看到的分数为零分。但在没有答完所有题目的情况下提交试卷，系统会给出错误提示，这与一般的处理方法并不一致。所以系统对于基本的操作流程，大体实现了相关功能，但对于一些特殊情况，系统的处理可能与常理不同，应当加以说明。
+没有覆盖的风险包括与考试时间相关的错误操作以及安全性相关的风险，如在考试未开始或结束后试图开始考试，在考试结束前查看成绩，在没有登录的情况下进行除了登录以外的操作，以及尝试获取自己没有参加的考试的试卷。
 
 \pagebreak
 
