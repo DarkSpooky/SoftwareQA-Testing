@@ -393,6 +393,19 @@ tinytex::install_tinytex()
 
 # 测试结果整理
 
+1. 测试错误总数整理
+
+![测试结果-abstract](screenshoots/PivotTable_abstract.png)
+
+2.整体错误情况 
+
+![测试结果-general](screenshoots/PivotTable_general.png)
+
+3. 具体错误情况
+
+![测试结果-details](screenshoots/PivotTable_Details.png)
+
+
 # bug等级评估
 
 # 总结陈词
