@@ -393,17 +393,47 @@ tinytex::install_tinytex()
 
 # 测试结果整理
 
+## 出题场景
+
 1. 测试错误总数整理
 
-![测试结果-abstract](screenshoots/PivotTable_abstract.png)
+![出题场景-测试结果-abstract](screenshoots/PivotTable_abstract.png)
 
 2.整体错误情况 
 
-![测试结果-general](screenshoots/PivotTable_general.png)
+![出题场景-测试结果-general](screenshoots/PivotTable_general.png)
 
 3. 具体错误情况
 
-![测试结果-details](screenshoots/PivotTable_Details.png)
+![出题场景-测试结果-details](screenshoots/PivotTable_Details.png)
+
+## 创建试卷与考试场景
+
+1. 测试错误总数整理
+
+![创建试卷-测试结果-abstract](screenshoots/PivotTable_Abstract_2.png)
+
+2.整体错误情况 
+
+![创建试卷-测试结果-general](screenshoots/PivotTable_general_2.png)
+
+3. 具体错误情况
+
+![创建试卷-测试结果-details](screenshoots/PivotTable_Details_2.png)
+
+## 参加考试场景
+
+1. 测试错误总数整理
+
+![参加考试-测试结果-abstract](screenshoots/PivotTable_abstract_3.png)
+
+2. 整体错误情况 
+
+![参加考试-测试结果-general](screenshoots/PivotTable_general_3.png)
+
+3. 具体错误情况
+
+![参加考试-测试结果-details](screenshoots/PivotTable_Details_3.png)
 
 
 # bug等级评估
