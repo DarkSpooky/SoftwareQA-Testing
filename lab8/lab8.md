@@ -393,43 +393,61 @@ references:
 
 ## 出题场景
 
-1. 测试错误总数整理
+### 测试错误总数整理
+
+出题场景测试结果整体情况如图1所示。
 
 ![出题场景-测试结果-abstract](screenshoots/PivotTable_abstract.png)
 
-2.整体错误情况 
+### 整体错误情况 
+
+出题场景测试结果分类别情况如图2所示。
 
 ![出题场景-测试结果-general](screenshoots/PivotTable_general.png)
 
-3. 具体错误情况
+### 具体错误情况
+
+出题场景测试结果具体情况如图3所示。
 
 ![出题场景-测试结果-details](screenshoots/PivotTable_Details.png)
 
 ## 创建试卷与考试场景
 
-1. 测试错误总数整理
+### 测试错误总数整理
+
+创建试卷与考试测试结果整体情况如图4所示。
 
 ![创建试卷-测试结果-abstract](screenshoots/PivotTable_Abstract_2.png)
 
-2.整体错误情况 
+### 整体错误情况 
+
+创建试卷与考试测试结果分类别情况如图5所示。
 
 ![创建试卷-测试结果-general](screenshoots/PivotTable_general_2.png)
 
-3. 具体错误情况
+### 具体错误情况
+
+创建试卷与考试测试结果具体情况如图6所示。
 
 ![创建试卷-测试结果-details](screenshoots/PivotTable_Details_2.png)
 
 ## 参加考试场景
 
-1. 测试错误总数整理
+### 测试错误总数整理
+
+参加考试测试结果整体情况如图7所示。
 
 ![参加考试-测试结果-abstract](screenshoots/PivotTable_abstract_3.png)
 
-2. 整体错误情况 
+### 整体错误情况 
+
+参加考试测试结果分类别情况如图8所示。
 
 ![参加考试-测试结果-general](screenshoots/PivotTable_general_3.png)
 
-3. 具体错误情况
+### 具体错误情况
+
+参加考试测试结果具体情况如图9所示。
 
 ![参加考试-测试结果-details](screenshoots/PivotTable_Details_3.png)
 
@@ -458,7 +476,7 @@ references:
 - 3 对功能的部分实现产生影响
 - 4 存在问题，但不对功能产生影响
 
-然后，我小组同学根据实际情况，对以上错误内容进行了错误等级评估，得到了上表中的结果。
+然后，我小组同学根据实际情况，对以上错误内容进行了错误等级评估，得到了表1中的结果。
 
 # 总结陈词
 
