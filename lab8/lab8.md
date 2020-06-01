@@ -391,7 +391,59 @@ references:
 
 # 测试结果整理
 
+## 出题场景
+
+1. 测试错误总数整理
+
+![出题场景-测试结果-abstract](screenshoots/PivotTable_abstract.png)
+
+2.整体错误情况 
+
+![出题场景-测试结果-general](screenshoots/PivotTable_general.png)
+
+3. 具体错误情况
+
+![出题场景-测试结果-details](screenshoots/PivotTable_Details.png)
+
+## 创建试卷与考试场景
+
+1. 测试错误总数整理
+
+![创建试卷-测试结果-abstract](screenshoots/PivotTable_Abstract_2.png)
+
+2.整体错误情况 
+
+![创建试卷-测试结果-general](screenshoots/PivotTable_general_2.png)
+
+3. 具体错误情况
+
+![创建试卷-测试结果-details](screenshoots/PivotTable_Details_2.png)
+
+## 参加考试场景
+
+1. 测试错误总数整理
+
+![参加考试-测试结果-abstract](screenshoots/PivotTable_abstract_3.png)
+
+2. 整体错误情况 
+
+![参加考试-测试结果-general](screenshoots/PivotTable_general_3.png)
+
+3. 具体错误情况
+
+![参加考试-测试结果-details](screenshoots/PivotTable_Details_3.png)
+
+
 # bug等级评估
+
+| bug类别 | bug内容         | 等级评估 |
+| -------- | ----------------- | -------- |
+| 出题场景 | 编写考题-修改状态 |          |
+| 出题场景 | 修改考题-修改权限控制 | column 3 |
+| 出题场景 | 再审考题-再审权限控制 |          |
+| 出题场景 | 作废考题-废除作废考题 | column 3 |
+| 出题场景 | 登录-登录 |          |
+| 出题场景 | 新建考题-提交考题 | column 3 |
 
 # 总结陈词
 

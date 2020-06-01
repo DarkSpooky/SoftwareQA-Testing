@@ -40,6 +40,16 @@
             linkcolor=magenta,
             pdfborder={0 0 0}}
 \urlstyle{same}  % don't use monospace font for urls
+\usepackage{longtable,booktabs}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -695,14 +705,148 @@
 \hypertarget{ux6d4bux8bd5ux7ed3ux679cux6574ux7406}{%
 \section{测试结果整理}\label{ux6d4bux8bd5ux7ed3ux679cux6574ux7406}}
 
+\hypertarget{ux51faux9898ux573aux666f-1}{%
+\subsection{出题场景}\label{ux51faux9898ux573aux666f-1}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  测试错误总数整理
+\end{enumerate}
+
+\begin{figure}
+\centering
+\includegraphics{screenshoots/PivotTable_abstract.png}
+\caption{出题场景-测试结果-abstract}
+\end{figure}
+
+2.整体错误情况
+
+\begin{figure}
+\centering
+\includegraphics{screenshoots/PivotTable_general.png}
+\caption{出题场景-测试结果-general}
+\end{figure}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  具体错误情况
+\end{enumerate}
+
+\begin{figure}
+\centering
+\includegraphics{screenshoots/PivotTable_Details.png}
+\caption{出题场景-测试结果-details}
+\end{figure}
+
+\hypertarget{ux521bux5efaux8bd5ux5377ux4e0eux8003ux8bd5ux573aux666f-1}{%
+\subsection{创建试卷与考试场景}\label{ux521bux5efaux8bd5ux5377ux4e0eux8003ux8bd5ux573aux666f-1}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  测试错误总数整理
+\end{enumerate}
+
+\begin{figure}
+\centering
+\includegraphics{screenshoots/PivotTable_Abstract_2.png}
+\caption{创建试卷-测试结果-abstract}
+\end{figure}
+
+2.整体错误情况
+
+\begin{figure}
+\centering
+\includegraphics{screenshoots/PivotTable_general_2.png}
+\caption{创建试卷-测试结果-general}
+\end{figure}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  具体错误情况
+\end{enumerate}
+
+\begin{figure}
+\centering
+\includegraphics{screenshoots/PivotTable_Details_2.png}
+\caption{创建试卷-测试结果-details}
+\end{figure}
+
+\hypertarget{ux53c2ux52a0ux8003ux8bd5ux573aux666f-1}{%
+\subsection{参加考试场景}\label{ux53c2ux52a0ux8003ux8bd5ux573aux666f-1}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  测试错误总数整理
+\end{enumerate}
+
+\begin{figure}
+\centering
+\includegraphics{screenshoots/PivotTable_abstract_3.png}
+\caption{参加考试-测试结果-abstract}
+\end{figure}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  整体错误情况
+\end{enumerate}
+
+\begin{figure}
+\centering
+\includegraphics{screenshoots/PivotTable_general_3.png}
+\caption{参加考试-测试结果-general}
+\end{figure}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  具体错误情况
+\end{enumerate}
+
+\begin{figure}
+\centering
+\includegraphics{screenshoots/PivotTable_Details_3.png}
+\caption{参加考试-测试结果-details}
+\end{figure}
+
 \hypertarget{bugux7b49ux7ea7ux8bc4ux4f30}{%
 \section{bug等级评估}\label{bugux7b49ux7ea7ux8bc4ux4f30}}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule
+bug类别 & bug内容 & 等级评估\tabularnewline
+\midrule
+\endhead
+出题场景 & 编写考题-修改状态 &\tabularnewline
+出题场景 & 修改考题-修改权限控制 & column 3\tabularnewline
+出题场景 & 再审考题-再审权限控制 &\tabularnewline
+出题场景 & 作废考题-废除作废考题 & column 3\tabularnewline
+出题场景 & 登录-登录 &\tabularnewline
+出题场景 & 新建考题-提交考题 & column 3\tabularnewline
+\bottomrule
+\end{longtable}
 
 \hypertarget{ux603bux7ed3ux9648ux8bcd}{%
 \section{总结陈词}\label{ux603bux7ed3ux9648ux8bcd}}
 
-\hypertarget{ux51faux9898ux573aux666f-1}{%
-\subsection{出题场景}\label{ux51faux9898ux573aux666f-1}}
+\hypertarget{ux51faux9898ux573aux666f-2}{%
+\subsection{出题场景}\label{ux51faux9898ux573aux666f-2}}
 
 \hypertarget{ux6d4bux8bd5ux6d41ux7a0b}{%
 \subsubsection{测试流程}\label{ux6d4bux8bd5ux6d41ux7a0b}}
