@@ -128,33 +128,107 @@
 
 1． 项目测试人员
 
+在本项目中，项目测试人员共有以下几位人员： - 刘佳兴 - 吴琛宁 - 张逸涵 -
+张岑媛 - 石睿欣 - 黄佳妮 - 田嘉禾 - 胡宵宵
+
 2． 项目测试经理和管理人员
 
+在本项目中，项目测试经理和管理人员有一名，是本组的组长王宸。
+
 3． 其他项目相关人员
+其他项目相关人员包含评审委员会，例如老师和助教，会对每一次测试汇报结果作出评价。
 
 \hypertarget{ux6d4bux8bd5ux5bf9ux8c61}{%
 \subsection{测试对象}\label{ux6d4bux8bd5ux5bf9ux8c61}}
 
-目标系统及其版本
+\hypertarget{ux76eeux6807ux7cfbux7edf}{%
+\subsubsection{目标系统}\label{ux76eeux6807ux7cfbux7edf}}
+
+\hypertarget{ux76eeux6807ux7cfbux7edfux6574ux4f53ux63cfux8ff0}{%
+\paragraph{目标系统整体描述}\label{ux76eeux6807ux7cfbux7edfux6574ux4f53ux63cfux8ff0}}
+
+本待测目标系统名称为``在线出题考试系统''，是为组织考试的一个基于web的在线系统。主要由``出题系统''、``题库管理系统''、``在线报名和考生管理系统''以及``考试系统''四大子模块组成。基于原系统，我们新增了组卷系统模块，故目前本系统已完成待测的部分有``出题系统''、``题库管理系统''、``考试系统''和``组卷系统''。
+
+\hypertarget{ux51faux9898ux7cfbux7edf}{%
+\paragraph{出题系统}\label{ux51faux9898ux7cfbux7edf}}
+
+出题系统是在线出题考试系统的一个子系统。利用出题系统，出题专家们可以方便地进行网上考题编写和评审，并无缝地与在线考试系统进行衔接，提高考题编写的质量与效率，也便于考题的统一管理和评估。
+
+\hypertarget{ux9898ux5e93ux7ba1ux7406ux7cfbux7edf}{%
+\paragraph{题库管理系统}\label{ux9898ux5e93ux7ba1ux7406ux7cfbux7edf}}
+
+题库管理系统是在线出题考试系统的一个子系统。输入是出题系统成功导出的考题，可以为考试系统按照规则导出考卷。
+
+\hypertarget{ux8003ux8bd5ux7cfbux7edf}{%
+\paragraph{考试系统}\label{ux8003ux8bd5ux7cfbux7edf}}
+
+考试系统是在线出题考试系统的一个子系统。考生能够根据既定的考生信息登陆考试系统，查看属于自己的相对应的考卷，在规定的时间内作答。在作答后，系统可以自动批改试卷并给出相应的得分，考生可以查看考试成绩。
+
+\hypertarget{ux7ec4ux5377ux7cfbux7edf}{%
+\paragraph{组卷系统}\label{ux7ec4ux5377ux7cfbux7edf}}
+
+组卷系统是在线出题考试系统的一个子系统。老师能够选择对应的章节和知识点范围，来进行随机组卷。
+
+\hypertarget{ux76eeux6807ux7cfbux7edfux7248ux672c}{%
+\subsubsection{目标系统版本}\label{ux76eeux6807ux7cfbux7edfux7248ux672c}}
+
+目标系统的版本为CS\_TESTMAKER\_1.0
 
 \hypertarget{ux6d4bux8bd5ux9636ux6bb5}{%
 \subsection{测试阶段}\label{ux6d4bux8bd5ux9636ux6bb5}}
 
-系统测试
+\hypertarget{ux6d4bux8bd5ux603bux6d41ux7a0b}{%
+\subsubsection{测试总流程}\label{ux6d4bux8bd5ux603bux6d41ux7a0b}}
+
+整个测试流程共分为： - 测试计划的撰写 - 测试条件分析与测试用例设计 -
+测试实现 - 测试评估与测试的报告 - 编写系统测试验收文档
+
+\hypertarget{ux6d4bux8bd5ux5b9eux73b0ux9636ux6bb5}{%
+\subsubsection{测试实现阶段}\label{ux6d4bux8bd5ux5b9eux73b0ux9636ux6bb5}}
+
+\begin{itemize}
+\tightlist
+\item
+  静态代码扫描测试（静态测试）
+\item
+  白盒测试（组件测试）
+\item
+  黑盒测试（系统测试）
+\item
+  负载测试（模块性能测试）
+\item
+  场景测试（验收测试）
+\end{itemize}
 
 \hypertarget{ux6d4bux8bd5ux5de5ux5177}{%
 \subsection{测试工具}\label{ux6d4bux8bd5ux5de5ux5177}}
 
-xx 测试（缺陷）管理系统
+共用到以下几种测试工具, 包括持续集成测试平台和静态代码扫描工具等，如下：
+- \url{https://codecov.io} - \url{https://jenkins.io} -
+\url{https://semmle.com/codeql} - \url{https://travis-ci.org} -
+\url{https://www.appveyor.com} - \url{https://github.com/alibaba/p3c} -
+\url{https://www.sonarqube.org/}
 
 \hypertarget{ux53c2ux8003ux8d44ux6599}{%
 \subsection{参考资料}\label{ux53c2ux8003ux8d44ux6599}}
 
-1． 需求和设计说明书
+请直接点击链接访问： 1．
+\href{https://github.com/StrayBird-ATSH/SoftwareQA-Testing/blob/master/requirements/\%E5\%87\%BA\%E9\%A2\%98\%E7\%B3\%BB\%E7\%BB\%9F\%E9\%9C\%80\%E6\%B1\%82\%E6\%96\%87\%E6\%A1\%A3-to\%E5\%AD\%A6\%E7\%94\%9F.pdf}{需求和设计说明书}
 
-2． 系统测试计划
+2．
+\href{https://github.com/StrayBird-ATSH/SoftwareQA-Testing/blob/master/lab3/lab3.pdf}{系统测试计划}
 
-3． 系统测试用例
+3． 系统测试用例 -
+\href{https://github.com/StrayBird-ATSH/SoftwareQA-Testing/blob/master/lab4/lab4\%E5\%87\%BA\%E9\%A2\%98\%E8\%80\%83\%E8\%AF\%95\%E7\%B3\%BB\%E7\%BB\%9F\%E7\%99\%BD\%E7\%9B\%92\%E6\%B5\%8B\%E8\%AF\%95\%E6\%8A\%A5\%E5\%91\%8A.pdf}{白盒测试用例说明}
+-
+\href{https://github.com/StrayBird-ATSH/SoftwareQA-Testing/blob/master/lab5/lab5.pdf}{黑盒测试用例说明}
+
+\begin{itemize}
+\item
+  \href{https://github.com/StrayBird-ATSH/SoftwareQA-Testing/blob/master/lab6/lab6.pdf}{负载测试用例说明}
+\item
+  \href{https://github.com/StrayBird-ATSH/SoftwareQA-Testing/blob/master/lab8/lab8.md}{场景测试用例说明}
+\end{itemize}
 
 \hypertarget{ux6d4bux8bd5ux6982ux8981}{%
 \section{测试概要}\label{ux6d4bux8bd5ux6982ux8981}}
@@ -162,17 +236,1684 @@ xx 测试（缺陷）管理系统
 \hypertarget{ux6d4bux8bd5ux8303ux56f4ux548cux8ba1ux5212}{%
 \subsection{测试范围和计划}\label{ux6d4bux8bd5ux8303ux56f4ux548cux8ba1ux5212}}
 
-被测模块，测试方法，测试用例等等。
+测试范围可简要分为以下几个测试功能模块。
+
+\hypertarget{ux6d4bux8bd5ux529fux80fdux6a21ux5757}{%
+\subsubsection{测试功能模块}\label{ux6d4bux8bd5ux529fux80fdux6a21ux5757}}
+
+\hypertarget{ux51faux9898ux7cfbux7edf-1}{%
+\paragraph{出题系统}\label{ux51faux9898ux7cfbux7edf-1}}
+
+\hypertarget{ux767bux9646ux53caux4e2aux4ebaux4fe1ux606fux6a21ux5757}{%
+\subparagraph{登陆及个人信息模块}\label{ux767bux9646ux53caux4e2aux4ebaux4fe1ux606fux6a21ux5757}}
+
+\begin{itemize}
+\tightlist
+\item
+  用户登陆校验
+\item
+  用户修改个人信息 \#\#\#\#\# 建立新项目
+\item
+  主持人创建项目
+\item
+  主持人新建考题 \#\#\#\#\# 开始启动项目
+\item
+  主持人设置考题期限
+\item
+  主持人修改状态从开始到编写 \#\#\#\#\# 编写考题
+\item
+  作者设置多类型考题
+\item
+  作者修改状态(编写-评审)
+\item
+  作者设置多类型考题2
+\item
+  送审前内容检查 \#\#\#\#\# 评审考题
+\item
+  评审员设置评审结果为``可接受''
+\item
+  评审员设置评审结果为``被拒绝''
+\item
+  评审员设置评审结果为``需修改''
+\item
+  评审员评审权限 \#\#\#\#\# 再审考题
+\item
+  质管员设置再审结果为``可发布''
+\item
+  质管员设置再审结果为``需修改''
+\item
+  质管员设置再审结果为``需作废''
+\item
+  质管员再审权限
+\end{itemize}
+
+\hypertarget{ux4feeux6539ux8003ux9898}{%
+\subparagraph{修改考题}\label{ux4feeux6539ux8003ux9898}}
+
+\begin{itemize}
+\tightlist
+\item
+  作者修改考题
+\item
+  作者修改权限
+\item
+  修改次数超过提醒
+\end{itemize}
+
+\hypertarget{ux53d1ux5e03ux8003ux9898}{%
+\subparagraph{发布考题}\label{ux53d1ux5e03ux8003ux9898}}
+
+\begin{itemize}
+\tightlist
+\item
+  主持人导出发布考题
+\item
+  主持人导入题库
+\end{itemize}
+
+\hypertarget{ux4f5cux5e9fux8003ux9898}{%
+\subparagraph{作废考题}\label{ux4f5cux5e9fux8003ux9898}}
+
+\begin{itemize}
+\tightlist
+\item
+  主持人废除作废考题
+\item
+  主持人重启出题流程
+\end{itemize}
+
+\hypertarget{ux7ec4ux5377ux7cfbux7edf-1}{%
+\paragraph{组卷系统}\label{ux7ec4ux5377ux7cfbux7edf-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  生成考卷
+\item
+  有权限用户查阅考题
+\end{itemize}
+
+\hypertarget{ux8003ux8bd5ux7cfbux7edf-1}{%
+\paragraph{考试系统}\label{ux8003ux8bd5ux7cfbux7edf-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  考生考试
+\item
+  系统自动批改考题
+\item
+  查看考卷
+\end{itemize}
+
+\hypertarget{ux6d4bux8bd5ux65b9ux6cd5}{%
+\subsubsection{测试方法}\label{ux6d4bux8bd5ux65b9ux6cd5}}
+
+\hypertarget{ux767dux76d2ux6d4bux8bd5}{%
+\paragraph{白盒测试}\label{ux767dux76d2ux6d4bux8bd5}}
+
+\hypertarget{ux6d4bux8bd5ux7279ux6027ux53caux6d4bux8bd5ux9879}{%
+\paragraph{测试特性及测试项}\label{ux6d4bux8bd5ux7279ux6027ux53caux6d4bux8bd5ux9879}}
+
+\hypertarget{ux8003ux8bd5ux7cfbux7edf-2}{%
+\subparagraph{考试系统}\label{ux8003ux8bd5ux7cfbux7edf-2}}
+
+\begin{itemize}
+\tightlist
+\item
+  根据考试id获取考试成绩
+\item
+  开始考试
+\item
+  系统在考生提交答案后可以得到分数 \#\#\#\#\# 题库管理系统
+\item
+  生成考卷
+\item
+  查看考题 \#\#\#\#\# 在线报名考生管理系统
+\item
+  考生参加考试
+\item
+  学生账户服务 \#\#\#\#\# 出题系统
+\item
+  考题服务
+\end{itemize}
+
+\hypertarget{ux9ed1ux76d2ux6d4bux8bd5}{%
+\paragraph{黑盒测试}\label{ux9ed1ux76d2ux6d4bux8bd5}}
+
+关键字驱动的测试方法。我们使用了如下黑盒测试框架进行测试：
+其中程序流程图将整个黑盒测试的各个步骤进行了分解，展现了整个测试过程中不同动作执行的先后顺序以及之间的关联关系。而UML类图将黑盒测试的框架组成进行了分解，说明了测试框架中各个模块之间的关系。
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.5]{./assets/FlowChart.pdf}
+  \caption{黑盒测试流程图}\label{1}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.75]{./assets/ClassDiagram.pdf}
+  \caption{黑盒测试整体框架图}\label{2}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.85]{./assets/KeywordsDiagram.pdf}
+  \caption{黑盒测试关键词设计框架图}\label{3}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.85]{./assets/ActionEngineDiagram.pdf}
+  \caption{黑盒测试用例执行组件框架图}\label{4}
+\end{figure}
+
+\hypertarget{ux6027ux80fdux6d4bux8bd5}{%
+\paragraph{性能测试}\label{ux6027ux80fdux6d4bux8bd5}}
+
+在性能测试部分，我们测试的对象是出题系统中的登陆和创建考题功能。
+登录功能分为认证以及选择项目两部分，创建考题功能则包括主持人创建新考题，完成属性配置、角色分配等活动，到将考题保存为止。性能指标为系统同时在线100人，20个并发访问。
+
+为了产生必要的负载，需要依赖工具来进行性能测试。鉴于作为测试对象的出题系统是一个web应用，所以选择了开源的测试工具Jmeter来进行测试。通过Jmeter产生的聚合报告中的响应时间、吞吐量等来对系统性能进行分析。
+
+测试中采用的策略包括并发测试和负载测试。并发测试主要用于检验系统是否能够达到给定的性能指标，即在给定条件下相应用户输入的能力是否达到要求。负载测试中则是通过不同并发数下的测试，对比响应时间、吞吐量等的变化，来分析系统性能的可扩展性，系统处理能力何时达到饱和状态，以及观察在并发数超出给定指标的情况下，系统能否继续正常运行。
+
+并发测试中，对应在线100人的要求的是发出100个登录请求；对应20个并发访问的要求，发出20个创建考题的请求。我们使用了Jmeter工具中的定时器来让请求同时发送，以观察并发状况下服务的行为表现。同一时间对后端服务进行调用能更好地发现资源竞争、资源死锁等问题。
+
+负载测试中，则是调整了并发数，将不同并发数下的聚合报告。对于在线人数的要求，进行了从20到140个用户同时在线的测试，每相隔20数量进行一次测试。对于并发访问的要求，进行了创建20到100个考题的测试，每次增量为20。通过这一策略，逐步增加系统的负载，直到超出指标，来寻找系统的性能上限，系统的处理能力，及系统在高负载情况下的稳定性。
+
+\hypertarget{ux6d4bux8bd5ux8ba1ux5212}{%
+\subsubsection{测试计划}\label{ux6d4bux8bd5ux8ba1ux5212}}
+
+CSTM1.0-TP1.0 修订历史
+
+\begin{tabular}{|p{2cm}|p{3.3cm}|p{5cm}|}
+\hline
+版本 & 日期 & 说明\\
+\hline
+草稿 & 2021 年3 月7 日 & 基于出题系统的测试计划草稿\\
+\hline
+CSTM1.0-TP1.0 & 2021 年4 月1 日 & 建立更完善的出题系统的测试计划\\
+\hline
+\end{tabular}
+
+\hypertarget{ux5f85ux6d4bux7279ux6027}{%
+\paragraph{待测特性}\label{ux5f85ux6d4bux7279ux6027}}
+
+\hypertarget{ux7279ux6027ux4e0eux4f18ux5148ux5ea6}{%
+\paragraph{特性与优先度}\label{ux7279ux6027ux4e0eux4f18ux5148ux5ea6}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  优先度划分标准
+
+  \begin{tabular}{|p{2cm}|p{8cm}|}
+  \hline
+  优先度 & 说明\\
+  \hline
+  P1 & 核心功能测试用例，此部分测试用例如果失败会阻碍系统核心功能与大部分其他测试用例的验证\\
+  \hline
+  P2 & 高优先级测试用例，最常执行以保证功能性稳定；基本功能测试，和重要的错误、边界测试\\
+  \hline
+  P3 & 中优先级测试用例，更全面地验证功能的各个方面，异常测试，边界，中断等测试用例\\
+  \hline
+  P4 & 低优先级测试用例，不常常被执行，性能、压力、兼容性、稳定性、安全、可用性等等\\
+  \hline
+  \end{tabular}
+\item
+  需测试特性与优先度
+
+  \begin{tabular}{|p{10cm}|}
+  \hline
+  P1\\
+  \hline
+  出题系统用户登录校验\\
+  \hline
+  主持人创建项目\\
+  \hline
+  主持人新建考题\\
+  \hline
+  主持人修改状态(开始-编写)\\
+  \hline
+  作者修改状态(编写-评审) \\
+  \hline
+  评审员设置评审结果为“可接受” \\
+  \hline
+  评审员设置评审结果为“被拒绝”\\
+  \hline
+  评审员设置评审结果为“需修改” \\
+  \hline
+  主持人修改状态(开始-编写)\\
+  \hline
+  评审员评审权限\\
+  \hline
+  质管员设置再审结果为“可发布” \\
+  \hline
+  质管员设置再审结果为“需修改” \\
+  \hline
+  质管员设置再审结果为“需作废”\\
+  \hline
+  质管员再审权限\\
+  \hline
+  作者修改考题\\
+  \hline
+  作者修改权限\\
+  \hline
+  主持人导出发布考题\\
+  \hline
+  主持人导入题库\\
+  \hline
+  有权限用户查阅考题\\
+  \hline
+  生成考卷\\
+  \hline
+  批改考题\\
+  \hline
+  在线报名考生管理系统用户登录校验\\
+  \hline
+  查看考卷与作答\\
+  \hline
+  \end{tabular}
+\end{enumerate}
+
+\begin{tabular}{|p{10cm}|}
+\hline
+P2\\
+\hline
+主持人设置考题期限\\
+\hline
+作者设置多类型考题\\
+\hline
+主持人重启出题流程\\
+\hline
+\end{tabular}
+
+\begin{tabular}{|p{10cm}|}
+\hline
+P3\\
+\hline
+送审前内容检查\\
+\hline
+主持人废除作废考题\\
+\hline
+\end{tabular}
+
+\begin{tabular}{|p{10cm}|}
+\hline
+P4\\
+\hline
+用户修改个人信息\\
+\hline
+修改次数超过提醒\\
+\hline
+响应速度\\
+\hline
+浏览器可移植性\\
+\hline
+平台可移植性\\
+\hline
+数据库可移植性\\
+\hline
+用户安全性需求\\
+\hline
+系统一致性需求\\
+\hline
+数据安全性需求\\
+\hline
+系统安全性需求\\
+\hline
+数据可靠性\\
+\hline
+系统可靠性\\
+\hline
+用户易用性\\
+\hline
+系统易用性\\
+\hline
+开发人员可维护性\\
+\hline
+符合国家安全标准\\
+\hline
+\end{tabular}
+
+\hypertarget{ux98ceux9669ux8bc4ux4f30}{%
+\paragraph{风险评估}\label{ux98ceux9669ux8bc4ux4f30}}
+
+\hypertarget{ux51faux9898ux7cfbux7edf-2}{%
+\subparagraph{出题系统}\label{ux51faux9898ux7cfbux7edf-2}}
+
+用户登录校验-P1
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  用户以非法方式登入系统
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：用户利用SQL注入等方式，绕过登录校验以管理员等身份登陆进系统；可能造成恶意用户对系统数据的篡改和删除
+  \item
+    可能性：中
+  \item
+    影响程度：高
+  \item
+    缓解措施：加强对登录页面的输入校验，过滤恶意输入
+  \item
+    风险级别：高
+  \end{itemize}
+\item
+  合法用户无法登入系统
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：因为数据库损坏等原因，合法用户无法正常登入系统
+  \item
+    可能性：低
+  \item
+    影响程度：中
+  \item
+    缓解措施：对数据进行备份
+  \item
+    风险级别：中
+  \end{itemize}
+\end{enumerate}
+
+用户修改个人信息-P4
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  用户个人信息保存失败
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：因为网络连接失败或并发过高，用户修改个人信息后无法保存
+  \item
+    可能性：低
+  \item
+    影响程度：低
+  \item
+    缓解措施：对用户的信息在本地进行储存，重新请求
+  \item
+    风险级别：低
+  \end{itemize}
+\end{enumerate}
+
+主持人创建项目-P1
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  主持人创建项目失败
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：由于网络错误等原因，主持人创建项目时无法成功对项目进行规划，如限制项目考题数量或考题范围，或创建项目成功后无法保存设置
+  \item
+    可能性：低
+  \item
+    影响程度：中
+  \item
+    缓解措施：合理设置主持人的权限并用log记录其行动，方便进行行动复现
+  \item
+    风险级别：高
+  \end{itemize}
+\end{enumerate}
+
+主持人新建考题-P1
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  主持人新建考题失败
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：由于网络错误等原因，主持人无法设置新考题的状态，属性或相关管理人员
+  \item
+    可能性：低
+  \item
+    影响程度：中
+  \item
+    缓解措施：合理设置主持人的权限并用log记录其行动，方便进行行动复现
+  \item
+    风险级别：高
+  \end{itemize}
+\item
+  系统发送邮件失败
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：系统没有成功将邮件发送给相关管理人员
+  \item
+    可能性：中
+  \item
+    影响程度：中
+  \item
+    缓解措施：若相关管理人员一段时间内没有登入系统则重发邮件
+  \item
+    风险级别：中
+  \end{itemize}
+\end{enumerate}
+
+主持人设置考题期限-P2
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  主持人设置考题期限失败
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：主持人无法设定考题状态或错误设定评审考题的时间限期
+  \item
+    可能性：中
+  \item
+    影响程度：中
+  \item
+    缓解措施：合理设置主持人的权限并用log记录其行动，方便进行行动复现；对主持人输入的时间限期是否合理进行检查
+  \item
+    风险级别：高
+  \end{itemize}
+\end{enumerate}
+
+主持人修改状态(开始-编写)-P1
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  主持人修改状态失败
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：主持人对于未完成设置的题目修改了状态，或完成设置后无法修改状态
+  \item
+    可能性：低
+  \item
+    影响程度：中
+  \item
+    缓解措施：为防止高并发情况下出现此种状况，修改状态时对题目的设置进行检查，合理设置主持人的权限
+  \item
+    风险级别：高
+  \end{itemize}
+\item
+  系统发送邮件失败
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：系统没有成功将邮件发送给相关管理人员
+  \item
+    可能性：中
+  \item
+    影响程度：中
+  \item
+    缓解措施：若相关管理人员一段时间内没有登入系统则重发邮件
+  \item
+    风险级别：中
+  \end{itemize}
+\end{enumerate}
+
+作者设置多类型考题-P2
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  作者无法编写带有表格，图形等的考题
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：由于富文本编辑器的bug，作者无法在考题中插入表格及图形或表格或图形出现乱码
+  \item
+    可能性：中
+  \item
+    影响程度：中
+  \item
+    缓解措施：在上线前对文本编辑器进行多轮测试并提供备用编辑器
+  \item
+    风险级别：中
+  \end{itemize}
+\item
+  作者导入考题时利用不合法文件进行攻击
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：作者在XML中插入后门，在系统解析XML时对系统进行攻击
+  \item
+    可能性：低
+  \item
+    影响程度：高
+  \item
+    缓解措施：对用户上传的XML文件进行过滤
+  \item
+    风险级别：中
+  \end{itemize}
+\end{enumerate}
+
+作者修改状态(编写-评审)-P1
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  作者错误修改状态
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：作者对未完成编写的题目修改了状态或作者编写完成后无法修改题目状态
+  \item
+    可能性：低
+  \item
+    影响程度：中
+  \item
+    缓解措施：为防止高并发前提下出现此种状态，在修改状态的请求前对题目的编写状态进行确认
+  \item
+    风险级别：高
+  \end{itemize}
+\end{enumerate}
+
+评审前内容检查-P3
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  评审前没有完全审核应审的项目就使状态修改成功
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：作者勾选了相应的题目附件却没有上传就选择了改变状态
+  \item
+    可能性：高
+  \item
+    影响程度：低
+  \item
+    缓解措施：在之后的评审阶段进行打回
+  \item
+    风险级别：低
+  \end{itemize}
+\end{enumerate}
+
+评审员设置评审结果（可接受/被拒绝/需修改）-P1
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  系统发送邮件失败
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：系统没有成功将邮件发送给相关管理人员
+  \item
+    可能性：中
+  \item
+    影响程度：中
+  \item
+    缓解措施：若相关管理人员一段时间内没有登入系统则重发邮件
+  \item
+    风险级别：中
+  \end{itemize}
+\end{enumerate}
+
+评审员评审权限-P1
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  评审员权限错误
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：因为权限设置失败，评审员无法阅读及编辑属于自己评审的考题或有权阅读及编辑不属于自己评审的考题
+  \item
+    可能性：低
+  \item
+    影响程度：高
+  \item
+    缓解措施：上线前进行多种权限测试；在考题处设置申请访问权限的入口，在检测到越权的修改记录后对评审员账户进行封禁
+  \item
+    风险级别：高
+  \end{itemize}
+\end{enumerate}
+
+质管员设置再审结果（可发布/需修改/需作废）-P1
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  系统发送邮件失败
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：系统没有成功将邮件发送给相关管理人员
+  \item
+    可能性：中
+  \item
+    影响程度：中
+  \item
+    缓解措施：若相关管理人员一段时间内没有登入系统则重发邮件
+  \item
+    风险级别：中
+  \end{itemize}
+\end{enumerate}
+
+质管员再审权限-P1
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  质管员再审权限错误
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：因为权限设置失败，质管员无法阅读及编辑属于自己再审的考题或有权阅读及编辑不属于自己再审的考题
+  \item
+    可能性：低
+  \item
+    影响程度：高
+  \item
+    缓解措施：上线前进行多种权限测试；在考题处设置申请访问权限的入口，在检测到越权的修改记录后对质管员账户进行封禁
+  \item
+    风险级别：高
+  \end{itemize}
+\end{enumerate}
+
+作者修改考题-P1
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  系统发送邮件失败
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：系统没有成功将邮件发送给相关管理人员
+  \item
+    可能性：中
+  \item
+    影响程度：中
+  \item
+    缓解措施：若相关管理人员一段时间内没有登入系统则重发邮件
+  \item
+    风险级别：中
+  \end{itemize}
+\end{enumerate}
+
+作者修改权限-P1
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  作者修改权限未落实
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：因为权限设置失败，作者无法阅读及编辑需要自己修改的考题或有权阅读及编辑不属于自己修改的考题
+  \item
+    可能性：低
+  \item
+    影响程度：高
+  \item
+    缓解措施：上线前进行多种权限测试；在考题处设置申请访问权限的入口，在检测到越权的修改记录后对作者账户进行封禁
+  \item
+    风险级别：高
+  \end{itemize}
+\end{enumerate}
+
+修改次数超过提醒-P4
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  系统在某考题修改次数超过3次时没有提醒主持人
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：在修改次数大于3次时没有提醒主持人
+  \item
+    可能性：低
+  \item
+    影响程度：低
+  \item
+    缓解措施：支持人自己按时查看出题系统内题目状态
+  \item
+    风险级别：低
+  \end{itemize}
+\end{enumerate}
+
+主持人导出发布考题-P1
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  发布考题数据损坏
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：因为数据损坏，考题无法被阅读，主持人无法导出考题或导出的考题中含有冗余数据
+  \item
+    可能性：低
+  \item
+    影响程度：高
+  \item
+    缓解措施：对数据进行备份
+  \item
+    风险级别：高
+  \end{itemize}
+\item
+  导出的考题不符合考题导出规则
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：因为在考题导出过程中规则被修改等情况，考题不符合考题导出规则
+  \item
+    可能性：低
+  \item
+    影响程度：中
+  \item
+    缓解措施：导出考题前重新对规则进行检查
+  \item
+    风险级别：高
+  \end{itemize}
+\end{enumerate}
+
+主持人导入题库-P1
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  管理员导入考题时利用不合法文件进行攻击
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：管理员导入考题时在XML中插入后门，在系统解析XML时对系统进行攻击
+  \item
+    可能性：低
+  \item
+    影响程度：高
+  \item
+    缓解措施：对输入文件进行格式检查和非法字符过滤
+  \item
+    风险级别：中
+  \end{itemize}
+\end{enumerate}
+
+主持人废除作废考题-P3
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  废除后的考题仍能被使用
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：由于主持人的废除操作被打断等原因，废除后的考题仍然能被查看及使用
+  \item
+    可能性：低
+  \item
+    影响程度：中
+  \item
+    缓解措施：对主持人的操作进行log记录以方便重现
+  \item
+    风险级别：低
+  \end{itemize}
+\end{enumerate}
+
+主持人重启出题流程-P2
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  旧项目中的考题仍能被阅读或修改
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：由于主持人的重启操作被打断等原因，旧项目中的考题仍能被阅读或修改
+  \item
+    可能性：低
+  \item
+    影响程度：低
+  \item
+    缓解措施：每次项目被使用时对项目状态进行确认
+  \item
+    风险级别：低
+  \end{itemize}
+\item
+  新项目中的考题无法正常使用
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：由于主持人的重启操作被打断等原因，新项目中的考题无法正常使用
+  \item
+    可能性：低
+  \item
+    影响程度：高
+  \item
+    缓解措施：检测到考题无法正常使用时对新建项目中的考题进行备份，以便再次新建时可以被使用
+  \item
+    风险级别：高
+  \end{itemize}
+\end{enumerate}
+
+\hypertarget{ux9898ux5e93ux7ba1ux7406ux7cfbux7edf-1}{%
+\subparagraph{题库管理系统}\label{ux9898ux5e93ux7ba1ux7406ux7cfbux7edf-1}}
+
+有权限用户查阅考题-P1
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  无权限用户查阅到了考题
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：无权限用户也能看见考题和答案
+  \item
+    可能性：低
+  \item
+    影响程度：高
+  \item
+    缓解措施：限制可登陆题库管理系统的账户
+  \item
+    风险级别：高
+  \end{itemize}
+\end{enumerate}
+
+生成考卷-P1
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  考卷未能按照规则生成
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：考卷没有按照考卷组成规则自动生成
+  \item
+    可能性：高
+  \item
+    影响程度：高
+  \item
+    缓解措施：加入生成后的人工检查
+  \item
+    风险级别：高
+  \end{itemize}
+\item
+  考卷生成后答案未能成功生成
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：考卷生成时答案导出错误或者没有导出答案
+  \item
+    可能性：高
+  \item
+    影响程度：高
+  \item
+    缓解措施：加入生成后的人工检查
+  \item
+    风险级别：高
+  \end{itemize}
+\end{enumerate}
+
+\hypertarget{ux8003ux8bd5ux7cfbux7edf-3}{%
+\subparagraph{考试系统}\label{ux8003ux8bd5ux7cfbux7edf-3}}
+
+批改考题-P1
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  错误批改考题
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：系统没有按照标准答案成功批改考题
+  \item
+    可能性：高
+  \item
+    影响程度：高
+  \item
+    缓解措施：加入人工检查
+  \item
+    风险级别：高
+  \end{itemize}
+\end{enumerate}
+
+\hypertarget{ux5728ux7ebfux62a5ux540dux8003ux751fux7ba1ux7406ux7cfbux7edf}{%
+\subparagraph{在线报名考生管理系统}\label{ux5728ux7ebfux62a5ux540dux8003ux751fux7ba1ux7406ux7cfbux7edf}}
+
+用户登录校验-P1
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  用户以非法方式登入系统
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：用户利用SQL注入等方式，绕过登录校验以他人身份登陆进系统；可能造成恶意用户对他人考卷随意作答及他人成绩信息泄露
+  \item
+    可能性：中
+  \item
+    影响程度：高
+  \item
+    缓解措施：加强对登录页面的输入校验，过滤恶意输入
+  \item
+    风险级别：高
+  \end{itemize}
+\item
+  合法用户无法登入系统
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：因为数据库损坏等原因，合法用户无法正常登入系统
+  \item
+    可能性：低
+  \item
+    影响程度：中
+  \item
+    缓解措施：对数据进行备份
+  \item
+    风险级别：高
+  \end{itemize}
+\end{enumerate}
+
+查看考卷与作答-P1
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  用户无法查看将要作答的考卷
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：因系统错误考卷不能显示
+  \item
+    可能性：低
+  \item
+    影响程度：高
+  \item
+    缓解措施：人工干预
+  \item
+    风险级别：高
+  \end{itemize}
+\item
+  用户作答后无法看见自己成绩
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：因系统错误考卷分数不能显示
+  \item
+    可能性：低
+  \item
+    影响程度：中
+  \item
+    缓解措施：通过老师，主持人角色查看并告知
+  \item
+    风险级别：中
+  \end{itemize}
+\end{enumerate}
+
+\hypertarget{ux7cfbux7edfux8d28ux91cf}{%
+\subparagraph{系统质量}\label{ux7cfbux7edfux8d28ux91cf}}
+
+响应速度-P4
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  用户使用系统时卡顿
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：用户在进行操作时网页响应速度很慢
+  \item
+    可能性：中
+  \item
+    影响程度：中
+  \item
+    缓解措施：提高网速，在系统负荷不大的时候工作
+  \item
+    风险级别：高
+  \end{itemize}
+\end{enumerate}
+
+浏览器可移植性-P4
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  不可移植
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：某些主流浏览器不支持网页的正确显示
+  \item
+    可能性：高
+  \item
+    影响程度：中
+  \item
+    缓解措施：更换至支持的浏览器上使用
+  \item
+    风险级别：高
+  \end{itemize}
+\end{enumerate}
+
+平台可移植性-P4
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  不可移植
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：如系统只能在windows系统上运行，mac系统不支持
+  \item
+    可能性：高
+  \item
+    影响程度：中
+  \item
+    缓解措施：更换至有可以运行系统的电脑环境下使用
+  \item
+    风险级别：高
+  \end{itemize}
+\end{enumerate}
+
+用户安全性需求-P4
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  用户可以越权
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：用户越权访问到自己本看不到的内容，比如学生看见考题与答案
+  \item
+    可能性：中
+  \item
+    影响程度：高
+  \item
+    缓解措施：严格规范系统防止越权
+  \item
+    风险级别：高
+  \end{itemize}
+\end{enumerate}
+
+系统一致性需求-P4
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  系统不一致
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：系统在突然断电情况下数据丢失
+  \item
+    可能性：高
+  \item
+    影响程度：高
+  \item
+    缓解措施：做好数据库事务日志记录
+  \item
+    风险级别：高
+  \end{itemize}
+\end{enumerate}
+
+数据安全性需求-P4
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  数据未加密
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：恶意用户劫持了网站的传输并看见了传输中的未加密考卷与答案
+  \item
+    可能性：中
+  \item
+    影响程度：高
+  \item
+    缓解措施：出题系统至题库管理系统至考试系统中考卷和答案的传输在离线情况或完全可靠状态下进行
+  \item
+    风险级别：高
+  \end{itemize}
+\end{enumerate}
+
+系统安全性需求-P4
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  系统遭受攻击
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：系统容易被攻击导致无法正常提供服务
+  \item
+    可能性：中
+  \item
+    影响程度：高
+  \item
+    缓解措施：人工干预，发现攻击时及时将攻击者ip列入黑名单
+  \item
+    风险级别：高
+  \end{itemize}
+\end{enumerate}
+
+数据可靠性-P4
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  数据不可靠
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：已变更的数据因为系统异常退出，更新没有保存至数据库
+  \item
+    可能性：中
+  \item
+    影响程度：高
+  \item
+    缓解措施：做好事务日志记录与回滚
+  \item
+    风险级别：高
+  \end{itemize}
+\end{enumerate}
+
+系统可靠性-P4
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  系统不可靠
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：软件系统会经常错误退出，闪退
+  \item
+    可能性：中
+  \item
+    影响程度：高
+  \item
+    缓解措施：人工干预
+  \item
+    风险级别：高
+  \end{itemize}
+\end{enumerate}
+
+用户易用性-P4
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  界面复杂
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：用户难以快速上手系统使用
+  \item
+    可能性：低
+  \item
+    影响程度：低
+  \item
+    缓解措施：配置使用文档
+  \item
+    风险级别：低
+  \end{itemize}
+\end{enumerate}
+
+系统易用性-P4
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  系统缺少操作成功的提示
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：在操作成功时没有提示
+  \item
+    可能性：中
+  \item
+    影响程度：低
+  \item
+    缓解措施：用户可以通过界面变更判断是否成功
+  \item
+    风险级别：低
+  \end{itemize}
+\item
+  系统缺少操作失败的提示
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：在操作失败时没有提示，用户不知道失败原因
+  \item
+    可能性：中
+  \item
+    影响程度：中
+  \item
+    缓解措施：用户可以通过界面变更判断是否成功，失败则再来一次
+  \item
+    风险级别：中
+  \end{itemize}
+\end{enumerate}
+
+开发人员可维护性-P4
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  代码规范度差
+
+  \begin{itemize}
+  \tightlist
+  \item
+    描述：项目代码没有规范
+  \item
+    可能性：中
+  \item
+    影响程度：中
+  \item
+    缓解措施：与开发人员直接沟通
+  \item
+    风险级别：中
+  \end{itemize}
+\end{enumerate}
+
+\hypertarget{ux6cd5ux5f8bux6cd5ux89c4}{%
+\subparagraph{法律法规}\label{ux6cd5ux5f8bux6cd5ux89c4}}
+
+符合国家安全标准-P4
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  系统有不符合中华人民共和国国家标准GB/T 22239-2008的部分
+
+  \begin{itemize}
+  \tightlist
+  \item
+    可能性：低
+  \item
+    影响程度：高
+  \item
+    缓解措施：与开发人员直接沟通改正
+  \item
+    风险级别：高
+  \end{itemize}
+\end{enumerate}
+
+\hypertarget{ux6d4bux8bd5ux7528ux4f8bux89c4ux8303}{%
+\paragraph{测试用例规范：}\label{ux6d4bux8bd5ux7528ux4f8bux89c4ux8303}}
+
+\begin{itemize}
+\tightlist
+\item
+  用例类型：功能测试、性能测试、配置相关、安装部署、安全相关、接口测试、其他
+\item
+  适用阶段：单元测试阶段、功能测试阶段、集成测试阶段、系统测试阶段、冒烟-
+  测试阶段、版本验证阶段
+\item
+  相关需求：测试用例关联的需求名称
+\item
+  用例标题：相关需求名-用例概括-编号
+\item
+  优先级：1、2、3、4
+\item
+  前置条件：用例测试的前置条件描述
+\item
+  用例步骤与预期结果
+\item
+  关键词
+\end{itemize}
+
+\hypertarget{ux6d4bux8bd5ux9879ux901aux8fc7ux4e0eux5931ux8d25ux51c6ux5219}{%
+\paragraph{测试项通过与失败准则}\label{ux6d4bux8bd5ux9879ux901aux8fc7ux4e0eux5931ux8d25ux51c6ux5219}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  组件测试相关准则
+
+  \begin{itemize}
+  \tightlist
+  \item
+    通过准则
+
+    \begin{itemize}
+    \tightlist
+    \item
+      关于该组件接口的准则通过率达100\%
+    \item
+      代码覆盖率达80\%以上
+    \end{itemize}
+  \item
+    失败准则
+
+    \begin{itemize}
+    \tightlist
+    \item
+      任意测试组件的相关准则有不符合的条目即为失败
+    \end{itemize}
+  \end{itemize}
+\item
+  集成测试相关准则
+
+  \begin{itemize}
+  \tightlist
+  \item
+    通过准则
+
+    \begin{itemize}
+    \tightlist
+    \item
+      所有接口测试通过率达100\%
+    \item
+      单元测试平均代码覆盖率达80\%以上
+    \end{itemize}
+  \end{itemize}
+\item
+  系统测试相关准则
+
+  \begin{itemize}
+  \tightlist
+  \item
+    通过准则
+
+    \begin{itemize}
+    \tightlist
+    \item
+      该版本的系统功能能够完整运作
+    \end{itemize}
+  \end{itemize}
+\item
+  验收测试相关准则
+
+  \begin{itemize}
+  \tightlist
+  \item
+    通过准则
+
+    \begin{itemize}
+    \tightlist
+    \item
+      软件需求分析说明书中定义的所有功能已全部实现，性能指标全部达到要求。
+    \item
+      所有测试项没有残余的一级二级三级四级的错误。
+    \item
+      立项审批表、需求分析文档、设计文档和编码实现一致。
+    \item
+      验收测试工件齐全（测试计划，测试用例，测试日志，测试通知单，测试分析报告）
+    \end{itemize}
+  \end{itemize}
+\end{enumerate}
+
+\hypertarget{ux6682ux505cux51c6ux5219ux548cux7ee7ux7eedux51c6ux5219}{%
+\paragraph{暂停准则和继续准则}\label{ux6682ux505cux51c6ux5219ux548cux7ee7ux7eedux51c6ux5219}}
+
+\begin{itemize}
+\tightlist
+\item
+  暂停准则列表
+
+  \begin{itemize}
+  \tightlist
+  \item
+    当系统环境中必要的jar依赖包受到损坏或丢失，以至于系统无法启动时，测试暂停
+  \item
+    某组件相关测试准则通过率小于50\%时测试暂停
+  \end{itemize}
+\item
+  继续准则列表
+
+  \begin{itemize}
+  \tightlist
+  \item
+    因测试项准则通过率过低而被暂停的测试，开发人员修复结束后继续进行
+  \item
+    系统能够启动（主页能够在浏览器上被正常显示）时，测试继续
+  \item
+    测试暂停时进行到一半的测试活动需要被重启
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux6d4bux8bd5ux4ea4ux4ed8ux7269}{%
+\paragraph{测试交付物}\label{ux6d4bux8bd5ux4ea4ux4ed8ux7269}}
+
+\begin{itemize}
+\tightlist
+\item
+  完整测试计划
+\item
+  测试设计规范
+\item
+  测试用例规范
+\item
+  测试程序规范
+\item
+  测试项目传送报告
+\item
+  测试日志
+\item
+  测试事故报告
+\item
+  测试总结报告
+\item
+  测试数据
+\item
+  测试工具记录
+\end{itemize}
 
 \hypertarget{ux6d4bux8bd5ux8fdbux5ea6}{%
 \subsection{测试进度}\label{ux6d4bux8bd5ux8fdbux5ea6}}
 
-实际测试进度
+\hypertarget{ux9700ux6c42ux7406ux89e3ux9636ux6bb5}{%
+\subsubsection{需求理解阶段}\label{ux9700ux6c42ux7406ux89e3ux9636ux6bb5}}
+
+\hypertarget{ux9605ux8bfbux9700ux6c42ux6587ux68633ux67081ux65e5ux81f33ux67089ux65e5}{%
+\paragraph{阅读需求文档（3月1日至3月9日）}\label{ux9605ux8bfbux9700ux6c42ux6587ux68633ux67081ux65e5ux81f33ux67089ux65e5}}
+
+\begin{itemize}
+\tightlist
+\item
+  交付物：需求文档理解报告
+\item
+  相关依赖：详细的需求说明及用户文档
+\item
+  内容：对整体需求的理解，将成为后续任务的依赖
+\end{itemize}
+
+\hypertarget{ux51c6ux5907ux6d4bux8bd5ux4efbux52a1}{%
+\subsubsection{准备测试任务}\label{ux51c6ux5907ux6d4bux8bd5ux4efbux52a1}}
+
+\hypertarget{ux6d4bux8bd5ux8ba1ux5212ux7f16ux51993ux67089ux65e5ux81f34ux67085ux65e5}{%
+\paragraph{测试计划编写（3月9日至4月5日）}\label{ux6d4bux8bd5ux8ba1ux5212ux7f16ux51993ux67089ux65e5ux81f34ux67085ux65e5}}
+
+\begin{itemize}
+\tightlist
+\item
+  交付物：测试计划
+\item
+  相关依赖：详细的需求说明及用户文档
+\item
+  内容：对测试过程的整体规划，将成为后续任务的依赖
+\end{itemize}
+
+\hypertarget{ux6267ux884cux6d4bux8bd5ux4efbux52a1}{%
+\subsubsection{执行测试任务}\label{ux6267ux884cux6d4bux8bd5ux4efbux52a1}}
+
+\hypertarget{ux767dux76d2ux6d4bux8bd54ux67086ux65e5ux81f34ux670826ux65e5}{%
+\paragraph{白盒测试（4月6日至4月26日）}\label{ux767dux76d2ux6d4bux8bd54ux67086ux65e5ux81f34ux670826ux65e5}}
+
+\begin{itemize}
+\tightlist
+\item
+  交付物：白盒测试报告
+\item
+  相关依赖：项目源代码及单元测试工具等
+\item
+  内容：通过检查软件内部的逻辑结构，对软件中的逻辑路径进行覆盖测试。在程序不同地方设立检查点，检查程序的状态，以确定实际运行状态与预期状态是否一致
+\end{itemize}
+
+\hypertarget{ux9ed1ux76d2ux6d4bux8bd54ux670827ux65e5ux81f35ux670810ux65e5}{%
+\paragraph{黑盒测试（4月27日至5月10日）}\label{ux9ed1ux76d2ux6d4bux8bd54ux670827ux65e5ux81f35ux670810ux65e5}}
+
+\begin{itemize}
+\tightlist
+\item
+  交付物：黑盒测试报告
+\item
+  相关依赖：可用的各功能接口
+\item
+  内容：在完全不考虑程序内部结构和内部特性的情况下，在程序接口进行测试，检查程序功能是否按照需求规格说明书的规定正常使用，程序是否能适当地接收输入数据而产生正确的输出信息
+\end{itemize}
+
+\hypertarget{ux6027ux80fdux6d4bux8bd55ux670811ux65e5ux81f35ux670818ux65e5}{%
+\paragraph{性能测试（5月11日至5月18日）}\label{ux6027ux80fdux6d4bux8bd55ux670811ux65e5ux81f35ux670818ux65e5}}
+
+\begin{itemize}
+\tightlist
+\item
+  交付物：性能测试报告
+\item
+  相关依赖：QALoad、LoadRunner、Benchmark
+  Factory和Webstress等性能测试工具
+\item
+  内容：通过自动化的测试工具模拟多种正常、峰值以及异常负载条件来对系统的各项性能指标进行测试
+\end{itemize}
+
+\hypertarget{ux5b89ux5168ux6027ux6d4bux8bd5ux6682ux672aux8fdbux884c}{%
+\paragraph{安全性测试（暂未进行）}\label{ux5b89ux5168ux6027ux6d4bux8bd5ux6682ux672aux8fdbux884c}}
+
+\begin{itemize}
+\tightlist
+\item
+  交付物：安全测试报告
+\item
+  相关依赖：国家安全标准参考
+\item
+  内容：验证安装在系统内的保护机制能否在实际应用中对系统进行保护，使之不被非法入侵，不受各种因素的干扰
+\end{itemize}
+
+\hypertarget{ux9759ux6001ux6d4bux8bd55ux670819ux65e5ux81f35ux670825ux65e5}{%
+\paragraph{静态测试（5月19日至5月25日）}\label{ux9759ux6001ux6d4bux8bd55ux670819ux65e5ux81f35ux670825ux65e5}}
+
+\begin{itemize}
+\tightlist
+\item
+  交付物：静态测试报告
+\item
+  相关依赖：项目源代码，代码书写规范，各阶段文档
+\item
+  内容：使用Sonar工具与IDEA插件p3c，通过分析或检查源程序的语法、结构、过程、接口等来检查程序的正确性。对需求规格说明书、软件设计说明书、源程序做结构分析、流程图分析、符号执行来寻找漏洞
+\end{itemize}
+
+\hypertarget{ux573aux666fux6d4bux8bd55ux670826ux65e5ux81f35ux67081ux65e5}{%
+\paragraph{场景测试（5月26日至5月1日）}\label{ux573aux666fux6d4bux8bd55ux670826ux65e5ux81f35ux67081ux65e5}}
+
+\begin{itemize}
+\tightlist
+\item
+  交付物：场景测试报告
+\item
+  相关依赖：能够顺利工作的完整系统
+\item
+  内容：模拟特定场景边界发生的事情，通过事件来触发某个动作的发生，观察事件的最终结果，从而用来发现需求中存在的问题
+\end{itemize}
 
 \hypertarget{ux6d4bux8bd5ux8986ux76d6}{%
 \subsection{测试覆盖}\label{ux6d4bux8bd5ux8986ux76d6}}
 
-是否完成所有的测试。 如有未完成的测试，指明原因以及何时测试。
+已完成上述除安全性测试外的所有测试。
 
 \hypertarget{ux6d4bux8bd5ux73afux5883}{%
 \section{测试环境}\label{ux6d4bux8bd5ux73afux5883}}
@@ -180,14 +1921,98 @@ xx 测试（缺陷）管理系统
 \hypertarget{ux8f6fux4ef6ux73afux5883}{%
 \subsection{软件环境}\label{ux8f6fux4ef6ux73afux5883}}
 
+\hypertarget{ux6574ux4f53ux73afux5883}{%
+\subsubsection{整体环境}\label{ux6574ux4f53ux73afux5883}}
+
+\begin{verbatim}
+- Java 1.8 运行环境
+- Maven
+\end{verbatim}
+
+\hypertarget{ideux73afux5883}{%
+\subsubsection{IDE环境}\label{ideux73afux5883}}
+
+IntelliJ IDEA 2019.3.4 (Ultimate Edition) Build \#IU-193.6911.18, built
+on March 17, 2020 Licensed to Beijing Bytedance Technology
+
+\begin{itemize}
+\tightlist
+\item
+  Runtime version 11.0.6+8-b520.43 x86\_64
+\item
+  VM OpenJDK 64-Bit Server VM by JetBrains s.r.o macOS 10.15.4
+\item
+  GC ParNew, ConcurrentMarkSweep
+\item
+  Memory：1981M
+\item
+  Cores: 8
+\item
+  Registry compiler.automake.allow.when.app.running=true
+\item
+  Non-Bundled Plugins： MavenRunHelper, aws. toolkit,
+  com.alibaba.p3c.smartfox, netsuite.tools.plugin
+\end{itemize}
+
+\hypertarget{ux6d4fux89c8ux5668ux73afux5883}{%
+\subsubsection{浏览器环境}\label{ux6d4fux89c8ux5668ux73afux5883}}
+
+\hypertarget{ux8c37ux6b4cux6d4fux89c8ux5668}{%
+\paragraph{谷歌浏览器}\label{ux8c37ux6b4cux6d4fux89c8ux5668}}
+
+Google Chrome 版本 80.0.3987.122（正式版本）（64 位）
+
+\hypertarget{ux64cdux4f5cux7cfbux7edfux73afux5883}{%
+\subsection{操作系统环境}\label{ux64cdux4f5cux7cfbux7edfux73afux5883}}
+
+\begin{itemize}
+\tightlist
+\item
+  MacOS Catalina Version 10.15.4
+\item
+  Windows 10
+\item
+  Ubuntu Linix, the Ubuntu 18.04（bionic）发行版
+\end{itemize}
+
 \hypertarget{ux786cux4ef6ux73afux5883}{%
 \subsection{硬件环境}\label{ux786cux4ef6ux73afux5883}}
+
+\hypertarget{cpuux4fe1ux606f}{%
+\subsubsection{CPU信息}\label{cpuux4fe1ux606f}}
+
+Intel(R) Core(TM) i7-6500U 2.5GHz
+
+\hypertarget{ux5185ux5b58ux4fe1ux606f}{%
+\subsubsection{内存信息}\label{ux5185ux5b58ux4fe1ux606f}}
+
+16GB 2133MHz LPDDR3
+
+\hypertarget{ux50a8ux5b58ux7a7aux95f4}{%
+\subsubsection{储存空间}\label{ux50a8ux5b58ux7a7aux95f4}}
+
+256GB
 
 \hypertarget{ux7f51ux7edcux73afux5883}{%
 \subsection{网络环境}\label{ux7f51ux7edcux73afux5883}}
 
+\hypertarget{ux7f51ux7edcux5e26ux5bbd}{%
+\subsubsection{网络带宽}\label{ux7f51ux7edcux5e26ux5bbd}}
+
+100Mbps左右
+
+\hypertarget{ux7f51ux7edcux5ef6ux8fdf}{%
+\subsubsection{网络延迟}\label{ux7f51ux7edcux5ef6ux8fdf}}
+
+100ms以内
+
 \hypertarget{ux6570ux636eux73afux5883}{%
 \subsection{数据环境}\label{ux6570ux636eux73afux5883}}
+
+\hypertarget{ux8003ux9898ux6d4bux8bd5ux6570ux636e}{%
+\subsubsection{考题测试数据}\label{ux8003ux9898ux6d4bux8bd5ux6570ux636e}}
+
+共有10MB来自复旦大学软件学院图书馆馆藏的题库素材。
 
 \hypertarget{ux6d4bux8bd5ux7ed3ux679cux5206ux6790}{%
 \section{测试结果分析}\label{ux6d4bux8bd5ux7ed3ux679cux5206ux6790}}
@@ -226,8 +2051,8 @@ xx 测试（缺陷）管理系统
 总结系统的主要功能性缺陷以及修复情况。
 是否满足测试的退出准则，能否上线。
 
-\hypertarget{ux6027ux80fdux6d4bux8bd5}{%
-\subsection{性能测试}\label{ux6027ux80fdux6d4bux8bd5}}
+\hypertarget{ux6027ux80fdux6d4bux8bd5-1}{%
+\subsection{性能测试}\label{ux6027ux80fdux6d4bux8bd5-1}}
 
 \hypertarget{ux5176ux4ed6ux6d4bux8bd5}{%
 \subsection{其他测试}\label{ux5176ux4ed6ux6d4bux8bd5}}
