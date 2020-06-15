@@ -431,7 +431,8 @@ P4 & 低优先级测试用例，不常常被执行，性能、压力、兼容性
 \end{table}
 
 2. 需测试特性与优先度
-\begin{table}[h]
+
+\begin{table}
 \centering
 \caption{P1特性}
 \begin{tabular}{|p{10cm}|}
@@ -503,7 +504,7 @@ P2\\
 \end{tabular}
 \end{table}
 
-\begin{table}[h]
+\begin{table}
 \centering
 \caption{P3特性}
 \begin{tabular}{|p{10cm}|}
@@ -517,7 +518,7 @@ P3\\
 \end{tabular}
 \end{table}
 
-\begin{table}[h]
+\begin{table}
 \centering
 \caption{P4特性}
 \begin{tabular}{|p{10cm}|}
