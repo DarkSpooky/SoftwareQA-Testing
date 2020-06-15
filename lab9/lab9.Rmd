@@ -1,5 +1,5 @@
 ---
-title: \vspace{2in} 场景测试报告
+title: \vspace{2in} 测试报告总结
 subtitle: "软件质量保障与测试课程Lab9课程作业（第9组）"
 author:
   - Tian, Jiahe^[Equal Contribution, Fudan University, 17307130313 (tianjh17@fudan.edu.cn)]
@@ -115,7 +115,7 @@ tinytex::install_tinytex()
 \LARGE
 
 \begin{center}
-\textbf{场景测试报告}
+\textbf{测试报告总结}
 \end{center}
 
 \large
@@ -125,7 +125,7 @@ tinytex::install_tinytex()
 
 # 摘要 {-}
 
-本次作业为软件质量保障与测试课程的Lab9课程作业，需要我们以小组为单位完成对出题系统的场景测试。本文档分为五小节。第一小节介绍了本小组进行测试计划设计的情况；第二小节介绍了本小组设计测试范围的情况；第三小节整理了本小组进行测试的结果；第四小节介绍了本小组对bug等级的评估情况；第五小节介绍了本小组对本次场景测试的测试总结。
+本次作业为软件质量保障与测试课程的Lab9课程作业，在本次作业中，我们对本学期的所有测试内容和环节进行了总结和分析。
 
 # 关键词 {-}
 
