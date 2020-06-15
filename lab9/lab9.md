@@ -394,6 +394,9 @@ references:
 ### 测试计划
 CSTM1.0-TP1.0
 修订历史
+\begin{table}[h]
+\centering
+\caption{修订历史}
 \begin{tabular}{|p{2cm}|p{3.3cm}|p{5cm}|}
 \hline
 版本 & 日期 & 说明\\
@@ -403,11 +406,15 @@ CSTM1.0-TP1.0
 CSTM1.0-TP1.0 & 2021 年4 月1 日 & 建立更完善的出题系统的测试计划\\
 \hline
 \end{tabular}
+\end{table}
 
 #### 待测特性
 
 #### 特性与优先度
 1. 优先度划分标准
+\begin{table}[h]
+\centering
+\caption{优先度划分标准}
 \begin{tabular}{|p{2cm}|p{8cm}|}
 \hline
 优先度 & 说明\\
@@ -421,8 +428,12 @@ P3 & 中优先级测试用例，更全面地验证功能的各个方面，异常
 P4 & 低优先级测试用例，不常常被执行，性能、压力、兼容性、稳定性、安全、可用性等等\\
 \hline
 \end{tabular}
+\end{table}
 
 2. 需测试特性与优先度
+\begin{table}[h]
+\centering
+\caption{P1特性}
 \begin{tabular}{|p{10cm}|}
 \hline
 P1\\
@@ -474,7 +485,11 @@ P1\\
 查看考卷与作答\\
 \hline
 \end{tabular}
+\end{table}
 
+\begin{table}[h]
+\centering
+\caption{P2特性}
 \begin{tabular}{|p{10cm}|}
 \hline
 P2\\
@@ -486,7 +501,11 @@ P2\\
 主持人重启出题流程\\
 \hline
 \end{tabular}
+\end{table}
 
+\begin{table}[h]
+\centering
+\caption{P3特性}
 \begin{tabular}{|p{10cm}|}
 \hline
 P3\\
@@ -496,7 +515,11 @@ P3\\
 主持人废除作废考题\\
 \hline
 \end{tabular}
+\end{table}
 
+\begin{table}[h]
+\centering
+\caption{P4特性}
 \begin{tabular}{|p{10cm}|}
 \hline
 P4\\
@@ -534,6 +557,7 @@ P4\\
 符合国家安全标准\\
 \hline
 \end{tabular}
+\end{table}
 
 #### 风险评估
 ##### 出题系统

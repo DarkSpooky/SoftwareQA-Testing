@@ -396,7 +396,7 @@ tinytex::install_tinytex()
 ### 测试计划
 CSTM1.0-TP1.0
 修订历史
-\begin{table}[H]
+\begin{table}[h]
 \centering
 \caption{修订历史}
 \begin{tabular}{|p{2cm}|p{3.3cm}|p{5cm}|}
@@ -414,7 +414,7 @@ CSTM1.0-TP1.0 & 2021 年4 月1 日 & 建立更完善的出题系统的测试计�
 
 #### 特性与优先度
 1. 优先度划分标准
-\begin{table}[H]
+\begin{table}[h]
 \centering
 \caption{优先度划分标准}
 \begin{tabular}{|p{2cm}|p{8cm}|}
@@ -433,7 +433,7 @@ P4 & 低优先级测试用例，不常常被执行，性能、压力、兼容性
 \end{table}
 
 2. 需测试特性与优先度
-\begin{table}[H]
+\begin{table}[h]
 \centering
 \caption{P1特性}
 \begin{tabular}{|p{10cm}|}
@@ -489,7 +489,7 @@ P1\\
 \end{tabular}
 \end{table}
 
-\begin{table}[H]
+\begin{table}[h]
 \centering
 \caption{P2特性}
 \begin{tabular}{|p{10cm}|}
@@ -505,7 +505,7 @@ P2\\
 \end{tabular}
 \end{table}
 
-\begin{table}[H]
+\begin{table}[h]
 \centering
 \caption{P3特性}
 \begin{tabular}{|p{10cm}|}
@@ -519,7 +519,7 @@ P3\\
 \end{tabular}
 \end{table}
 
-\begin{table}[H]
+\begin{table}[h]
 \centering
 \caption{P4特性}
 \begin{tabular}{|p{10cm}|}
