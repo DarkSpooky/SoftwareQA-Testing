@@ -408,7 +408,7 @@ CSTM1.0-TP1.0
 CSTM1.0-TP1.0 & 2021 年4 月1 日 & 建立更完善的出题系统的测试计划\\
 \hline
 \end{tabular}
-\end
+\end{table}
 
 #### 待测特性
 
@@ -430,7 +430,7 @@ P3 & 中优先级测试用例，更全面地验证功能的各个方面，异常
 P4 & 低优先级测试用例，不常常被执行，性能、压力、兼容性、稳定性、安全、可用性等等\\
 \hline
 \end{tabular}
-\end
+\end{table}
 
 2. 需测试特性与优先度
 \begin{table}[H]
@@ -487,7 +487,7 @@ P1\\
 查看考卷与作答\\
 \hline
 \end{tabular}
-\end
+\end{table}
 
 \begin{table}[H]
 \centering
@@ -503,7 +503,7 @@ P2\\
 主持人重启出题流程\\
 \hline
 \end{tabular}
-\end
+\end{table}
 
 \begin{table}[H]
 \centering
@@ -517,7 +517,7 @@ P3\\
 主持人废除作废考题\\
 \hline
 \end{tabular}
-\end
+\end{table}
 
 \begin{table}[H]
 \centering
@@ -559,7 +559,7 @@ P4\\
 符合国家安全标准\\
 \hline
 \end{tabular}
-\end
+\end{table}
 
 #### 风险评估
 ##### 出题系统
