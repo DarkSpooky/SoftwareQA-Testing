@@ -359,25 +359,25 @@ tinytex::install_tinytex()
 
 \begin{figure}
   \centering
-  \includegraphics[scale=0.5]{./assets/FlowChart.pdf}
+  \includegraphics[width=18cm]{./assets/FlowChart.pdf}
   \caption{黑盒测试流程图}\label{1}
 \end{figure}
 
 \begin{figure}
   \centering
-  \includegraphics[scale=0.75]{./assets/ClassDiagram.pdf}
+  \includegraphics[width=18cm]{./assets/ClassDiagram.pdf}
   \caption{黑盒测试整体框架图}\label{2}
 \end{figure}
 
 \begin{figure}
   \centering
-  \includegraphics[scale=0.85]{./assets/KeywordsDiagram.pdf}
+  \includegraphics[width=18cm]{./assets/KeywordsDiagram.pdf}
   \caption{黑盒测试关键词设计框架图}\label{3}
 \end{figure}
 
 \begin{figure}
   \centering
-  \includegraphics[scale=0.85]{./assets/ActionEngineDiagram.pdf}
+  \includegraphics[width=18cm]{./assets/ActionEngineDiagram.pdf}
   \caption{黑盒测试用例执行组件框架图}\label{4}
 \end{figure}
 
@@ -1089,7 +1089,7 @@ Intel(R) Core(TM) i7-6500U 2.5GHz
 
 ## 数据环境
 ### 考题测试数据
-共有10MB来自复旦大学软件学院图书馆馆藏的题库素材。
+共有10MB来自复旦大学软件学院图书馆馆藏的题库素材，包含图片和表格等多种形式。
 
 
 #	测试结果分析
