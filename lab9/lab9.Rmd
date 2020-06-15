@@ -158,13 +158,21 @@ tinytex::install_tinytex()
 1．	项目测试人员
 
 在本项目中，项目测试人员共有以下几位人员：
+
 - 刘佳兴
+
 - 吴琛宁
+
 - 张逸涵
+
 - 张岑媛
+
 - 石睿欣
+
 - 黄佳妮
+
 - 田嘉禾
+
 - 胡宵宵
 
 2．	项目测试经理和管理人员
@@ -173,6 +181,7 @@ tinytex::install_tinytex()
 
 
 3．	其他项目相关人员
+
 其他项目相关人员包含评审委员会，例如老师和助教，会对每一次测试汇报结果作出评价。
 
 ## 测试对象
@@ -196,15 +205,22 @@ tinytex::install_tinytex()
 
 
 ### 目标系统版本
+
 目标系统的版本为CS_TESTMAKER_1.0
 
 ## 测试阶段
 ### 测试总流程
+
 整个测试流程共分为：
+
 - 测试计划的撰写
+
 - 测试条件分析与测试用例设计
+
 - 测试实现
+
 - 测试评估与测试的报告
+
 - 编写系统测试验收文档
 
 ### 测试实现阶段
@@ -218,23 +234,34 @@ tinytex::install_tinytex()
 ## 测试工具
 
 共用到以下几种测试工具, 包括持续集成测试平台和静态代码扫描工具等，如下：
+
 - https://codecov.io
+
 - https://jenkins.io
+
 - https://semmle.com/codeql
+
 - https://travis-ci.org
+
 - https://www.appveyor.com
+
 - https://github.com/alibaba/p3c
+
 - https://www.sonarqube.org/
 
 
 ## 参考资料
+
 请直接点击链接访问：
+
 1．	[需求和设计说明书](https://github.com/StrayBird-ATSH/SoftwareQA-Testing/blob/master/requirements/%E5%87%BA%E9%A2%98%E7%B3%BB%E7%BB%9F%E9%9C%80%E6%B1%82%E6%96%87%E6%A1%A3-to%E5%AD%A6%E7%94%9F.pdf)
 
 2．	[系统测试计划](https://github.com/StrayBird-ATSH/SoftwareQA-Testing/blob/master/lab3/lab3.pdf)
 
 3．	系统测试用例
+
 - [白盒测试用例说明](https://github.com/StrayBird-ATSH/SoftwareQA-Testing/blob/master/lab4/lab4%E5%87%BA%E9%A2%98%E8%80%83%E8%AF%95%E7%B3%BB%E7%BB%9F%E7%99%BD%E7%9B%92%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A.pdf)
+
 - [黑盒测试用例说明](https://github.com/StrayBird-ATSH/SoftwareQA-Testing/blob/master/lab5/lab5.pdf)
 
 - [负载测试用例说明](https://github.com/StrayBird-ATSH/SoftwareQA-Testing/blob/master/lab6/lab6.pdf)
@@ -249,25 +276,31 @@ tinytex::install_tinytex()
 
 ### 测试功能模块
 #### 出题系统
+
 ##### 登陆及个人信息模块
 - 用户登陆校验
 - 用户修改个人信息
+
 ##### 建立新项目
 - 主持人创建项目
 - 主持人新建考题
+
 ##### 开始启动项目
 - 主持人设置考题期限
 - 主持人修改状态从开始到编写
+
 ##### 编写考题
 - 作者设置多类型考题
 - 作者修改状态(编写-评审)
 - 作者设置多类型考题2
 - 送审前内容检查
+
 ##### 评审考题
 - 评审员设置评审结果为“可接受”
 - 评审员设置评审结果为“被拒绝”
 - 评审员设置评审结果为“需修改”
 - 评审员评审权限
+
 ##### 再审考题
 - 质管员设置再审结果为“可发布”
 - 质管员设置再审结果为“需修改”
@@ -303,16 +336,20 @@ tinytex::install_tinytex()
 #### 白盒测试
 
 #### 测试特性及测试项
+
 ##### 考试系统
 - 根据考试id获取考试成绩
 - 开始考试
 - 系统在考生提交答案后可以得到分数
+
 ##### 题库管理系统
 - 生成考卷
 - 查看考题
+
 ##### 在线报名考生管理系统
 - 考生参加考试
 - 学生账户服务
+
 ##### 出题系统
 - 考题服务
 
